@@ -32,10 +32,6 @@ namespace BaketyManagement
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdmin));
-//            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
- //           System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
- //           System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
- //           System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tcAccount = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -243,7 +239,6 @@ namespace BaketyManagement
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.panel20 = new System.Windows.Forms.Panel();
-//            this.chartStatistical = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel21 = new System.Windows.Forms.Panel();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.panel24 = new System.Windows.Forms.Panel();
@@ -291,7 +286,6 @@ namespace BaketyManagement
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
             this.tcAccount.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -377,8 +371,6 @@ namespace BaketyManagement
             this.tabPage13.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.groupBox15.SuspendLayout();
-            this.panel20.SuspendLayout();
-        //    ((System.ComponentModel.ISupportInitialize)(this.chartStatistical)).BeginInit();
             this.panel21.SuspendLayout();
             this.groupBox18.SuspendLayout();
             this.panel24.SuspendLayout();
@@ -412,9 +404,8 @@ namespace BaketyManagement
             this.tcAccount.Controls.Add(this.tabPage8);
             this.tcAccount.Controls.Add(this.tabPage12);
             this.tcAccount.Controls.Add(this.tabPage9);
-            this.tcAccount.Controls.Add(this.tabPage10);
             this.tcAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tcAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tcAccount.ImageList = this.imageList1;
             this.tcAccount.Location = new System.Drawing.Point(0, 0);
             this.tcAccount.Name = "tcAccount";
@@ -482,19 +473,18 @@ namespace BaketyManagement
             // cbbListStaff
             // 
             this.cbbListStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbbListStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbListStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbbListStaff.FormattingEnabled = true;
             this.cbbListStaff.Location = new System.Drawing.Point(924, 32);
             this.cbbListStaff.Name = "cbbListStaff";
             this.cbbListStaff.Size = new System.Drawing.Size(266, 28);
             this.cbbListStaff.TabIndex = 5;
-//            this.cbbListStaff.SelectedIndexChanged += new System.EventHandler(this.cbbListStaff_SelectedIndexChanged);
             // 
             // txtIdStaffAccount
             // 
             this.txtIdStaffAccount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtIdStaffAccount.Enabled = false;
-            this.txtIdStaffAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdStaffAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtIdStaffAccount.Location = new System.Drawing.Point(924, 85);
             this.txtIdStaffAccount.Name = "txtIdStaffAccount";
             this.txtIdStaffAccount.ReadOnly = true;
@@ -505,7 +495,7 @@ namespace BaketyManagement
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPassword.Enabled = false;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.Location = new System.Drawing.Point(441, 85);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.ReadOnly = true;
@@ -516,7 +506,7 @@ namespace BaketyManagement
             // txtUserName
             // 
             this.txtUserName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUserName.Location = new System.Drawing.Point(441, 32);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(266, 26);
@@ -577,7 +567,7 @@ namespace BaketyManagement
             // 
             this.panel2.Controls.Add(this.dgvAccount);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel2.Location = new System.Drawing.Point(3, 203);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1520, 350);
@@ -596,7 +586,6 @@ namespace BaketyManagement
             this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccount.Size = new System.Drawing.Size(1520, 350);
             this.dgvAccount.TabIndex = 0;
-     //       this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick);
             // 
             // panel3
             // 
@@ -645,7 +634,6 @@ namespace BaketyManagement
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.UseVisualStyleBackColor = true;
-      //      this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDisplay
             // 
@@ -658,7 +646,6 @@ namespace BaketyManagement
             this.btnDisplay.Text = "Xem";
             this.btnDisplay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDisplay.UseVisualStyleBackColor = true;
-      //      this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
             // btnDelete
             // 
@@ -671,7 +658,6 @@ namespace BaketyManagement
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelete.UseVisualStyleBackColor = true;
-      //      this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnReset
             // 
@@ -684,12 +670,11 @@ namespace BaketyManagement
             this.btnReset.Text = "Đặt lại mật khẩu";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReset.UseVisualStyleBackColor = true;
-     //       this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // txtAccountSearch
             // 
             this.txtAccountSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtAccountSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccountSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAccountSearch.Location = new System.Drawing.Point(511, 60);
             this.txtAccountSearch.Name = "txtAccountSearch";
             this.txtAccountSearch.Size = new System.Drawing.Size(502, 26);
@@ -706,7 +691,6 @@ namespace BaketyManagement
             this.btnSearch.Text = "Tìm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearch.UseVisualStyleBackColor = true;
-     //       this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // tabPage2
             // 
@@ -796,7 +780,7 @@ namespace BaketyManagement
             // txtWorkDay
             // 
             this.txtWorkDay.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtWorkDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWorkDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtWorkDay.Location = new System.Drawing.Point(943, 133);
             this.txtWorkDay.Name = "txtWorkDay";
             this.txtWorkDay.Size = new System.Drawing.Size(266, 26);
@@ -805,7 +789,7 @@ namespace BaketyManagement
             // txtSalary
             // 
             this.txtSalary.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSalary.Location = new System.Drawing.Point(943, 85);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(266, 26);
@@ -814,7 +798,7 @@ namespace BaketyManagement
             // txtAddressStaff
             // 
             this.txtAddressStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtAddressStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddressStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAddressStaff.Location = new System.Drawing.Point(943, 37);
             this.txtAddressStaff.Name = "txtAddressStaff";
             this.txtAddressStaff.Size = new System.Drawing.Size(266, 26);
@@ -833,7 +817,7 @@ namespace BaketyManagement
             // txtPhoneStaff
             // 
             this.txtPhoneStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPhoneStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPhoneStaff.Location = new System.Drawing.Point(445, 133);
             this.txtPhoneStaff.Name = "txtPhoneStaff";
             this.txtPhoneStaff.Size = new System.Drawing.Size(266, 26);
@@ -852,7 +836,7 @@ namespace BaketyManagement
             // txtNameStaff
             // 
             this.txtNameStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNameStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNameStaff.Location = new System.Drawing.Point(445, 34);
             this.txtNameStaff.Name = "txtNameStaff";
             this.txtNameStaff.Size = new System.Drawing.Size(266, 26);
@@ -902,7 +886,7 @@ namespace BaketyManagement
             // 
             this.panel5.Controls.Add(this.dgvStaff);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel5.Location = new System.Drawing.Point(3, 203);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1520, 350);
@@ -921,7 +905,6 @@ namespace BaketyManagement
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStaff.Size = new System.Drawing.Size(1520, 350);
             this.dgvStaff.TabIndex = 0;
-  //          this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel6
             // 
@@ -969,7 +952,6 @@ namespace BaketyManagement
             this.btnAddStaff.Text = "Thêm";
             this.btnAddStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddStaff.UseVisualStyleBackColor = true;
-    //        this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
             // 
             // btnDisplayStaff
             // 
@@ -983,7 +965,6 @@ namespace BaketyManagement
             this.btnDisplayStaff.Text = "Xem";
             this.btnDisplayStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDisplayStaff.UseVisualStyleBackColor = false;
-  //          this.btnDisplayStaff.Click += new System.EventHandler(this.btnDisplayStaff_Click);
             // 
             // btnEditStaff
             // 
@@ -996,7 +977,6 @@ namespace BaketyManagement
             this.btnEditStaff.Text = "Sửa";
             this.btnEditStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditStaff.UseVisualStyleBackColor = true;
-       //     this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
             // 
             // btnDeleteStaff
             // 
@@ -1009,12 +989,11 @@ namespace BaketyManagement
             this.btnDeleteStaff.Text = "Xóa";
             this.btnDeleteStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDeleteStaff.UseVisualStyleBackColor = true;
-       //     this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
             // 
             // txtStaffSearch
             // 
             this.txtStaffSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtStaffSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStaffSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtStaffSearch.Location = new System.Drawing.Point(504, 64);
             this.txtStaffSearch.Name = "txtStaffSearch";
             this.txtStaffSearch.Size = new System.Drawing.Size(502, 26);
@@ -1031,7 +1010,6 @@ namespace BaketyManagement
             this.btnStaffSearch.Text = "Tìm";
             this.btnStaffSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnStaffSearch.UseVisualStyleBackColor = true;
-    //        this.btnStaffSearch.Click += new System.EventHandler(this.btnStaffSearch_Click);
             // 
             // tabPage3
             // 
@@ -1091,7 +1069,7 @@ namespace BaketyManagement
             // cbbCategory
             // 
             this.cbbCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbbCategory.FormattingEnabled = true;
             this.cbbCategory.Location = new System.Drawing.Point(936, 104);
             this.cbbCategory.Name = "cbbCategory";
@@ -1101,7 +1079,7 @@ namespace BaketyManagement
             // txtSize
             // 
             this.txtSize.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSize.Location = new System.Drawing.Point(936, 61);
             this.txtSize.Name = "txtSize";
             this.txtSize.Size = new System.Drawing.Size(266, 26);
@@ -1130,7 +1108,7 @@ namespace BaketyManagement
             // txtPrice
             // 
             this.txtPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPrice.Location = new System.Drawing.Point(455, 107);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(266, 26);
@@ -1139,7 +1117,7 @@ namespace BaketyManagement
             // txtNameCake
             // 
             this.txtNameCake.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNameCake.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameCake.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNameCake.Location = new System.Drawing.Point(455, 61);
             this.txtNameCake.Name = "txtNameCake";
             this.txtNameCake.Size = new System.Drawing.Size(266, 26);
@@ -1169,7 +1147,7 @@ namespace BaketyManagement
             // 
             this.panel8.Controls.Add(this.dgvCake);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel8.Location = new System.Drawing.Point(3, 203);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1526, 356);
@@ -1188,7 +1166,6 @@ namespace BaketyManagement
             this.dgvCake.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCake.Size = new System.Drawing.Size(1526, 356);
             this.dgvCake.TabIndex = 0;
-   //         this.dgvCake.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCake_CellClick);
             // 
             // panel9
             // 
@@ -1236,7 +1213,6 @@ namespace BaketyManagement
             this.btnCakeEdit.Text = "Sửa";
             this.btnCakeEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCakeEdit.UseVisualStyleBackColor = true;
-    //        this.btnCakeEdit.Click += new System.EventHandler(this.btnCakeEdit_Click);
             // 
             // btnCakeDisplay
             // 
@@ -1249,7 +1225,6 @@ namespace BaketyManagement
             this.btnCakeDisplay.Text = "Xem";
             this.btnCakeDisplay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCakeDisplay.UseVisualStyleBackColor = true;
-    //        this.btnCakeDisplay.Click += new System.EventHandler(this.btnCakeDisplay_Click);
             // 
             // btnCakeDel
             // 
@@ -1262,7 +1237,6 @@ namespace BaketyManagement
             this.btnCakeDel.Text = "Xóa";
             this.btnCakeDel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCakeDel.UseVisualStyleBackColor = true;
-  //          this.btnCakeDel.Click += new System.EventHandler(this.btnCakeDel_Click);
             // 
             // txtCakeSearch
             // 
@@ -1283,7 +1257,6 @@ namespace BaketyManagement
             this.btnCakeSearch.Text = "Tìm";
             this.btnCakeSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCakeSearch.UseVisualStyleBackColor = true;
- //           this.btnCakeSearch.Click += new System.EventHandler(this.btnCakeSearch_Click);
             // 
             // tabPage4
             // 
@@ -1336,7 +1309,7 @@ namespace BaketyManagement
             this.groupBox7.Controls.Add(this.label19);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox7.ForeColor = System.Drawing.Color.White;
             this.groupBox7.Location = new System.Drawing.Point(0, 0);
             this.groupBox7.Name = "groupBox7";
@@ -1348,7 +1321,7 @@ namespace BaketyManagement
             // txtAddressSupplier
             // 
             this.txtAddressSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtAddressSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddressSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAddressSupplier.Location = new System.Drawing.Point(938, 109);
             this.txtAddressSupplier.Name = "txtAddressSupplier";
             this.txtAddressSupplier.Size = new System.Drawing.Size(266, 26);
@@ -1357,7 +1330,7 @@ namespace BaketyManagement
             // txtPhoneSupplier
             // 
             this.txtPhoneSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPhoneSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPhoneSupplier.Location = new System.Drawing.Point(938, 59);
             this.txtPhoneSupplier.Name = "txtPhoneSupplier";
             this.txtPhoneSupplier.Size = new System.Drawing.Size(266, 26);
@@ -1366,7 +1339,7 @@ namespace BaketyManagement
             // txtIdSupplier
             // 
             this.txtIdSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtIdSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtIdSupplier.Location = new System.Drawing.Point(493, 65);
             this.txtIdSupplier.Name = "txtIdSupplier";
             this.txtIdSupplier.ReadOnly = true;
@@ -1376,7 +1349,7 @@ namespace BaketyManagement
             // txtNameSupplier
             // 
             this.txtNameSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNameSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNameSupplier.Location = new System.Drawing.Point(493, 106);
             this.txtNameSupplier.Name = "txtNameSupplier";
             this.txtNameSupplier.Size = new System.Drawing.Size(266, 26);
@@ -1386,7 +1359,7 @@ namespace BaketyManagement
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.Location = new System.Drawing.Point(817, 115);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(64, 20);
@@ -1397,7 +1370,7 @@ namespace BaketyManagement
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.Location = new System.Drawing.Point(817, 65);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(115, 20);
@@ -1408,7 +1381,7 @@ namespace BaketyManagement
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.Location = new System.Drawing.Point(321, 65);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(146, 20);
@@ -1419,7 +1392,7 @@ namespace BaketyManagement
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label19.Location = new System.Drawing.Point(316, 112);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(152, 20);
@@ -1430,7 +1403,7 @@ namespace BaketyManagement
             // 
             this.panel11.Controls.Add(this.dgvSupplier);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel11.Location = new System.Drawing.Point(3, 203);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(1520, 350);
@@ -1451,7 +1424,6 @@ namespace BaketyManagement
             this.dgvSupplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSupplier.Size = new System.Drawing.Size(1520, 350);
             this.dgvSupplier.TabIndex = 0;
-     //       this.dgvSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSupplier_CellClick);
             // 
             // panel12
             // 
@@ -1474,7 +1446,7 @@ namespace BaketyManagement
             this.groupBox8.Controls.Add(this.btnSearchSupplier);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox8.ForeColor = System.Drawing.Color.White;
             this.groupBox8.Location = new System.Drawing.Point(0, 0);
             this.groupBox8.Name = "groupBox8";
@@ -1487,7 +1459,7 @@ namespace BaketyManagement
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(309, 64);
             this.label16.Name = "label16";
@@ -1506,7 +1478,6 @@ namespace BaketyManagement
             this.btnAddSupplier.Text = "Thêm";
             this.btnAddSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddSupplier.UseVisualStyleBackColor = true;
-        //    this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
             // 
             // btnEditSupplier
             // 
@@ -1519,7 +1490,6 @@ namespace BaketyManagement
             this.btnEditSupplier.Text = "Sửa";
             this.btnEditSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditSupplier.UseVisualStyleBackColor = true;
-   //         this.btnEditSupplier.Click += new System.EventHandler(this.btnEditSupplier_Click);
             // 
             // btnViewSupplier
             // 
@@ -1532,7 +1502,6 @@ namespace BaketyManagement
             this.btnViewSupplier.Text = "Xem";
             this.btnViewSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnViewSupplier.UseVisualStyleBackColor = true;
-       //     this.btnViewSupplier.Click += new System.EventHandler(this.btnViewSupplier_Click);
             // 
             // btnDelSupplier
             // 
@@ -1545,12 +1514,11 @@ namespace BaketyManagement
             this.btnDelSupplier.Text = "Xóa";
             this.btnDelSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelSupplier.UseVisualStyleBackColor = true;
-      //      this.btnDelSupplier.Click += new System.EventHandler(this.btnDelSupplier_Click);
             // 
             // txtSearchKeySupplier
             // 
             this.txtSearchKeySupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSearchKeySupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchKeySupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearchKeySupplier.Location = new System.Drawing.Point(579, 58);
             this.txtSearchKeySupplier.Name = "txtSearchKeySupplier";
             this.txtSearchKeySupplier.Size = new System.Drawing.Size(433, 26);
@@ -1567,7 +1535,6 @@ namespace BaketyManagement
             this.btnSearchSupplier.Text = "Tìm";
             this.btnSearchSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchSupplier.UseVisualStyleBackColor = true;
-      //      this.btnSearchSupplier.Click += new System.EventHandler(this.btnSearchSupplier_Click);
             // 
             // tabPage5
             // 
@@ -1629,7 +1596,7 @@ namespace BaketyManagement
             // 
             this.panel14.Controls.Add(this.dgvBill);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel14.Location = new System.Drawing.Point(3, 22);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(748, 519);
@@ -1648,7 +1615,6 @@ namespace BaketyManagement
             this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBill.Size = new System.Drawing.Size(748, 519);
             this.dgvBill.TabIndex = 0;
-    //        this.dgvBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBill_CellClick);
             // 
             // groupBox10
             // 
@@ -1665,7 +1631,7 @@ namespace BaketyManagement
             // 
             this.panel15.Controls.Add(this.dgvBillDetail);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel15.Location = new System.Drawing.Point(3, 22);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(748, 519);
@@ -1738,7 +1704,7 @@ namespace BaketyManagement
             // 
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label26.Location = new System.Drawing.Point(326, 180);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(119, 20);
@@ -1749,7 +1715,7 @@ namespace BaketyManagement
             // 
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label25.Location = new System.Drawing.Point(330, 135);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(115, 20);
@@ -1760,7 +1726,7 @@ namespace BaketyManagement
             // 
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label24.Location = new System.Drawing.Point(197, 95);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(192, 20);
@@ -1771,7 +1737,7 @@ namespace BaketyManagement
             // 
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label23.Location = new System.Drawing.Point(197, 48);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(261, 20);
@@ -1781,7 +1747,7 @@ namespace BaketyManagement
             // txtSearchKeyBill
             // 
             this.txtSearchKeyBill.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSearchKeyBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchKeyBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearchKeyBill.Location = new System.Drawing.Point(474, 42);
             this.txtSearchKeyBill.Name = "txtSearchKeyBill";
             this.txtSearchKeyBill.Size = new System.Drawing.Size(433, 26);
@@ -1798,7 +1764,6 @@ namespace BaketyManagement
             this.btnFilterBill.Text = "Lọc";
             this.btnFilterBill.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFilterBill.UseVisualStyleBackColor = true;
-    //        this.btnFilterBill.Click += new System.EventHandler(this.btnFilterBill_Click);
             // 
             // btnSearchBill
             // 
@@ -1811,7 +1776,6 @@ namespace BaketyManagement
             this.btnSearchBill.Text = "Tìm";
             this.btnSearchBill.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchBill.UseVisualStyleBackColor = true;
-      //      this.btnSearchBill.Click += new System.EventHandler(this.btnSearchBill_Click);
             // 
             // btnViewBill
             // 
@@ -1824,7 +1788,6 @@ namespace BaketyManagement
             this.btnViewBill.Text = "Xem";
             this.btnViewBill.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnViewBill.UseVisualStyleBackColor = true;
-       //     this.btnViewBill.Click += new System.EventHandler(this.btnViewBill_Click);
             // 
             // tabPage7
             // 
@@ -1878,7 +1841,7 @@ namespace BaketyManagement
             // txtNameCategory
             // 
             this.txtNameCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNameCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNameCategory.Location = new System.Drawing.Point(728, 61);
             this.txtNameCategory.Name = "txtNameCategory";
             this.txtNameCategory.Size = new System.Drawing.Size(266, 26);
@@ -1898,7 +1861,7 @@ namespace BaketyManagement
             // 
             this.panel18.Controls.Add(this.dgvCategory);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel18.Location = new System.Drawing.Point(3, 203);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(1526, 356);
@@ -1917,7 +1880,6 @@ namespace BaketyManagement
             this.dgvCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategory.Size = new System.Drawing.Size(1526, 356);
             this.dgvCategory.TabIndex = 0;
-    //        this.dgvCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellClick);
             // 
             // panel19
             // 
@@ -1966,7 +1928,6 @@ namespace BaketyManagement
             this.btnDisplayCategory.Text = "Xem";
             this.btnDisplayCategory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDisplayCategory.UseVisualStyleBackColor = true;
-    //        this.btnDisplayCategory.Click += new System.EventHandler(this.btnDisplayCategory_Click);
             // 
             // btnDeleteCategory
             // 
@@ -1979,7 +1940,6 @@ namespace BaketyManagement
             this.btnDeleteCategory.Text = "Xóa";
             this.btnDeleteCategory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDeleteCategory.UseVisualStyleBackColor = true;
-      //      this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
             // 
             // btnAddCategory
             // 
@@ -1992,7 +1952,6 @@ namespace BaketyManagement
             this.btnAddCategory.Text = "Thêm";
             this.btnAddCategory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddCategory.UseVisualStyleBackColor = true;
-       //     this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click_1);
             // 
             // btnEditCategory
             // 
@@ -2005,12 +1964,11 @@ namespace BaketyManagement
             this.btnEditCategory.Text = "Sửa";
             this.btnEditCategory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditCategory.UseVisualStyleBackColor = true;
-     //       this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
             // 
             // txtCategorySearch
             // 
             this.txtCategorySearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCategorySearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategorySearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCategorySearch.Location = new System.Drawing.Point(514, 60);
             this.txtCategorySearch.Name = "txtCategorySearch";
             this.txtCategorySearch.Size = new System.Drawing.Size(502, 26);
@@ -2027,7 +1985,6 @@ namespace BaketyManagement
             this.btnCategorySearch.Text = "Tìm";
             this.btnCategorySearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCategorySearch.UseVisualStyleBackColor = true;
-       //     this.btnCategorySearch.Click += new System.EventHandler(this.btnCategorySearch_Click);
             // 
             // tabPage8
             // 
@@ -2099,7 +2056,6 @@ namespace BaketyManagement
             this.dgvCakePresent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCakePresent.Size = new System.Drawing.Size(754, 265);
             this.dgvCakePresent.TabIndex = 0;
-  //          this.dgvCakePresent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCakePresent_CellClick);
             // 
             // panel30
             // 
@@ -2377,7 +2333,6 @@ namespace BaketyManagement
             this.btnSearchCakeImport.Text = "Tìm Kiếm";
             this.btnSearchCakeImport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchCakeImport.UseVisualStyleBackColor = true;
-  //          this.btnSearchCakeImport.Click += new System.EventHandler(this.btnSearchCakeImport_Click);
             // 
             // panel32
             // 
@@ -2414,7 +2369,6 @@ namespace BaketyManagement
             this.btnCancelCakeImport.Text = "Hủy";
             this.btnCancelCakeImport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelCakeImport.UseVisualStyleBackColor = true;
- //           this.btnCancelCakeImport.Click += new System.EventHandler(this.btnCancelCakeImport_Click);
             // 
             // btnDisplayCakePresent
             // 
@@ -2427,7 +2381,6 @@ namespace BaketyManagement
             this.btnDisplayCakePresent.Text = "Xem";
             this.btnDisplayCakePresent.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDisplayCakePresent.UseVisualStyleBackColor = true;
-   //         this.btnDisplayCakePresent.Click += new System.EventHandler(this.btnDisplayCakePresent_Click);
             // 
             // btnAddImportCoupon
             // 
@@ -2440,7 +2393,6 @@ namespace BaketyManagement
             this.btnAddImportCoupon.Text = "Thêm";
             this.btnAddImportCoupon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddImportCoupon.UseVisualStyleBackColor = true;
-  //          this.btnAddImportCoupon.Click += new System.EventHandler(this.btnAddImportCoupon_Click);
             // 
             // btnEditImportCoupon
             // 
@@ -2453,7 +2405,6 @@ namespace BaketyManagement
             this.btnEditImportCoupon.Text = "Sửa";
             this.btnEditImportCoupon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditImportCoupon.UseVisualStyleBackColor = true;
-   //         this.btnEditImportCoupon.Click += new System.EventHandler(this.btnEditImportCoupon_Click);
             // 
             // btnDeleteImportCoupon
             // 
@@ -2466,7 +2417,6 @@ namespace BaketyManagement
             this.btnDeleteImportCoupon.Text = "Xóa";
             this.btnDeleteImportCoupon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDeleteImportCoupon.UseVisualStyleBackColor = true;
-  //          this.btnDeleteImportCoupon.Click += new System.EventHandler(this.btnDeleteImportCoupon_Click);
             // 
             // panel33
             // 
@@ -2502,7 +2452,6 @@ namespace BaketyManagement
             this.dgvDetailImport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetailImport.Size = new System.Drawing.Size(1520, 265);
             this.dgvDetailImport.TabIndex = 0;
-  //          this.dgvDetailImport.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetailImport_CellClick);
             // 
             // panel34
             // 
@@ -2544,7 +2493,6 @@ namespace BaketyManagement
             this.btnSearchDetailImport.Text = "Tìm Kiếm";
             this.btnSearchDetailImport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchDetailImport.UseVisualStyleBackColor = true;
-      //      this.btnSearchDetailImport.Click += new System.EventHandler(this.btnSearchDetailImport_Click);
             // 
             // panel36
             // 
@@ -2642,7 +2590,7 @@ namespace BaketyManagement
             // 
             this.panel25.Controls.Add(this.dgvStatistical);
             this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel25.Location = new System.Drawing.Point(3, 22);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(1506, 492);
@@ -2703,7 +2651,6 @@ namespace BaketyManagement
             this.btnStatisticalList.Text = "Thống kê";
             this.btnStatisticalList.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnStatisticalList.UseVisualStyleBackColor = true;
-      //      this.btnStatisticalList.Click += new System.EventHandler(this.btnStatisticalList_Click);
             // 
             // groupBox22
             // 
@@ -2810,35 +2757,11 @@ namespace BaketyManagement
             // 
             // panel20
             // 
-//            this.panel20.Controls.Add(this.chartStatistical);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(3, 22);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(1506, 492);
             this.panel20.TabIndex = 0;
-            // 
-            // chartStatistical
-            // 
- //           chartArea6.Name = "ChartArea1";
- //           this.chartStatistical.ChartAreas.Add(chartArea6);
-//            this.chartStatistical.Dock = System.Windows.Forms.DockStyle.Fill;
- //           legend6.Name = "Legend1";
-//            this.chartStatistical.Legends.Add(legend6);
- //           this.chartStatistical.Location = new System.Drawing.Point(0, 0);
- //           this.chartStatistical.Name = "chartStatistical";
-  //          series6.ChartArea = "ChartArea1";
-   //         series6.IsValueShownAsLabel = true;
-  //          series6.Legend = "Legend1";
-  //          series6.Name = "statistical";
- //           this.chartStatistical.Series.Add(series6);
-//            this.chartStatistical.Size = new System.Drawing.Size(1506, 492);
-//            this.chartStatistical.TabIndex = 0;
- //           this.chartStatistical.Text = "chart1";
-  //          title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
- //           title6.ForeColor = System.Drawing.Color.Red;
- //           title6.Name = "Title1";
-  //          title6.Text = "BIỂU ĐỒ";
-  //          this.chartStatistical.Titles.Add(title6);
             // 
             // panel21
             // 
@@ -2882,7 +2805,6 @@ namespace BaketyManagement
             this.btnStatisticalChart.Text = "Thống kê";
             this.btnStatisticalChart.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnStatisticalChart.UseVisualStyleBackColor = true;
-      //      this.btnStatisticalChart.Click += new System.EventHandler(this.btnStatisticalChart_Click);
             // 
             // groupBox17
             // 
@@ -3061,7 +2983,7 @@ namespace BaketyManagement
             // 
             this.panel35.Controls.Add(this.dgvCouponImport);
             this.panel35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel35.Location = new System.Drawing.Point(3, 22);
             this.panel35.Name = "panel35";
             this.panel35.Size = new System.Drawing.Size(751, 525);
@@ -3080,7 +3002,6 @@ namespace BaketyManagement
             this.dgvCouponImport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCouponImport.Size = new System.Drawing.Size(751, 525);
             this.dgvCouponImport.TabIndex = 0;
-        //    this.dgvCouponImport.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCouponImport_CellClick);
             // 
             // groupBox29
             // 
@@ -3097,7 +3018,7 @@ namespace BaketyManagement
             // 
             this.panel37.Controls.Add(this.dgvDetailCouponImport);
             this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel37.Location = new System.Drawing.Point(3, 22);
             this.panel37.Name = "panel37";
             this.panel37.Size = new System.Drawing.Size(751, 525);
@@ -3170,7 +3091,7 @@ namespace BaketyManagement
             // 
             this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label36.Location = new System.Drawing.Point(329, 180);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(119, 20);
@@ -3181,7 +3102,7 @@ namespace BaketyManagement
             // 
             this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label41.Location = new System.Drawing.Point(333, 135);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(115, 20);
@@ -3192,7 +3113,7 @@ namespace BaketyManagement
             // 
             this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label42.Location = new System.Drawing.Point(200, 95);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(216, 20);
@@ -3203,7 +3124,7 @@ namespace BaketyManagement
             // 
             this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label43.Location = new System.Drawing.Point(117, 45);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(316, 20);
@@ -3213,7 +3134,7 @@ namespace BaketyManagement
             // txtSearchImportCoupon
             // 
             this.txtSearchImportCoupon.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSearchImportCoupon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchImportCoupon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearchImportCoupon.Location = new System.Drawing.Point(477, 42);
             this.txtSearchImportCoupon.Name = "txtSearchImportCoupon";
             this.txtSearchImportCoupon.Size = new System.Drawing.Size(433, 26);
@@ -3230,7 +3151,6 @@ namespace BaketyManagement
             this.btnFilterCouponImport.Text = "Lọc";
             this.btnFilterCouponImport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFilterCouponImport.UseVisualStyleBackColor = true;
- //           this.btnFilterCouponImport.Click += new System.EventHandler(this.btnFilterCouponImport_Click);
             // 
             // btnSearchCouponImport
             // 
@@ -3243,7 +3163,6 @@ namespace BaketyManagement
             this.btnSearchCouponImport.Text = "Tìm";
             this.btnSearchCouponImport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchCouponImport.UseVisualStyleBackColor = true;
- //           this.btnSearchCouponImport.Click += new System.EventHandler(this.btnSearchCouponImport_Click);
             // 
             // btnDisplayCouponImport
             // 
@@ -3256,10 +3175,10 @@ namespace BaketyManagement
             this.btnDisplayCouponImport.Text = "Xem";
             this.btnDisplayCouponImport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDisplayCouponImport.UseVisualStyleBackColor = true;
-  //          this.btnDisplayCouponImport.Click += new System.EventHandler(this.btnDisplayCouponImport_Click);
             // 
             // imageList1
             // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "Account.png");
@@ -3275,49 +3194,49 @@ namespace BaketyManagement
             // 
             this.textBox1.Location = new System.Drawing.Point(189, 306);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(392, 20);
+            this.textBox1.Size = new System.Drawing.Size(392, 23);
             this.textBox1.TabIndex = 1;
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(189, 264);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(392, 20);
+            this.textBox8.Size = new System.Drawing.Size(392, 23);
             this.textBox8.TabIndex = 1;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(0, 0);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
+            this.textBox7.Size = new System.Drawing.Size(100, 23);
             this.textBox7.TabIndex = 0;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(0, 0);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.Size = new System.Drawing.Size(100, 23);
             this.textBox6.TabIndex = 0;
             // 
             // txtExpImport
             // 
             this.txtExpImport.Location = new System.Drawing.Point(0, 0);
             this.txtExpImport.Name = "txtExpImport";
-            this.txtExpImport.Size = new System.Drawing.Size(100, 20);
+            this.txtExpImport.Size = new System.Drawing.Size(100, 23);
             this.txtExpImport.TabIndex = 0;
             // 
             // txtPriceCakeImport
             // 
             this.txtPriceCakeImport.Location = new System.Drawing.Point(0, 0);
             this.txtPriceCakeImport.Name = "txtPriceCakeImport";
-            this.txtPriceCakeImport.Size = new System.Drawing.Size(100, 20);
+            this.txtPriceCakeImport.Size = new System.Drawing.Size(100, 23);
             this.txtPriceCakeImport.TabIndex = 0;
             // 
             // txtIdCakeImport
             // 
             this.txtIdCakeImport.Location = new System.Drawing.Point(189, 19);
             this.txtIdCakeImport.Name = "txtIdCakeImport";
-            this.txtIdCakeImport.Size = new System.Drawing.Size(392, 20);
+            this.txtIdCakeImport.Size = new System.Drawing.Size(392, 23);
             this.txtIdCakeImport.TabIndex = 1;
             // 
             // tableLayoutPanel7
@@ -3354,29 +3273,18 @@ namespace BaketyManagement
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Chi tiết loại bánh";
             // 
-            // tabPage10
-            // 
-            this.tabPage10.Location = new System.Drawing.Point(4, 29);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(1532, 812);
-            this.tabPage10.TabIndex = 12;
-            this.tabPage10.Text = "tabPage10";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1540, 845);
             this.Controls.Add(this.tcAccount);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý tiệm bánh";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-    //        this.Load += new System.EventHandler(this.FrmAdmin_Load);
             this.tcAccount.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -3477,8 +3385,6 @@ namespace BaketyManagement
             this.tabPage13.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
-            this.panel20.ResumeLayout(false);
-         //   ((System.ComponentModel.ISupportInitialize)(this.chartStatistical)).EndInit();
             this.panel21.ResumeLayout(false);
             this.groupBox18.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
@@ -3765,7 +3671,6 @@ namespace BaketyManagement
         private Button btnFilterCouponImport;
         private Button btnSearchCouponImport;
         private Button btnDisplayCouponImport;
-        private TabPage tabPage10;
         //=======
         //private System.Windows.Forms.Button btnAddImportCoupon;
         //private System.Windows.Forms.DataGridView dgvDetailImport;

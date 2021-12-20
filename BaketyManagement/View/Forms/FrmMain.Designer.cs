@@ -89,12 +89,13 @@
             this.pnMenu.Controls.Add(this.btnMain);
             this.pnMenu.Controls.Add(this.pnLogo);
             this.pnMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnMenu.Location = new System.Drawing.Point(0, 0);
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Padding = new System.Windows.Forms.Padding(20);
             this.pnMenu.Size = new System.Drawing.Size(334, 862);
             this.pnMenu.TabIndex = 2;
+            this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMenu_Paint);
             // 
             // btnLogout
             // 
@@ -103,7 +104,7 @@
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogout.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnLogout.Image = global::BaketyManagement.Properties.Resources.logout;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -111,7 +112,7 @@
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(273, 45);
+            this.btnLogout.Size = new System.Drawing.Size(277, 45);
             this.btnLogout.TabIndex = 5;
             this.btnLogout.Text = "   Đăng Xuất";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,7 +126,7 @@
             this.btnAccountInfor.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAccountInfor.FlatAppearance.BorderSize = 0;
             this.btnAccountInfor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccountInfor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccountInfor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAccountInfor.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAccountInfor.Image = global::BaketyManagement.Properties.Resources.accountInfo;
             this.btnAccountInfor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,7 +134,7 @@
             this.btnAccountInfor.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnAccountInfor.Name = "btnAccountInfor";
             this.btnAccountInfor.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAccountInfor.Size = new System.Drawing.Size(273, 45);
+            this.btnAccountInfor.Size = new System.Drawing.Size(277, 45);
             this.btnAccountInfor.TabIndex = 4;
             this.btnAccountInfor.Text = "   Thông Tin Tài Khoản";
             this.btnAccountInfor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -159,7 +160,7 @@
             this.pnSubmenuAdmin.Location = new System.Drawing.Point(20, 315);
             this.pnSubmenuAdmin.Name = "pnSubmenuAdmin";
             this.pnSubmenuAdmin.Padding = new System.Windows.Forms.Padding(10);
-            this.pnSubmenuAdmin.Size = new System.Drawing.Size(273, 613);
+            this.pnSubmenuAdmin.Size = new System.Drawing.Size(277, 613);
             this.pnSubmenuAdmin.TabIndex = 3;
             // 
             // pnStatistical
@@ -171,7 +172,7 @@
             this.pnStatistical.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnStatistical.Location = new System.Drawing.Point(10, 462);
             this.pnStatistical.Name = "pnStatistical";
-            this.pnStatistical.Size = new System.Drawing.Size(253, 148);
+            this.pnStatistical.Size = new System.Drawing.Size(257, 148);
             this.pnStatistical.TabIndex = 16;
             // 
             // btnPrintInventory
@@ -181,7 +182,7 @@
             this.btnPrintInventory.FlatAppearance.BorderSize = 0;
             this.btnPrintInventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnPrintInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPrintInventory.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnPrintInventory.Image = global::BaketyManagement.Properties.Resources.report;
             this.btnPrintInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -189,7 +190,7 @@
             this.btnPrintInventory.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnPrintInventory.Name = "btnPrintInventory";
             this.btnPrintInventory.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnPrintInventory.Size = new System.Drawing.Size(253, 47);
+            this.btnPrintInventory.Size = new System.Drawing.Size(257, 47);
             this.btnPrintInventory.TabIndex = 14;
             this.btnPrintInventory.Text = "   Xuất Báo Cáo";
             this.btnPrintInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -204,7 +205,7 @@
             this.btnStatisticalChart.FlatAppearance.BorderSize = 0;
             this.btnStatisticalChart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnStatisticalChart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatisticalChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatisticalChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnStatisticalChart.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnStatisticalChart.Image = global::BaketyManagement.Properties.Resources.chart;
             this.btnStatisticalChart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -212,7 +213,7 @@
             this.btnStatisticalChart.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnStatisticalChart.Name = "btnStatisticalChart";
             this.btnStatisticalChart.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnStatisticalChart.Size = new System.Drawing.Size(253, 47);
+            this.btnStatisticalChart.Size = new System.Drawing.Size(257, 47);
             this.btnStatisticalChart.TabIndex = 13;
             this.btnStatisticalChart.Text = "   Biểu Đồ";
             this.btnStatisticalChart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -227,7 +228,7 @@
             this.btnSatisticalList.FlatAppearance.BorderSize = 0;
             this.btnSatisticalList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnSatisticalList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSatisticalList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSatisticalList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSatisticalList.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSatisticalList.Image = global::BaketyManagement.Properties.Resources.StatiticalList;
             this.btnSatisticalList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -235,7 +236,7 @@
             this.btnSatisticalList.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnSatisticalList.Name = "btnSatisticalList";
             this.btnSatisticalList.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSatisticalList.Size = new System.Drawing.Size(253, 47);
+            this.btnSatisticalList.Size = new System.Drawing.Size(257, 47);
             this.btnSatisticalList.TabIndex = 12;
             this.btnSatisticalList.Text = "   Theo Danh Sách";
             this.btnSatisticalList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -250,7 +251,7 @@
             this.btnStatistical.FlatAppearance.BorderSize = 0;
             this.btnStatistical.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnStatistical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatistical.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistical.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnStatistical.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnStatistical.Image = global::BaketyManagement.Properties.Resources.statistical;
             this.btnStatistical.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -258,7 +259,7 @@
             this.btnStatistical.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnStatistical.Name = "btnStatistical";
             this.btnStatistical.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnStatistical.Size = new System.Drawing.Size(253, 47);
+            this.btnStatistical.Size = new System.Drawing.Size(257, 47);
             this.btnStatistical.TabIndex = 15;
             this.btnStatistical.Text = "   Thống Kê";
             this.btnStatistical.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -273,7 +274,7 @@
             this.btnTimeKeeping.FlatAppearance.BorderSize = 0;
             this.btnTimeKeeping.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnTimeKeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimeKeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimeKeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTimeKeeping.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnTimeKeeping.Image = global::BaketyManagement.Properties.Resources.timeKeeping;
             this.btnTimeKeeping.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -281,7 +282,7 @@
             this.btnTimeKeeping.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnTimeKeeping.Name = "btnTimeKeeping";
             this.btnTimeKeeping.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnTimeKeeping.Size = new System.Drawing.Size(253, 45);
+            this.btnTimeKeeping.Size = new System.Drawing.Size(257, 45);
             this.btnTimeKeeping.TabIndex = 11;
             this.btnTimeKeeping.Text = "   Chấm công";
             this.btnTimeKeeping.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,7 +297,7 @@
             this.btnEnterImportCoupon.FlatAppearance.BorderSize = 0;
             this.btnEnterImportCoupon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnEnterImportCoupon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnterImportCoupon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnterImportCoupon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEnterImportCoupon.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEnterImportCoupon.Image = global::BaketyManagement.Properties.Resources.EnterImportCoupon;
             this.btnEnterImportCoupon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -304,7 +305,7 @@
             this.btnEnterImportCoupon.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnEnterImportCoupon.Name = "btnEnterImportCoupon";
             this.btnEnterImportCoupon.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnEnterImportCoupon.Size = new System.Drawing.Size(253, 45);
+            this.btnEnterImportCoupon.Size = new System.Drawing.Size(257, 45);
             this.btnEnterImportCoupon.TabIndex = 10;
             this.btnEnterImportCoupon.Text = "   Nhập Phiếu";
             this.btnEnterImportCoupon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -319,7 +320,7 @@
             this.btnImportCoupon.FlatAppearance.BorderSize = 0;
             this.btnImportCoupon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnImportCoupon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImportCoupon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportCoupon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnImportCoupon.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnImportCoupon.Image = global::BaketyManagement.Properties.Resources.ImportCoupon;
             this.btnImportCoupon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -327,7 +328,7 @@
             this.btnImportCoupon.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnImportCoupon.Name = "btnImportCoupon";
             this.btnImportCoupon.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnImportCoupon.Size = new System.Drawing.Size(253, 45);
+            this.btnImportCoupon.Size = new System.Drawing.Size(257, 45);
             this.btnImportCoupon.TabIndex = 9;
             this.btnImportCoupon.Text = "   Phiếu Nhập";
             this.btnImportCoupon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -342,7 +343,7 @@
             this.btnBill.FlatAppearance.BorderSize = 0;
             this.btnBill.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBill.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnBill.Image = global::BaketyManagement.Properties.Resources.Bill;
             this.btnBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -350,7 +351,7 @@
             this.btnBill.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnBill.Name = "btnBill";
             this.btnBill.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnBill.Size = new System.Drawing.Size(253, 45);
+            this.btnBill.Size = new System.Drawing.Size(257, 45);
             this.btnBill.TabIndex = 8;
             this.btnBill.Text = "   Hóa Đơn";
             this.btnBill.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -365,7 +366,7 @@
             this.btnSupplier.FlatAppearance.BorderSize = 0;
             this.btnSupplier.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSupplier.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSupplier.Image = global::BaketyManagement.Properties.Resources.provider;
             this.btnSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -373,7 +374,7 @@
             this.btnSupplier.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnSupplier.Name = "btnSupplier";
             this.btnSupplier.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnSupplier.Size = new System.Drawing.Size(253, 45);
+            this.btnSupplier.Size = new System.Drawing.Size(257, 45);
             this.btnSupplier.TabIndex = 7;
             this.btnSupplier.Text = "   Nhà Cung Cấp";
             this.btnSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -388,7 +389,7 @@
             this.btnCategory.FlatAppearance.BorderSize = 0;
             this.btnCategory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCategory.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnCategory.Image = global::BaketyManagement.Properties.Resources.Category;
             this.btnCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -396,7 +397,7 @@
             this.btnCategory.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnCategory.Size = new System.Drawing.Size(253, 45);
+            this.btnCategory.Size = new System.Drawing.Size(257, 45);
             this.btnCategory.TabIndex = 6;
             this.btnCategory.Text = "   Danh Mục";
             this.btnCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -411,7 +412,7 @@
             this.btnProduct.FlatAppearance.BorderSize = 0;
             this.btnProduct.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnProduct.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnProduct.Image = global::BaketyManagement.Properties.Resources.cake;
             this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -419,7 +420,7 @@
             this.btnProduct.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnProduct.Size = new System.Drawing.Size(253, 45);
+            this.btnProduct.Size = new System.Drawing.Size(257, 45);
             this.btnProduct.TabIndex = 5;
             this.btnProduct.Text = "   Sản Phẩm";
             this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -434,7 +435,7 @@
             this.btnStaff.FlatAppearance.BorderSize = 0;
             this.btnStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnStaff.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnStaff.Image = global::BaketyManagement.Properties.Resources.Staff;
             this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -442,7 +443,7 @@
             this.btnStaff.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnStaff.Size = new System.Drawing.Size(253, 45);
+            this.btnStaff.Size = new System.Drawing.Size(257, 45);
             this.btnStaff.TabIndex = 4;
             this.btnStaff.Text = "   Nhân Viên";
             this.btnStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -457,7 +458,7 @@
             this.btnAccount.FlatAppearance.BorderSize = 0;
             this.btnAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAccount.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAccount.Image = global::BaketyManagement.Properties.Resources.account;
             this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -465,7 +466,7 @@
             this.btnAccount.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnAccount.Size = new System.Drawing.Size(253, 45);
+            this.btnAccount.Size = new System.Drawing.Size(257, 45);
             this.btnAccount.TabIndex = 3;
             this.btnAccount.Text = "   Tài Khoản";
             this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -480,7 +481,7 @@
             this.btnAdmin.FlatAppearance.BorderSize = 0;
             this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdmin.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAdmin.Image = global::BaketyManagement.Properties.Resources.administrator;
             this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -488,7 +489,7 @@
             this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 2);
-            this.btnAdmin.Size = new System.Drawing.Size(273, 45);
+            this.btnAdmin.Size = new System.Drawing.Size(277, 45);
             this.btnAdmin.TabIndex = 2;
             this.btnAdmin.Text = "   Quản Lý";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -503,7 +504,7 @@
             this.btnMain.FlatAppearance.BorderSize = 0;
             this.btnMain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
             this.btnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMain.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnMain.Image = global::BaketyManagement.Properties.Resources.cart;
             this.btnMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -511,7 +512,7 @@
             this.btnMain.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnMain.Name = "btnMain";
             this.btnMain.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMain.Size = new System.Drawing.Size(273, 45);
+            this.btnMain.Size = new System.Drawing.Size(277, 45);
             this.btnMain.TabIndex = 1;
             this.btnMain.Text = "   Thanh Toán";
             this.btnMain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -529,7 +530,7 @@
             this.pnLogo.Margin = new System.Windows.Forms.Padding(10);
             this.pnLogo.Name = "pnLogo";
             this.pnLogo.Padding = new System.Windows.Forms.Padding(10);
-            this.pnLogo.Size = new System.Drawing.Size(273, 205);
+            this.pnLogo.Size = new System.Drawing.Size(277, 205);
             this.pnLogo.TabIndex = 0;
             // 
             // pnTitle
@@ -633,11 +634,11 @@
             // 
             this.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTitle.AutoSize = true;
-            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.txtTitle.Location = new System.Drawing.Point(166, 0);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(615, 52);
+            this.txtTitle.Size = new System.Drawing.Size(492, 39);
             this.txtTitle.TabIndex = 4;
             this.txtTitle.Text = "Phần mềm quản lý tiệm bánh";
             this.txtTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -656,14 +657,14 @@
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnLogout;
             this.ClientSize = new System.Drawing.Size(1338, 862);
             this.Controls.Add(this.pnDesktop);
             this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.pnMenuLarge);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmMain";

@@ -1,4 +1,4 @@
-﻿//using BaketyManagement.DAO;
+﻿using BaketyManagement.DataModels;
 using BaketyManagement.View;
 using BaketyManagement.View.Forms;
 using System;
@@ -12,8 +12,7 @@ namespace BaketyManagement
 {
     public partial class FrmMain : Form
     {
-        public static String userName;
-
+        public static string userName;
         public FrmMain()
         {
             InitializeComponent();
@@ -113,15 +112,16 @@ namespace BaketyManagement
         #region Events
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            Account acc = (Account)this.Tag;
             btnMaximize1.Visible = false;
-           // if (AccountDAO.Instance.GetTypeOfAccount(userName))
-          //  {
+            if (acc.TypeAccount != false)
+            {
                 btnAdmin.Enabled = false;
-           // }
-          //  else
-          //  {
-          //      btnAdmin.Enabled = true;
-          //  }
+            }
+            else
+            {
+                btnAdmin.Enabled = true;
+            }
         }
         private void btnTimeKeeping_Click(object sender, EventArgs e)
         {
@@ -361,8 +361,12 @@ namespace BaketyManagement
             }
         }
 
+
         #endregion
 
-       
+        private void pnMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
