@@ -55,19 +55,29 @@ namespace BaketyManagement.View
             try
             {
                 string userName = txtUserName.Text;
+                string passWord = txtPassword.Text;
                 Boolean staff = ckbStaff.Checked;
                 int idStaff = (cbbListStaff.SelectedItem as staff).IdStaff;
 
                 var query = from acc in db.Accounts
                             select acc;
                 int dem = 0;
+                int checkTk = 0;
                 foreach (var acc in query)
                 {
                     dem++;
+                    if(acc.UserName == userName)
+                    {
+                        checkTk++;
+                    }
                 }
-
+                    
+                if (checkTk > 0)
+                    throw new Exception("Tên tài khoản này đã tồn tại");
                 if (userName == "")
                     throw new Exception("Nhập tên tài khoản cần thêm");
+                if (passWord == "")
+                    throw new Exception("Nhập mật khẩu cần thêm");
                 if (idStaff < 0)
                     throw new Exception("Chọn nhân viên cho tài khoản cần thêm");
 
@@ -78,13 +88,13 @@ namespace BaketyManagement.View
                     acc.UserName = userName;
                     if (staff == true)
                     {
-                        acc.TypeAccount = true;
+                        acc.TypeAccount = false;
                     }
                     else
                     {
-                        acc.TypeAccount = false;
+                        acc.TypeAccount = true;
                     }
-                    acc.Pass = "1";
+                    acc.Pass = passWord;
                     db.Accounts.Add(acc);
                     db.SaveChanges();
 
