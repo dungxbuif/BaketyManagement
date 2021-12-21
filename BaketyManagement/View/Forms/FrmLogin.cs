@@ -1,5 +1,6 @@
 ﻿//using BaketyManagement.DAO;
 using BaketyManagement.DataModels;
+using BaketyManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace BaketyManagement
 {
     public partial class FrmLogin : Form
     {
-        BakeryManagementContext db = new BakeryManagementContext();
+        BakeryManagementContext db = BakeryManagementContext.Instance;
         public FrmLogin()
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace BaketyManagement
                           where sp.UserName == txtUserName.Text
                           && sp.Pass == txtPassword.Text
                           select sp).FirstOrDefault();
+            MainDto.accountDto = acc;
             try
             {
                 String user = txtUserName.Text;
