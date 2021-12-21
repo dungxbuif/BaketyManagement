@@ -276,7 +276,6 @@ namespace BaketyManagement
         private void btnAccountInfor_Click(object sender, EventArgs e)
         {
             FrmAccountInfor frmAccount = new FrmAccountInfor();
-            FrmAccountInfor.userName = userName;
             OpenChildForm(frmAccount, sender);
         }
 

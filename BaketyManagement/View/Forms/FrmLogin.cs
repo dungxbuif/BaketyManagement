@@ -38,7 +38,6 @@ namespace BaketyManagement
                           where sp.UserName == txtUserName.Text
                           && sp.Pass == txtPassword.Text
                           select sp).FirstOrDefault();
-            MainDto.accountDto = acc;
             try
             {
                 String user = txtUserName.Text;
@@ -50,6 +49,7 @@ namespace BaketyManagement
                     throw new Exception("Tên đăng nhập hoặc mật khẩu không đúng!");
 
                 FrmMain frmMain = new FrmMain();
+                MainDto.accountDto = acc;
                 frmMain.Tag = acc;
                 this.Hide();
                 frmMain.ShowDialog();
