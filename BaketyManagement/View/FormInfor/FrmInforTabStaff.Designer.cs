@@ -94,7 +94,7 @@ namespace BaketyManagement.View
             this.label1.Location = new System.Drawing.Point(98, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(464, 52);
+            this.label1.Size = new System.Drawing.Size(376, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông Tin Nhân Viên";
             // 
@@ -131,7 +131,7 @@ namespace BaketyManagement.View
             this.rdbWoman.Location = new System.Drawing.Point(258, 87);
             this.rdbWoman.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdbWoman.Name = "rdbWoman";
-            this.rdbWoman.Size = new System.Drawing.Size(60, 29);
+            this.rdbWoman.Size = new System.Drawing.Size(49, 24);
             this.rdbWoman.TabIndex = 2;
             this.rdbWoman.TabStop = true;
             this.rdbWoman.Text = "Nữ";
@@ -146,7 +146,7 @@ namespace BaketyManagement.View
             this.rdbMan.Location = new System.Drawing.Point(173, 87);
             this.rdbMan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdbMan.Name = "rdbMan";
-            this.rdbMan.Size = new System.Drawing.Size(77, 29);
+            this.rdbMan.Size = new System.Drawing.Size(63, 24);
             this.rdbMan.TabIndex = 1;
             this.rdbMan.TabStop = true;
             this.rdbMan.Text = "Nam";
@@ -159,7 +159,7 @@ namespace BaketyManagement.View
             this.txtWorkDay.Location = new System.Drawing.Point(173, 417);
             this.txtWorkDay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtWorkDay.Name = "txtWorkDay";
-            this.txtWorkDay.Size = new System.Drawing.Size(397, 30);
+            this.txtWorkDay.Size = new System.Drawing.Size(397, 26);
             this.txtWorkDay.TabIndex = 13;
             // 
             // txtSalary
@@ -169,7 +169,7 @@ namespace BaketyManagement.View
             this.txtSalary.Location = new System.Drawing.Point(173, 343);
             this.txtSalary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(397, 30);
+            this.txtSalary.Size = new System.Drawing.Size(397, 26);
             this.txtSalary.TabIndex = 14;
             // 
             // txtAddressStaff
@@ -179,7 +179,7 @@ namespace BaketyManagement.View
             this.txtAddressStaff.Location = new System.Drawing.Point(176, 186);
             this.txtAddressStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAddressStaff.Name = "txtAddressStaff";
-            this.txtAddressStaff.Size = new System.Drawing.Size(397, 30);
+            this.txtAddressStaff.Size = new System.Drawing.Size(397, 26);
             this.txtAddressStaff.TabIndex = 4;
             // 
             // label9
@@ -191,7 +191,7 @@ namespace BaketyManagement.View
             this.label9.Location = new System.Drawing.Point(-29, 428);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(158, 25);
+            this.label9.Size = new System.Drawing.Size(128, 20);
             this.label9.TabIndex = 7;
             this.label9.Text = "Ngày Làm Việc";
             // 
@@ -202,7 +202,7 @@ namespace BaketyManagement.View
             this.txtPhoneStaff.Location = new System.Drawing.Point(176, 137);
             this.txtPhoneStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhoneStaff.Name = "txtPhoneStaff";
-            this.txtPhoneStaff.Size = new System.Drawing.Size(397, 30);
+            this.txtPhoneStaff.Size = new System.Drawing.Size(397, 26);
             this.txtPhoneStaff.TabIndex = 3;
             // 
             // label8
@@ -214,7 +214,7 @@ namespace BaketyManagement.View
             this.label8.Location = new System.Drawing.Point(-29, 348);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(138, 25);
+            this.label8.Size = new System.Drawing.Size(114, 20);
             this.label8.TabIndex = 8;
             this.label8.Text = "Hệ Số Lương";
             // 
@@ -225,7 +225,7 @@ namespace BaketyManagement.View
             this.txtNameStaff.Location = new System.Drawing.Point(176, 35);
             this.txtNameStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNameStaff.Name = "txtNameStaff";
-            this.txtNameStaff.Size = new System.Drawing.Size(397, 30);
+            this.txtNameStaff.Size = new System.Drawing.Size(397, 26);
             this.txtNameStaff.TabIndex = 0;
             // 
             // label4
@@ -237,7 +237,7 @@ namespace BaketyManagement.View
             this.label4.Location = new System.Drawing.Point(20, 191);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 25);
+            this.label4.Size = new System.Drawing.Size(67, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Địa Chỉ";
             // 
@@ -250,7 +250,7 @@ namespace BaketyManagement.View
             this.label7.Location = new System.Drawing.Point(20, 140);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 25);
+            this.label7.Size = new System.Drawing.Size(95, 20);
             this.label7.TabIndex = 10;
             this.label7.Text = "Điện Thoại";
             // 
@@ -263,7 +263,7 @@ namespace BaketyManagement.View
             this.label5.Location = new System.Drawing.Point(20, 89);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 25);
+            this.label5.Size = new System.Drawing.Size(80, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "Giới Tính";
             // 
@@ -276,7 +276,7 @@ namespace BaketyManagement.View
             this.label6.Location = new System.Drawing.Point(20, 38);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 25);
+            this.label6.Size = new System.Drawing.Size(127, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Tên Nhân Viên";
             // 
@@ -358,7 +358,7 @@ namespace BaketyManagement.View
             // 
             // FrmInforTabStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 469);
             this.Controls.Add(this.tableLayoutPanel1);
