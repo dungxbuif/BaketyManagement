@@ -36,7 +36,6 @@
             this.pnSubmenuAdmin = new System.Windows.Forms.Panel();
             this.pnStatistical = new System.Windows.Forms.Panel();
             this.btnPrintInventory = new System.Windows.Forms.Button();
-            this.btnStatisticalChart = new System.Windows.Forms.Button();
             this.btnSatisticalList = new System.Windows.Forms.Button();
             this.btnStatistical = new System.Windows.Forms.Button();
             this.btnTimeKeeping = new System.Windows.Forms.Button();
@@ -108,11 +107,11 @@
             this.btnLogout.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnLogout.Image = global::BaketyManagement.Properties.Resources.logout;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(20, 973);
+            this.btnLogout.Location = new System.Drawing.Point(20, 954);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(277, 45);
+            this.btnLogout.Size = new System.Drawing.Size(273, 45);
             this.btnLogout.TabIndex = 5;
             this.btnLogout.Text = "   Đăng Xuất";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,11 +129,11 @@
             this.btnAccountInfor.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAccountInfor.Image = global::BaketyManagement.Properties.Resources.accountInfo;
             this.btnAccountInfor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccountInfor.Location = new System.Drawing.Point(20, 928);
+            this.btnAccountInfor.Location = new System.Drawing.Point(20, 909);
             this.btnAccountInfor.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnAccountInfor.Name = "btnAccountInfor";
             this.btnAccountInfor.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAccountInfor.Size = new System.Drawing.Size(277, 45);
+            this.btnAccountInfor.Size = new System.Drawing.Size(273, 45);
             this.btnAccountInfor.TabIndex = 4;
             this.btnAccountInfor.Text = "   Thông Tin Tài Khoản";
             this.btnAccountInfor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,19 +159,18 @@
             this.pnSubmenuAdmin.Location = new System.Drawing.Point(20, 315);
             this.pnSubmenuAdmin.Name = "pnSubmenuAdmin";
             this.pnSubmenuAdmin.Padding = new System.Windows.Forms.Padding(10);
-            this.pnSubmenuAdmin.Size = new System.Drawing.Size(277, 613);
+            this.pnSubmenuAdmin.Size = new System.Drawing.Size(273, 594);
             this.pnSubmenuAdmin.TabIndex = 3;
             // 
             // pnStatistical
             // 
             this.pnStatistical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(47)))));
             this.pnStatistical.Controls.Add(this.btnPrintInventory);
-            this.pnStatistical.Controls.Add(this.btnStatisticalChart);
             this.pnStatistical.Controls.Add(this.btnSatisticalList);
             this.pnStatistical.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnStatistical.Location = new System.Drawing.Point(10, 462);
             this.pnStatistical.Name = "pnStatistical";
-            this.pnStatistical.Size = new System.Drawing.Size(257, 148);
+            this.pnStatistical.Size = new System.Drawing.Size(253, 125);
             this.pnStatistical.TabIndex = 16;
             // 
             // btnPrintInventory
@@ -186,40 +184,17 @@
             this.btnPrintInventory.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnPrintInventory.Image = global::BaketyManagement.Properties.Resources.report;
             this.btnPrintInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrintInventory.Location = new System.Drawing.Point(0, 94);
+            this.btnPrintInventory.Location = new System.Drawing.Point(0, 73);
             this.btnPrintInventory.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnPrintInventory.Name = "btnPrintInventory";
             this.btnPrintInventory.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnPrintInventory.Size = new System.Drawing.Size(257, 47);
+            this.btnPrintInventory.Size = new System.Drawing.Size(253, 47);
             this.btnPrintInventory.TabIndex = 14;
             this.btnPrintInventory.Text = "   Xuất Báo Cáo";
             this.btnPrintInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrintInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrintInventory.UseVisualStyleBackColor = false;
             this.btnPrintInventory.Click += new System.EventHandler(this.btnPrintInventory_Click);
-            // 
-            // btnStatisticalChart
-            // 
-            this.btnStatisticalChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(47)))));
-            this.btnStatisticalChart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStatisticalChart.FlatAppearance.BorderSize = 0;
-            this.btnStatisticalChart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(129)))));
-            this.btnStatisticalChart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatisticalChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnStatisticalChart.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnStatisticalChart.Image = global::BaketyManagement.Properties.Resources.chart;
-            this.btnStatisticalChart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatisticalChart.Location = new System.Drawing.Point(0, 47);
-            this.btnStatisticalChart.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
-            this.btnStatisticalChart.Name = "btnStatisticalChart";
-            this.btnStatisticalChart.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnStatisticalChart.Size = new System.Drawing.Size(257, 47);
-            this.btnStatisticalChart.TabIndex = 13;
-            this.btnStatisticalChart.Text = "   Biểu Đồ";
-            this.btnStatisticalChart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStatisticalChart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStatisticalChart.UseVisualStyleBackColor = false;
-            this.btnStatisticalChart.Click += new System.EventHandler(this.btnStatisticalChart_Click);
             // 
             // btnSatisticalList
             // 
@@ -236,7 +211,7 @@
             this.btnSatisticalList.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnSatisticalList.Name = "btnSatisticalList";
             this.btnSatisticalList.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSatisticalList.Size = new System.Drawing.Size(257, 47);
+            this.btnSatisticalList.Size = new System.Drawing.Size(253, 73);
             this.btnSatisticalList.TabIndex = 12;
             this.btnSatisticalList.Text = "   Theo Danh Sách";
             this.btnSatisticalList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -259,7 +234,7 @@
             this.btnStatistical.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnStatistical.Name = "btnStatistical";
             this.btnStatistical.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnStatistical.Size = new System.Drawing.Size(257, 47);
+            this.btnStatistical.Size = new System.Drawing.Size(253, 47);
             this.btnStatistical.TabIndex = 15;
             this.btnStatistical.Text = "   Thống Kê";
             this.btnStatistical.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -282,7 +257,7 @@
             this.btnTimeKeeping.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnTimeKeeping.Name = "btnTimeKeeping";
             this.btnTimeKeeping.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnTimeKeeping.Size = new System.Drawing.Size(257, 45);
+            this.btnTimeKeeping.Size = new System.Drawing.Size(253, 45);
             this.btnTimeKeeping.TabIndex = 11;
             this.btnTimeKeeping.Text = "   Chấm công";
             this.btnTimeKeeping.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -305,7 +280,7 @@
             this.btnEnterImportCoupon.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnEnterImportCoupon.Name = "btnEnterImportCoupon";
             this.btnEnterImportCoupon.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnEnterImportCoupon.Size = new System.Drawing.Size(257, 45);
+            this.btnEnterImportCoupon.Size = new System.Drawing.Size(253, 45);
             this.btnEnterImportCoupon.TabIndex = 10;
             this.btnEnterImportCoupon.Text = "   Nhập Phiếu";
             this.btnEnterImportCoupon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -328,7 +303,7 @@
             this.btnImportCoupon.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnImportCoupon.Name = "btnImportCoupon";
             this.btnImportCoupon.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnImportCoupon.Size = new System.Drawing.Size(257, 45);
+            this.btnImportCoupon.Size = new System.Drawing.Size(253, 45);
             this.btnImportCoupon.TabIndex = 9;
             this.btnImportCoupon.Text = "   Phiếu Nhập";
             this.btnImportCoupon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -351,7 +326,7 @@
             this.btnBill.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnBill.Name = "btnBill";
             this.btnBill.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnBill.Size = new System.Drawing.Size(257, 45);
+            this.btnBill.Size = new System.Drawing.Size(253, 45);
             this.btnBill.TabIndex = 8;
             this.btnBill.Text = "   Hóa Đơn";
             this.btnBill.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -374,7 +349,7 @@
             this.btnSupplier.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnSupplier.Name = "btnSupplier";
             this.btnSupplier.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnSupplier.Size = new System.Drawing.Size(257, 45);
+            this.btnSupplier.Size = new System.Drawing.Size(253, 45);
             this.btnSupplier.TabIndex = 7;
             this.btnSupplier.Text = "   Nhà Cung Cấp";
             this.btnSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -397,7 +372,7 @@
             this.btnCategory.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnCategory.Size = new System.Drawing.Size(257, 45);
+            this.btnCategory.Size = new System.Drawing.Size(253, 45);
             this.btnCategory.TabIndex = 6;
             this.btnCategory.Text = "   Danh Mục";
             this.btnCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -420,7 +395,7 @@
             this.btnProduct.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnProduct.Size = new System.Drawing.Size(257, 45);
+            this.btnProduct.Size = new System.Drawing.Size(253, 45);
             this.btnProduct.TabIndex = 5;
             this.btnProduct.Text = "   Sản Phẩm";
             this.btnProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -443,7 +418,7 @@
             this.btnStaff.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnStaff.Size = new System.Drawing.Size(257, 45);
+            this.btnStaff.Size = new System.Drawing.Size(253, 45);
             this.btnStaff.TabIndex = 4;
             this.btnStaff.Text = "   Nhân Viên";
             this.btnStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -466,7 +441,7 @@
             this.btnAccount.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnAccount.Size = new System.Drawing.Size(257, 45);
+            this.btnAccount.Size = new System.Drawing.Size(253, 45);
             this.btnAccount.TabIndex = 3;
             this.btnAccount.Text = "   Tài Khoản";
             this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -489,7 +464,7 @@
             this.btnAdmin.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 2);
-            this.btnAdmin.Size = new System.Drawing.Size(277, 45);
+            this.btnAdmin.Size = new System.Drawing.Size(273, 45);
             this.btnAdmin.TabIndex = 2;
             this.btnAdmin.Text = "   Quản Lý";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -512,7 +487,7 @@
             this.btnMain.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnMain.Name = "btnMain";
             this.btnMain.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMain.Size = new System.Drawing.Size(277, 45);
+            this.btnMain.Size = new System.Drawing.Size(273, 45);
             this.btnMain.TabIndex = 1;
             this.btnMain.Text = "   Thanh Toán";
             this.btnMain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -530,7 +505,7 @@
             this.pnLogo.Margin = new System.Windows.Forms.Padding(10);
             this.pnLogo.Name = "pnLogo";
             this.pnLogo.Padding = new System.Windows.Forms.Padding(10);
-            this.pnLogo.Size = new System.Drawing.Size(277, 205);
+            this.pnLogo.Size = new System.Drawing.Size(273, 205);
             this.pnLogo.TabIndex = 0;
             // 
             // pnTitle
@@ -638,7 +613,7 @@
             this.txtTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.txtTitle.Location = new System.Drawing.Point(166, 0);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(492, 39);
+            this.txtTitle.Size = new System.Drawing.Size(614, 52);
             this.txtTitle.TabIndex = 4;
             this.txtTitle.Text = "Phần mềm quản lý tiệm bánh";
             this.txtTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -657,7 +632,7 @@
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnLogout;
             this.ClientSize = new System.Drawing.Size(1338, 862);
@@ -713,7 +688,6 @@
         private System.Windows.Forms.Button btnStatistical;
         private System.Windows.Forms.Panel pnStatistical;
         private System.Windows.Forms.Button btnPrintInventory;
-        private System.Windows.Forms.Button btnStatisticalChart;
         private System.Windows.Forms.Button btnSatisticalList;
         private System.Windows.Forms.Button btnMaximize1;
     }

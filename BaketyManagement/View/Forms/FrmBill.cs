@@ -48,7 +48,6 @@ namespace BaketyManagement.View.Forms
             dgvBill.DataSource = query.ToList();
         }
 
-
         private void dgvBill_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             rowDgvBill = e.RowIndex;

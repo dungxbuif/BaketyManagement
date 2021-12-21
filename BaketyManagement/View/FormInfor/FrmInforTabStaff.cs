@@ -72,11 +72,12 @@ namespace BaketyManagement.View
             try
             {
                 var query = from sp in db.staff
-                            select sp;
+                            select sp.IdStaff;
                 int dem = 0;
                 foreach(var nv in query)
                 {
-                    dem++;
+                    if (nv >= dem)
+                        dem = nv;
                 }
                     string nameStaff = txtNameStaff.Text;
                 Boolean gender = false;
