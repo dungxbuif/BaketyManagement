@@ -91,6 +91,8 @@ namespace BaketyManagement.View
 
                 if (nameStaff == "")
                     throw new Exception("Cần nhập tên nhân viên");
+                if (rdbMan.Checked == false && rdbWoman.Checked == false)
+                    throw new Exception("Cần chọn giới tính");
                 if (phoneStaff == "")
                     throw new Exception("Cần nhập số điện thoại");
                 if (addressStaff == "")
