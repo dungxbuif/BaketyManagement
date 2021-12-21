@@ -166,7 +166,7 @@ namespace BaketyManagement.View.Forms
         {
             try
             {
-                if (row < 0)
+                if (row < 0 || dgvStaff.Rows[row].Cells[0].Value == null)
                     throw new Exception("Chọn nhân viên cần sửa");
                 FrmInforTabStaff.isAdd = false;
                 FrmInforTabStaff.idStaff = Int32.Parse(dgvStaff.Rows[row].Cells[0].Value.ToString());
