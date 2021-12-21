@@ -54,7 +54,6 @@ namespace BaketyManagement
             this.pnAccountInfor.Padding = new System.Windows.Forms.Padding(20);
             this.pnAccountInfor.Size = new System.Drawing.Size(669, 444);
             this.pnAccountInfor.TabIndex = 0;
-    //        this.pnAccountInfor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnAccountInfor_Paint);
             // 
             // pnAccount
             // 
@@ -92,7 +91,7 @@ namespace BaketyManagement
             this.btnChangePassword.Text = "Đổi mật khẩu";
             this.btnChangePassword.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnChangePassword.UseVisualStyleBackColor = false;
- //           this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click_1);
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // label2
             // 
@@ -102,7 +101,7 @@ namespace BaketyManagement
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(22, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(158, 25);
+            this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên đăng nhập";
             // 
@@ -114,7 +113,7 @@ namespace BaketyManagement
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(22, 109);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 25);
+            this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Mật khẩu";
             // 
@@ -126,7 +125,7 @@ namespace BaketyManagement
             this.txtReEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtReEnter.Location = new System.Drawing.Point(157, 243);
             this.txtReEnter.Name = "txtReEnter";
-            this.txtReEnter.Size = new System.Drawing.Size(450, 30);
+            this.txtReEnter.Size = new System.Drawing.Size(450, 26);
             this.txtReEnter.TabIndex = 4;
             this.txtReEnter.UseSystemPasswordChar = true;
             // 
@@ -138,7 +137,7 @@ namespace BaketyManagement
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(22, 177);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 25);
+            this.label4.Size = new System.Drawing.Size(116, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "Mật khẩu mới";
             // 
@@ -150,7 +149,7 @@ namespace BaketyManagement
             this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtNewPassword.Location = new System.Drawing.Point(157, 175);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(450, 30);
+            this.txtNewPassword.Size = new System.Drawing.Size(450, 26);
             this.txtNewPassword.TabIndex = 3;
             this.txtNewPassword.UseSystemPasswordChar = true;
             // 
@@ -163,7 +162,7 @@ namespace BaketyManagement
             this.txtUserName.Location = new System.Drawing.Point(157, 39);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.ReadOnly = true;
-            this.txtUserName.Size = new System.Drawing.Size(450, 30);
+            this.txtUserName.Size = new System.Drawing.Size(450, 26);
             this.txtUserName.TabIndex = 1;
             // 
             // txtPassword
@@ -174,7 +173,7 @@ namespace BaketyManagement
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.Location = new System.Drawing.Point(157, 107);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(450, 30);
+            this.txtPassword.Size = new System.Drawing.Size(450, 26);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -186,13 +185,13 @@ namespace BaketyManagement
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(22, 245);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 25);
+            this.label1.Size = new System.Drawing.Size(74, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nhập lại";
             // 
             // FrmAccountInfor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 444);
             this.Controls.Add(this.pnAccountInfor);
@@ -202,7 +201,7 @@ namespace BaketyManagement
             this.Name = "FrmAccountInfor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin tài khoản";
-   //         this.Load += new System.EventHandler(this.FrmAccountInfor_Load);
+            this.Load += new System.EventHandler(this.FrmAccountInfor_Load);
             this.pnAccountInfor.ResumeLayout(false);
             this.pnAccount.ResumeLayout(false);
             this.pnAccount.PerformLayout();
