@@ -116,10 +116,9 @@ namespace BaketyManagement.View
         {
             try
             {
-                //staff nvXoa = (from stf in db.staff
-                //             where stf.IdStaff == idStaff
-                //            select stf).FirstOrDefault();
-                //db.staff.Remove(nvXoa);
+                staff nvSua = (from stf in db.staff
+                               where stf.IdStaff == idStaff
+                               select stf).FirstOrDefault();
                 String nameStaff = txtNameStaff.Text;
                 String phoneStaff = txtPhoneStaff.Text;
                 String addressStaff = txtAddressStaff.Text;
@@ -132,13 +131,12 @@ namespace BaketyManagement.View
                     gender = false;
                 if (rdbWoman.Checked)
                     gender = true;
-                staff newStf = new staff();
-                newStf.IdStaff = idStaff;
-                newStf.NameStaff = nameStaff;
-                newStf.Gender = gender;
-                newStf.Phone = phoneStaff;
-                newStf.Address = addressStaff;
-                db.staff.Update(newStf);
+                nvSua.IdStaff = idStaff;
+                nvSua.NameStaff = nameStaff;
+                nvSua.Gender = gender;
+                nvSua.Phone = phoneStaff;
+                nvSua.Address = addressStaff;
+                db.SaveChanges();
                 MessageBox.Show("Sửa nhân viên thành công");
                 this.Close();
                 ClearTextBox();
