@@ -61,5 +61,10 @@ namespace BaketyManagement
                 MessageBox.Show(ex.Message, "Thông báo lỗi");
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -36,14 +36,19 @@ namespace BaketyManagement.View.Forms
             this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.pnFunctionStaff = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.btnAddStaff = new System.Windows.Forms.Button();
+            this.btnStaffSearch = new System.Windows.Forms.Button();
             this.btnDisplayStaff = new System.Windows.Forms.Button();
+            this.txtStaffSearch = new System.Windows.Forms.TextBox();
             this.btnEditStaff = new System.Windows.Forms.Button();
             this.btnDeleteStaff = new System.Windows.Forms.Button();
-            this.txtStaffSearch = new System.Windows.Forms.TextBox();
-            this.btnStaffSearch = new System.Windows.Forms.Button();
-            this.pnFunctionStaff = new System.Windows.Forms.Panel();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpStaff.SuspendLayout();
             this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -71,13 +76,12 @@ namespace BaketyManagement.View.Forms
             this.tlpStaff.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tlpStaff.Size = new System.Drawing.Size(1138, 493);
             this.tlpStaff.TabIndex = 2;
-//            this.tlpStaff.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpStaff_Paint);
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.groupBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel5.Location = new System.Drawing.Point(36, 40);
             this.panel5.Margin = new System.Windows.Forms.Padding(18, 20, 18, 20);
             this.panel5.Name = "panel5";
@@ -89,7 +93,7 @@ namespace BaketyManagement.View.Forms
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
@@ -102,11 +106,11 @@ namespace BaketyManagement.View.Forms
             // 
             this.panel1.Controls.Add(this.dgvStaff);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(3, 22);
+            this.panel1.Location = new System.Drawing.Point(3, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1060, 88);
+            this.panel1.Size = new System.Drawing.Size(1060, 84);
             this.panel1.TabIndex = 0;
             // 
             // dgvStaff
@@ -114,6 +118,12 @@ namespace BaketyManagement.View.Forms
             this.dgvStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStaff.BackgroundColor = System.Drawing.Color.White;
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStaff.Location = new System.Drawing.Point(0, 0);
             this.dgvStaff.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
@@ -122,9 +132,9 @@ namespace BaketyManagement.View.Forms
             this.dgvStaff.ReadOnly = true;
             this.dgvStaff.RowHeadersWidth = 51;
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStaff.Size = new System.Drawing.Size(1060, 88);
+            this.dgvStaff.Size = new System.Drawing.Size(1060, 84);
             this.dgvStaff.TabIndex = 1;
-    //        this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
+            this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
             // 
             // panel6
             // 
@@ -141,7 +151,7 @@ namespace BaketyManagement.View.Forms
             this.groupBox4.BackColor = System.Drawing.Color.White;
             this.groupBox4.Controls.Add(this.pnFunctionStaff);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
@@ -151,140 +161,6 @@ namespace BaketyManagement.View.Forms
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chức năng";
-            // 
-            // label21
-            // 
-            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.label21.Location = new System.Drawing.Point(32, 68);
-            this.label21.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(151, 20);
-            this.label21.TabIndex = 2;
-            this.label21.Text = "Tìm kiếm theo tên";
-            // 
-            // btnAddStaff
-            // 
-            this.btnAddStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(140)))), ((int)(((byte)(36)))));
-            this.btnAddStaff.FlatAppearance.BorderSize = 0;
-            this.btnAddStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(107)))), ((int)(((byte)(18)))));
-            this.btnAddStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(140)))), ((int)(((byte)(36)))));
-            this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStaff.ForeColor = System.Drawing.Color.White;
-            this.btnAddStaff.Image = global::BaketyManagement.Properties.Resources.Add;
-            this.btnAddStaff.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddStaff.Location = new System.Drawing.Point(313, 137);
-            this.btnAddStaff.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.btnAddStaff.Name = "btnAddStaff";
-            this.btnAddStaff.Size = new System.Drawing.Size(150, 70);
-            this.btnAddStaff.TabIndex = 0;
-            this.btnAddStaff.Text = "Thêm";
-            this.btnAddStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddStaff.UseVisualStyleBackColor = false;
-    //        this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
-            // 
-            // btnDisplayStaff
-            // 
-            this.btnDisplayStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDisplayStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
-            this.btnDisplayStaff.FlatAppearance.BorderSize = 0;
-            this.btnDisplayStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
-            this.btnDisplayStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
-            this.btnDisplayStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDisplayStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisplayStaff.ForeColor = System.Drawing.Color.White;
-            this.btnDisplayStaff.Image = global::BaketyManagement.Properties.Resources.Display;
-            this.btnDisplayStaff.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDisplayStaff.Location = new System.Drawing.Point(36, 137);
-            this.btnDisplayStaff.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.btnDisplayStaff.Name = "btnDisplayStaff";
-            this.btnDisplayStaff.Size = new System.Drawing.Size(150, 70);
-            this.btnDisplayStaff.TabIndex = 0;
-            this.btnDisplayStaff.Text = "Xem";
-            this.btnDisplayStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDisplayStaff.UseVisualStyleBackColor = false;
-    //        this.btnDisplayStaff.Click += new System.EventHandler(this.btnDisplayStaff_Click);
-            // 
-            // btnEditStaff
-            // 
-            this.btnEditStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEditStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(83)))), ((int)(((byte)(137)))));
-            this.btnEditStaff.FlatAppearance.BorderSize = 0;
-            this.btnEditStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(63)))), ((int)(((byte)(109)))));
-            this.btnEditStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(83)))), ((int)(((byte)(137)))));
-            this.btnEditStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditStaff.ForeColor = System.Drawing.Color.White;
-            this.btnEditStaff.Image = global::BaketyManagement.Properties.Resources.Edit;
-            this.btnEditStaff.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditStaff.Location = new System.Drawing.Point(590, 137);
-            this.btnEditStaff.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.btnEditStaff.Name = "btnEditStaff";
-            this.btnEditStaff.Size = new System.Drawing.Size(150, 70);
-            this.btnEditStaff.TabIndex = 0;
-            this.btnEditStaff.Text = "Sửa";
-            this.btnEditStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEditStaff.UseVisualStyleBackColor = false;
-    //        this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
-            // 
-            // btnDeleteStaff
-            // 
-            this.btnDeleteStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDeleteStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
-            this.btnDeleteStaff.FlatAppearance.BorderSize = 0;
-            this.btnDeleteStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(32)))), ((int)(((byte)(18)))));
-            this.btnDeleteStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
-            this.btnDeleteStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteStaff.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteStaff.Image = global::BaketyManagement.Properties.Resources.Delete;
-            this.btnDeleteStaff.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeleteStaff.Location = new System.Drawing.Point(867, 137);
-            this.btnDeleteStaff.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.btnDeleteStaff.Name = "btnDeleteStaff";
-            this.btnDeleteStaff.Size = new System.Drawing.Size(150, 70);
-            this.btnDeleteStaff.TabIndex = 0;
-            this.btnDeleteStaff.Text = "Xóa";
-            this.btnDeleteStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDeleteStaff.UseVisualStyleBackColor = false;
-     //       this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
-            // 
-            // txtStaffSearch
-            // 
-            this.txtStaffSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtStaffSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtStaffSearch.Location = new System.Drawing.Point(201, 65);
-            this.txtStaffSearch.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.txtStaffSearch.Name = "txtStaffSearch";
-            this.txtStaffSearch.Size = new System.Drawing.Size(618, 26);
-            this.txtStaffSearch.TabIndex = 1;
-            // 
-            // btnStaffSearch
-            // 
-            this.btnStaffSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnStaffSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(36)))), ((int)(((byte)(210)))));
-            this.btnStaffSearch.FlatAppearance.BorderSize = 0;
-            this.btnStaffSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(18)))), ((int)(((byte)(167)))));
-            this.btnStaffSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(36)))), ((int)(((byte)(210)))));
-            this.btnStaffSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStaffSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStaffSearch.ForeColor = System.Drawing.Color.White;
-            this.btnStaffSearch.Image = global::BaketyManagement.Properties.Resources.Search;
-            this.btnStaffSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnStaffSearch.Location = new System.Drawing.Point(867, 34);
-            this.btnStaffSearch.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.btnStaffSearch.Name = "btnStaffSearch";
-            this.btnStaffSearch.Size = new System.Drawing.Size(150, 70);
-            this.btnStaffSearch.TabIndex = 0;
-            this.btnStaffSearch.Text = "Tìm";
-            this.btnStaffSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnStaffSearch.UseVisualStyleBackColor = false;
-     //       this.btnStaffSearch.Click += new System.EventHandler(this.btnStaffSearch_Click);
             // 
             // pnFunctionStaff
             // 
@@ -296,22 +172,196 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionStaff.Controls.Add(this.btnEditStaff);
             this.pnFunctionStaff.Controls.Add(this.btnDeleteStaff);
             this.pnFunctionStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnFunctionStaff.Location = new System.Drawing.Point(9, 19);
+            this.pnFunctionStaff.Location = new System.Drawing.Point(9, 23);
             this.pnFunctionStaff.Name = "pnFunctionStaff";
-            this.pnFunctionStaff.Size = new System.Drawing.Size(1048, 241);
+            this.pnFunctionStaff.Size = new System.Drawing.Size(1048, 237);
             this.pnFunctionStaff.TabIndex = 2;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.label21.Location = new System.Drawing.Point(32, 68);
+            this.label21.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(183, 25);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Tìm kiếm theo tên";
+            // 
+            // btnAddStaff
+            // 
+            this.btnAddStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(140)))), ((int)(((byte)(36)))));
+            this.btnAddStaff.FlatAppearance.BorderSize = 0;
+            this.btnAddStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(107)))), ((int)(((byte)(18)))));
+            this.btnAddStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(140)))), ((int)(((byte)(36)))));
+            this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddStaff.ForeColor = System.Drawing.Color.White;
+            this.btnAddStaff.Image = global::BaketyManagement.Properties.Resources.Add;
+            this.btnAddStaff.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddStaff.Location = new System.Drawing.Point(313, 137);
+            this.btnAddStaff.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
+            this.btnAddStaff.Name = "btnAddStaff";
+            this.btnAddStaff.Size = new System.Drawing.Size(150, 70);
+            this.btnAddStaff.TabIndex = 0;
+            this.btnAddStaff.Text = "Thêm";
+            this.btnAddStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAddStaff.UseVisualStyleBackColor = false;
+            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
+            // 
+            // btnStaffSearch
+            // 
+            this.btnStaffSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnStaffSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(36)))), ((int)(((byte)(210)))));
+            this.btnStaffSearch.FlatAppearance.BorderSize = 0;
+            this.btnStaffSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(18)))), ((int)(((byte)(167)))));
+            this.btnStaffSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(36)))), ((int)(((byte)(210)))));
+            this.btnStaffSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStaffSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnStaffSearch.ForeColor = System.Drawing.Color.White;
+            this.btnStaffSearch.Image = global::BaketyManagement.Properties.Resources.Search;
+            this.btnStaffSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnStaffSearch.Location = new System.Drawing.Point(867, 34);
+            this.btnStaffSearch.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
+            this.btnStaffSearch.Name = "btnStaffSearch";
+            this.btnStaffSearch.Size = new System.Drawing.Size(150, 70);
+            this.btnStaffSearch.TabIndex = 0;
+            this.btnStaffSearch.Text = "Tìm";
+            this.btnStaffSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnStaffSearch.UseVisualStyleBackColor = false;
+            this.btnStaffSearch.Click += new System.EventHandler(this.btnStaffSearch_Click);
+            // 
+            // btnDisplayStaff
+            // 
+            this.btnDisplayStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDisplayStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
+            this.btnDisplayStaff.FlatAppearance.BorderSize = 0;
+            this.btnDisplayStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
+            this.btnDisplayStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
+            this.btnDisplayStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisplayStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDisplayStaff.ForeColor = System.Drawing.Color.White;
+            this.btnDisplayStaff.Image = global::BaketyManagement.Properties.Resources.Display;
+            this.btnDisplayStaff.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDisplayStaff.Location = new System.Drawing.Point(36, 137);
+            this.btnDisplayStaff.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
+            this.btnDisplayStaff.Name = "btnDisplayStaff";
+            this.btnDisplayStaff.Size = new System.Drawing.Size(150, 70);
+            this.btnDisplayStaff.TabIndex = 0;
+            this.btnDisplayStaff.Text = "Xem";
+            this.btnDisplayStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDisplayStaff.UseVisualStyleBackColor = false;
+            this.btnDisplayStaff.Click += new System.EventHandler(this.btnDisplayStaff_Click);
+            // 
+            // txtStaffSearch
+            // 
+            this.txtStaffSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtStaffSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtStaffSearch.ForeColor = System.Drawing.Color.Black;
+            this.txtStaffSearch.Location = new System.Drawing.Point(221, 65);
+            this.txtStaffSearch.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
+            this.txtStaffSearch.Name = "txtStaffSearch";
+            this.txtStaffSearch.Size = new System.Drawing.Size(618, 30);
+            this.txtStaffSearch.TabIndex = 1;
+            // 
+            // btnEditStaff
+            // 
+            this.btnEditStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEditStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(83)))), ((int)(((byte)(137)))));
+            this.btnEditStaff.FlatAppearance.BorderSize = 0;
+            this.btnEditStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(63)))), ((int)(((byte)(109)))));
+            this.btnEditStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(83)))), ((int)(((byte)(137)))));
+            this.btnEditStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEditStaff.ForeColor = System.Drawing.Color.White;
+            this.btnEditStaff.Image = global::BaketyManagement.Properties.Resources.Edit;
+            this.btnEditStaff.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEditStaff.Location = new System.Drawing.Point(590, 137);
+            this.btnEditStaff.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
+            this.btnEditStaff.Name = "btnEditStaff";
+            this.btnEditStaff.Size = new System.Drawing.Size(150, 70);
+            this.btnEditStaff.TabIndex = 0;
+            this.btnEditStaff.Text = "Sửa";
+            this.btnEditStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditStaff.UseVisualStyleBackColor = false;
+            this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
+            // 
+            // btnDeleteStaff
+            // 
+            this.btnDeleteStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDeleteStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
+            this.btnDeleteStaff.FlatAppearance.BorderSize = 0;
+            this.btnDeleteStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(32)))), ((int)(((byte)(18)))));
+            this.btnDeleteStaff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
+            this.btnDeleteStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDeleteStaff.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteStaff.Image = global::BaketyManagement.Properties.Resources.Delete;
+            this.btnDeleteStaff.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDeleteStaff.Location = new System.Drawing.Point(867, 137);
+            this.btnDeleteStaff.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
+            this.btnDeleteStaff.Name = "btnDeleteStaff";
+            this.btnDeleteStaff.Size = new System.Drawing.Size(150, 70);
+            this.btnDeleteStaff.TabIndex = 0;
+            this.btnDeleteStaff.Text = "Xóa";
+            this.btnDeleteStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDeleteStaff.UseVisualStyleBackColor = false;
+            this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "idStaff";
+            this.Column5.HeaderText = "Mã nhân viên";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "nameStaff";
+            this.Column1.HeaderText = "Tên nhân viên";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "gender";
+            this.Column2.HeaderText = "Giới tính";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "phone";
+            this.Column3.HeaderText = "Điện thoại";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "address";
+            this.Column4.HeaderText = "Địa chỉ";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // FrmStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1138, 493);
             this.Controls.Add(this.tlpStaff);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.Name = "FrmStaff";
             this.Text = "FrmStaff";
-     //       this.Load += new System.EventHandler(this.FrmStaff_Load);
+            this.Load += new System.EventHandler(this.FrmStaff_Load);
             this.tlpStaff.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -342,5 +392,10 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvStaff;
         private System.Windows.Forms.Panel pnFunctionStaff;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
