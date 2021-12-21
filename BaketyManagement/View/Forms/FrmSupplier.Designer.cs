@@ -34,6 +34,10 @@ namespace BaketyManagement.View.Forms
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
+            this.idSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel12 = new System.Windows.Forms.Panel();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.pnFunctionSupplier = new System.Windows.Forms.Panel();
@@ -102,9 +106,9 @@ namespace BaketyManagement.View.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(3, 26);
+            this.panel1.Location = new System.Drawing.Point(3, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1125, 93);
+            this.panel1.Size = new System.Drawing.Size(1125, 97);
             this.panel1.TabIndex = 0;
             // 
             // dgvSupplier
@@ -112,6 +116,11 @@ namespace BaketyManagement.View.Forms
             this.dgvSupplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSupplier.BackgroundColor = System.Drawing.Color.White;
             this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idSupplier,
+            this.nameSupplier,
+            this.phone,
+            this.address});
             this.dgvSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSupplier.Location = new System.Drawing.Point(0, 0);
             this.dgvSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -120,8 +129,33 @@ namespace BaketyManagement.View.Forms
             this.dgvSupplier.ReadOnly = true;
             this.dgvSupplier.RowHeadersWidth = 51;
             this.dgvSupplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSupplier.Size = new System.Drawing.Size(1125, 93);
+            this.dgvSupplier.Size = new System.Drawing.Size(1125, 97);
             this.dgvSupplier.TabIndex = 1;
+            this.dgvSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSupplier_CellClick);
+            // 
+            // idSupplier
+            // 
+            this.idSupplier.HeaderText = "Mã nhà cung cấp";
+            this.idSupplier.Name = "idSupplier";
+            this.idSupplier.ReadOnly = true;
+            // 
+            // nameSupplier
+            // 
+            this.nameSupplier.HeaderText = "Tên Nhà Cung Cấp";
+            this.nameSupplier.Name = "nameSupplier";
+            this.nameSupplier.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.HeaderText = "Số điện thoại";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            // 
+            // address
+            // 
+            this.address.HeaderText = "Địa Chỉ";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
             // 
             // panel12
             // 
@@ -160,9 +194,9 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionSupplier.Controls.Add(this.btnDelSupplier);
             this.pnFunctionSupplier.Controls.Add(this.btnViewSupplier);
             this.pnFunctionSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnFunctionSupplier.Location = new System.Drawing.Point(4, 28);
+            this.pnFunctionSupplier.Location = new System.Drawing.Point(4, 24);
             this.pnFunctionSupplier.Name = "pnFunctionSupplier";
-            this.pnFunctionSupplier.Size = new System.Drawing.Size(1123, 237);
+            this.pnFunctionSupplier.Size = new System.Drawing.Size(1123, 241);
             this.pnFunctionSupplier.TabIndex = 2;
             // 
             // label16
@@ -174,7 +208,7 @@ namespace BaketyManagement.View.Forms
             this.label16.Location = new System.Drawing.Point(38, 62);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(319, 25);
+            this.label16.Size = new System.Drawing.Size(264, 20);
             this.label16.TabIndex = 3;
             this.label16.Text = "Tìm kiếm theo tên nhà cung cấp";
             // 
@@ -186,7 +220,7 @@ namespace BaketyManagement.View.Forms
             this.txtSearchKeySupplier.Location = new System.Drawing.Point(310, 59);
             this.txtSearchKeySupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearchKeySupplier.Name = "txtSearchKeySupplier";
-            this.txtSearchKeySupplier.Size = new System.Drawing.Size(600, 30);
+            this.txtSearchKeySupplier.Size = new System.Drawing.Size(600, 26);
             this.txtSearchKeySupplier.TabIndex = 1;
             // 
             // btnAddSupplier
@@ -208,6 +242,7 @@ namespace BaketyManagement.View.Forms
             this.btnAddSupplier.Text = "Thêm";
             this.btnAddSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddSupplier.UseVisualStyleBackColor = false;
+            this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
             // 
             // btnSearchSupplier
             // 
@@ -228,6 +263,7 @@ namespace BaketyManagement.View.Forms
             this.btnSearchSupplier.Text = "Tìm";
             this.btnSearchSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchSupplier.UseVisualStyleBackColor = false;
+            this.btnSearchSupplier.Click += new System.EventHandler(this.btnSearchSupplier_Click);
             // 
             // btnEditSupplier
             // 
@@ -248,6 +284,7 @@ namespace BaketyManagement.View.Forms
             this.btnEditSupplier.Text = "Sửa";
             this.btnEditSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditSupplier.UseVisualStyleBackColor = false;
+            this.btnEditSupplier.Click += new System.EventHandler(this.btnEditSupplier_Click);
             // 
             // btnDelSupplier
             // 
@@ -268,6 +305,7 @@ namespace BaketyManagement.View.Forms
             this.btnDelSupplier.Text = "Xóa";
             this.btnDelSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelSupplier.UseVisualStyleBackColor = false;
+            this.btnDelSupplier.Click += new System.EventHandler(this.btnDelSupplier_Click);
             // 
             // btnViewSupplier
             // 
@@ -292,7 +330,7 @@ namespace BaketyManagement.View.Forms
             // 
             // FrmSupplier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1191, 482);
             this.Controls.Add(this.tlpSupplier);
@@ -331,5 +369,9 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvSupplier;
         private System.Windows.Forms.Panel pnFunctionSupplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSupplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameSupplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
     }
 }

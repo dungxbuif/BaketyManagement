@@ -65,7 +65,7 @@ namespace BaketyManagement.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(84, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -94,7 +94,7 @@ namespace BaketyManagement.View
             this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(32)))), ((int)(((byte)(18)))));
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = global::BaketyManagement.Properties.Resources.Cancel;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -106,7 +106,7 @@ namespace BaketyManagement.View
             this.btnCancel.Text = "Hủy";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancel.UseVisualStyleBackColor = false;
-  //          this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAddSupplier
             // 
@@ -115,7 +115,7 @@ namespace BaketyManagement.View
             this.btnAddSupplier.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
             this.btnAddSupplier.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
             this.btnAddSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddSupplier.ForeColor = System.Drawing.Color.White;
             this.btnAddSupplier.Image = global::BaketyManagement.Properties.Resources.Add;
             this.btnAddSupplier.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -127,7 +127,7 @@ namespace BaketyManagement.View
             this.btnAddSupplier.Text = "Thêm";
             this.btnAddSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddSupplier.UseVisualStyleBackColor = false;
-   //         this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
+            this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
             // 
             // btnEditSupplier
             // 
@@ -136,7 +136,7 @@ namespace BaketyManagement.View
             this.btnEditSupplier.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(32)))), ((int)(((byte)(18)))));
             this.btnEditSupplier.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
             this.btnEditSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEditSupplier.ForeColor = System.Drawing.Color.White;
             this.btnEditSupplier.Image = global::BaketyManagement.Properties.Resources.Edit;
             this.btnEditSupplier.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -148,7 +148,6 @@ namespace BaketyManagement.View
             this.btnEditSupplier.Text = "Sửa";
             this.btnEditSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditSupplier.UseVisualStyleBackColor = false;
- //           this.btnEditSupplier.Click += new System.EventHandler(this.btnEditSupplier_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -181,7 +180,7 @@ namespace BaketyManagement.View
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(4, 85);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -192,7 +191,7 @@ namespace BaketyManagement.View
             // txtAddressSupplier
             // 
             this.txtAddressSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtAddressSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddressSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAddressSupplier.Location = new System.Drawing.Point(193, 183);
             this.txtAddressSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAddressSupplier.Name = "txtAddressSupplier";
@@ -202,7 +201,7 @@ namespace BaketyManagement.View
             // txtPhoneSupplier
             // 
             this.txtPhoneSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtPhoneSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPhoneSupplier.Location = new System.Drawing.Point(193, 131);
             this.txtPhoneSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhoneSupplier.Name = "txtPhoneSupplier";
@@ -213,7 +212,7 @@ namespace BaketyManagement.View
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.Location = new System.Drawing.Point(27, 186);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
@@ -225,7 +224,7 @@ namespace BaketyManagement.View
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.Location = new System.Drawing.Point(27, 134);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
@@ -236,7 +235,7 @@ namespace BaketyManagement.View
             // txtIdSupplier
             // 
             this.txtIdSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtIdSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtIdSupplier.Location = new System.Drawing.Point(193, 27);
             this.txtIdSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIdSupplier.Name = "txtIdSupplier";
@@ -247,7 +246,7 @@ namespace BaketyManagement.View
             // txtNameSupplier
             // 
             this.txtNameSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNameSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNameSupplier.Location = new System.Drawing.Point(193, 79);
             this.txtNameSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNameSupplier.Name = "txtNameSupplier";
@@ -258,7 +257,7 @@ namespace BaketyManagement.View
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.Location = new System.Drawing.Point(27, 30);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
@@ -270,7 +269,7 @@ namespace BaketyManagement.View
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label19.Location = new System.Drawing.Point(27, 82);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
@@ -284,7 +283,7 @@ namespace BaketyManagement.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 456);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmInforTabProvider";

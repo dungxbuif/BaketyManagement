@@ -135,21 +135,23 @@ namespace BaketyManagement.View.Forms
                 {
                     dgvStaff.Rows.Clear();
                     var nvTim = from sp in db.staff
-                                where sp.NameStaff == nameStaff
                                 select sp;
                     row = 0;
                     foreach (var stf in nvTim)
                     {
-                        dgvStaff.Rows.Add();
-                        dgvStaff.Rows[row].Cells[0].Value = stf.IdStaff.ToString();
-                        dgvStaff.Rows[row].Cells[1].Value = stf.NameStaff.ToString();
-                        if (stf.Gender == true)
-                            dgvStaff.Rows[row].Cells[2].Value = "Nam";
-                        else
-                            dgvStaff.Rows[row].Cells[2].Value = "Nữ";
-                        dgvStaff.Rows[row].Cells[3].Value = stf.Phone.ToString();
-                        dgvStaff.Rows[row].Cells[4].Value = stf.Address.ToString();
-                        row++;
+                        if (stf.NameStaff.Contains(nameStaff))
+                        {
+                            dgvStaff.Rows.Add();
+                            dgvStaff.Rows[row].Cells[0].Value = stf.IdStaff.ToString();
+                            dgvStaff.Rows[row].Cells[1].Value = stf.NameStaff.ToString();
+                            if (stf.Gender == true)
+                                dgvStaff.Rows[row].Cells[2].Value = "Nam";
+                            else
+                                dgvStaff.Rows[row].Cells[2].Value = "Nữ";
+                            dgvStaff.Rows[row].Cells[3].Value = stf.Phone.ToString();
+                            dgvStaff.Rows[row].Cells[4].Value = stf.Address.ToString();
+                            row++;
+                        }
                     }
                 }
                 if (dgvStaff.Rows.Count <= 0)

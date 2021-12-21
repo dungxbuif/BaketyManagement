@@ -147,13 +147,11 @@ namespace BaketyManagement.View
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPassword.BackColor = System.Drawing.Color.White;
-            this.txtPassword.Enabled = false;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.txtPassword.Location = new System.Drawing.Point(159, 95);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.ReadOnly = true;
             this.txtPassword.Size = new System.Drawing.Size(397, 26);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
@@ -180,9 +178,9 @@ namespace BaketyManagement.View
             this.ckbStaff.Location = new System.Drawing.Point(159, 249);
             this.ckbStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ckbStaff.Name = "ckbStaff";
-            this.ckbStaff.Size = new System.Drawing.Size(111, 24);
+            this.ckbStaff.Size = new System.Drawing.Size(129, 24);
             this.ckbStaff.TabIndex = 4;
-            this.ckbStaff.Text = "Nhân Viên";
+            this.ckbStaff.Text = "Quản trị viên";
             this.ckbStaff.UseVisualStyleBackColor = false;
             // 
             // label37
