@@ -105,7 +105,7 @@ namespace BaketyManagement.View.Forms
                     amount = cake.Sum(c => c.ctb.AmountOrder)
                 })
                     .OrderByDescending(cake => cake.amount)
-                    .Take(2);
+                    .Take(10);
 
                 Int32 row = 0;
                 dgvStatistical.Rows.Clear();
