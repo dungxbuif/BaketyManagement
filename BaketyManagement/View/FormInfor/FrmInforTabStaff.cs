@@ -1,4 +1,5 @@
 ﻿
+using BaketyManagement.DataModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace BaketyManagement.View
     {
         public static Boolean isAdd;
         public static Int32 idStaff;
+        private BakeryManagementContext db = BakeryManagementContext.Instance;
         public FrmInforTabStaff()
         {
             InitializeComponent();
