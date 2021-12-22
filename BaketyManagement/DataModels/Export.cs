@@ -11,7 +11,5 @@ namespace BaketyManagement.DataModels
         public int? IdRecipe { get; set; }
         public int? Amount { get; set; }
         public DateTime? CreatedAt { get; set; }
-
-        public virtual Recipe IdRecipeNavigation { get; set; }
     }
 }

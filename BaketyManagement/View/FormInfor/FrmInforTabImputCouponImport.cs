@@ -1,4 +1,5 @@
 ﻿
+using BaketyManagement.DataModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,22 +14,104 @@ namespace BaketyManagement.View
 {
     public partial class FrmInforTabImputCouponImport : Form
     {
-        public static Int32 idCake = 0;
-        public static Int32 idSupplierPresent;
-        public static Int32 couponDetailRows;
-        public static Int32 idCouponDetail;
-        public static Int32 rowDetailCoupon;
-        public static Boolean isAdd;
-        public static Boolean isCancel = false;
-        private Int32 amount;
-
-
-        public int Amount { get => amount; set => amount = value; }
-
+        private BakeryManagementContext db = BakeryManagementContext.Instance;
+        public Int32 idImport = -1;
         public FrmInforTabImputCouponImport()
         {
             InitializeComponent();
+            cbbNameSupplier.DataSource = db.Suppliers.Select(s => s.NameSupplier).ToList();
+
         }
-         
+        public FrmInforTabImputCouponImport(Int32 IdImport)
+        {
+            InitializeComponent();
+            btnAddImportCoupon.Text = "Sửa";
+            idImport = IdImport;
+            var import = db.Imports.Where(i => i.IdImport == idImport).FirstOrDefault();
+            var query = (from metrial in db.Materials
+                         where import.IdMaterial == metrial.IdMaterial
+                         join supplier in db.Suppliers
+                         on metrial.IdSupplier equals supplier.IdSupplier
+                         select new
+                         {
+                             material = metrial.NameMaterial,
+                             supplier = supplier.NameSupplier
+                         }).FirstOrDefault();
+            cbbMaterial.SelectedItem = query.material;
+            cbbNameSupplier.SelectedItem = query.material;
+            txtAmountImport.Text = import.Amount.ToString();
+            txtImportPrice.Text = import.Price.ToString();
+        }
+
+
+        private void btnAddImportCoupon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (idImport == -1)
+                {
+                    if (txtImportPrice.Text == "" || txtAmountImport.Text == "")
+                        throw new Exception("Hãy nhập đủ các trường");
+                    var import = new Import();
+                    var material = db.Materials.Where(m => m.NameMaterial == cbbMaterial.Text).FirstOrDefault();
+                    var materialStore = db.MaterialStores.Where(m => m.IdMaterial == material.IdMaterial).FirstOrDefault();
+                    var query = db.Imports.Select(c => c);
+                    var count = query.Count() + 1;
+                    import.IdImport = count;
+                    import.Price = Convert.ToDouble(txtImportPrice.Text);
+                    import.Amount = Convert.ToDouble(txtAmountImport.Text);
+                    import.CreatedAt = dtpDayImport.Value;
+                    import.IdMaterial = material.IdMaterial;
+                    materialStore.Amount += import.Amount;
+
+                    db.Imports.Add(import);
+
+                    db.SaveChanges();
+                    MessageBox.Show("Thêm thành công");
+                }
+                else
+                {
+                    if (txtImportPrice.Text == "" || txtAmountImport.Text == "")
+                        throw new Exception("Hãy nhập đủ các trường");
+                    var import = db.Imports.Where(i => i.IdImport == idImport).FirstOrDefault();
+                    var materialStore = db.MaterialStores.Where(m => m.IdMaterial == import.IdMaterial).FirstOrDefault();
+
+                    var editAmount = Convert.ToDouble(txtAmountImport.Text) - import.Amount;
+
+                    if (materialStore.Amount + editAmount < 0)
+                        throw new Exception("Số lượng trong kho không đủ");
+
+                    import.Price = Convert.ToDouble(txtImportPrice.Text);
+                    import.Amount = Convert.ToDouble(txtAmountImport.Text);
+                    import.CreatedAt = dtpDayImport.Value;
+                    materialStore.Amount += editAmount;
+
+                    db.SaveChanges();
+                    MessageBox.Show("Sửa thành công");
+                }
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cbbNameSupplier_TextChanged(object sender, EventArgs e)
+        {
+            var query = from material in db.Materials
+                        join supplier in db.Suppliers
+                        on material.IdSupplier equals supplier.IdSupplier
+                        where supplier.NameSupplier == cbbNameSupplier.SelectedValue
+                        select material.NameMaterial;
+            var te = query.ToList();
+            cbbMaterial.DataSource = query.ToList();
+        }
     }
 }

@@ -20,7 +20,6 @@ namespace BaketyManagement.DataModels
         public DateTime? MfgCake { get; set; }
         public string Size { get; set; }
 
-        public virtual Recipe IdRecipeNavigation { get; set; }
         public virtual ICollection<BilDetail> BilDetails { get; set; }
     }
 }

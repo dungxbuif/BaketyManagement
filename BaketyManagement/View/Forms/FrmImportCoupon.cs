@@ -14,8 +14,8 @@ namespace BaketyManagement.View.Forms
 {
     public partial class FrmImportCoupon : Form
     {
-        private BakeryManagementContext db = new BakeryManagementContext();
-        private int idImport;
+        private BakeryManagementContext db = BakeryManagementContext.Instance;
+        private int idImport = -1;
         public FrmImportCoupon()
         {
             InitializeComponent();
@@ -35,10 +35,8 @@ namespace BaketyManagement.View.Forms
         {
             dgvCouponImport.DataSource = null;
             var query = from import in db.Imports
-                        join importDetail in db.ImportDetails
-                        on import.IdImport equals importDetail.IdImport
                         join metrial in db.Materials
-                        on importDetail.IdMaterial equals metrial.IdMaterial
+                        on import.IdMaterial equals metrial.IdMaterial
                         join supplier in db.Suppliers
                         on metrial.IdSupplier equals supplier.IdSupplier
                         select new
@@ -70,17 +68,17 @@ namespace BaketyManagement.View.Forms
                 dgvDetailCouponImport.DataSource = null;
                 return;
             }
-            var query = from importDetail in db.ImportDetails
-                        where importDetail.IdImport == idImport
+            var query = from import in db.Imports
+                        where import.IdImport == idImport
                         join metrial in db.Materials
-                        on importDetail.IdMaterial equals metrial.IdMaterial
+                        on import.IdMaterial equals metrial.IdMaterial
                         select new
                         {
                             metrial.NameMaterial,
-                            importDetail.Amount,
+                            import.Amount,
                             metrial.Unit,
-                            importDetail.Price,
-                            totalMoney = importDetail.Price * importDetail.Amount
+                            import.Price,
+                            totalMoney = import.Price * import.Amount
                         };
             dgvDetailCouponImport.DataSource = query.ToList();
             dgvDetailCouponImport.Columns[0].HeaderText = "Tên Ngyên liệu";
@@ -99,18 +97,20 @@ namespace BaketyManagement.View.Forms
         private void SearchImportCoupon()
         {
             String keyWord = txtSearchImportCoupon.Text;
+            if (keyWord == "")
+            {
+                MessageBox.Show("Mời nhập tên");
+                return;
+            }
             LoadImportByText(keyWord);
             LoadImportDetailByText(keyWord);
         }
         private void LoadImportByText(String keyWord)
         {
             dgvDetailCouponImport.DataSource = null;
-
             var query = from import in db.Imports
-                        join importDetail in db.ImportDetails
-                        on import.IdImport equals importDetail.IdImport
                         join metrial in db.Materials
-                        on importDetail.IdMaterial equals metrial.IdMaterial
+                        on import.IdMaterial equals metrial.IdMaterial
                         join supplier in db.Suppliers
                         on metrial.IdSupplier equals supplier.IdSupplier
                         where supplier.NameSupplier.ToLower().Contains(keyWord.ToLower())
@@ -131,20 +131,20 @@ namespace BaketyManagement.View.Forms
         {
             dgvDetailCouponImport.DataSource = null;
 
-            var query = from importDetail in db.ImportDetails
-                        where importDetail.IdImport == idImport
+            var query = from import in db.Imports
+                        where import.IdImport == idImport
                         join metrial in db.Materials
-                        on importDetail.IdMaterial equals metrial.IdMaterial
+                        on import.IdMaterial equals metrial.IdMaterial
                         join supplier in db.Suppliers
                         on metrial.IdSupplier equals supplier.IdSupplier
                         where supplier.NameSupplier.ToLower().Contains(keyWord.ToLower())
                         select new
                         {
                             metrial.NameMaterial,
-                            importDetail.Amount,
+                            import.Amount,
                             metrial.Unit,
-                            importDetail.Price,
-                            totalMoney = importDetail.Price * importDetail.Amount
+                            import.Price,
+                            totalMoney = import.Price * import.Amount
                         };
             dgvDetailCouponImport.DataSource = query.ToList();
             dgvDetailCouponImport.Columns[0].HeaderText = "Tên Ngyên liệu";
@@ -195,10 +195,8 @@ namespace BaketyManagement.View.Forms
 
             var query = from import in db.Imports
                         where import.CreatedAt >= startDate && import.CreatedAt <= endDate
-                        join importDetail in db.ImportDetails
-                        on import.IdImport equals importDetail.IdImport
                         join metrial in db.Materials
-                        on importDetail.IdMaterial equals metrial.IdMaterial
+                        on import.IdMaterial equals metrial.IdMaterial
                         join supplier in db.Suppliers
                         on metrial.IdSupplier equals supplier.IdSupplier
                         select new
@@ -218,21 +216,19 @@ namespace BaketyManagement.View.Forms
         {
             dgvDetailCouponImport.DataSource = null;
 
-            var query = from importDetail in db.ImportDetails
-                        join import in db.Imports
-                        on importDetail.IdImport equals import.IdImport
+            var query = from import in db.Imports
                         join metrial in db.Materials
-                        on importDetail.IdMaterial equals metrial.IdMaterial
+                        on import.IdMaterial equals metrial.IdMaterial
                         join supplier in db.Suppliers
                         on metrial.IdSupplier equals supplier.IdSupplier
                         where import.CreatedAt >= startDate && import.CreatedAt <= endDate
                         select new
                         {
                             metrial.NameMaterial,
-                            importDetail.Amount,
+                            import.Amount,
                             metrial.Unit,
-                            importDetail.Price,
-                            totalMoney = importDetail.Price * importDetail.Amount
+                            import.Price,
+                            totalMoney = import.Price * import.Amount
                         };
             dgvDetailCouponImport.DataSource = query.ToList();
             dgvDetailCouponImport.Columns[0].HeaderText = "Tên Ngyên liệu";
@@ -241,5 +237,57 @@ namespace BaketyManagement.View.Forms
             dgvDetailCouponImport.Columns[3].HeaderText = "Đơn Giá";
             dgvDetailCouponImport.Columns[4].HeaderText = "Tổng Tiền";
         }
+
+        private void btnDeleteImportCoupon_Click(object sender, EventArgs e)
+        {
+              
+            try
+            {
+                if(idImport <= 0)
+                    throw new Exception("Hãy chọn phiếu nhập");
+                var import = db.Imports.Where(i=>i.IdImport == idImport).FirstOrDefault();
+                var materialStore = db.MaterialStores.Where(m => m.IdMaterial == import.IdMaterial).FirstOrDefault();
+                if(materialStore.Amount < import.Amount)
+                    throw new Exception("Số lượng trong kho nhỏ hơn số lượng phiếu nhập");
+                materialStore.Amount -= import.Amount;
+                db.Imports.Remove(import);
+                db.SaveChanges();
+                dgvCouponImport.DataSource = null;
+                dgvDetailCouponImport.DataSource = null;
+                MessageBox.Show("Xóa thành công");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAddImportCoupon_Click(object sender, EventArgs e)
+        {
+            FrmInforTabImputCouponImport frmImportInfo = new FrmInforTabImputCouponImport();
+            frmImportInfo.StartPosition = FormStartPosition.CenterScreen;
+            frmImportInfo.ShowDialog();
+        }
+
+        private void btnEditImportCoupon_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                if (idImport <= 0)
+                    throw new Exception("Hãy chọn phiếu nhập");
+
+                FrmInforTabImputCouponImport frmImportInfo = new FrmInforTabImputCouponImport(idImport);
+                frmImportInfo.StartPosition = FormStartPosition.CenterScreen;
+                frmImportInfo.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+      
     }
 }

@@ -117,13 +117,20 @@ namespace BaketyManagement.View
 
         private void AddCakeToBill()
         {
-           
+            try
+            {
                 validateAddCake();
-                if(idBill == 0)
+                if (idBill == 0)
                     createBill();
                 createBillDetailAndUpdateCake();
                 LoadCake();
                 LoadBill();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            
         }
         private void createBillDetailAndUpdateCake()
         {
