@@ -87,7 +87,7 @@ namespace BaketyManagement.View.FormInfor
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(147, 17);
             this.label1.Name = "label1";
@@ -125,7 +125,7 @@ namespace BaketyManagement.View.FormInfor
             this.cboStaffName.Name = "cboStaffName";
             this.cboStaffName.Size = new System.Drawing.Size(317, 28);
             this.cboStaffName.TabIndex = 7;
-   //         this.cboStaffName.SelectedIndexChanged += new System.EventHandler(this.cboStaffName_SelectedIndexChanged);
+            this.cboStaffName.SelectedIndexChanged += new System.EventHandler(this.cboStaffName_SelectedIndexChanged);
             // 
             // txtSalaryOverTime
             // 
@@ -174,7 +174,7 @@ namespace BaketyManagement.View.FormInfor
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(37, 342);
             this.label7.Name = "label7";
@@ -185,7 +185,7 @@ namespace BaketyManagement.View.FormInfor
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(37, 290);
             this.label6.Name = "label6";
@@ -196,7 +196,7 @@ namespace BaketyManagement.View.FormInfor
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(37, 82);
             this.label5.Name = "label5";
@@ -207,7 +207,7 @@ namespace BaketyManagement.View.FormInfor
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(37, 30);
             this.label4.Name = "label4";
@@ -218,7 +218,7 @@ namespace BaketyManagement.View.FormInfor
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(37, 238);
             this.label3.Name = "label3";
@@ -229,7 +229,7 @@ namespace BaketyManagement.View.FormInfor
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(37, 134);
             this.label9.Name = "label9";
@@ -240,7 +240,7 @@ namespace BaketyManagement.View.FormInfor
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(37, 186);
             this.label2.Name = "label2";
@@ -267,7 +267,7 @@ namespace BaketyManagement.View.FormInfor
             this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(32)))), ((int)(((byte)(18)))));
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = global::BaketyManagement.Properties.Resources.Cancel;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -279,7 +279,7 @@ namespace BaketyManagement.View.FormInfor
             this.btnCancel.Text = "Hủy";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancel.UseVisualStyleBackColor = false;
- //           this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnTimeKeeping
             // 
@@ -289,7 +289,7 @@ namespace BaketyManagement.View.FormInfor
             this.btnTimeKeeping.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
             this.btnTimeKeeping.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
             this.btnTimeKeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimeKeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimeKeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTimeKeeping.ForeColor = System.Drawing.Color.White;
             this.btnTimeKeeping.Image = global::BaketyManagement.Properties.Resources.Edit;
             this.btnTimeKeeping.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -301,7 +301,7 @@ namespace BaketyManagement.View.FormInfor
             this.btnTimeKeeping.Text = "Chấm Công";
             this.btnTimeKeeping.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTimeKeeping.UseVisualStyleBackColor = false;
-   //         this.btnTimeKeeping.Click += new System.EventHandler(this.btnTimeKeeping_Click);
+            this.btnTimeKeeping.Click += new System.EventHandler(this.btnTimeKeeping_Click);
             // 
             // btnAddSalary
             // 
@@ -311,7 +311,7 @@ namespace BaketyManagement.View.FormInfor
             this.btnAddSalary.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
             this.btnAddSalary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
             this.btnAddSalary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddSalary.ForeColor = System.Drawing.Color.White;
             this.btnAddSalary.Image = global::BaketyManagement.Properties.Resources.Add;
             this.btnAddSalary.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -323,7 +323,6 @@ namespace BaketyManagement.View.FormInfor
             this.btnAddSalary.Text = "Thêm mới";
             this.btnAddSalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddSalary.UseVisualStyleBackColor = false;
-   //         this.btnAddSalary.Click += new System.EventHandler(this.btnAddSalary_Click);
             // 
             // btnUpdate
             // 
@@ -333,7 +332,7 @@ namespace BaketyManagement.View.FormInfor
             this.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
             this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(109, 27);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -342,7 +341,6 @@ namespace BaketyManagement.View.FormInfor
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Cập Nhật";
             this.btnUpdate.UseVisualStyleBackColor = false;
-   //         this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // FrmInforSalary
             // 
@@ -351,13 +349,12 @@ namespace BaketyManagement.View.FormInfor
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(580, 624);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmInforSalary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInforSalary";
-   //         this.Load += new System.EventHandler(this.FrmInforSalary_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
