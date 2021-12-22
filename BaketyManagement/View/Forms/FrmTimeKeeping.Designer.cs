@@ -50,9 +50,14 @@ namespace BaketyManagement.View.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvTimeKeeping = new System.Windows.Forms.DataGridView();
             this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Luong1Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoNgayLamViec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thoiGianLamThem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LuongLamNgoaiGio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LuongThucNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpTimeKeeping.SuspendLayout();
             this.pnFunctionTimeKeeping.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -205,6 +210,7 @@ namespace BaketyManagement.View.Forms
             this.btnAddSalary.Text = "Thêm mới lương";
             this.btnAddSalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddSalary.UseVisualStyleBackColor = false;
+            this.btnAddSalary.Click += new System.EventHandler(this.btnAddSalary_Click);
             // 
             // btnDisplaySalary
             // 
@@ -386,9 +392,14 @@ namespace BaketyManagement.View.Forms
             this.dgvTimeKeeping.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTimeKeeping.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNhanVien,
+            this.tenNhanVien,
+            this.NgayChamCong,
             this.Luong1Ngay,
             this.SoNgayLamViec,
-            this.thoiGianLamThem});
+            this.thoiGianLamThem,
+            this.Thuong,
+            this.LuongLamNgoaiGio,
+            this.LuongThucNhan});
             this.dgvTimeKeeping.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTimeKeeping.Location = new System.Drawing.Point(0, 0);
             this.dgvTimeKeeping.MultiSelect = false;
@@ -405,9 +416,21 @@ namespace BaketyManagement.View.Forms
             this.MaNhanVien.Name = "MaNhanVien";
             this.MaNhanVien.ReadOnly = true;
             // 
+            // tenNhanVien
+            // 
+            this.tenNhanVien.HeaderText = "Tên Nhân Viên";
+            this.tenNhanVien.Name = "tenNhanVien";
+            this.tenNhanVien.ReadOnly = true;
+            // 
+            // NgayChamCong
+            // 
+            this.NgayChamCong.HeaderText = "Ngày Chấm Công Gần Nhất";
+            this.NgayChamCong.Name = "NgayChamCong";
+            this.NgayChamCong.ReadOnly = true;
+            // 
             // Luong1Ngay
             // 
-            this.Luong1Ngay.HeaderText = "Lương 1 Ngày";
+            this.Luong1Ngay.HeaderText = "Lương 1 Ngày (VND)";
             this.Luong1Ngay.Name = "Luong1Ngay";
             this.Luong1Ngay.ReadOnly = true;
             // 
@@ -422,6 +445,24 @@ namespace BaketyManagement.View.Forms
             this.thoiGianLamThem.HeaderText = "Số Giờ Làm Thêm";
             this.thoiGianLamThem.Name = "thoiGianLamThem";
             this.thoiGianLamThem.ReadOnly = true;
+            // 
+            // Thuong
+            // 
+            this.Thuong.HeaderText = "Thưởng (VND)";
+            this.Thuong.Name = "Thuong";
+            this.Thuong.ReadOnly = true;
+            // 
+            // LuongLamNgoaiGio
+            // 
+            this.LuongLamNgoaiGio.HeaderText = "Lương Làm Ngoài Giờ (VND/h)";
+            this.LuongLamNgoaiGio.Name = "LuongLamNgoaiGio";
+            this.LuongLamNgoaiGio.ReadOnly = true;
+            // 
+            // LuongThucNhan
+            // 
+            this.LuongThucNhan.HeaderText = "Lương Thực Nhận (VND)";
+            this.LuongThucNhan.Name = "LuongThucNhan";
+            this.LuongThucNhan.ReadOnly = true;
             // 
             // FrmTimeKeeping
             // 
@@ -470,8 +511,13 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.Button btnCancelTimeKeeping;
         private System.Windows.Forms.Button btnAddSalary;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayChamCong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Luong1Ngay;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoNgayLamViec;
         private System.Windows.Forms.DataGridViewTextBoxColumn thoiGianLamThem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Thuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LuongLamNgoaiGio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LuongThucNhan;
     }
 }
