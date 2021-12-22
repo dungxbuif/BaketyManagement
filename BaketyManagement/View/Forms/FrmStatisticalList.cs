@@ -34,26 +34,25 @@ namespace BaketyManagement.View.Forms
                 dgvStatistical.Columns[0].HeaderText = "Ngày";
                 dgvStatistical.Columns[1].HeaderText = "Tổng tiền";
                 gbStatisticalList.Text = "Danh sách doanh thu 7 ngày gần đây";
-                var query = from bill in db.Bills
-                            where bill.ExportDate <= now && bill.ExportDate >= sevenDaysAgo
-                            select new
-                            {
-                                tien = ((from ctb in db.BilDetails
-                                         where ctb.IdBill == bill.IdBill
-                                         select ctb.AmountOrder).FirstOrDefault() *
-                                            (from cake in db.Cakes
-                                             where cake.IdCake == ((from ctb in db.BilDetails
-                                                                    where ctb.IdBill == bill.IdBill
-                                                                    select ctb.IdCake).FirstOrDefault())
-                                             select cake.Price).FirstOrDefault()) * ((100 - bill.Discount) / 100)
-                            };
+                var data = from bi in db.Bills
+                           join nv in db.staff on bi.IdStaff equals nv.IdStaff
+                           join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
+                           join ca in db.Cakes on ctb.IdCake equals ca.IdCake
+                           where bi.ExportDate <= now && bi.ExportDate >= sevenDaysAgo
+                           group new { bi, ctb, ca } by new { bi.IdBill, bi.ExportDate, bi.Discount, nv.NameStaff } into bill
+                           select bill;
+                var query = data
+                    .Select(bill => new
+                    {
+                        tien = bill.Sum(b => b.ctb.AmountOrder * b.ca.Price * ((100 - bill.Key.Discount) / 100))
+                    });
 
                 foreach (var tinhTien in query)
                 {
                     TongTien += (double)tinhTien.tien;
                 }
-
-                dgvStatistical.Rows[0].Cells[0].Value = "Từ ngày "+ sevenDaysAgo.ToShortDateString() + " -> " + now.ToShortDateString();
+                dgvStatistical.Rows.Clear();
+                dgvStatistical.Rows[0].Cells[0].Value = "Từ ngày " + sevenDaysAgo.ToShortDateString() + " đến " + now.ToShortDateString();
                 dgvStatistical.Rows[0].Cells[1].Value = TongTien.ToString();
             }
             else if (radRevenue3MonthsList.Checked)
@@ -65,25 +64,24 @@ namespace BaketyManagement.View.Forms
                 dgvStatistical.Columns[0].HeaderText = "Tháng";
                 dgvStatistical.Columns[1].HeaderText = "Tổng tiền";
                 gbStatisticalList.Text = "Danh sách doanh thu 3 tháng gần đây";
-                var query = from bill in db.Bills
-                            where bill.ExportDate <= now && bill.ExportDate >= threeMonthAgo
-                            select new
-                            {
-                                tien = ((from ctb in db.BilDetails
-                                         where ctb.IdBill == bill.IdBill
-                                         select ctb.AmountOrder).FirstOrDefault() *
-                                            (from cake in db.Cakes
-                                             where cake.IdCake == ((from ctb in db.BilDetails
-                                                                    where ctb.IdBill == bill.IdBill
-                                                                    select ctb.IdCake).FirstOrDefault())
-                                             select cake.Price).FirstOrDefault()) * ((100 - bill.Discount) / 100)
-                            };
+                var data = from bi in db.Bills
+                           join nv in db.staff on bi.IdStaff equals nv.IdStaff
+                           join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
+                           join ca in db.Cakes on ctb.IdCake equals ca.IdCake
+                           where bi.ExportDate <= now && bi.ExportDate >= threeMonthAgo
+                           group new { bi, ctb, ca } by new { bi.IdBill, bi.ExportDate, bi.Discount, nv.NameStaff } into bill
+                           select bill;
+                var query = data
+                    .Select(bill => new
+                    {
+                        tien = bill.Sum(b => b.ctb.AmountOrder * b.ca.Price * ((100 - bill.Key.Discount) / 100))
+                    });
 
                 foreach (var tinhTien in query)
                 {
                     TongTien += (double)tinhTien.tien;
                 }
-
+                dgvStatistical.Rows.Clear();
                 dgvStatistical.Rows[0].Cells[0].Value = "Từ ngày " + threeMonthAgo.ToShortDateString() + " đến " + now.ToShortDateString();
                 dgvStatistical.Rows[0].Cells[1].Value = TongTien.ToString();
             }
@@ -94,12 +92,30 @@ namespace BaketyManagement.View.Forms
                 dgvStatistical.Columns[0].HeaderText = "Tên bánh";
                 dgvStatistical.Columns[1].HeaderText = "Số lượng";
                 gbStatisticalList.Text = "Danh sách 10 loại bánh bán chạy nhất trong 30 ngày gần đây";
-                var query = from bill in db.Bills
-                            where bill.ExportDate <= now && bill.ExportDate >= thirtyDaysAgo
-                            select new
-                            {
+                var data = from bi in db.Bills
+                           join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
+                           join ca in db.Cakes on ctb.IdCake equals ca.IdCake
+                           join res in db.Recipes on ca.IdRecipe equals res.IdRecipe
+                           where bi.ExportDate <= now && bi.ExportDate >= thirtyDaysAgo
+                           group new { bi, ctb  } by new { ca.IdCake, res.NameCake } into cake
+                           select cake;
+                var query = data.Select(cake => new
+                {
+                    nameCake = cake.Key.NameCake,
+                    amount = cake.Sum(c => c.ctb.AmountOrder)
+                })
+                    .OrderByDescending(cake => cake.amount)
+                    .Take(2);
 
-                            };
+                Int32 row = 0;
+                dgvStatistical.Rows.Clear();
+                foreach(var cake in query)
+                {
+                    dgvStatistical.Rows.Add();
+                    dgvStatistical.Rows[row].Cells[0].Value = cake.nameCake;
+                    dgvStatistical.Rows[row].Cells[1].Value = cake.amount;
+                    row++;
+                }
             }
             else if (radSlowestSellerList.Checked)
             {
@@ -118,20 +134,18 @@ namespace BaketyManagement.View.Forms
             dgvStatistical.Columns.Add("Ngay", "Ngày");
             dgvStatistical.Columns.Add("TongTien", "Tổng tiền");
             gbStatisticalList.Text = "Danh sách doanh thu 7 ngày gần đây";
-
-            var query = from bill in db.Bills
-                        where bill.ExportDate <= now && bill.ExportDate >= sevenDaysAgo
-                        select new
-                        {
-                            tien = ((from ctb in db.BilDetails
-                                     where ctb.IdBill == bill.IdBill
-                                     select ctb.AmountOrder).FirstOrDefault() *
-                                        (from cake in db.Cakes
-                                         where cake.IdCake == ((from ctb in db.BilDetails
-                                                                where ctb.IdBill == bill.IdBill
-                                                                select ctb.IdCake).FirstOrDefault())
-                                         select cake.Price).FirstOrDefault()) * ((100 - bill.Discount) / 100)
-                        };
+            var data = from bi in db.Bills
+                       join nv in db.staff on bi.IdStaff equals nv.IdStaff
+                       join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
+                       join ca in db.Cakes on ctb.IdCake equals ca.IdCake
+                       where bi.ExportDate <= now && bi.ExportDate >= sevenDaysAgo
+                       group new { bi, ctb, ca } by new { bi.IdBill, bi.ExportDate, bi.Discount, nv.NameStaff } into bill
+                       select bill;
+            var query = data
+                .Select(bill => new
+                {
+                    tien = bill.Sum(b => b.ctb.AmountOrder * b.ca.Price * ((100 - bill.Key.Discount) / 100))
+                });
 
             foreach(var tinhTien in query)
             {
