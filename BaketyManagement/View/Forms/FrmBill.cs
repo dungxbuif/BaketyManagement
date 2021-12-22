@@ -27,24 +27,21 @@ namespace BaketyManagement.View.Forms
         }
         private void LoadTabBill()
         {
-            var query = from hd in db.Bills
-                        select new
-                        {
-                            hd.IdBill,
-                            hd.ExportDate,
-                            nameStaff = (from nv in db.staff
-                            where nv.IdStaff == hd.IdStaff
-                            select nv.NameStaff).FirstOrDefault(),
-                            hd.Discount,
-                            TongTien = ((from ctb in db.BilDetails
-                                        where ctb.IdBill == hd.IdBill
-                                        select ctb.AmountOrder).FirstOrDefault() * 
-                                        (from cake in db.Cakes
-                                         where cake.IdCake == ((from ctb in db.BilDetails
-                                                               where ctb.IdBill == hd.IdBill
-                                                               select ctb.IdCake).FirstOrDefault())
-                                            select cake.Price).FirstOrDefault())*((100-hd.Discount)/100)
-                        };
+            var data = from bi in db.Bills
+                       join nv in db.staff on bi.IdStaff equals nv.IdStaff
+                       join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
+                       join ca in db.Cakes on ctb.IdCake equals ca.IdCake
+                       group new { bi, ctb, ca } by new { bi.IdBill, bi.ExportDate, bi.Discount, nv.NameStaff} into bill
+                        select bill;
+            var query = data
+                .Select(bill => new
+                {
+                    idBill = bill.Key.IdBill,
+                    exportDate = bill.Key.ExportDate,
+                    nameStaff = bill.Key.NameStaff,
+                    discount = bill.Key.Discount,
+                    TongTien = bill.Sum(b => b.ctb.AmountOrder * b.ca.Price * ((100 - bill.Key.Discount) / 100))
+                });
             dgvBill.DataSource = query.ToList();
         }
 
@@ -55,25 +52,13 @@ namespace BaketyManagement.View.Forms
             {
                 Int32 idBill = Convert.ToInt32(dgvBill.Rows[rowDgvBill].Cells[0].Value);
                 var query = from ctb in db.BilDetails
+                            join ca in db.Cakes on ctb.IdCake equals ca.IdCake
+                            join re in db.Recipes on ca.IdRecipe equals re.IdRecipe
                             where ctb.IdBill == idBill
                             select new
                             {
-                                nameCake = (from ct in db.Recipes
-                                            where ct.IdRecipe == ((
-                                                from b in db.Cakes
-                                                where b.IdCake == ((
-                                                    from ctb in db.BilDetails
-                                                    where ctb.IdBill == idBill
-                                                    select ctb.IdCake
-                                                    ).FirstOrDefault())
-                                                select b.IdRecipe
-                                                ).FirstOrDefault())
-                                            select ct.NameCake).FirstOrDefault(),
-                                price = (from cake in db.Cakes
-                                         where cake.IdCake == ((from ctb in db.BilDetails
-                                                                where ctb.IdBill == idBill
-                                                                select ctb.IdCake).FirstOrDefault())
-                                         select cake.Price).FirstOrDefault(),
+                                nameCake = re.NameCake,
+                                price = ca.Price,
                                 ctb.AmountOrder
                             };
                 dgvBillDetail.DataSource = query.ToList();
@@ -106,27 +91,24 @@ namespace BaketyManagement.View.Forms
                 {
                     throw new Exception("Vui lòng nhập từ khóa tìm kiếm!");
                 }
-                var query = from hd in db.Bills
-                            where hd.IdStaff == (from nv in db.staff
-                                                 where nv.NameStaff == searchKey
-                                                 select nv.IdStaff).FirstOrDefault()
-                            select new
-                            {
-                                hd.IdBill,
-                                hd.ExportDate,
-                                nameStaff = (from nv in db.staff
-                                             where nv.IdStaff == hd.IdStaff
-                                             select nv.NameStaff).FirstOrDefault(),
-                                hd.Discount,
-                                TongTien = ((from ctb in db.BilDetails
-                                             where ctb.IdBill == hd.IdBill
-                                             select ctb.AmountOrder).FirstOrDefault() *
-                                            (from cake in db.Cakes
-                                             where cake.IdCake == ((from ctb in db.BilDetails
-                                                                    where ctb.IdBill == hd.IdBill
-                                                                    select ctb.IdCake).FirstOrDefault())
-                                             select cake.Price).FirstOrDefault()) * ((100 - hd.Discount) / 100)
-                            };
+                var data = from bi in db.Bills
+                           join nv in db.staff on bi.IdStaff equals nv.IdStaff
+                           join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
+                           join ca in db.Cakes on ctb.IdCake equals ca.IdCake
+                           where bi.IdStaff == (from nv in db.staff
+                                                where nv.NameStaff == searchKey
+                                                select nv.IdStaff).FirstOrDefault()
+                           group new { bi, ctb, ca } by new { bi.IdBill, bi.ExportDate, bi.Discount, nv.NameStaff } into bill
+                           select bill;
+                var query = data
+                    .Select(bill => new
+                    {
+                        idBill = bill.Key.IdBill,
+                        exportDate = bill.Key.ExportDate,
+                        nameStaff = bill.Key.NameStaff,
+                        discount = bill.Key.Discount,
+                        TongTien = bill.Sum(b => b.ctb.AmountOrder * b.ca.Price * ((100 - bill.Key.Discount) / 100))
+                    });
                 dgvBill.DataSource = query.ToList();
                 txtSearchKeyBill.Clear();
             }
