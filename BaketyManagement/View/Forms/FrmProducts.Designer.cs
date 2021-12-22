@@ -34,6 +34,13 @@ namespace BaketyManagement.View.Forms
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCake = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.pnFunctionProduct = new System.Windows.Forms.Panel();
@@ -68,19 +75,18 @@ namespace BaketyManagement.View.Forms
             this.tlpProduct.RowCount = 2;
             this.tlpProduct.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpProduct.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tlpProduct.Size = new System.Drawing.Size(1092, 522);
+            this.tlpProduct.Size = new System.Drawing.Size(1092, 504);
             this.tlpProduct.TabIndex = 3;
-//            this.tlpProduct.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpProduct_Paint);
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.groupBox1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel8.Location = new System.Drawing.Point(30, 30);
             this.panel8.Margin = new System.Windows.Forms.Padding(15);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1032, 162);
+            this.panel8.Size = new System.Drawing.Size(1032, 144);
             this.panel8.TabIndex = 1;
             // 
             // groupBox1
@@ -88,11 +94,11 @@ namespace BaketyManagement.View.Forms
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1032, 162);
+            this.groupBox1.Size = new System.Drawing.Size(1032, 144);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách bánh";
@@ -101,11 +107,11 @@ namespace BaketyManagement.View.Forms
             // 
             this.panel1.Controls.Add(this.dgvCake);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(3, 22);
+            this.panel1.Location = new System.Drawing.Point(3, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1026, 137);
+            this.panel1.Size = new System.Drawing.Size(1026, 115);
             this.panel1.TabIndex = 0;
             // 
             // dgvCake
@@ -113,6 +119,14 @@ namespace BaketyManagement.View.Forms
             this.dgvCake.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCake.BackgroundColor = System.Drawing.Color.White;
             this.dgvCake.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCake.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
             this.dgvCake.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCake.Location = new System.Drawing.Point(0, 0);
             this.dgvCake.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -121,15 +135,64 @@ namespace BaketyManagement.View.Forms
             this.dgvCake.ReadOnly = true;
             this.dgvCake.RowHeadersWidth = 51;
             this.dgvCake.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCake.Size = new System.Drawing.Size(1026, 137);
+            this.dgvCake.Size = new System.Drawing.Size(1026, 115);
             this.dgvCake.TabIndex = 2;
-    //        this.dgvCake.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCake_CellClick);
+            this.dgvCake.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCake_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã bánh";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên bánh";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Giá";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Số lượng còn";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Kích thước";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Ngày ra lò";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Ngày hết hạn";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.groupBox6);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(30, 222);
+            this.panel9.Location = new System.Drawing.Point(30, 204);
             this.panel9.Margin = new System.Windows.Forms.Padding(15);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1032, 270);
@@ -140,7 +203,7 @@ namespace BaketyManagement.View.Forms
             this.groupBox6.BackColor = System.Drawing.Color.White;
             this.groupBox6.Controls.Add(this.pnFunctionProduct);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.groupBox6.Location = new System.Drawing.Point(0, 0);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -160,33 +223,33 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionProduct.Controls.Add(this.btnCakeDisplay);
             this.pnFunctionProduct.Controls.Add(this.btnCakeDel);
             this.pnFunctionProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnFunctionProduct.Location = new System.Drawing.Point(4, 24);
+            this.pnFunctionProduct.Location = new System.Drawing.Point(4, 28);
             this.pnFunctionProduct.Name = "pnFunctionProduct";
-            this.pnFunctionProduct.Size = new System.Drawing.Size(1024, 241);
+            this.pnFunctionProduct.Size = new System.Drawing.Size(1024, 237);
             this.pnFunctionProduct.TabIndex = 3;
             // 
             // label22
             // 
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.label22.Location = new System.Drawing.Point(24, 69);
+            this.label22.Location = new System.Drawing.Point(16, 69);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(151, 20);
+            this.label22.Size = new System.Drawing.Size(183, 25);
             this.label22.TabIndex = 2;
             this.label22.Text = "Tìm kiếm theo tên";
             // 
             // txtCakeSearch
             // 
             this.txtCakeSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCakeSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCakeSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCakeSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtCakeSearch.Location = new System.Drawing.Point(197, 66);
+            this.txtCakeSearch.Location = new System.Drawing.Point(189, 66);
             this.txtCakeSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCakeSearch.Name = "txtCakeSearch";
-            this.txtCakeSearch.Size = new System.Drawing.Size(600, 26);
+            this.txtCakeSearch.Size = new System.Drawing.Size(600, 30);
             this.txtCakeSearch.TabIndex = 1;
             // 
             // btnCakeEdit
@@ -200,7 +263,7 @@ namespace BaketyManagement.View.Forms
             this.btnCakeEdit.ForeColor = System.Drawing.Color.White;
             this.btnCakeEdit.Image = global::BaketyManagement.Properties.Resources.Edit;
             this.btnCakeEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCakeEdit.Location = new System.Drawing.Point(435, 132);
+            this.btnCakeEdit.Location = new System.Drawing.Point(427, 132);
             this.btnCakeEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCakeEdit.Name = "btnCakeEdit";
             this.btnCakeEdit.Size = new System.Drawing.Size(150, 70);
@@ -208,7 +271,7 @@ namespace BaketyManagement.View.Forms
             this.btnCakeEdit.Text = "Sửa";
             this.btnCakeEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCakeEdit.UseVisualStyleBackColor = false;
-    //        this.btnCakeEdit.Click += new System.EventHandler(this.btnCakeEdit_Click);
+            this.btnCakeEdit.Click += new System.EventHandler(this.btnCakeEdit_Click);
             // 
             // btnCakeSearch
             // 
@@ -221,7 +284,7 @@ namespace BaketyManagement.View.Forms
             this.btnCakeSearch.ForeColor = System.Drawing.Color.White;
             this.btnCakeSearch.Image = global::BaketyManagement.Properties.Resources.Search;
             this.btnCakeSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCakeSearch.Location = new System.Drawing.Point(850, 38);
+            this.btnCakeSearch.Location = new System.Drawing.Point(842, 38);
             this.btnCakeSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCakeSearch.Name = "btnCakeSearch";
             this.btnCakeSearch.Size = new System.Drawing.Size(150, 70);
@@ -229,7 +292,7 @@ namespace BaketyManagement.View.Forms
             this.btnCakeSearch.Text = "Tìm";
             this.btnCakeSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCakeSearch.UseVisualStyleBackColor = false;
-    //        this.btnCakeSearch.Click += new System.EventHandler(this.btnCakeSearch_Click);
+            this.btnCakeSearch.Click += new System.EventHandler(this.btnCakeSearch_Click);
             // 
             // btnCakeDisplay
             // 
@@ -242,7 +305,7 @@ namespace BaketyManagement.View.Forms
             this.btnCakeDisplay.ForeColor = System.Drawing.Color.White;
             this.btnCakeDisplay.Image = global::BaketyManagement.Properties.Resources.Display;
             this.btnCakeDisplay.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCakeDisplay.Location = new System.Drawing.Point(189, 132);
+            this.btnCakeDisplay.Location = new System.Drawing.Point(181, 132);
             this.btnCakeDisplay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCakeDisplay.Name = "btnCakeDisplay";
             this.btnCakeDisplay.Size = new System.Drawing.Size(150, 70);
@@ -250,7 +313,7 @@ namespace BaketyManagement.View.Forms
             this.btnCakeDisplay.Text = "Xem";
             this.btnCakeDisplay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCakeDisplay.UseVisualStyleBackColor = false;
-    //        this.btnCakeDisplay.Click += new System.EventHandler(this.btnCakeDisplay_Click);
+            this.btnCakeDisplay.Click += new System.EventHandler(this.btnCakeDisplay_Click);
             // 
             // btnCakeDel
             // 
@@ -263,7 +326,7 @@ namespace BaketyManagement.View.Forms
             this.btnCakeDel.ForeColor = System.Drawing.Color.White;
             this.btnCakeDel.Image = global::BaketyManagement.Properties.Resources.Delete;
             this.btnCakeDel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCakeDel.Location = new System.Drawing.Point(681, 132);
+            this.btnCakeDel.Location = new System.Drawing.Point(673, 132);
             this.btnCakeDel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCakeDel.Name = "btnCakeDel";
             this.btnCakeDel.Size = new System.Drawing.Size(150, 70);
@@ -271,19 +334,19 @@ namespace BaketyManagement.View.Forms
             this.btnCakeDel.Text = "Xóa";
             this.btnCakeDel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCakeDel.UseVisualStyleBackColor = false;
-    //        this.btnCakeDel.Click += new System.EventHandler(this.btnCakeDel_Click);
+            this.btnCakeDel.Click += new System.EventHandler(this.btnCakeDel_Click);
             // 
             // FrmProducts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 522);
+            this.ClientSize = new System.Drawing.Size(1092, 504);
             this.Controls.Add(this.tlpProduct);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmProducts";
             this.Text = "FrmProducts";
-    //        this.Load += new System.EventHandler(this.FrmProducts_Load);
+            this.Load += new System.EventHandler(this.FrmProducts_Load);
             this.tlpProduct.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -313,5 +376,12 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvCake;
         private System.Windows.Forms.Panel pnFunctionProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }
