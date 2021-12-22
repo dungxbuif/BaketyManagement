@@ -61,12 +61,12 @@ namespace BaketyManagement.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(88, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(370, 40);
+            this.label1.Size = new System.Drawing.Size(456, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông Tin Loại Bánh";
             // 
@@ -78,7 +78,7 @@ namespace BaketyManagement.View
             this.panel2.Controls.Add(this.txtNameCategory);
             this.panel2.Controls.Add(this.label29);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(4, 85);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -89,45 +89,45 @@ namespace BaketyManagement.View
             // txtIdCategory
             // 
             this.txtIdCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtIdCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdCategory.Location = new System.Drawing.Point(195, 94);
+            this.txtIdCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtIdCategory.Location = new System.Drawing.Point(195, 37);
             this.txtIdCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIdCategory.Name = "txtIdCategory";
             this.txtIdCategory.ReadOnly = true;
-            this.txtIdCategory.Size = new System.Drawing.Size(309, 26);
+            this.txtIdCategory.Size = new System.Drawing.Size(309, 30);
             this.txtIdCategory.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 96);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(42, 40);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 20);
+            this.label2.Size = new System.Drawing.Size(145, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Mã Loại Bánh";
             // 
             // txtNameCategory
             // 
             this.txtNameCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNameCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameCategory.Location = new System.Drawing.Point(195, 37);
+            this.txtNameCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNameCategory.Location = new System.Drawing.Point(195, 89);
             this.txtNameCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNameCategory.Name = "txtNameCategory";
-            this.txtNameCategory.Size = new System.Drawing.Size(309, 26);
+            this.txtNameCategory.Size = new System.Drawing.Size(309, 30);
             this.txtNameCategory.TabIndex = 0;
             // 
             // label29
             // 
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(43, 40);
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label29.Location = new System.Drawing.Point(34, 94);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(125, 20);
+            this.label29.Size = new System.Drawing.Size(153, 25);
             this.label29.TabIndex = 5;
             this.label29.Text = "Tên Loại Bánh";
             // 
@@ -151,7 +151,7 @@ namespace BaketyManagement.View
             this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(32)))), ((int)(((byte)(18)))));
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = global::BaketyManagement.Properties.Resources.Cancel;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -163,7 +163,7 @@ namespace BaketyManagement.View
             this.btnCancel.Text = "Hủy";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancel.UseVisualStyleBackColor = false;
-//            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // btnEditCategory
             // 
@@ -172,7 +172,7 @@ namespace BaketyManagement.View
             this.btnEditCategory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
             this.btnEditCategory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
             this.btnEditCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEditCategory.ForeColor = System.Drawing.Color.White;
             this.btnEditCategory.Image = global::BaketyManagement.Properties.Resources.Edit;
             this.btnEditCategory.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -184,7 +184,7 @@ namespace BaketyManagement.View
             this.btnEditCategory.Text = "Sửa";
             this.btnEditCategory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditCategory.UseVisualStyleBackColor = false;
-//            this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
+            this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
             // 
             // btnAddCategory
             // 
@@ -193,7 +193,7 @@ namespace BaketyManagement.View
             this.btnAddCategory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
             this.btnAddCategory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
             this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddCategory.ForeColor = System.Drawing.Color.White;
             this.btnAddCategory.Image = global::BaketyManagement.Properties.Resources.Add;
             this.btnAddCategory.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -205,7 +205,7 @@ namespace BaketyManagement.View
             this.btnAddCategory.Text = "Thêm";
             this.btnAddCategory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddCategory.UseVisualStyleBackColor = false;
-   //         this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click_1);
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -228,11 +228,11 @@ namespace BaketyManagement.View
             // 
             // FrmInforTabCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 386);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;

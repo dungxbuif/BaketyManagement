@@ -1,5 +1,4 @@
 ﻿
-using BaketyManagement.DataModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +13,6 @@ namespace BaketyManagement.View
 {
     public partial class FrmInforTabStaff : Form
     {
-        BakeryManagementContext db = new BakeryManagementContext();
         public static Boolean isAdd;
         public static Int32 idStaff;
         public FrmInforTabStaff()
@@ -24,33 +22,9 @@ namespace BaketyManagement.View
             this.MaximumSize = this.Size;
             this.MinimumSize = this.Size;
             this.TopLevelControl.BackColor = this.BackColor;
-            if (isAdd)
-                btnEditStaff.Visible = false;
-            else
-            {
-                btnAddStaff.Visible = false;
-                LoadTextBox();
-            }
+            
         }
-        public void LoadTextBox()
-        {
-            staff stf = (from nv in db.staff
-                         where nv.IdStaff == idStaff
-                         select nv).FirstOrDefault();
-            txtNameStaff.Text = stf.NameStaff;
-            if (stf.Gender == true)
-                rdbMan.Checked = true;
-            if (stf.Gender == false)
-                rdbWoman.Checked = true;
-            txtPhoneStaff.Text = stf.Phone.ToString();
-            txtAddressStaff.Text = stf.Address.ToString();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+              
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
             AddStaff();
