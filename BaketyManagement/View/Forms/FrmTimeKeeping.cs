@@ -34,6 +34,7 @@ namespace BaketyManagement.View.Forms
 
         private void LoadSalary()
         {
+            dgvTimeKeeping.Rows.Clear();
             row = 0;
             var query = from slr in db.Salaries
                         select new
@@ -67,13 +68,18 @@ namespace BaketyManagement.View.Forms
 
         private void btnAddSalary_Click(object sender, EventArgs e)
         {
+            addSalary();
+        }
+
+        private void addSalary()
+        {
             try
             {
                 row = 0;
                 Int32 idStaff = Convert.ToInt32(dgvTimeKeeping.Rows[row].Cells[0].Value);
-                FrmInforSalary frmInforSalary = new FrmInforSalary();
                 FrmInforSalary.idStaff = idStaff;
-                FrmInforSalary.checkSender = 3;
+                FrmInforSalary.checkSender = 2;
+                FrmInforSalary frmInforSalary = new FrmInforSalary();
                 frmInforSalary.ShowDialog();
                 LoadSalary();
             }
@@ -81,6 +87,55 @@ namespace BaketyManagement.View.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnTimeKeeping_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void editSalary()
+        {
+            try
+            {
+                if (row < 0 || row >= dgvTimeKeeping.Rows.Count - 1)
+                {
+                    throw new Exception("Vui lòng chọn nhân viên cần cập nhật!");
+                }
+                Int32 idStaff = Convert.ToInt32(dgvTimeKeeping.Rows[row].Cells[0].Value);
+                FrmInforSalary.idStaff = idStaff;
+                FrmInforSalary.checkSender = 1;
+                FrmInforSalary frmInforSalary = new FrmInforSalary();
+                frmInforSalary.ShowDialog();
+                LoadSalary();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvTimeKeeping_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            row = e.RowIndex;
+        }
+
+        private void btnEditSalary_Click(object sender, EventArgs e)
+        {
+            editSalary();
+        }
+
+        private void btnCancelTimeKeeping_Click(object sender, EventArgs e)
+        {
+            Int32 idStaff = Convert.ToInt32(dgvTimeKeeping.Rows[row].Cells[0].Value);
+            Salary slXoa = (from sl in db.Salaries
+                            where sl.IdStaff == idStaff
+                            select sl).FirstOrDefault();
+            db.Salaries.Remove(slXoa);
+            db.SaveChanges();
+            row--;
+            MessageBox.Show("Xóa chấm công thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadSalary();
         }
     }
 }

@@ -189,6 +189,7 @@ namespace BaketyManagement.View.Forms
             this.btnTimeKeeping.Text = "Chấm Công";
             this.btnTimeKeeping.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTimeKeeping.UseVisualStyleBackColor = false;
+            this.btnTimeKeeping.Click += new System.EventHandler(this.btnTimeKeeping_Click);
             // 
             // btnAddSalary
             // 
@@ -253,6 +254,7 @@ namespace BaketyManagement.View.Forms
             this.btnEditSalary.Text = "Sửa";
             this.btnEditSalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditSalary.UseVisualStyleBackColor = false;
+            this.btnEditSalary.Click += new System.EventHandler(this.btnEditSalary_Click);
             // 
             // btnPrintSalary
             // 
@@ -306,6 +308,7 @@ namespace BaketyManagement.View.Forms
             this.btnCancelTimeKeeping.Text = "Hủy chấm công";
             this.btnCancelTimeKeeping.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelTimeKeeping.UseVisualStyleBackColor = false;
+            this.btnCancelTimeKeeping.Click += new System.EventHandler(this.btnCancelTimeKeeping_Click);
             // 
             // btnFilter
             // 
@@ -409,6 +412,7 @@ namespace BaketyManagement.View.Forms
             this.dgvTimeKeeping.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTimeKeeping.Size = new System.Drawing.Size(1131, 132);
             this.dgvTimeKeeping.TabIndex = 0;
+            this.dgvTimeKeeping.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTimeKeeping_CellClick);
             // 
             // MaNhanVien
             // 
