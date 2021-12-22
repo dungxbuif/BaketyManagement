@@ -11,8 +11,5 @@ namespace BaketyManagement.DataModels
         public int IdRecipe { get; set; }
         public double? Amount { get; set; }
         public double? Price { get; set; }
-
-        public virtual Material IdMaterialNavigation { get; set; }
-        public virtual Recipe IdRecipeNavigation { get; set; }
     }
 }

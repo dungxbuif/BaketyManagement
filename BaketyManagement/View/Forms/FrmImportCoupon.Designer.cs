@@ -41,6 +41,9 @@ namespace BaketyManagement.View.Forms
             this.btnDisplayCouponImport = new System.Windows.Forms.Button();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.pnFunctionImport = new System.Windows.Forms.Panel();
+            this.btnDeleteImportCoupon = new System.Windows.Forms.Button();
+            this.btnEditImportCoupon = new System.Windows.Forms.Button();
+            this.btnAddImportCoupon = new System.Windows.Forms.Button();
             this.groupBox29 = new System.Windows.Forms.GroupBox();
             this.panel37 = new System.Windows.Forms.Panel();
             this.dgvDetailCouponImport = new System.Windows.Forms.DataGridView();
@@ -71,33 +74,33 @@ namespace BaketyManagement.View.Forms
             // 
             this.dtpEndImportDay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpEndImportDay.CustomFormat = "dd/MM/yyyy";
-            this.dtpEndImportDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEndImportDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpEndImportDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndImportDay.Location = new System.Drawing.Point(354, 162);
+            this.dtpEndImportDay.Location = new System.Drawing.Point(335, 145);
             this.dtpEndImportDay.Name = "dtpEndImportDay";
-            this.dtpEndImportDay.Size = new System.Drawing.Size(433, 26);
+            this.dtpEndImportDay.Size = new System.Drawing.Size(433, 30);
             this.dtpEndImportDay.TabIndex = 7;
             // 
             // dtpStartImportDay
             // 
             this.dtpStartImportDay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpStartImportDay.CustomFormat = "dd/MM/yyyy";
-            this.dtpStartImportDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartImportDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpStartImportDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartImportDay.Location = new System.Drawing.Point(354, 118);
+            this.dtpStartImportDay.Location = new System.Drawing.Point(335, 101);
             this.dtpStartImportDay.Name = "dtpStartImportDay";
-            this.dtpStartImportDay.Size = new System.Drawing.Size(433, 26);
+            this.dtpStartImportDay.Size = new System.Drawing.Size(433, 30);
             this.dtpStartImportDay.TabIndex = 7;
             // 
             // label36
             // 
             this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.label36.Location = new System.Drawing.Point(194, 168);
+            this.label36.Location = new System.Drawing.Point(175, 151);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(119, 20);
+            this.label36.Size = new System.Drawing.Size(144, 25);
             this.label36.TabIndex = 6;
             this.label36.Text = "Ngày kết thúc";
             // 
@@ -105,11 +108,11 @@ namespace BaketyManagement.View.Forms
             // 
             this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.label41.Location = new System.Drawing.Point(194, 123);
+            this.label41.Location = new System.Drawing.Point(175, 106);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(115, 20);
+            this.label41.Size = new System.Drawing.Size(140, 25);
             this.label41.TabIndex = 6;
             this.label41.Text = "Ngày bắt đầu";
             // 
@@ -117,11 +120,11 @@ namespace BaketyManagement.View.Forms
             // 
             this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.label42.Location = new System.Drawing.Point(32, 89);
+            this.label42.Location = new System.Drawing.Point(13, 72);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(216, 20);
+            this.label42.Size = new System.Drawing.Size(261, 25);
             this.label42.TabIndex = 6;
             this.label42.Text = "Lọc phiếu nhập theo ngày";
             // 
@@ -129,21 +132,22 @@ namespace BaketyManagement.View.Forms
             // 
             this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.label43.Location = new System.Drawing.Point(32, 49);
+            this.label43.Location = new System.Drawing.Point(13, 32);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(316, 20);
+            this.label43.Size = new System.Drawing.Size(381, 25);
             this.label43.TabIndex = 6;
             this.label43.Text = "Tìm phiếu nhập theo tên nhà cung cấp";
+            this.label43.Click += new System.EventHandler(this.label43_Click);
             // 
             // txtSearchImportCoupon
             // 
             this.txtSearchImportCoupon.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSearchImportCoupon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchImportCoupon.Location = new System.Drawing.Point(354, 46);
+            this.txtSearchImportCoupon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSearchImportCoupon.Location = new System.Drawing.Point(414, 29);
             this.txtSearchImportCoupon.Name = "txtSearchImportCoupon";
-            this.txtSearchImportCoupon.Size = new System.Drawing.Size(433, 26);
+            this.txtSearchImportCoupon.Size = new System.Drawing.Size(354, 30);
             this.txtSearchImportCoupon.TabIndex = 5;
             // 
             // btnFilterCouponImport
@@ -154,18 +158,18 @@ namespace BaketyManagement.View.Forms
             this.btnFilterCouponImport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(63)))), ((int)(((byte)(109)))));
             this.btnFilterCouponImport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(83)))), ((int)(((byte)(137)))));
             this.btnFilterCouponImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterCouponImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilterCouponImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFilterCouponImport.ForeColor = System.Drawing.Color.White;
             this.btnFilterCouponImport.Image = global::BaketyManagement.Properties.Resources.filter;
             this.btnFilterCouponImport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFilterCouponImport.Location = new System.Drawing.Point(818, 115);
+            this.btnFilterCouponImport.Location = new System.Drawing.Point(875, 115);
             this.btnFilterCouponImport.Name = "btnFilterCouponImport";
             this.btnFilterCouponImport.Size = new System.Drawing.Size(150, 70);
             this.btnFilterCouponImport.TabIndex = 4;
             this.btnFilterCouponImport.Text = "Lọc";
             this.btnFilterCouponImport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFilterCouponImport.UseVisualStyleBackColor = false;
-//            this.btnFilterCouponImport.Click += new System.EventHandler(this.btnFilterCouponImport_Click);
+            this.btnFilterCouponImport.Click += new System.EventHandler(this.btnFilterCouponImport_Click);
             // 
             // btnSearchCouponImport
             // 
@@ -175,18 +179,18 @@ namespace BaketyManagement.View.Forms
             this.btnSearchCouponImport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(18)))), ((int)(((byte)(167)))));
             this.btnSearchCouponImport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(36)))), ((int)(((byte)(210)))));
             this.btnSearchCouponImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchCouponImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCouponImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSearchCouponImport.ForeColor = System.Drawing.Color.White;
             this.btnSearchCouponImport.Image = global::BaketyManagement.Properties.Resources.Search;
             this.btnSearchCouponImport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSearchCouponImport.Location = new System.Drawing.Point(818, 16);
+            this.btnSearchCouponImport.Location = new System.Drawing.Point(875, 16);
             this.btnSearchCouponImport.Name = "btnSearchCouponImport";
             this.btnSearchCouponImport.Size = new System.Drawing.Size(150, 70);
             this.btnSearchCouponImport.TabIndex = 4;
             this.btnSearchCouponImport.Text = "Tìm";
             this.btnSearchCouponImport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchCouponImport.UseVisualStyleBackColor = false;
-     //       this.btnSearchCouponImport.Click += new System.EventHandler(this.btnSearchCouponImport_Click);
+            this.btnSearchCouponImport.Click += new System.EventHandler(this.btnSearchCouponImport_Click);
             // 
             // btnDisplayCouponImport
             // 
@@ -196,29 +200,29 @@ namespace BaketyManagement.View.Forms
             this.btnDisplayCouponImport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
             this.btnDisplayCouponImport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
             this.btnDisplayCouponImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDisplayCouponImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisplayCouponImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDisplayCouponImport.ForeColor = System.Drawing.Color.White;
             this.btnDisplayCouponImport.Image = global::BaketyManagement.Properties.Resources.Display;
             this.btnDisplayCouponImport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDisplayCouponImport.Location = new System.Drawing.Point(1008, 16);
+            this.btnDisplayCouponImport.Location = new System.Drawing.Point(1065, 16);
             this.btnDisplayCouponImport.Name = "btnDisplayCouponImport";
             this.btnDisplayCouponImport.Size = new System.Drawing.Size(150, 70);
             this.btnDisplayCouponImport.TabIndex = 1;
             this.btnDisplayCouponImport.Text = "Xem";
             this.btnDisplayCouponImport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDisplayCouponImport.UseVisualStyleBackColor = false;
-       //     this.btnDisplayCouponImport.Click += new System.EventHandler(this.btnDisplayCouponImport_Click);
+            this.btnDisplayCouponImport.Click += new System.EventHandler(this.btnDisplayCouponImport_Click);
             // 
             // groupBox30
             // 
             this.groupBox30.BackColor = System.Drawing.Color.White;
             this.groupBox30.Controls.Add(this.pnFunctionImport);
             this.groupBox30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.groupBox30.Location = new System.Drawing.Point(0, 0);
             this.groupBox30.Name = "groupBox30";
-            this.groupBox30.Size = new System.Drawing.Size(1197, 230);
+            this.groupBox30.Size = new System.Drawing.Size(1426, 230);
             this.groupBox30.TabIndex = 1;
             this.groupBox30.TabStop = false;
             this.groupBox30.Text = "Chức năng";
@@ -226,6 +230,9 @@ namespace BaketyManagement.View.Forms
             // pnFunctionImport
             // 
             this.pnFunctionImport.BackColor = System.Drawing.Color.White;
+            this.pnFunctionImport.Controls.Add(this.btnDeleteImportCoupon);
+            this.pnFunctionImport.Controls.Add(this.btnEditImportCoupon);
+            this.pnFunctionImport.Controls.Add(this.btnAddImportCoupon);
             this.pnFunctionImport.Controls.Add(this.dtpEndImportDay);
             this.pnFunctionImport.Controls.Add(this.dtpStartImportDay);
             this.pnFunctionImport.Controls.Add(this.label36);
@@ -237,21 +244,84 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionImport.Controls.Add(this.btnSearchCouponImport);
             this.pnFunctionImport.Controls.Add(this.btnDisplayCouponImport);
             this.pnFunctionImport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnFunctionImport.Location = new System.Drawing.Point(3, 22);
+            this.pnFunctionImport.Location = new System.Drawing.Point(3, 26);
             this.pnFunctionImport.Name = "pnFunctionImport";
-            this.pnFunctionImport.Size = new System.Drawing.Size(1191, 205);
+            this.pnFunctionImport.Size = new System.Drawing.Size(1420, 201);
             this.pnFunctionImport.TabIndex = 0;
+            // 
+            // btnDeleteImportCoupon
+            // 
+            this.btnDeleteImportCoupon.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDeleteImportCoupon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
+            this.btnDeleteImportCoupon.FlatAppearance.BorderSize = 0;
+            this.btnDeleteImportCoupon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(32)))), ((int)(((byte)(18)))));
+            this.btnDeleteImportCoupon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
+            this.btnDeleteImportCoupon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteImportCoupon.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteImportCoupon.Image = global::BaketyManagement.Properties.Resources.Delete;
+            this.btnDeleteImportCoupon.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDeleteImportCoupon.Location = new System.Drawing.Point(1253, 110);
+            this.btnDeleteImportCoupon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDeleteImportCoupon.Name = "btnDeleteImportCoupon";
+            this.btnDeleteImportCoupon.Size = new System.Drawing.Size(150, 70);
+            this.btnDeleteImportCoupon.TabIndex = 9;
+            this.btnDeleteImportCoupon.Text = "Xóa";
+            this.btnDeleteImportCoupon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDeleteImportCoupon.UseVisualStyleBackColor = false;
+            this.btnDeleteImportCoupon.Click += new System.EventHandler(this.btnDeleteImportCoupon_Click);
+            // 
+            // btnEditImportCoupon
+            // 
+            this.btnEditImportCoupon.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEditImportCoupon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(83)))), ((int)(((byte)(137)))));
+            this.btnEditImportCoupon.FlatAppearance.BorderSize = 0;
+            this.btnEditImportCoupon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(63)))), ((int)(((byte)(109)))));
+            this.btnEditImportCoupon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(83)))), ((int)(((byte)(137)))));
+            this.btnEditImportCoupon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditImportCoupon.ForeColor = System.Drawing.Color.White;
+            this.btnEditImportCoupon.Image = global::BaketyManagement.Properties.Resources.Edit;
+            this.btnEditImportCoupon.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEditImportCoupon.Location = new System.Drawing.Point(1069, 110);
+            this.btnEditImportCoupon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEditImportCoupon.Name = "btnEditImportCoupon";
+            this.btnEditImportCoupon.Size = new System.Drawing.Size(150, 70);
+            this.btnEditImportCoupon.TabIndex = 8;
+            this.btnEditImportCoupon.Text = "Sửa";
+            this.btnEditImportCoupon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditImportCoupon.UseVisualStyleBackColor = false;
+            this.btnEditImportCoupon.Click += new System.EventHandler(this.btnEditImportCoupon_Click);
+            // 
+            // btnAddImportCoupon
+            // 
+            this.btnAddImportCoupon.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddImportCoupon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(140)))), ((int)(((byte)(36)))));
+            this.btnAddImportCoupon.FlatAppearance.BorderSize = 0;
+            this.btnAddImportCoupon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(107)))), ((int)(((byte)(18)))));
+            this.btnAddImportCoupon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(140)))), ((int)(((byte)(36)))));
+            this.btnAddImportCoupon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddImportCoupon.ForeColor = System.Drawing.Color.White;
+            this.btnAddImportCoupon.Image = global::BaketyManagement.Properties.Resources.Add;
+            this.btnAddImportCoupon.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddImportCoupon.Location = new System.Drawing.Point(1253, 16);
+            this.btnAddImportCoupon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddImportCoupon.Name = "btnAddImportCoupon";
+            this.btnAddImportCoupon.Size = new System.Drawing.Size(150, 70);
+            this.btnAddImportCoupon.TabIndex = 4;
+            this.btnAddImportCoupon.Text = "Thêm";
+            this.btnAddImportCoupon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAddImportCoupon.UseVisualStyleBackColor = false;
+            this.btnAddImportCoupon.Click += new System.EventHandler(this.btnAddImportCoupon_Click);
             // 
             // groupBox29
             // 
             this.groupBox29.BackColor = System.Drawing.Color.White;
             this.groupBox29.Controls.Add(this.panel37);
             this.groupBox29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox29.Location = new System.Drawing.Point(0, 0);
             this.groupBox29.Name = "groupBox29";
             this.groupBox29.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox29.Size = new System.Drawing.Size(569, 382);
+            this.groupBox29.Size = new System.Drawing.Size(683, 376);
             this.groupBox29.TabIndex = 1;
             this.groupBox29.TabStop = false;
             this.groupBox29.Text = "Chi tiết phiếu nhập";
@@ -261,10 +331,10 @@ namespace BaketyManagement.View.Forms
             this.panel37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.panel37.Controls.Add(this.dgvDetailCouponImport);
             this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel37.Location = new System.Drawing.Point(0, 19);
+            this.panel37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel37.Location = new System.Drawing.Point(0, 23);
             this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(569, 363);
+            this.panel37.Size = new System.Drawing.Size(683, 353);
             this.panel37.TabIndex = 0;
             // 
             // dgvDetailCouponImport
@@ -279,7 +349,7 @@ namespace BaketyManagement.View.Forms
             this.dgvDetailCouponImport.ReadOnly = true;
             this.dgvDetailCouponImport.RowHeadersWidth = 51;
             this.dgvDetailCouponImport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetailCouponImport.Size = new System.Drawing.Size(569, 363);
+            this.dgvDetailCouponImport.Size = new System.Drawing.Size(683, 353);
             this.dgvDetailCouponImport.TabIndex = 0;
             // 
             // tlpCoupon
@@ -297,18 +367,18 @@ namespace BaketyManagement.View.Forms
             this.tlpCoupon.RowCount = 2;
             this.tlpCoupon.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpCoupon.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.tlpCoupon.Size = new System.Drawing.Size(1237, 712);
+            this.tlpCoupon.Size = new System.Drawing.Size(1466, 706);
             this.tlpCoupon.TabIndex = 2;
-   //         this.tlpCoupon.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpCoupon_Paint);
+            this.tlpCoupon.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpCoupon_Paint);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.groupBox30);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(20, 462);
+            this.panel3.Location = new System.Drawing.Point(20, 456);
             this.panel3.Margin = new System.Windows.Forms.Padding(10);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1197, 230);
+            this.panel3.Size = new System.Drawing.Size(1426, 230);
             this.panel3.TabIndex = 1;
             // 
             // tableLayoutPanel13
@@ -328,7 +398,7 @@ namespace BaketyManagement.View.Forms
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 551F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 551F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(1197, 422);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(1426, 416);
             this.tableLayoutPanel13.TabIndex = 0;
             // 
             // panel1
@@ -338,7 +408,7 @@ namespace BaketyManagement.View.Forms
             this.panel1.Location = new System.Drawing.Point(20, 20);
             this.panel1.Margin = new System.Windows.Forms.Padding(10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(568, 382);
+            this.panel1.Size = new System.Drawing.Size(683, 376);
             this.panel1.TabIndex = 2;
             // 
             // groupBox28
@@ -346,11 +416,11 @@ namespace BaketyManagement.View.Forms
             this.groupBox28.BackColor = System.Drawing.Color.White;
             this.groupBox28.Controls.Add(this.panel35);
             this.groupBox28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox28.Location = new System.Drawing.Point(0, 0);
             this.groupBox28.Name = "groupBox28";
             this.groupBox28.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox28.Size = new System.Drawing.Size(568, 382);
+            this.groupBox28.Size = new System.Drawing.Size(683, 376);
             this.groupBox28.TabIndex = 0;
             this.groupBox28.TabStop = false;
             this.groupBox28.Text = "Danh sách phiếu nhập";
@@ -360,10 +430,10 @@ namespace BaketyManagement.View.Forms
             this.panel35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.panel35.Controls.Add(this.dgvCouponImport);
             this.panel35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel35.Location = new System.Drawing.Point(0, 19);
+            this.panel35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel35.Location = new System.Drawing.Point(0, 23);
             this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(568, 363);
+            this.panel35.Size = new System.Drawing.Size(683, 353);
             this.panel35.TabIndex = 0;
             // 
             // dgvCouponImport
@@ -378,31 +448,31 @@ namespace BaketyManagement.View.Forms
             this.dgvCouponImport.ReadOnly = true;
             this.dgvCouponImport.RowHeadersWidth = 51;
             this.dgvCouponImport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCouponImport.Size = new System.Drawing.Size(568, 363);
+            this.dgvCouponImport.Size = new System.Drawing.Size(683, 353);
             this.dgvCouponImport.TabIndex = 0;
-  //          this.dgvCouponImport.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCouponImport_CellClick);
+            this.dgvCouponImport.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCouponImport_CellClick);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.groupBox29);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(608, 20);
+            this.panel2.Location = new System.Drawing.Point(723, 20);
             this.panel2.Margin = new System.Windows.Forms.Padding(10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(569, 382);
+            this.panel2.Size = new System.Drawing.Size(683, 376);
             this.panel2.TabIndex = 3;
             // 
             // FrmImportCoupon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1237, 712);
+            this.ClientSize = new System.Drawing.Size(1466, 706);
             this.Controls.Add(this.tlpCoupon);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmImportCoupon";
             this.Text = "FrmImportCoupon";
-//            this.Load += new System.EventHandler(this.FrmImportCoupon_Load);
+            this.Load += new System.EventHandler(this.FrmImportCoupon_Load);
             this.groupBox30.ResumeLayout(false);
             this.pnFunctionImport.ResumeLayout(false);
             this.pnFunctionImport.PerformLayout();
@@ -446,5 +516,10 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdAt;
+        private System.Windows.Forms.Button btnAddImportCoupon;
+        private System.Windows.Forms.Button btnDeleteImportCoupon;
+        private System.Windows.Forms.Button btnEditImportCoupon;
     }
 }

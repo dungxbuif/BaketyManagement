@@ -44,6 +44,9 @@ namespace BaketyManagement.View.Forms
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
+            this.nameStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeAcc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpAccount.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -70,7 +73,6 @@ namespace BaketyManagement.View.Forms
             this.tlpAccount.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tlpAccount.Size = new System.Drawing.Size(1050, 556);
             this.tlpAccount.TabIndex = 1;
-//            this.tlpAccount.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpAccount_Paint);
             // 
             // panel3
             // 
@@ -88,7 +90,7 @@ namespace BaketyManagement.View.Forms
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.pnFunctionAccount);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -145,7 +147,7 @@ namespace BaketyManagement.View.Forms
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.UseVisualStyleBackColor = false;
-//            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSearch
             // 
@@ -166,7 +168,7 @@ namespace BaketyManagement.View.Forms
             this.btnSearch.Text = "Tìm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearch.UseVisualStyleBackColor = false;
- //           this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnDisplay
             // 
@@ -187,12 +189,12 @@ namespace BaketyManagement.View.Forms
             this.btnDisplay.Text = "Xem";
             this.btnDisplay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDisplay.UseVisualStyleBackColor = false;
-  //          this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
+            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
             // txtAccountSearch
             // 
             this.txtAccountSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtAccountSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccountSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAccountSearch.ForeColor = System.Drawing.Color.Black;
             this.txtAccountSearch.Location = new System.Drawing.Point(191, 69);
             this.txtAccountSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -219,7 +221,7 @@ namespace BaketyManagement.View.Forms
             this.button1.Text = "Reset Mật Khẩu";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
- //           this.button1.Click += new System.EventHandler(this.btnReset_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnDelete
             // 
@@ -240,7 +242,7 @@ namespace BaketyManagement.View.Forms
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelete.UseVisualStyleBackColor = false;
-//            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // panel2
             // 
@@ -257,7 +259,7 @@ namespace BaketyManagement.View.Forms
             this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.panel4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
@@ -271,7 +273,7 @@ namespace BaketyManagement.View.Forms
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.dgvAccount);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel4.ForeColor = System.Drawing.Color.Black;
             this.panel4.Location = new System.Drawing.Point(3, 22);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
@@ -284,6 +286,10 @@ namespace BaketyManagement.View.Forms
             this.dgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAccount.BackgroundColor = System.Drawing.Color.White;
             this.dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameStaff,
+            this.account,
+            this.typeAcc});
             this.dgvAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAccount.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.dgvAccount.Location = new System.Drawing.Point(0, 0);
@@ -294,7 +300,25 @@ namespace BaketyManagement.View.Forms
             this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAccount.Size = new System.Drawing.Size(984, 171);
             this.dgvAccount.TabIndex = 0;
- //           this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick);
+            this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick);
+            // 
+            // nameStaff
+            // 
+            this.nameStaff.HeaderText = "Tên Nhân Viên";
+            this.nameStaff.Name = "nameStaff";
+            this.nameStaff.ReadOnly = true;
+            // 
+            // account
+            // 
+            this.account.HeaderText = "Tài khoản";
+            this.account.Name = "account";
+            this.account.ReadOnly = true;
+            // 
+            // typeAcc
+            // 
+            this.typeAcc.HeaderText = "Loại tài khoản";
+            this.typeAcc.Name = "typeAcc";
+            this.typeAcc.ReadOnly = true;
             // 
             // FrmAccount
             // 
@@ -302,11 +326,11 @@ namespace BaketyManagement.View.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 556);
             this.Controls.Add(this.tlpAccount);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAccount";
             this.Text = "FrmAccount";
-   //         this.Load += new System.EventHandler(this.FrmAccount_Load);
+            this.Load += new System.EventHandler(this.FrmAccount_Load);
             this.tlpAccount.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -337,5 +361,8 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameStaff;
+        private System.Windows.Forms.DataGridViewTextBoxColumn account;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeAcc;
     }
 }

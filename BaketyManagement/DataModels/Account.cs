@@ -11,7 +11,5 @@ namespace BaketyManagement.DataModels
         public int? IdStaff { get; set; }
         public string Pass { get; set; }
         public bool? TypeAccount { get; set; }
-
-        public virtual staff IdStaffNavigation { get; set; }
     }
 }

@@ -9,7 +9,6 @@ namespace BaketyManagement.DataModels
     {
         public staff()
         {
-            Accounts = new HashSet<Account>();
             Bills = new HashSet<Bill>();
             Salaries = new HashSet<Salary>();
         }
@@ -20,7 +19,6 @@ namespace BaketyManagement.DataModels
         public string Phone { get; set; }
         public string Address { get; set; }
 
-        public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<Bill> Bills { get; set; }
         public virtual ICollection<Salary> Salaries { get; set; }
     }

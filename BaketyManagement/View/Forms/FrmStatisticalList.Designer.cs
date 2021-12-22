@@ -85,7 +85,6 @@ namespace BaketyManagement.View.Forms
             this.pnListStatical.Padding = new System.Windows.Forms.Padding(10);
             this.pnListStatical.Size = new System.Drawing.Size(1034, 383);
             this.pnListStatical.TabIndex = 1;
-//            this.pnListStatical.Paint += new System.Windows.Forms.PaintEventHandler(this.pnListStatical_Paint);
             // 
             // panel3
             // 
@@ -157,7 +156,6 @@ namespace BaketyManagement.View.Forms
             this.pnTypeStatical.Padding = new System.Windows.Forms.Padding(10);
             this.pnTypeStatical.Size = new System.Drawing.Size(1028, 224);
             this.pnTypeStatical.TabIndex = 1;
-       //     this.pnTypeStatical.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTypeStatical_Paint);
             // 
             // panel1
             // 
@@ -206,7 +204,7 @@ namespace BaketyManagement.View.Forms
             this.radSlowestSellerList.TabIndex = 0;
             this.radSlowestSellerList.Text = "10 loại bánh bán chậm nhất trong 30 ngày gần đây";
             this.radSlowestSellerList.UseVisualStyleBackColor = true;
-      //      this.radSlowestSellerList.Click += new System.EventHandler(this.radSlowestSellerList_Click);
+            this.radSlowestSellerList.Click += new System.EventHandler(this.radSlowestSellerList_Click);
             // 
             // radBestSellerList
             // 
@@ -219,7 +217,7 @@ namespace BaketyManagement.View.Forms
             this.radBestSellerList.TabIndex = 0;
             this.radBestSellerList.Text = "10 loại bánh bán chạy nhất trong 30 ngày gần đây";
             this.radBestSellerList.UseVisualStyleBackColor = true;
-      //      this.radBestSellerList.Click += new System.EventHandler(this.radBestSellerList_Click);
+            this.radBestSellerList.Click += new System.EventHandler(this.radBestSellerList_Click);
             // 
             // radRevenue3MonthsList
             // 
@@ -232,7 +230,7 @@ namespace BaketyManagement.View.Forms
             this.radRevenue3MonthsList.TabIndex = 0;
             this.radRevenue3MonthsList.Text = "Doanh thu 3 tháng gần đây";
             this.radRevenue3MonthsList.UseVisualStyleBackColor = true;
-     //       this.radRevenue3MonthsList.Click += new System.EventHandler(this.radRevenue3MonthsList_Click);
+            this.radRevenue3MonthsList.Click += new System.EventHandler(this.radRevenue3MonthsList_Click);
             // 
             // radRevenue7DaysList
             // 
@@ -247,8 +245,7 @@ namespace BaketyManagement.View.Forms
             this.radRevenue7DaysList.TabStop = true;
             this.radRevenue7DaysList.Text = "Doanh thu 7 ngày gần đây";
             this.radRevenue7DaysList.UseVisualStyleBackColor = true;
-      //      this.radRevenue7DaysList.CheckedChanged += new System.EventHandler(this.radRevenue7DaysList_CheckedChanged);
-     //       this.radRevenue7DaysList.Click += new System.EventHandler(this.radRevenue7DaysList_Click);
+            this.radRevenue7DaysList.Click += new System.EventHandler(this.radRevenue7DaysList_Click);
             // 
             // FrmStatisticalList
             // 
@@ -260,7 +257,7 @@ namespace BaketyManagement.View.Forms
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmStatisticalList";
             this.Text = "FrmStatisticalList";
-     //       this.Load += new System.EventHandler(this.FrmStatisticalList_Load);
+            this.Load += new System.EventHandler(this.FrmStatisticalList_Load);
             this.tableLayoutPanel10.ResumeLayout(false);
             this.pnListStatical.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

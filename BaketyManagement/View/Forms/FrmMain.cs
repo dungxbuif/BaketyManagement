@@ -266,17 +266,9 @@ namespace BaketyManagement
             FrmStatisticalList frmStatisticalList = new FrmStatisticalList();
             OpenChildForm(frmStatisticalList, sender);
         }
-
-        private void btnStatisticalChart_Click(object sender, EventArgs e)
-        {
-            FrmStatisticalChart frmStatisticalChart = new FrmStatisticalChart();
-            OpenChildForm(frmStatisticalChart, sender);
-        }
-
         private void btnAccountInfor_Click(object sender, EventArgs e)
         {
             FrmAccountInfor frmAccount = new FrmAccountInfor();
-            FrmAccountInfor.userName = userName;
             OpenChildForm(frmAccount, sender);
         }
 
