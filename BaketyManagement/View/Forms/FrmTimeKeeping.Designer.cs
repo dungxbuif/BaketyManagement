@@ -33,8 +33,6 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionTimeKeeping = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pnFunctionSalary = new System.Windows.Forms.Panel();
-            this.dtpFilter = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.btnTimeKeeping = new System.Windows.Forms.Button();
             this.btnAddSalary = new System.Windows.Forms.Button();
@@ -114,8 +112,6 @@ namespace BaketyManagement.View.Forms
             // pnFunctionSalary
             // 
             this.pnFunctionSalary.BackColor = System.Drawing.Color.White;
-            this.pnFunctionSalary.Controls.Add(this.dtpFilter);
-            this.pnFunctionSalary.Controls.Add(this.label1);
             this.pnFunctionSalary.Controls.Add(this.label21);
             this.pnFunctionSalary.Controls.Add(this.btnTimeKeeping);
             this.pnFunctionSalary.Controls.Add(this.btnAddSalary);
@@ -132,37 +128,13 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionSalary.Size = new System.Drawing.Size(1131, 355);
             this.pnFunctionSalary.TabIndex = 0;
             // 
-            // dtpFilter
-            // 
-            this.dtpFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpFilter.CustomFormat = "MM/yyyy";
-            this.dtpFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFilter.Location = new System.Drawing.Point(306, 161);
-            this.dtpFilter.Name = "dtpFilter";
-            this.dtpFilter.Size = new System.Drawing.Size(600, 26);
-            this.dtpFilter.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.label1.Location = new System.Drawing.Point(37, 166);
-            this.label1.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Lọc theo tháng";
-            // 
             // label21
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.label21.Location = new System.Drawing.Point(37, 61);
+            this.label21.Location = new System.Drawing.Point(21, 61);
             this.label21.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(233, 20);
@@ -282,7 +254,7 @@ namespace BaketyManagement.View.Forms
             this.txtTimeKeepingSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTimeKeepingSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTimeKeepingSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtTimeKeepingSearch.Location = new System.Drawing.Point(306, 58);
+            this.txtTimeKeepingSearch.Location = new System.Drawing.Point(272, 58);
             this.txtTimeKeepingSearch.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.txtTimeKeepingSearch.Name = "txtTimeKeepingSearch";
             this.txtTimeKeepingSearch.Size = new System.Drawing.Size(600, 26);
@@ -322,14 +294,15 @@ namespace BaketyManagement.View.Forms
             this.btnFilter.ForeColor = System.Drawing.Color.White;
             this.btnFilter.Image = global::BaketyManagement.Properties.Resources.filter;
             this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFilter.Location = new System.Drawing.Point(943, 134);
+            this.btnFilter.Location = new System.Drawing.Point(455, 129);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(150, 70);
+            this.btnFilter.Size = new System.Drawing.Size(221, 70);
             this.btnFilter.TabIndex = 7;
-            this.btnFilter.Text = "Lọc";
+            this.btnFilter.Text = "Tính Tổng Lương";
             this.btnFilter.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnTimeKeepingSearch
             // 
@@ -343,7 +316,7 @@ namespace BaketyManagement.View.Forms
             this.btnTimeKeepingSearch.ForeColor = System.Drawing.Color.White;
             this.btnTimeKeepingSearch.Image = global::BaketyManagement.Properties.Resources.Search;
             this.btnTimeKeepingSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTimeKeepingSearch.Location = new System.Drawing.Point(943, 37);
+            this.btnTimeKeepingSearch.Location = new System.Drawing.Point(941, 35);
             this.btnTimeKeepingSearch.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.btnTimeKeepingSearch.Name = "btnTimeKeepingSearch";
             this.btnTimeKeepingSearch.Size = new System.Drawing.Size(150, 70);
@@ -509,8 +482,6 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.Button btnPrintSalary;
         private System.Windows.Forms.TextBox txtTimeKeepingSearch;
         private System.Windows.Forms.Button btnTimeKeepingSearch;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpFilter;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Button btnCancelTimeKeeping;
         private System.Windows.Forms.Button btnAddSalary;
