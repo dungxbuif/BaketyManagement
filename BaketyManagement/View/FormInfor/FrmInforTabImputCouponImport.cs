@@ -55,6 +55,7 @@ namespace BaketyManagement.View
                     var import = new Import();
                     var material = db.Materials.Where(m => m.NameMaterial == cbbMaterial.Text).FirstOrDefault();
                     var materialStore = db.MaterialStores.Where(m => m.IdMaterial == material.IdMaterial).FirstOrDefault();
+
                     var query = db.Imports.Select(c => c);
                     var count = query.Count() + 1;
                     import.IdImport = count;
@@ -62,7 +63,19 @@ namespace BaketyManagement.View
                     import.Amount = Convert.ToDouble(txtAmountImport.Text);
                     import.CreatedAt = dtpDayImport.Value;
                     import.IdMaterial = material.IdMaterial;
-                    materialStore.Amount += import.Amount;
+                    if (materialStore == null)
+                    {
+                        materialStore = new MaterialStore();
+                        materialStore.IdMaterialStore = db.Materials.Select(c => c).ToList().Count() + 1;
+                        materialStore.IdMaterial = material.IdMaterial;
+                        materialStore.Amount = import.Amount;
+                        
+                    } else
+                    {
+                        materialStore.Amount += import.Amount;
+                    }
+
+                        
 
                     db.Imports.Add(import);
 

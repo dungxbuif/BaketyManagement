@@ -35,7 +35,6 @@ namespace BaketyManagement.View.Forms
             this.btnDeleteImportCoupon = new System.Windows.Forms.Button();
             this.btnEditImportCoupon = new System.Windows.Forms.Button();
             this.btnAddImportCoupon = new System.Windows.Forms.Button();
-            this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.txtSearchImportCoupon = new System.Windows.Forms.TextBox();
             this.btnSearchCouponImport = new System.Windows.Forms.Button();
@@ -95,7 +94,6 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionImport.Controls.Add(this.btnDeleteImportCoupon);
             this.pnFunctionImport.Controls.Add(this.btnEditImportCoupon);
             this.pnFunctionImport.Controls.Add(this.btnAddImportCoupon);
-            this.pnFunctionImport.Controls.Add(this.label42);
             this.pnFunctionImport.Controls.Add(this.label43);
             this.pnFunctionImport.Controls.Add(this.txtSearchImportCoupon);
             this.pnFunctionImport.Controls.Add(this.btnSearchCouponImport);
@@ -169,18 +167,6 @@ namespace BaketyManagement.View.Forms
             this.btnAddImportCoupon.UseVisualStyleBackColor = false;
             this.btnAddImportCoupon.Click += new System.EventHandler(this.btnAddImportCoupon_Click);
             // 
-            // label42
-            // 
-            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.label42.Location = new System.Drawing.Point(-286, 74);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(261, 25);
-            this.label42.TabIndex = 6;
-            this.label42.Text = "Lọc phiếu nhập theo ngày";
-            // 
             // label43
             // 
             this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -189,9 +175,9 @@ namespace BaketyManagement.View.Forms
             this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.label43.Location = new System.Drawing.Point(-286, 34);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(381, 25);
+            this.label43.Size = new System.Drawing.Size(385, 25);
             this.label43.TabIndex = 6;
-            this.label43.Text = "Tìm phiếu nhập theo tên nhà cung cấp";
+            this.label43.Text = "Tìm nguyên liệu theo tên nhà cung cấp";
             // 
             // txtSearchImportCoupon
             // 
@@ -442,7 +428,6 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.Button btnDeleteImportCoupon;
         private System.Windows.Forms.Button btnEditImportCoupon;
         private System.Windows.Forms.Button btnAddImportCoupon;
-        private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox txtSearchImportCoupon;
         private System.Windows.Forms.Button btnSearchCouponImport;
         private System.Windows.Forms.Button btnDisplayCouponImport;
