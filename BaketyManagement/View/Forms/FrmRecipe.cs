@@ -14,7 +14,7 @@ namespace BaketyManagement.View.Forms
 {
     public partial class FrmRecipe : Form
     {
-        Int32 row,rowDetail;
+        private Int32 row,rowDetail;
         BakeryManagementContext db = new BakeryManagementContext();
         public FrmRecipe()
         {
@@ -62,9 +62,18 @@ namespace BaketyManagement.View.Forms
 
         private void dgvRecipe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            row = e.RowIndex;
-            int idRecipe = int.Parse(dgvRecipe.Rows[row].Cells[0].Value.ToString());
-            LoadTabDetails(idRecipe);
+            
+            try
+            {
+                row = e.RowIndex;
+                int idRecipe = int.Parse(dgvRecipe.Rows[row].Cells[0].Value.ToString());
+                LoadTabDetails(idRecipe);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void btnRecipeDisplay_Click(object sender, EventArgs e)
@@ -75,20 +84,22 @@ namespace BaketyManagement.View.Forms
         private void LoadTabDetails(int idRecipe)
         {
             rowDetail = 0;
-            var q = from c in db.RecipeDetails where (c.IdRecipe == idRecipe)
-                        select new
-                        {
-                            c.IdMaterial,
-                            c.Amount     
-                        };
+            var q = from c in db.RecipeDetails
+                    where (c.IdRecipe == idRecipe)
+                    select new
+                    {
+                        c.IdMaterial,
+                        c.Amount
+                    };
             dgvDetail.Rows.Clear();
             foreach (var c in q)
             {
                 dgvDetail.Rows.Add();
                 dgvDetail.Rows[rowDetail].Cells[0].Value = c.IdMaterial.ToString();
-                dgvDetail.Rows[rowDetail].Cells[1].Value = c.Amount.ToString();          
+                dgvDetail.Rows[rowDetail].Cells[1].Value = c.Amount.ToString();
                 rowDetail++;
             }
+
             for (int i = 0; i < rowDetail; i++)
             {
                 int id = int.Parse(dgvRecipe.Rows[i].Cells[0].Value.ToString());

@@ -34,6 +34,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnAccountInfor = new System.Windows.Forms.Button();
             this.pnSubmenuAdmin = new System.Windows.Forms.Panel();
+            this.btnRecipe = new System.Windows.Forms.Button();
             this.pnStatistical = new System.Windows.Forms.Panel();
             this.btnPrintInventory = new System.Windows.Forms.Button();
             this.btnSatisticalList = new System.Windows.Forms.Button();
@@ -74,7 +75,7 @@
             this.pnMenuLarge.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnMenuLarge.Location = new System.Drawing.Point(0, 0);
             this.pnMenuLarge.Name = "pnMenuLarge";
-            this.pnMenuLarge.Size = new System.Drawing.Size(334, 862);
+            this.pnMenuLarge.Size = new System.Drawing.Size(334, 734);
             this.pnMenuLarge.TabIndex = 0;
             // 
             // pnMenu
@@ -92,7 +93,7 @@
             this.pnMenu.Location = new System.Drawing.Point(0, 0);
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Padding = new System.Windows.Forms.Padding(20);
-            this.pnMenu.Size = new System.Drawing.Size(334, 862);
+            this.pnMenu.Size = new System.Drawing.Size(334, 734);
             this.pnMenu.TabIndex = 2;
             this.pnMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMenu_Paint);
             // 
@@ -107,7 +108,7 @@
             this.btnLogout.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnLogout.Image = global::BaketyManagement.Properties.Resources.logout;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(20, 954);
+            this.btnLogout.Location = new System.Drawing.Point(20, 1021);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -129,7 +130,7 @@
             this.btnAccountInfor.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAccountInfor.Image = global::BaketyManagement.Properties.Resources.accountInfo;
             this.btnAccountInfor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccountInfor.Location = new System.Drawing.Point(20, 909);
+            this.btnAccountInfor.Location = new System.Drawing.Point(20, 976);
             this.btnAccountInfor.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
             this.btnAccountInfor.Name = "btnAccountInfor";
             this.btnAccountInfor.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -144,6 +145,7 @@
             // pnSubmenuAdmin
             // 
             this.pnSubmenuAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(47)))));
+            this.pnSubmenuAdmin.Controls.Add(this.btnRecipe);
             this.pnSubmenuAdmin.Controls.Add(this.pnStatistical);
             this.pnSubmenuAdmin.Controls.Add(this.btnStatistical);
             this.pnSubmenuAdmin.Controls.Add(this.btnTimeKeeping);
@@ -159,8 +161,28 @@
             this.pnSubmenuAdmin.Location = new System.Drawing.Point(20, 315);
             this.pnSubmenuAdmin.Name = "pnSubmenuAdmin";
             this.pnSubmenuAdmin.Padding = new System.Windows.Forms.Padding(10);
-            this.pnSubmenuAdmin.Size = new System.Drawing.Size(273, 594);
+            this.pnSubmenuAdmin.Size = new System.Drawing.Size(273, 661);
             this.pnSubmenuAdmin.TabIndex = 3;
+            // 
+            // btnRecipe
+            // 
+            this.btnRecipe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRecipe.FlatAppearance.BorderSize = 0;
+            this.btnRecipe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRecipe.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnRecipe.Image = global::BaketyManagement.Properties.Resources.Edit;
+            this.btnRecipe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRecipe.Location = new System.Drawing.Point(10, 587);
+            this.btnRecipe.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
+            this.btnRecipe.Name = "btnRecipe";
+            this.btnRecipe.Size = new System.Drawing.Size(253, 51);
+            this.btnRecipe.TabIndex = 17;
+            this.btnRecipe.TabStop = false;
+            this.btnRecipe.Text = "Làm Bánh";
+            this.btnRecipe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRecipe.UseVisualStyleBackColor = false;
+            this.btnRecipe.Click += new System.EventHandler(this.btnRecipe_Click_1);
             // 
             // pnStatistical
             // 
@@ -627,7 +649,7 @@
             this.pnDesktop.Location = new System.Drawing.Point(334, 90);
             this.pnDesktop.Name = "pnDesktop";
             this.pnDesktop.Padding = new System.Windows.Forms.Padding(10);
-            this.pnDesktop.Size = new System.Drawing.Size(1004, 772);
+            this.pnDesktop.Size = new System.Drawing.Size(1004, 644);
             this.pnDesktop.TabIndex = 5;
             // 
             // FrmMain
@@ -635,7 +657,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnLogout;
-            this.ClientSize = new System.Drawing.Size(1338, 862);
+            this.ClientSize = new System.Drawing.Size(1338, 734);
             this.Controls.Add(this.pnDesktop);
             this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.pnMenuLarge);
@@ -690,5 +712,6 @@
         private System.Windows.Forms.Button btnPrintInventory;
         private System.Windows.Forms.Button btnSatisticalList;
         private System.Windows.Forms.Button btnMaximize1;
+        private System.Windows.Forms.Button btnRecipe;
     }
 }

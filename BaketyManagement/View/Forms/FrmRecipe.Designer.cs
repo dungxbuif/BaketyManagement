@@ -225,7 +225,6 @@ namespace BaketyManagement.View.Forms
             // 
             // btnRecipeDisplay
             // 
-            this.btnRecipeDisplay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRecipeDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
             this.btnRecipeDisplay.FlatAppearance.BorderSize = 0;
             this.btnRecipeDisplay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
@@ -234,7 +233,7 @@ namespace BaketyManagement.View.Forms
             this.btnRecipeDisplay.ForeColor = System.Drawing.Color.White;
             this.btnRecipeDisplay.Image = global::BaketyManagement.Properties.Resources.Display;
             this.btnRecipeDisplay.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRecipeDisplay.Location = new System.Drawing.Point(33, 143);
+            this.btnRecipeDisplay.Location = new System.Drawing.Point(36, 143);
             this.btnRecipeDisplay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRecipeDisplay.Name = "btnRecipeDisplay";
             this.btnRecipeDisplay.Size = new System.Drawing.Size(150, 70);
