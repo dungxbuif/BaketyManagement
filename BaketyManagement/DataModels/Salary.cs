@@ -11,7 +11,6 @@ namespace BaketyManagement.DataModels
         public int? IdStaff { get; set; }
         public double? SalaryDate { get; set; }
         public DateTime? TimeKeeped { get; set; }
-        public DateTime? LastTimeKeeped { get; set; }
         public DateTime? SalaryTime { get; set; }
         public double? WorkDay { get; set; }
         public double? HoursOverTime { get; set; }

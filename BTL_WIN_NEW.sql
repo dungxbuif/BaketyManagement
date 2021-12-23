@@ -4,14 +4,14 @@ USE BakeryManagement
 
 GO
 CREATE TABLE [Bill] (
-  [idBill] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  [idBill] int PRIMARY KEY,
   [idStaff] int,
   [exportDate] datetime NOT NULL,
   [discount] float
 )
 GO
 CREATE TABLE [Staff] (
-  [idStaff] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  [idStaff] int PRIMARY KEY,
   [nameStaff] varchar(255),
   [gender] bit,
   [phone] varchar(255),
@@ -19,20 +19,19 @@ CREATE TABLE [Staff] (
 )
 GO
 INSERT INTO Staff
-VALUES ('NGUYEN NGOC DUNG', 1, '0828531788', 'Nguyen Xa - Minh Khai -Bac Tu Liem - Ha Noi')
+VALUES (1,'NGUYEN NGOC DUNG', 1, '0828531788', 'Nguyen Xa - Minh Khai -Bac Tu Liem - Ha Noi')
 INSERT INTO Staff
-VALUES ('NGUYEN TIEN HUY', 1, '0828533245', 'Nguyen Xa - Minh Khai -Bac Tu Liem - Ha Noi')
+VALUES (2,'NGUYEN TIEN HUY', 1, '0828533245', 'Nguyen Xa - Minh Khai -Bac Tu Liem - Ha Noi')
 INSERT INTO Staff
-VALUES ('NGUYEN VAN HOANG', 1, '0828533256', 'Kieu Mai - Minh Khai -Bac Tu Liem - Ha Noi')
+VALUES (3,'NGUYEN VAN HOANG', 1, '0828533256', 'Kieu Mai - Minh Khai -Bac Tu Liem - Ha Noi')
 INSERT INTO Staff
-VALUES ('BUI HUU DUNG', 1, '09974294839', 'Phu Dien - Minh Khai -Bac Tu Liem - Ha Noi')
+VALUES (4,'BUI HUU DUNG', 1, '09974294839', 'Phu Dien - Minh Khai -Bac Tu Liem - Ha Noi')
 
 CREATE TABLE [Salary] (
-  [idSalary] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  [idSalary] int PRIMARY KEY,
   [idStaff] int,
   [salaryDate] float,
   [timeKeeped] date,
-  [lastTimeKeeped] date,
   [salaryTime] date,
   [workDay] float,
   [hoursOverTime] float,
@@ -40,6 +39,9 @@ CREATE TABLE [Salary] (
   [salaryOverTime] float
 )
 GO
+INSERT INTO Salary VALUES (1, 1, 100000, '2020-12-22', '2020-12-01', 20, 3, 0, 30000)
+INSERT INTO Salary VALUES (2, 2, 100000, '2020-12-22', '2020-12-01', 21, 0, 0, 30000)
+INSERT INTO Salary VALUES (3, 3, 100000, '2020-12-22', '2020-12-01', 22, 5, 0, 30000)
 
 CREATE TABLE [BilDetail] (
   [idBill] int,
@@ -56,41 +58,44 @@ CREATE TABLE [Account] (
   [typeAccount] bit
 )
 
-INSERT INTO Account VALUES('DungNN','1', '123', 1)
-INSERT INTO Account VALUES('HuyNT','2', '123', 1)
-INSERT INTO Account VALUES('HoangNV','3', '123', 1)
-INSERT INTO Account VALUES('DungBH','4', '123456', 0)
+INSERT INTO Account VALUES('DungNN','1', '1', 1)
+INSERT INTO Account VALUES('HuyNT','2', '1', 1)
+INSERT INTO Account VALUES('HoangNV','3', '1', 1)
+INSERT INTO Account VALUES('Admin','4', '1', 0)
 GO
 CREATE TABLE [Category] (
-  [idCategory] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  [idCategory] int PRIMARY KEY,
   [nameCategory] varchar(255)
 )
 GO
 CREATE TABLE [Supplier] (
-  [idSupplier] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  [idSupplier] int PRIMARY KEY,
   [nameSupplier] varchar(255),
   [phone] varchar(255),
   [address] varchar(255)
 )
 GO
-
+INSERT INTO Supplier VALUES(1,'Huu Nghi','0123456789','Thanh Xuan - Ha Noi')
+INSERT INTO Supplier VALUES(2,'Kinh Do','0123456789','Cau Giay - Ha Noi')
+INSERT INTO Supplier VALUES(3,'D2H','0123456789','Hai Ba Trung - Ha Noi')
+INSERT INTO Supplier VALUES(4,'H2D','0123456789','Dong Da - Ha Noi')
+Go
 CREATE TABLE [Material] (
-  [idMaterial] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  [idMaterial] int PRIMARY KEY,
   [idSupplier] int,
   [nameMaterial] varchar(255),
   [unit] varchar(255)
 )
 GO
-
+INSERT INTO Material VALUES(1,1,N'Bot my','Kg')
 CREATE TABLE [MaterialStore] (
-  [idMaterialStore] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  [idMaterialStore] int PRIMARY KEY,
   [idMaterial] int,
   [amount] float
 )
 GO
-
 CREATE TABLE [Cake] (
-  [idCake] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  [idCake] int PRIMARY KEY,
   [idRecipe] int,
   [price] float,
   [Amount] int,
@@ -101,40 +106,26 @@ CREATE TABLE [Cake] (
 GO
 
 CREATE TABLE [Recipe] (
-  [idRecipe] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  [idRecipe] int PRIMARY KEY,
+  [price] float,
   [idCategory] int,
   [nameCake] varchar(255)
 )
 GO
 
 CREATE TABLE [RecipeDetail] (
-  [idMaterial] int,
   [idRecipe] int,
+  [idMaterial] int,
   [amount] float,
-  [price] float,
   PRIMARY KEY ([idMaterial], [idRecipe])
 )
 GO
 
-CREATE TABLE [ImportDetail] (
-  [idMaterial] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-  [idImport] int,
+CREATE TABLE [Import] (
+  [idImport] int PRIMARY KEY,
+  [idMaterial] int,
   [amount] float,
   [price] float,
-  [createdAt] datetime
-)
-GO
-
-CREATE TABLE [Import] (
-  [idImport] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-  [createdAt] datetime
-)
-GO
-
-CREATE TABLE [Export] (
-  [idExport] int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-  [idRecipe] int,
-  [amount] int,
   [createdAt] datetime
 )
 GO
@@ -172,12 +163,5 @@ GO
 ALTER TABLE [RecipeDetail] ADD FOREIGN KEY ([idRecipe]) REFERENCES [Recipe] ([idRecipe])
 GO
 
-ALTER TABLE [ImportDetail] ADD FOREIGN KEY ([idMaterial]) REFERENCES [Material] ([idMaterial])
+ALTER TABLE [Import] ADD FOREIGN KEY ([idMaterial]) REFERENCES [Material] ([idMaterial])
 GO
-
-ALTER TABLE [ImportDetail] ADD FOREIGN KEY ([idMaterial]) REFERENCES [Import] ([idImport])
-GO
-
-ALTER TABLE [Export] ADD FOREIGN KEY ([idRecipe]) REFERENCES [Recipe] ([idRecipe])
-GO
-

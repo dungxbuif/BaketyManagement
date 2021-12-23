@@ -12,5 +12,7 @@ namespace BaketyManagement.DataModels
         public double? Amount { get; set; }
         public double? Price { get; set; }
         public DateTime? CreatedAt { get; set; }
+
+        public virtual Material IdMaterialNavigation { get; set; }
     }
 }

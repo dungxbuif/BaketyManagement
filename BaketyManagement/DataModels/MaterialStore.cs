@@ -10,5 +10,7 @@ namespace BaketyManagement.DataModels
         public int IdMaterialStore { get; set; }
         public int? IdMaterial { get; set; }
         public double? Amount { get; set; }
+
+        public virtual Material IdMaterialNavigation { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace BaketyManagement.DataModels
         public BakeryManagementContext()
         {
         }
+
         private static BakeryManagementContext instance;
 
         public static BakeryManagementContext Instance
@@ -32,7 +33,6 @@ namespace BaketyManagement.DataModels
         public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<Cake> Cakes { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Export> Exports { get; set; }
         public virtual DbSet<Import> Imports { get; set; }
         public virtual DbSet<Material> Materials { get; set; }
         public virtual DbSet<MaterialStore> MaterialStores { get; set; }
@@ -58,7 +58,7 @@ namespace BaketyManagement.DataModels
             modelBuilder.Entity<Account>(entity =>
             {
                 entity.HasKey(e => e.UserName)
-                    .HasName("PK__Account__66DCF95D54A9ECAB");
+                    .HasName("PK__Account__66DCF95DC452B564");
 
                 entity.ToTable("Account");
 
@@ -75,12 +75,17 @@ namespace BaketyManagement.DataModels
                     .HasColumnName("pass");
 
                 entity.Property(e => e.TypeAccount).HasColumnName("typeAccount");
+
+                entity.HasOne(d => d.IdStaffNavigation)
+                    .WithMany(p => p.Accounts)
+                    .HasForeignKey(d => d.IdStaff)
+                    .HasConstraintName("FK__Account__idStaff__4222D4EF");
             });
 
             modelBuilder.Entity<BilDetail>(entity =>
             {
                 entity.HasKey(e => new { e.IdBill, e.IdCake })
-                    .HasName("PK__BilDetai__6E4549A8A71D58FF");
+                    .HasName("PK__BilDetai__6E4549A8F2F9B64B");
 
                 entity.ToTable("BilDetail");
 
@@ -94,19 +99,19 @@ namespace BaketyManagement.DataModels
                     .WithMany(p => p.BilDetails)
                     .HasForeignKey(d => d.IdBill)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BilDetail__idBil__4222D4EF");
+                    .HasConstraintName("FK__BilDetail__idBil__3E52440B");
 
                 entity.HasOne(d => d.IdCakeNavigation)
                     .WithMany(p => p.BilDetails)
                     .HasForeignKey(d => d.IdCake)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BilDetail__idCak__412EB0B6");
+                    .HasConstraintName("FK__BilDetail__idCak__3D5E1FD2");
             });
 
             modelBuilder.Entity<Bill>(entity =>
             {
                 entity.HasKey(e => e.IdBill)
-                    .HasName("PK__Bill__E6F933987AECB15C");
+                    .HasName("PK__Bill__E6F933983ACD7AD4");
 
                 entity.ToTable("Bill");
 
@@ -125,13 +130,13 @@ namespace BaketyManagement.DataModels
                 entity.HasOne(d => d.IdStaffNavigation)
                     .WithMany(p => p.Bills)
                     .HasForeignKey(d => d.IdStaff)
-                    .HasConstraintName("FK__Bill__idStaff__3F466844");
+                    .HasConstraintName("FK__Bill__idStaff__3B75D760");
             });
 
             modelBuilder.Entity<Cake>(entity =>
             {
                 entity.HasKey(e => e.IdCake)
-                    .HasName("PK__Cake__8BC7A30921C5E9A7");
+                    .HasName("PK__Cake__8BC7A309FD638B35");
 
                 entity.ToTable("Cake");
 
@@ -155,12 +160,17 @@ namespace BaketyManagement.DataModels
                     .HasMaxLength(5)
                     .IsUnicode(false)
                     .HasColumnName("size");
+
+                entity.HasOne(d => d.IdRecipeNavigation)
+                    .WithMany(p => p.Cakes)
+                    .HasForeignKey(d => d.IdRecipe)
+                    .HasConstraintName("FK__Cake__idRecipe__4316F928");
             });
 
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.HasKey(e => e.IdCategory)
-                    .HasName("PK__Category__79D361B6CC94DBE1");
+                    .HasName("PK__Category__79D361B6B68FBC1B");
 
                 entity.ToTable("Category");
 
@@ -174,30 +184,10 @@ namespace BaketyManagement.DataModels
                     .HasColumnName("nameCategory");
             });
 
-            modelBuilder.Entity<Export>(entity =>
-            {
-                entity.HasKey(e => e.IdExport)
-                    .HasName("PK__Export__3BF05D28371E7B92");
-
-                entity.ToTable("Export");
-
-                entity.Property(e => e.IdExport)
-                    .ValueGeneratedNever()
-                    .HasColumnName("idExport");
-
-                entity.Property(e => e.Amount).HasColumnName("amount");
-
-                entity.Property(e => e.CreatedAt)
-                    .HasColumnType("datetime")
-                    .HasColumnName("createdAt");
-
-                entity.Property(e => e.IdRecipe).HasColumnName("idRecipe");
-            });
-
             modelBuilder.Entity<Import>(entity =>
             {
                 entity.HasKey(e => e.IdImport)
-                    .HasName("PK__Import__798A20AFAE4A2E7B");
+                    .HasName("PK__Import__798A20AF6EAEAB04");
 
                 entity.ToTable("Import");
 
@@ -214,12 +204,17 @@ namespace BaketyManagement.DataModels
                 entity.Property(e => e.IdMaterial).HasColumnName("idMaterial");
 
                 entity.Property(e => e.Price).HasColumnName("price");
+
+                entity.HasOne(d => d.IdMaterialNavigation)
+                    .WithMany(p => p.Imports)
+                    .HasForeignKey(d => d.IdMaterial)
+                    .HasConstraintName("FK__Import__idMateri__45F365D3");
             });
 
             modelBuilder.Entity<Material>(entity =>
             {
                 entity.HasKey(e => e.IdMaterial)
-                    .HasName("PK__Material__6AC7E3EB4A3D51FB");
+                    .HasName("PK__Material__6AC7E3EB3F14086F");
 
                 entity.ToTable("Material");
 
@@ -242,13 +237,13 @@ namespace BaketyManagement.DataModels
                 entity.HasOne(d => d.IdSupplierNavigation)
                     .WithMany(p => p.Materials)
                     .HasForeignKey(d => d.IdSupplier)
-                    .HasConstraintName("FK__Material__idSupp__440B1D61");
+                    .HasConstraintName("FK__Material__idSupp__403A8C7D");
             });
 
             modelBuilder.Entity<MaterialStore>(entity =>
             {
                 entity.HasKey(e => e.IdMaterialStore)
-                    .HasName("PK__Material__72E1DCB082000E2A");
+                    .HasName("PK__Material__72E1DCB0398F6515");
 
                 entity.ToTable("MaterialStore");
 
@@ -259,12 +254,17 @@ namespace BaketyManagement.DataModels
                 entity.Property(e => e.Amount).HasColumnName("amount");
 
                 entity.Property(e => e.IdMaterial).HasColumnName("idMaterial");
+
+                entity.HasOne(d => d.IdMaterialNavigation)
+                    .WithMany(p => p.MaterialStores)
+                    .HasForeignKey(d => d.IdMaterial)
+                    .HasConstraintName("FK__MaterialS__idMat__412EB0B6");
             });
 
             modelBuilder.Entity<Recipe>(entity =>
             {
                 entity.HasKey(e => e.IdRecipe)
-                    .HasName("PK__Recipe__7BA2E083D6CA64D9");
+                    .HasName("PK__Recipe__7BA2E083AEDA4AD8");
 
                 entity.ToTable("Recipe");
 
@@ -279,16 +279,18 @@ namespace BaketyManagement.DataModels
                     .IsUnicode(false)
                     .HasColumnName("nameCake");
 
+                entity.Property(e => e.Price).HasColumnName("price");
+
                 entity.HasOne(d => d.IdCategoryNavigation)
                     .WithMany(p => p.Recipes)
                     .HasForeignKey(d => d.IdCategory)
-                    .HasConstraintName("FK__Recipe__idCatego__4316F928");
+                    .HasConstraintName("FK__Recipe__idCatego__3F466844");
             });
 
             modelBuilder.Entity<RecipeDetail>(entity =>
             {
                 entity.HasKey(e => new { e.IdMaterial, e.IdRecipe })
-                    .HasName("PK__RecipeDe__4D7DCDE3D93EFEDE");
+                    .HasName("PK__RecipeDe__4D7DCDE3BE74C322");
 
                 entity.ToTable("RecipeDetail");
 
@@ -298,13 +300,23 @@ namespace BaketyManagement.DataModels
 
                 entity.Property(e => e.Amount).HasColumnName("amount");
 
-                entity.Property(e => e.Price).HasColumnName("price");
+                entity.HasOne(d => d.IdMaterialNavigation)
+                    .WithMany(p => p.RecipeDetails)
+                    .HasForeignKey(d => d.IdMaterial)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__RecipeDet__idMat__440B1D61");
+
+                entity.HasOne(d => d.IdRecipeNavigation)
+                    .WithMany(p => p.RecipeDetails)
+                    .HasForeignKey(d => d.IdRecipe)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__RecipeDet__idRec__44FF419A");
             });
 
             modelBuilder.Entity<Salary>(entity =>
             {
                 entity.HasKey(e => e.IdSalary)
-                    .HasName("PK__Salary__BDC602979ECF7606");
+                    .HasName("PK__Salary__BDC60297C77CD007");
 
                 entity.ToTable("Salary");
 
@@ -315,10 +327,6 @@ namespace BaketyManagement.DataModels
                 entity.Property(e => e.HoursOverTime).HasColumnName("hoursOverTime");
 
                 entity.Property(e => e.IdStaff).HasColumnName("idStaff");
-
-                entity.Property(e => e.LastTimeKeeped)
-                    .HasColumnType("date")
-                    .HasColumnName("lastTimeKeeped");
 
                 entity.Property(e => e.Rewards).HasColumnName("rewards");
 
@@ -339,13 +347,13 @@ namespace BaketyManagement.DataModels
                 entity.HasOne(d => d.IdStaffNavigation)
                     .WithMany(p => p.Salaries)
                     .HasForeignKey(d => d.IdStaff)
-                    .HasConstraintName("FK__Salary__idStaff__403A8C7D");
+                    .HasConstraintName("FK__Salary__idStaff__3C69FB99");
             });
 
             modelBuilder.Entity<Supplier>(entity =>
             {
                 entity.HasKey(e => e.IdSupplier)
-                    .HasName("PK__Supplier__696F9A7700B5454B");
+                    .HasName("PK__Supplier__696F9A776106232D");
 
                 entity.ToTable("Supplier");
 
@@ -372,7 +380,7 @@ namespace BaketyManagement.DataModels
             modelBuilder.Entity<staff>(entity =>
             {
                 entity.HasKey(e => e.IdStaff)
-                    .HasName("PK__Staff__98C886A93848E2C4");
+                    .HasName("PK__Staff__98C886A950ECD16A");
 
                 entity.ToTable("Staff");
 
