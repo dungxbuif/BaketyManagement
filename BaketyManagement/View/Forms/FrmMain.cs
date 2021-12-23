@@ -362,5 +362,13 @@ namespace BaketyManagement
         {
 
         }
+
+      
+
+        private void btnRecipe_Click_1(object sender, EventArgs e)
+        {
+            FrmRecipe frm = new FrmRecipe();
+            OpenChildForm(frm, sender);
+        }
     }
 }

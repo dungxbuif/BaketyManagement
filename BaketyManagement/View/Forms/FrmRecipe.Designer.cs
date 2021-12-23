@@ -38,10 +38,9 @@ namespace BaketyManagement.View.Forms
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pnFunctionRecipe = new System.Windows.Forms.Panel();
-            this.btnDetail = new System.Windows.Forms.Button();
+            this.btnRecipeAdd = new System.Windows.Forms.Button();
             this.txtCakeSearch = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.btnRecipeAdd = new System.Windows.Forms.Button();
             this.btnRecipeDisplay = new System.Windows.Forms.Button();
             this.btnRecipeSearch = new System.Windows.Forms.Button();
             this.btnRecipeEdit = new System.Windows.Forms.Button();
@@ -91,14 +90,13 @@ namespace BaketyManagement.View.Forms
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.btnDetail);
             this.groupBox1.Controls.Add(this.dgvRecipe);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.groupBox1.Location = new System.Drawing.Point(18, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(696, 156);
+            this.groupBox1.Size = new System.Drawing.Size(695, 156);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Công thức";
@@ -114,7 +112,6 @@ namespace BaketyManagement.View.Forms
             this.Column3,
             this.Column4});
             this.dgvRecipe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRecipe.GridColor = System.Drawing.Color.White;
             this.dgvRecipe.Location = new System.Drawing.Point(3, 26);
             this.dgvRecipe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvRecipe.MultiSelect = false;
@@ -123,8 +120,9 @@ namespace BaketyManagement.View.Forms
             this.dgvRecipe.RowHeadersWidth = 51;
             this.dgvRecipe.RowTemplate.Height = 29;
             this.dgvRecipe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecipe.Size = new System.Drawing.Size(690, 127);
+            this.dgvRecipe.Size = new System.Drawing.Size(689, 127);
             this.dgvRecipe.TabIndex = 2;
+            this.dgvRecipe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecipe_CellClick);
             // 
             // Column1
             // 
@@ -163,7 +161,7 @@ namespace BaketyManagement.View.Forms
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.groupBox2.Location = new System.Drawing.Point(18, 180);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(696, 294);
+            this.groupBox2.Size = new System.Drawing.Size(695, 294);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
@@ -171,9 +169,9 @@ namespace BaketyManagement.View.Forms
             // pnFunctionRecipe
             // 
             this.pnFunctionRecipe.BackColor = System.Drawing.Color.White;
+            this.pnFunctionRecipe.Controls.Add(this.btnRecipeAdd);
             this.pnFunctionRecipe.Controls.Add(this.txtCakeSearch);
             this.pnFunctionRecipe.Controls.Add(this.label22);
-            this.pnFunctionRecipe.Controls.Add(this.btnRecipeAdd);
             this.pnFunctionRecipe.Controls.Add(this.btnRecipeDisplay);
             this.pnFunctionRecipe.Controls.Add(this.btnRecipeSearch);
             this.pnFunctionRecipe.Controls.Add(this.btnRecipeEdit);
@@ -181,24 +179,32 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionRecipe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnFunctionRecipe.Location = new System.Drawing.Point(3, 26);
             this.pnFunctionRecipe.Name = "pnFunctionRecipe";
-            this.pnFunctionRecipe.Size = new System.Drawing.Size(690, 265);
+            this.pnFunctionRecipe.Size = new System.Drawing.Size(689, 265);
             this.pnFunctionRecipe.TabIndex = 0;
             // 
-            // btnDetail
+            // btnRecipeAdd
             // 
-            this.btnDetail.Location = new System.Drawing.Point(639, 40);
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(51, 38);
-            this.btnDetail.TabIndex = 1;
-            this.btnDetail.Text = ">>";
-            this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnRecipeAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnRecipeAdd.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnRecipeAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecipeAdd.ForeColor = System.Drawing.Color.White;
+            this.btnRecipeAdd.Image = global::BaketyManagement.Properties.Resources.Add;
+            this.btnRecipeAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRecipeAdd.Location = new System.Drawing.Point(200, 143);
+            this.btnRecipeAdd.Name = "btnRecipeAdd";
+            this.btnRecipeAdd.Size = new System.Drawing.Size(150, 70);
+            this.btnRecipeAdd.TabIndex = 11;
+            this.btnRecipeAdd.Text = "Thêm";
+            this.btnRecipeAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRecipeAdd.UseVisualStyleBackColor = false;
+            this.btnRecipeAdd.Click += new System.EventHandler(this.btnRecipeAdd_Click);
             // 
             // txtCakeSearch
             // 
             this.txtCakeSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCakeSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCakeSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtCakeSearch.Location = new System.Drawing.Point(183, 53);
+            this.txtCakeSearch.Location = new System.Drawing.Point(200, 53);
             this.txtCakeSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCakeSearch.Name = "txtCakeSearch";
             this.txtCakeSearch.Size = new System.Drawing.Size(304, 30);
@@ -210,36 +216,15 @@ namespace BaketyManagement.View.Forms
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.label22.Location = new System.Drawing.Point(16, 56);
+            this.label22.Location = new System.Drawing.Point(33, 56);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(153, 25);
             this.label22.TabIndex = 9;
             this.label22.Text = "Nhập tên bánh";
             // 
-            // btnRecipeAdd
-            // 
-            this.btnRecipeAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnRecipeAdd.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnRecipeAdd.FlatAppearance.BorderSize = 0;
-            this.btnRecipeAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(63)))), ((int)(((byte)(109)))));
-            this.btnRecipeAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(83)))), ((int)(((byte)(137)))));
-            this.btnRecipeAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecipeAdd.ForeColor = System.Drawing.Color.White;
-            this.btnRecipeAdd.Image = global::BaketyManagement.Properties.Resources.Add;
-            this.btnRecipeAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRecipeAdd.Location = new System.Drawing.Point(183, 143);
-            this.btnRecipeAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnRecipeAdd.Name = "btnRecipeAdd";
-            this.btnRecipeAdd.Size = new System.Drawing.Size(150, 70);
-            this.btnRecipeAdd.TabIndex = 8;
-            this.btnRecipeAdd.Text = "Thêm";
-            this.btnRecipeAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRecipeAdd.UseVisualStyleBackColor = false;
-            // 
             // btnRecipeDisplay
             // 
-            this.btnRecipeDisplay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRecipeDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
             this.btnRecipeDisplay.FlatAppearance.BorderSize = 0;
             this.btnRecipeDisplay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
@@ -248,7 +233,7 @@ namespace BaketyManagement.View.Forms
             this.btnRecipeDisplay.ForeColor = System.Drawing.Color.White;
             this.btnRecipeDisplay.Image = global::BaketyManagement.Properties.Resources.Display;
             this.btnRecipeDisplay.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRecipeDisplay.Location = new System.Drawing.Point(16, 143);
+            this.btnRecipeDisplay.Location = new System.Drawing.Point(36, 143);
             this.btnRecipeDisplay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRecipeDisplay.Name = "btnRecipeDisplay";
             this.btnRecipeDisplay.Size = new System.Drawing.Size(150, 70);
@@ -256,6 +241,7 @@ namespace BaketyManagement.View.Forms
             this.btnRecipeDisplay.Text = "Xem";
             this.btnRecipeDisplay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRecipeDisplay.UseVisualStyleBackColor = false;
+            this.btnRecipeDisplay.Click += new System.EventHandler(this.btnRecipeDisplay_Click);
             // 
             // btnRecipeSearch
             // 
@@ -268,7 +254,7 @@ namespace BaketyManagement.View.Forms
             this.btnRecipeSearch.ForeColor = System.Drawing.Color.White;
             this.btnRecipeSearch.Image = global::BaketyManagement.Properties.Resources.Search;
             this.btnRecipeSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRecipeSearch.Location = new System.Drawing.Point(512, 35);
+            this.btnRecipeSearch.Location = new System.Drawing.Point(529, 35);
             this.btnRecipeSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRecipeSearch.Name = "btnRecipeSearch";
             this.btnRecipeSearch.Size = new System.Drawing.Size(150, 70);
@@ -276,6 +262,7 @@ namespace BaketyManagement.View.Forms
             this.btnRecipeSearch.Text = "Tìm";
             this.btnRecipeSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRecipeSearch.UseVisualStyleBackColor = false;
+            this.btnRecipeSearch.Click += new System.EventHandler(this.btnRecipeSearch_Click);
             // 
             // btnRecipeEdit
             // 
@@ -288,7 +275,7 @@ namespace BaketyManagement.View.Forms
             this.btnRecipeEdit.ForeColor = System.Drawing.Color.White;
             this.btnRecipeEdit.Image = global::BaketyManagement.Properties.Resources.Edit;
             this.btnRecipeEdit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRecipeEdit.Location = new System.Drawing.Point(352, 143);
+            this.btnRecipeEdit.Location = new System.Drawing.Point(369, 143);
             this.btnRecipeEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRecipeEdit.Name = "btnRecipeEdit";
             this.btnRecipeEdit.Size = new System.Drawing.Size(150, 70);
@@ -296,6 +283,7 @@ namespace BaketyManagement.View.Forms
             this.btnRecipeEdit.Text = "Sửa";
             this.btnRecipeEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRecipeEdit.UseVisualStyleBackColor = false;
+            this.btnRecipeEdit.Click += new System.EventHandler(this.btnRecipeEdit_Click);
             // 
             // btnRecipeDel
             // 
@@ -308,7 +296,7 @@ namespace BaketyManagement.View.Forms
             this.btnRecipeDel.ForeColor = System.Drawing.Color.White;
             this.btnRecipeDel.Image = global::BaketyManagement.Properties.Resources.Delete;
             this.btnRecipeDel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRecipeDel.Location = new System.Drawing.Point(522, 143);
+            this.btnRecipeDel.Location = new System.Drawing.Point(539, 143);
             this.btnRecipeDel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRecipeDel.Name = "btnRecipeDel";
             this.btnRecipeDel.Size = new System.Drawing.Size(150, 70);
@@ -316,6 +304,7 @@ namespace BaketyManagement.View.Forms
             this.btnRecipeDel.Text = "Xóa";
             this.btnRecipeDel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRecipeDel.UseVisualStyleBackColor = false;
+            this.btnRecipeDel.Click += new System.EventHandler(this.btnRecipeDel_Click);
             // 
             // groupBox3
             // 
@@ -324,9 +313,9 @@ namespace BaketyManagement.View.Forms
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.groupBox3.Location = new System.Drawing.Point(720, 18);
+            this.groupBox3.Location = new System.Drawing.Point(719, 18);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(408, 156);
+            this.groupBox3.Size = new System.Drawing.Size(409, 156);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Nguyên liệu";
@@ -348,7 +337,7 @@ namespace BaketyManagement.View.Forms
             this.dgvDetail.RowHeadersWidth = 51;
             this.dgvDetail.RowTemplate.Height = 29;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetail.Size = new System.Drawing.Size(402, 127);
+            this.dgvDetail.Size = new System.Drawing.Size(403, 127);
             this.dgvDetail.TabIndex = 2;
             // 
             // Column5
@@ -370,9 +359,9 @@ namespace BaketyManagement.View.Forms
             this.groupBox4.BackColor = System.Drawing.Color.White;
             this.groupBox4.Controls.Add(this.panel1);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(720, 180);
+            this.groupBox4.Location = new System.Drawing.Point(719, 180);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(408, 294);
+            this.groupBox4.Size = new System.Drawing.Size(409, 294);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             // 
@@ -385,26 +374,22 @@ namespace BaketyManagement.View.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(402, 268);
+            this.panel1.Size = new System.Drawing.Size(403, 268);
             this.panel1.TabIndex = 10;
             // 
             // btnAddMaterial
             // 
             this.btnAddMaterial.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddMaterial.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnAddMaterial.FlatAppearance.BorderSize = 0;
-            this.btnAddMaterial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
-            this.btnAddMaterial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
             this.btnAddMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddMaterial.ForeColor = System.Drawing.Color.White;
             this.btnAddMaterial.Image = global::BaketyManagement.Properties.Resources.Add;
             this.btnAddMaterial.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddMaterial.Location = new System.Drawing.Point(242, 26);
-            this.btnAddMaterial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddMaterial.Location = new System.Drawing.Point(254, 26);
             this.btnAddMaterial.Name = "btnAddMaterial";
             this.btnAddMaterial.Size = new System.Drawing.Size(150, 70);
-            this.btnAddMaterial.TabIndex = 9;
+            this.btnAddMaterial.TabIndex = 12;
             this.btnAddMaterial.Text = "Thêm NL";
             this.btnAddMaterial.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddMaterial.UseVisualStyleBackColor = false;
@@ -421,7 +406,7 @@ namespace BaketyManagement.View.Forms
             this.btnDelMaterial.ForeColor = System.Drawing.Color.White;
             this.btnDelMaterial.Image = global::BaketyManagement.Properties.Resources.Delete;
             this.btnDelMaterial.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelMaterial.Location = new System.Drawing.Point(242, 143);
+            this.btnDelMaterial.Location = new System.Drawing.Point(254, 143);
             this.btnDelMaterial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDelMaterial.Name = "btnDelMaterial";
             this.btnDelMaterial.Size = new System.Drawing.Size(150, 70);
@@ -442,7 +427,7 @@ namespace BaketyManagement.View.Forms
             this.btnEditMaterial.ForeColor = System.Drawing.Color.White;
             this.btnEditMaterial.Image = global::BaketyManagement.Properties.Resources.Edit;
             this.btnEditMaterial.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditMaterial.Location = new System.Drawing.Point(38, 143);
+            this.btnEditMaterial.Location = new System.Drawing.Point(50, 143);
             this.btnEditMaterial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEditMaterial.Name = "btnEditMaterial";
             this.btnEditMaterial.Size = new System.Drawing.Size(150, 70);
@@ -463,7 +448,7 @@ namespace BaketyManagement.View.Forms
             this.btnBaking.ForeColor = System.Drawing.Color.White;
             this.btnBaking.Image = global::BaketyManagement.Properties.Resources.Add;
             this.btnBaking.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBaking.Location = new System.Drawing.Point(38, 26);
+            this.btnBaking.Location = new System.Drawing.Point(50, 26);
             this.btnBaking.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBaking.Name = "btnBaking";
             this.btnBaking.Size = new System.Drawing.Size(150, 70);
@@ -480,6 +465,7 @@ namespace BaketyManagement.View.Forms
             this.Controls.Add(this.tlpRecipe);
             this.Name = "FrmRecipe";
             this.Text = "FrmRecipe";
+            this.Load += new System.EventHandler(this.FrmRecipe_Load);
             this.tlpRecipe.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecipe)).EndInit();
@@ -506,7 +492,6 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.Button btnRecipeDisplay;
         private System.Windows.Forms.Button btnBaking;
         private System.Windows.Forms.DataGridView dgvRecipe;
-        private System.Windows.Forms.Button btnAddMaterial;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -518,10 +503,10 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Button btnDelMaterial;
         private System.Windows.Forms.Button btnEditMaterial;
-        private System.Windows.Forms.Button btnRecipeAdd;
-        private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtCakeSearch;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnRecipeAdd;
+        private System.Windows.Forms.Button btnAddMaterial;
     }
 }

@@ -67,7 +67,7 @@ namespace BaketyManagement.View
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(589, 536);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(607, 536);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -78,7 +78,7 @@ namespace BaketyManagement.View
             this.panel1.Location = new System.Drawing.Point(4, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(581, 70);
+            this.panel1.Size = new System.Drawing.Size(599, 70);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -90,7 +90,7 @@ namespace BaketyManagement.View
             this.label1.Location = new System.Drawing.Point(104, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(372, 40);
+            this.label1.Size = new System.Drawing.Size(458, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông Tin Tài Khoản";
             // 
@@ -111,7 +111,7 @@ namespace BaketyManagement.View
             this.panel2.Location = new System.Drawing.Point(4, 85);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(581, 316);
+            this.panel2.Size = new System.Drawing.Size(599, 316);
             this.panel2.TabIndex = 1;
             // 
             // cbbListStaff
@@ -122,10 +122,10 @@ namespace BaketyManagement.View
             this.cbbListStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbbListStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.cbbListStaff.FormattingEnabled = true;
-            this.cbbListStaff.Location = new System.Drawing.Point(159, 146);
+            this.cbbListStaff.Location = new System.Drawing.Point(168, 146);
             this.cbbListStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbListStaff.Name = "cbbListStaff";
-            this.cbbListStaff.Size = new System.Drawing.Size(397, 28);
+            this.cbbListStaff.Size = new System.Drawing.Size(397, 33);
             this.cbbListStaff.TabIndex = 2;
             this.cbbListStaff.SelectedIndexChanged += new System.EventHandler(this.cbbListStaff_SelectedIndexChanged);
             // 
@@ -136,11 +136,11 @@ namespace BaketyManagement.View
             this.txtIdStaffAccount.Enabled = false;
             this.txtIdStaffAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtIdStaffAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.txtIdStaffAccount.Location = new System.Drawing.Point(159, 199);
+            this.txtIdStaffAccount.Location = new System.Drawing.Point(168, 199);
             this.txtIdStaffAccount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIdStaffAccount.Name = "txtIdStaffAccount";
             this.txtIdStaffAccount.ReadOnly = true;
-            this.txtIdStaffAccount.Size = new System.Drawing.Size(397, 26);
+            this.txtIdStaffAccount.Size = new System.Drawing.Size(397, 30);
             this.txtIdStaffAccount.TabIndex = 3;
             // 
             // txtPassword
@@ -149,10 +149,10 @@ namespace BaketyManagement.View
             this.txtPassword.BackColor = System.Drawing.Color.White;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.txtPassword.Location = new System.Drawing.Point(159, 95);
+            this.txtPassword.Location = new System.Drawing.Point(168, 95);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(397, 26);
+            this.txtPassword.Size = new System.Drawing.Size(397, 30);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -162,10 +162,10 @@ namespace BaketyManagement.View
             this.txtUserName.BackColor = System.Drawing.Color.White;
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.txtUserName.Location = new System.Drawing.Point(159, 44);
+            this.txtUserName.Location = new System.Drawing.Point(168, 44);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(397, 26);
+            this.txtUserName.Size = new System.Drawing.Size(397, 30);
             this.txtUserName.TabIndex = 0;
             // 
             // ckbStaff
@@ -175,10 +175,10 @@ namespace BaketyManagement.View
             this.ckbStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(47)))));
             this.ckbStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ckbStaff.ForeColor = System.Drawing.Color.White;
-            this.ckbStaff.Location = new System.Drawing.Point(159, 249);
+            this.ckbStaff.Location = new System.Drawing.Point(168, 249);
             this.ckbStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ckbStaff.Name = "ckbStaff";
-            this.ckbStaff.Size = new System.Drawing.Size(129, 24);
+            this.ckbStaff.Size = new System.Drawing.Size(157, 29);
             this.ckbStaff.TabIndex = 4;
             this.ckbStaff.Text = "Quản trị viên";
             this.ckbStaff.UseVisualStyleBackColor = false;
@@ -190,10 +190,10 @@ namespace BaketyManagement.View
             this.label37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(47)))));
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label37.ForeColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(25, 203);
+            this.label37.Location = new System.Drawing.Point(34, 203);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(117, 20);
+            this.label37.Size = new System.Drawing.Size(145, 25);
             this.label37.TabIndex = 6;
             this.label37.Text = "Mã Nhân viên";
             // 
@@ -204,10 +204,10 @@ namespace BaketyManagement.View
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(47)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(25, 151);
+            this.label3.Location = new System.Drawing.Point(34, 151);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 20);
+            this.label3.Size = new System.Drawing.Size(157, 25);
             this.label3.TabIndex = 7;
             this.label3.Text = "Tên Nhân Viên";
             // 
@@ -218,10 +218,10 @@ namespace BaketyManagement.View
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(47)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(25, 99);
+            this.label2.Location = new System.Drawing.Point(34, 99);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 20);
+            this.label2.Size = new System.Drawing.Size(105, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "Mật Khẩu";
             // 
@@ -232,10 +232,10 @@ namespace BaketyManagement.View
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(47)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(25, 47);
+            this.label4.Location = new System.Drawing.Point(34, 47);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 20);
+            this.label4.Size = new System.Drawing.Size(112, 25);
             this.label4.TabIndex = 9;
             this.label4.Text = "Tài Khoản";
             // 
@@ -248,7 +248,7 @@ namespace BaketyManagement.View
             this.panel3.Location = new System.Drawing.Point(4, 411);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(581, 120);
+            this.panel3.Size = new System.Drawing.Size(599, 120);
             this.panel3.TabIndex = 2;
             // 
             // btnCancel
@@ -296,10 +296,10 @@ namespace BaketyManagement.View
             // 
             // FrmInforTabAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(589, 536);
+            this.ClientSize = new System.Drawing.Size(607, 536);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

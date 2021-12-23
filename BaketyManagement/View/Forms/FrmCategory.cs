@@ -112,6 +112,9 @@ namespace BaketyManagement.View.Forms
                 DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa loại bánh có mã " + dgvCategory.Rows[row].Cells[0].Value.ToString(), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    var q = from sp in db.Recipes where (sp.IdCategory == idCategory) select sp;
+                    if (q.FirstOrDefault() != null)
+                        throw new Exception("Danh mục này đang có bánh, không thể xóa");
                     var query = from sp in db.Categories where (sp.IdCategory == idCategory) select sp;
                     Category cate = query.FirstOrDefault();
                     db.Categories.Remove(cate);

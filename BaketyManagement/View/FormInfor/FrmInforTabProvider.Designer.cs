@@ -59,7 +59,7 @@ namespace BaketyManagement.View
             this.panel1.Location = new System.Drawing.Point(4, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(616, 70);
+            this.panel1.Size = new System.Drawing.Size(873, 70);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -70,7 +70,7 @@ namespace BaketyManagement.View
             this.label1.Location = new System.Drawing.Point(84, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(449, 40);
+            this.label1.Size = new System.Drawing.Size(555, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông Tin Nhà Cung Cấp";
             // 
@@ -84,7 +84,7 @@ namespace BaketyManagement.View
             this.panel3.Location = new System.Drawing.Point(4, 331);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(616, 120);
+            this.panel3.Size = new System.Drawing.Size(873, 120);
             this.panel3.TabIndex = 2;
             // 
             // btnCancel
@@ -165,7 +165,7 @@ namespace BaketyManagement.View
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(624, 456);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(881, 456);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // panel2
@@ -185,7 +185,7 @@ namespace BaketyManagement.View
             this.panel2.Location = new System.Drawing.Point(4, 85);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(616, 236);
+            this.panel2.Size = new System.Drawing.Size(873, 236);
             this.panel2.TabIndex = 1;
             // 
             // txtAddressSupplier
@@ -195,7 +195,7 @@ namespace BaketyManagement.View
             this.txtAddressSupplier.Location = new System.Drawing.Point(193, 183);
             this.txtAddressSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAddressSupplier.Name = "txtAddressSupplier";
-            this.txtAddressSupplier.Size = new System.Drawing.Size(397, 26);
+            this.txtAddressSupplier.Size = new System.Drawing.Size(397, 30);
             this.txtAddressSupplier.TabIndex = 3;
             // 
             // txtPhoneSupplier
@@ -205,7 +205,7 @@ namespace BaketyManagement.View
             this.txtPhoneSupplier.Location = new System.Drawing.Point(193, 131);
             this.txtPhoneSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhoneSupplier.Name = "txtPhoneSupplier";
-            this.txtPhoneSupplier.Size = new System.Drawing.Size(397, 26);
+            this.txtPhoneSupplier.Size = new System.Drawing.Size(397, 30);
             this.txtPhoneSupplier.TabIndex = 2;
             // 
             // label17
@@ -216,7 +216,7 @@ namespace BaketyManagement.View
             this.label17.Location = new System.Drawing.Point(27, 186);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(64, 20);
+            this.label17.Size = new System.Drawing.Size(78, 25);
             this.label17.TabIndex = 9;
             this.label17.Text = "Địa chỉ";
             // 
@@ -228,7 +228,7 @@ namespace BaketyManagement.View
             this.label18.Location = new System.Drawing.Point(27, 134);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(115, 20);
+            this.label18.Size = new System.Drawing.Size(139, 25);
             this.label18.TabIndex = 10;
             this.label18.Text = "Số điện thoại";
             // 
@@ -240,7 +240,7 @@ namespace BaketyManagement.View
             this.txtIdSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIdSupplier.Name = "txtIdSupplier";
             this.txtIdSupplier.ReadOnly = true;
-            this.txtIdSupplier.Size = new System.Drawing.Size(397, 26);
+            this.txtIdSupplier.Size = new System.Drawing.Size(397, 30);
             this.txtIdSupplier.TabIndex = 0;
             // 
             // txtNameSupplier
@@ -250,7 +250,7 @@ namespace BaketyManagement.View
             this.txtNameSupplier.Location = new System.Drawing.Point(193, 79);
             this.txtNameSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNameSupplier.Name = "txtNameSupplier";
-            this.txtNameSupplier.Size = new System.Drawing.Size(397, 26);
+            this.txtNameSupplier.Size = new System.Drawing.Size(397, 30);
             this.txtNameSupplier.TabIndex = 1;
             // 
             // label12
@@ -261,7 +261,7 @@ namespace BaketyManagement.View
             this.label12.Location = new System.Drawing.Point(27, 30);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(146, 20);
+            this.label12.Size = new System.Drawing.Size(178, 25);
             this.label12.TabIndex = 5;
             this.label12.Text = "Mã nhà cung cấp";
             // 
@@ -273,13 +273,13 @@ namespace BaketyManagement.View
             this.label19.Location = new System.Drawing.Point(27, 82);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(152, 20);
+            this.label19.Size = new System.Drawing.Size(186, 25);
             this.label19.TabIndex = 6;
             this.label19.Text = "Tên nhà cung cấp";
             // 
             // FrmInforTabProvider
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 456);
             this.Controls.Add(this.tableLayoutPanel1);
