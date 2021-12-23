@@ -11,7 +11,9 @@ CREATE TABLE [Bill] (
 )
 GO
 INSERT INTO Bill
-VALUES (1,1, 2021-12-1, 10)
+VALUES (1,1, '2021-12-12', 10)
+INSERT INTO Bill
+VALUES (2,1, '2021-12-1', 10)
 GO
 CREATE TABLE [Staff] (
   [idStaff] int PRIMARY KEY,
@@ -54,6 +56,9 @@ CREATE TABLE [BilDetail] (
 )
 GO
 INSERT INTO BilDetail VALUES (1, 1, 10)
+INSERT INTO BilDetail VALUES (1, 2, 5)
+INSERT INTO BilDetail VALUES (2, 1, 13)
+
 CREATE TABLE [Account] (
   [userName] varchar(255) PRIMARY KEY,
   [idStaff] int,
