@@ -282,7 +282,7 @@
             this.btnEnterImportCoupon.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnEnterImportCoupon.Size = new System.Drawing.Size(253, 45);
             this.btnEnterImportCoupon.TabIndex = 10;
-            this.btnEnterImportCoupon.Text = "   Nhập Phiếu";
+            this.btnEnterImportCoupon.Text = "Kho hàng";
             this.btnEnterImportCoupon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEnterImportCoupon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEnterImportCoupon.UseVisualStyleBackColor = false;
