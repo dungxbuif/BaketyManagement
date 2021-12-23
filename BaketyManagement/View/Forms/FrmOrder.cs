@@ -176,8 +176,6 @@ namespace BaketyManagement.View
                 throw new Exception("Số lượng mua hàng phải lớn 0!");
             }
             txtTotalMoney.Text = "0";
-            txtCustomerMoney.Text = "0";
-            txtReturnMoney.Text = "0";
 
             var query = db.Cakes.Where(c => c.IdCake == Int32.Parse(txtNameCake.Tag.ToString())).FirstOrDefault();
             var amountCake = Convert.ToInt32(query.Amount);
@@ -305,8 +303,6 @@ namespace BaketyManagement.View
                 txtTotalMoney.Text = "0";
                 txtDiscount.Text = "0";
                 txtTotalMoneyAfterDiscount.Text = "0";
-                txtCustomerMoney.Text = "0";
-                txtReturnMoney.Text = "0";
             }
             else
             {
@@ -320,43 +316,31 @@ namespace BaketyManagement.View
             {
                 Single totalMoney = Convert.ToSingle(txtTotalMoney.Text);
                 Single discount = Convert.ToSingle(txtDiscount.Text);
-                Single customerMoney = Convert.ToSingle(txtCustomerMoney.Text);
                 Single returnMoney = 0;
                 Single totalAfterDiscount = 0;
                 var bill = db.Bills.Where(b => b.IdBill == idBill).FirstOrDefault();
-                if (customerMoney <= 0)
-                {
-                    throw new Exception("Số tiền khách hàng thanh toán ít hơn số tiền phải trả!");
-                }
                 if (discount > 0)
                 {
-
-                    if (customerMoney < totalMoney - totalMoney * discount / 100)
-                    {
-                        throw new Exception("Số tiền khách hàng thanh toán ít hơn số tiền phải trả!");
-                    }
-                    txtReturnMoney.Text = Convert.ToString(customerMoney - (totalMoney - totalMoney * discount / 100));
-                    returnMoney = customerMoney - (totalMoney - totalMoney * discount / 100);
                     totalAfterDiscount = totalMoney - totalMoney * discount / 100;
                     bill.Discount = discount;
                 }
                 else
-                {
-                    if (customerMoney < totalMoney)
-                    {
-                        throw new Exception("Số tiền khách hàng thanh toán ít hơn số tiền phải trả!");
-                    }
-                    txtReturnMoney.Text = Convert.ToString(customerMoney - totalMoney);
-                    returnMoney = customerMoney - totalMoney;
+                {                   
                     totalAfterDiscount = totalMoney;
                 }
                 dgvBill.DataSource = null;
                 db.SaveChanges();
+                MessageBox.Show("Thanh toán thành công");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void pnPayCake_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

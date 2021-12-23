@@ -30,12 +30,8 @@ namespace BaketyManagement.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrder));
-            this.txtReturnMoney = new System.Windows.Forms.TextBox();
-            this.txtCustomerMoney = new System.Windows.Forms.TextBox();
             this.txtDiscount = new System.Windows.Forms.TextBox();
             this.txtTotalMoney = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gbPayCake = new System.Windows.Forms.GroupBox();
             this.pnPayCake = new System.Windows.Forms.Panel();
@@ -92,28 +88,6 @@ namespace BaketyManagement.View
             ((System.ComponentModel.ISupportInitialize)(this.numAmountOrder)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtReturnMoney
-            // 
-            this.txtReturnMoney.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtReturnMoney.Location = new System.Drawing.Point(190, 227);
-            this.txtReturnMoney.Name = "txtReturnMoney";
-            this.txtReturnMoney.Size = new System.Drawing.Size(324, 30);
-            this.txtReturnMoney.TabIndex = 2;
-            this.txtReturnMoney.Text = "0";
-            this.txtReturnMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtCustomerMoney
-            // 
-            this.txtCustomerMoney.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCustomerMoney.Location = new System.Drawing.Point(190, 176);
-            this.txtCustomerMoney.Name = "txtCustomerMoney";
-            this.txtCustomerMoney.Size = new System.Drawing.Size(324, 30);
-            this.txtCustomerMoney.TabIndex = 2;
-            this.txtCustomerMoney.Text = "0";
-            this.txtCustomerMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // txtDiscount
             // 
             this.txtDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -138,28 +112,6 @@ namespace BaketyManagement.View
             this.txtTotalMoney.Text = "0";
             this.txtTotalMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTotalMoney.TextChanged += new System.EventHandler(this.txtTotalMoney_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(3, 230);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 25);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Trả lại";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(3, 179);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Tiền khách đưa";
             // 
             // label2
             // 
@@ -189,21 +141,18 @@ namespace BaketyManagement.View
             // 
             this.pnPayCake.Controls.Add(this.btnCancel);
             this.pnPayCake.Controls.Add(this.label1);
-            this.pnPayCake.Controls.Add(this.txtReturnMoney);
             this.pnPayCake.Controls.Add(this.btnPay);
             this.pnPayCake.Controls.Add(this.txtTotalMoneyAfterDiscount);
-            this.pnPayCake.Controls.Add(this.txtCustomerMoney);
             this.pnPayCake.Controls.Add(this.label2);
             this.pnPayCake.Controls.Add(this.txtDiscount);
             this.pnPayCake.Controls.Add(this.label7);
-            this.pnPayCake.Controls.Add(this.label3);
             this.pnPayCake.Controls.Add(this.txtTotalMoney);
-            this.pnPayCake.Controls.Add(this.label4);
             this.pnPayCake.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnPayCake.Location = new System.Drawing.Point(3, 26);
             this.pnPayCake.Name = "pnPayCake";
             this.pnPayCake.Size = new System.Drawing.Size(550, 362);
             this.pnPayCake.TabIndex = 2;
+            this.pnPayCake.Paint += new System.Windows.Forms.PaintEventHandler(this.pnPayCake_Paint);
             // 
             // btnCancel
             // 
@@ -734,12 +683,8 @@ namespace BaketyManagement.View
         #endregion
 
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox txtReturnMoney;
-        private System.Windows.Forms.TextBox txtCustomerMoney;
         private System.Windows.Forms.TextBox txtDiscount;
         private System.Windows.Forms.TextBox txtTotalMoney;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.GroupBox gbPayCake;
