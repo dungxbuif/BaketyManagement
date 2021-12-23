@@ -110,7 +110,6 @@ namespace BaketyManagement.View
                         on material.IdSupplier equals supplier.IdSupplier
                         where supplier.NameSupplier == cbbNameSupplier.SelectedValue
                         select material.NameMaterial;
-            var te = query.ToList();
             cbbMaterial.DataSource = query.ToList();
         }
     }
