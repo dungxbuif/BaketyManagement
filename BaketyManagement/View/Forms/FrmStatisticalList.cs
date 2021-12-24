@@ -9,6 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using iTextSharp.text.html.simpleparser;
 
 namespace BaketyManagement.View.Forms
 {
@@ -200,6 +204,101 @@ namespace BaketyManagement.View.Forms
         private void radSlowestSellerList_Click(object sender, EventArgs e)
         {
             StatisticalList();
+        }
+
+        private void btn_exportPDF_Click(object sender, EventArgs e)
+        {
+            if (dgvStatistical.Rows.Count > 0)
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "PDF (*.pdf)|*.pdf";
+                sfd.FileName = "Output.pdf";
+                bool fileError = false;
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    if (File.Exists(sfd.FileName))
+                    {
+                        try
+                        {
+                            File.Delete(sfd.FileName);
+                        }
+                        catch (IOException ex)
+                        {
+                            fileError = true;
+                            MessageBox.Show("Không thể in dữ liệu." + ex.Message);
+                        }
+                    }
+                    if (!fileError)
+                    {
+                        try
+                        {
+                            string pdfHeader = gbStatisticalList.Text + "\n";
+                            StringReader sr = new StringReader(pdfHeader.ToString());
+                            PdfPTable pdfTable = new PdfPTable(dgvStatistical.Columns.Count);
+                            pdfTable.DefaultCell.Padding = 3;
+                            pdfTable.WidthPercentage = 100;
+                            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                            foreach (DataGridViewColumn column in dgvStatistical.Columns)
+                            {
+                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                pdfTable.AddCell(cell);
+                            }
+
+                            foreach (DataGridViewRow row in dgvStatistical.Rows)
+                            {
+                                if(dgvStatistical.Rows.Count == 1)
+                                {
+                                    string cell1 = row.Cells[0].Value.ToString();
+                                    pdfTable.AddCell(cell1);
+                                    string cell2 = row.Cells[1].Value.ToString();
+                                    pdfTable.AddCell(cell2);
+                                }
+                                else
+                                {
+                                    if (row.Index < dgvStatistical.Rows.Count - 1)
+                                    {
+                                        string cell1 = row.Cells[0].Value.ToString();
+                                        pdfTable.AddCell(cell1);
+                                        string cell2 = row.Cells[1].Value.ToString();
+                                        pdfTable.AddCell(cell2);
+                                    }
+                                    else
+                                    {
+                                        string cell1 = "";
+                                        pdfTable.AddCell(cell1);
+                                        string cell2 = "";
+                                        pdfTable.AddCell(cell2);
+                                    }
+                                }    
+
+                            }
+
+                            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+                            {
+                                Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+                                HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
+                                PdfWriter.GetInstance(pdfDoc, stream);
+                                pdfDoc.Open();
+                                htmlparser.Parse(sr);
+                                pdfDoc.Add(pdfTable);
+                                pdfDoc.Close();
+                                stream.Close();
+                            }
+
+                            MessageBox.Show("Xuất dữ liệu thành công !!!", "Info");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error :" + ex.Message);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Record To Export !!!", "Info");
+            }
         }
     }
 }

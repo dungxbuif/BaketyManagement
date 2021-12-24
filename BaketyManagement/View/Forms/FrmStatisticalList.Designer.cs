@@ -40,6 +40,7 @@ namespace BaketyManagement.View.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.panel29 = new System.Windows.Forms.Panel();
+            this.btn_exportPDF = new System.Windows.Forms.Button();
             this.radSlowestSellerList = new System.Windows.Forms.RadioButton();
             this.radBestSellerList = new System.Windows.Forms.RadioButton();
             this.radRevenue3MonthsList = new System.Windows.Forms.RadioButton();
@@ -183,6 +184,7 @@ namespace BaketyManagement.View.Forms
             // panel29
             // 
             this.panel29.BackColor = System.Drawing.Color.White;
+            this.panel29.Controls.Add(this.btn_exportPDF);
             this.panel29.Controls.Add(this.radSlowestSellerList);
             this.panel29.Controls.Add(this.radBestSellerList);
             this.panel29.Controls.Add(this.radRevenue3MonthsList);
@@ -192,6 +194,19 @@ namespace BaketyManagement.View.Forms
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(1002, 175);
             this.panel29.TabIndex = 0;
+            // 
+            // btn_exportPDF
+            // 
+            this.btn_exportPDF.BackColor = System.Drawing.Color.Red;
+            this.btn_exportPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_exportPDF.ForeColor = System.Drawing.Color.White;
+            this.btn_exportPDF.Location = new System.Drawing.Point(59, 54);
+            this.btn_exportPDF.Name = "btn_exportPDF";
+            this.btn_exportPDF.Size = new System.Drawing.Size(103, 71);
+            this.btn_exportPDF.TabIndex = 1;
+            this.btn_exportPDF.Text = "Xuất PDF";
+            this.btn_exportPDF.UseVisualStyleBackColor = false;
+            this.btn_exportPDF.Click += new System.EventHandler(this.btn_exportPDF_Click);
             // 
             // radSlowestSellerList
             // 
@@ -291,5 +306,6 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.Panel pnTypeStatical;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btn_exportPDF;
     }
 }
