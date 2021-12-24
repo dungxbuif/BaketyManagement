@@ -15,7 +15,7 @@ namespace BaketyManagement.View.Forms
     public partial class FrmBill : Form
     {
         BakeryManagementContext db = new BakeryManagementContext();
-        Int32 rowDgvBill = 0;
+        Int32 rowDgvBill;
         public FrmBill()
         {
             InitializeComponent();
@@ -42,7 +42,17 @@ namespace BaketyManagement.View.Forms
                     discount = bill.Key.Discount,
                     TongTien = bill.Sum(b => b.ctb.AmountOrder * b.ca.Price * ((100 - bill.Key.Discount) / 100))
                 });
-            dgvBill.DataSource = query.ToList();
+            //dgvBill.DataSource = query.ToList();
+            foreach(var bill in query)
+            {
+                dgvBill.Rows.Add();
+                dgvBill.Rows[rowDgvBill].Cells[0].Value = bill.idBill;
+                dgvBill.Rows[rowDgvBill].Cells[1].Value = bill.exportDate.ToString("dd/MM/yyyy");
+                dgvBill.Rows[rowDgvBill].Cells[2].Value = bill.nameStaff;
+                dgvBill.Rows[rowDgvBill].Cells[3].Value = bill.discount;
+                dgvBill.Rows[rowDgvBill].Cells[4].Value = bill.TongTien;
+                rowDgvBill++;
+            }
         }
 
         private void dgvBill_CellClick(object sender, DataGridViewCellEventArgs e)
