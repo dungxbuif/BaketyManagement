@@ -45,7 +45,7 @@ namespace BaketyManagement.View
                             price = cake.Price,
                             amount = cake.Amount,
                             size = cake.Size,
-                            exp = (DateTime)cake.ExpCake
+                            exp = Convert.ToDateTime(cake.ExpCake).ToString("dd/MM/yyyy")
                         };
             dgvCake.DataSource = query.ToList();
             dgvCake.Columns[0].HeaderText = "Mã";
@@ -71,7 +71,7 @@ namespace BaketyManagement.View
                             price = cake.Price,
                             amount = bill.AmountOrder,
                             size = cake.Size,
-                            exp = (DateTime)cake.ExpCake
+                            exp = Convert.ToDateTime(cake.ExpCake).ToString("dd/MM/yyyy")
                         };
             var totalMoney = 0;
             foreach(var item in query.ToList())
@@ -105,7 +105,7 @@ namespace BaketyManagement.View
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            tim(txtSearchCake.Text);
+            timTheoTen(txtSearchCake.Text);
         }
 
       /*  private SearchCakeByCakeName()*/
@@ -199,9 +199,10 @@ namespace BaketyManagement.View
             LoadCake();
             LoadBill();
         }
-        private void tim(string ten)
+        private void timTheoTen(string ten)
         {
-            if (ten == "") {
+            if (ten == "")
+            {
                 MessageBox.Show("Hãy nhập tên bánh");
                 return;
             }
@@ -216,8 +217,42 @@ namespace BaketyManagement.View
                             price = cake.Price,
                             amount = cake.Amount,
                             size = cake.Size,
-                            exp = (DateTime)cake.ExpCake
+                            exp = Convert.ToDateTime(cake.ExpCake).ToString("dd/MM/yyyy")
                         };
+            if (query.Count() <= 0)
+            {
+                MessageBox.Show("Không có tên bánh cần tìm");
+                return;
+            }
+            dgvCake.DataSource = query.ToList();
+            dgvCake.Columns[0].HeaderText = "Mã";
+            dgvCake.Columns[1].HeaderText = "Tên bánh";
+            dgvCake.Columns[2].HeaderText = "Giá";
+            dgvCake.Columns[3].HeaderText = "Số lượng còn";
+            dgvCake.Columns[4].HeaderText = "Kích cỡ";
+            dgvCake.Columns[5].HeaderText = "Hạn dùng";
+        }
+        private void tim(string ten)
+        {
+            if (ten == "") {
+                MessageBox.Show("Hãy nhập tên bánh");
+                return;
+            }
+            var query = from cake in db.Cakes
+                        join recipe in db.Recipes
+                        on cake.IdRecipe equals recipe.IdRecipe
+                        join category in db.Categories
+                        on recipe.IdCategory equals category.IdCategory
+                        where category.NameCategory.ToLower().Contains(ten.ToLower())
+                        select new
+                        {
+                            IdCake = cake.IdCake,
+                            name = recipe.NameCake,
+                            price = cake.Price,
+                            amount = cake.Amount,
+                            size = cake.Size,
+                            exp = Convert.ToDateTime(cake.ExpCake).ToString("dd/MM/yyyy")
+        };
             if(query.Count() <= 0)
             {
                 MessageBox.Show("Không có tên bánh cần tìm");
