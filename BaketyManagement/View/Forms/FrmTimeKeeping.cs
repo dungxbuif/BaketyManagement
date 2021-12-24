@@ -35,7 +35,7 @@ namespace BaketyManagement.View.Forms
 
         private void LoadSalary()
         {
-
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             row = 0;
             var query = from slr in db.Salaries
                         select new
@@ -64,6 +64,9 @@ namespace BaketyManagement.View.Forms
                 dgvTimeKeeping.Rows[row].Cells[5].Value = slr.HoursOverTime.ToString();
                 dgvTimeKeeping.Rows[row].Cells[6].Value = slr.Rewards.ToString();
                 dgvTimeKeeping.Rows[row].Cells[7].Value = slr.SalaryOverTime.ToString();
+                double tong = ((double)((slr.WorkDay * slr.SalaryDate) + (slr.HoursOverTime * slr.SalaryOverTime) + slr.Rewards));
+                string Tong = tong.ToString("#,###", cul.NumberFormat);
+                dgvTimeKeeping.Rows[row].Cells[8].Value = Tong;
                 row++;
             }
         }
@@ -193,7 +196,120 @@ namespace BaketyManagement.View.Forms
                             select sl).FirstOrDefault();
             Double tong = (double)((slTinh.WorkDay * slTinh.SalaryDate) + (slTinh.HoursOverTime * slTinh.SalaryOverTime) + slTinh.Rewards);
             string Tong = tong.ToString("#,###", cul.NumberFormat);
-            MessageBox.Show("Tiền lương thực nhận của " + dgvTimeKeeping.Rows[row].Cells[1].Value.ToString() + " là: " + Tong + " VND", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            double reward = (double)slTinh.Rewards;
+            double salaryNgoaiGio = (double)(slTinh.HoursOverTime * slTinh.SalaryOverTime);
+            double salary = (double)(slTinh.WorkDay * slTinh.SalaryDate);
+            MessageBox.Show("Tiền lương thực nhận của "
+                + dgvTimeKeeping.Rows[row].Cells[1].Value.ToString()
+                + " là: Lương thưởng: " + reward.ToString()
+                + " Lương ngoài giờ: " + salaryNgoaiGio.ToString()
+                + " Lương chính : " + salary.ToString("#,###", cul.NumberFormat)
+                + " Tổng lương thực nhận: " + Tong + " VND", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa chấm công của nhân viên ngày hôm nay của " + dgvTimeKeeping.Rows[row].Cells[1].Value.ToString(), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    Int32 idStaff = Convert.ToInt32(dgvTimeKeeping.Rows[row].Cells[0].Value);
+                    var query = from slr in db.Salaries
+                                where slr.IdStaff == idStaff
+                                select slr;
+                    string nowDay = DateTime.Now.ToString("dd/MM/yyyy");
+                    foreach (var day in query)
+                    {
+                        DateTime timeKeep = (DateTime)day.TimeKeeped;
+                        string timeKeepDay = timeKeep.ToString("dd/MM/yyyy");
+                        if (timeKeepDay != nowDay)
+                        {
+                            throw new Exception("Nhân viên này chưa được chấm công ngày hôm nay");
+                        }
+                    }
+                    Salary slXoa = (from sl in db.Salaries
+                                    where sl.IdStaff == idStaff
+                                    select sl).FirstOrDefault();
+                    slXoa.TimeKeeped = DateTime.Today.AddDays(-1);
+                    db.SaveChanges();
+                    MessageBox.Show("Xóa chấm công ngày hôm nay thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadSalary();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
+            }
+        }
+
+        private void btnTimeKeepingSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string userName = txtTimeKeepingSearch.Text;
+                if (userName == "")
+                    throw new Exception("Nhập tên nhân viên cần tìm");
+                else
+                {
+                    dgvTimeKeeping.Rows.Clear();
+                    var accTim = from nv in db.staff
+                                 select new
+                                 {
+                                     nv.IdStaff,
+                                     nv.NameStaff,
+                                     TimeKeeped = (from sl in db.Salaries
+                                                   where sl.IdStaff == nv.IdStaff
+                                                   select sl.TimeKeeped).FirstOrDefault(),
+                                     SalaryDate = (from sl in db.Salaries
+                                                     where sl.IdStaff == nv.IdStaff
+                                                     select sl.SalaryDate).FirstOrDefault(),
+                                     WorkDay = (from sl in db.Salaries
+                                                where sl.IdStaff == nv.IdStaff
+                                                select sl.WorkDay).FirstOrDefault(),
+                                     HoursOverTime = (from sl in db.Salaries
+                                                      where sl.IdStaff == nv.IdStaff
+                                                      select sl.HoursOverTime).FirstOrDefault(),
+                                     Rewards = (from sl in db.Salaries
+                                                where sl.IdStaff == nv.IdStaff
+                                                select sl.Rewards).FirstOrDefault(),
+                                     SalaryOverTime = (from sl in db.Salaries
+                                                        where sl.IdStaff == nv.IdStaff
+                                                        select sl.SalaryOverTime).FirstOrDefault(),
+                                 };
+                    row = 0;
+                    foreach (var slr in accTim)
+                    {
+                        CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+                        if (slr.NameStaff.Contains(userName))
+                        {
+                            DateTime timekeep = (DateTime)slr.TimeKeeped;
+                            dgvTimeKeeping.Rows.Add();
+                            dgvTimeKeeping.Rows[row].Cells[0].Value = slr.IdStaff.ToString();
+                            dgvTimeKeeping.Rows[row].Cells[1].Value = slr.NameStaff.ToString();
+                            dgvTimeKeeping.Rows[row].Cells[2].Value = timekeep.ToString("dd/MM/yyyy");
+                            dgvTimeKeeping.Rows[row].Cells[3].Value = slr.SalaryDate.ToString();
+                            dgvTimeKeeping.Rows[row].Cells[4].Value = slr.WorkDay.ToString();
+                            dgvTimeKeeping.Rows[row].Cells[5].Value = slr.HoursOverTime.ToString();
+                            dgvTimeKeeping.Rows[row].Cells[6].Value = slr.Rewards.ToString();
+                            dgvTimeKeeping.Rows[row].Cells[7].Value = slr.SalaryOverTime.ToString();
+                            double tong = ((double)((slr.WorkDay * slr.SalaryDate) + (slr.HoursOverTime * slr.SalaryOverTime) + slr.Rewards));
+                            string Tong = tong.ToString("#,###", cul.NumberFormat);
+                            dgvTimeKeeping.Rows[row].Cells[8].Value = Tong;
+                            row++;
+                        }
+                    }
+                }
+                if (dgvTimeKeeping.Rows.Count <= 0)
+                {
+                    throw new Exception("Không tồn tại nhân viên có tên " + userName + "!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
