@@ -33,6 +33,7 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionTimeKeeping = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pnFunctionSalary = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.btnTimeKeeping = new System.Windows.Forms.Button();
             this.btnAddSalary = new System.Windows.Forms.Button();
@@ -112,6 +113,7 @@ namespace BaketyManagement.View.Forms
             // pnFunctionSalary
             // 
             this.pnFunctionSalary.BackColor = System.Drawing.Color.White;
+            this.pnFunctionSalary.Controls.Add(this.button1);
             this.pnFunctionSalary.Controls.Add(this.label21);
             this.pnFunctionSalary.Controls.Add(this.btnTimeKeeping);
             this.pnFunctionSalary.Controls.Add(this.btnAddSalary);
@@ -127,6 +129,28 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionSalary.Name = "pnFunctionSalary";
             this.pnFunctionSalary.Size = new System.Drawing.Size(1131, 355);
             this.pnFunctionSalary.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(18)))), ((int)(((byte)(167)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(36)))), ((int)(((byte)(210)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::BaketyManagement.Properties.Resources.Cancel;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(722, 113);
+            this.button1.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 86);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Hủy chấm công hôm nay";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label21
             // 
@@ -245,7 +269,7 @@ namespace BaketyManagement.View.Forms
             this.btnPrintSalary.Name = "btnPrintSalary";
             this.btnPrintSalary.Size = new System.Drawing.Size(150, 70);
             this.btnPrintSalary.TabIndex = 6;
-            this.btnPrintSalary.Text = "In Lương";
+            this.btnPrintSalary.Text = "Xuất Lương";
             this.btnPrintSalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPrintSalary.UseVisualStyleBackColor = false;
             // 
@@ -272,7 +296,7 @@ namespace BaketyManagement.View.Forms
             this.btnCancelTimeKeeping.ForeColor = System.Drawing.Color.White;
             this.btnCancelTimeKeeping.Image = global::BaketyManagement.Properties.Resources.Cancel;
             this.btnCancelTimeKeeping.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelTimeKeeping.Location = new System.Drawing.Point(581, 248);
+            this.btnCancelTimeKeeping.Location = new System.Drawing.Point(578, 248);
             this.btnCancelTimeKeeping.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.btnCancelTimeKeeping.Name = "btnCancelTimeKeeping";
             this.btnCancelTimeKeeping.Size = new System.Drawing.Size(150, 70);
@@ -294,12 +318,12 @@ namespace BaketyManagement.View.Forms
             this.btnFilter.ForeColor = System.Drawing.Color.White;
             this.btnFilter.Image = global::BaketyManagement.Properties.Resources.filter;
             this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFilter.Location = new System.Drawing.Point(455, 129);
+            this.btnFilter.Location = new System.Drawing.Point(455, 113);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(221, 70);
+            this.btnFilter.Size = new System.Drawing.Size(221, 86);
             this.btnFilter.TabIndex = 7;
-            this.btnFilter.Text = "Tính Tổng Lương";
+            this.btnFilter.Text = "Tính Lương Nhận";
             this.btnFilter.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFilter.UseVisualStyleBackColor = false;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
@@ -324,6 +348,7 @@ namespace BaketyManagement.View.Forms
             this.btnTimeKeepingSearch.Text = "Tìm";
             this.btnTimeKeepingSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTimeKeepingSearch.UseVisualStyleBackColor = false;
+            this.btnTimeKeepingSearch.Click += new System.EventHandler(this.btnTimeKeepingSearch_Click);
             // 
             // pnTimeKeeping
             // 
@@ -494,5 +519,6 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Thuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn LuongLamNgoaiGio;
         private System.Windows.Forms.DataGridViewTextBoxColumn LuongThucNhan;
+        private System.Windows.Forms.Button button1;
     }
 }
