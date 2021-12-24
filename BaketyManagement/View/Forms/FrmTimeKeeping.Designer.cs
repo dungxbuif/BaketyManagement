@@ -229,6 +229,7 @@ namespace BaketyManagement.View.Forms
             this.btnDisplaySalary.Text = "Xem";
             this.btnDisplaySalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDisplaySalary.UseVisualStyleBackColor = false;
+            this.btnDisplaySalary.Click += new System.EventHandler(this.btnDisplaySalary_Click);
             // 
             // btnEditSalary
             // 

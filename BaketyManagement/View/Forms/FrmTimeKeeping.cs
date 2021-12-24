@@ -311,5 +311,10 @@ namespace BaketyManagement.View.Forms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnDisplaySalary_Click(object sender, EventArgs e)
+        {
+            LoadSalary();
+        }
     }
 }
