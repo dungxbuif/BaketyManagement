@@ -52,7 +52,7 @@ namespace BaketyManagement.View.Forms
                     TongTien += (double)tinhTien.tien;
                 }
                 dgvStatistical.Rows.Clear();
-                dgvStatistical.Rows[0].Cells[0].Value = "Từ ngày " + sevenDaysAgo.ToShortDateString() + " đến " + now.ToShortDateString();
+                dgvStatistical.Rows[0].Cells[0].Value = "Từ ngày " + sevenDaysAgo.ToString("dd/MM/yyyy") + " đến " + now.ToString("dd/MM/yyyy");
                 dgvStatistical.Rows[0].Cells[1].Value = TongTien.ToString();
             }
             else if (radRevenue3MonthsList.Checked)
@@ -82,7 +82,7 @@ namespace BaketyManagement.View.Forms
                     TongTien += (double)tinhTien.tien;
                 }
                 dgvStatistical.Rows.Clear();
-                dgvStatistical.Rows[0].Cells[0].Value = "Từ ngày " + threeMonthAgo.ToShortDateString() + " đến " + now.ToShortDateString();
+                dgvStatistical.Rows[0].Cells[0].Value = "Từ ngày " + threeMonthAgo.ToString("dd/MM/yyyy") + " đến " + now.ToString("dd/MM/yyyy");
                 dgvStatistical.Rows[0].Cells[1].Value = TongTien.ToString();
             }
             else if (radBestSellerList.Checked)
@@ -178,7 +178,7 @@ namespace BaketyManagement.View.Forms
                 TongTien += (double)tinhTien.tien;
             }
 
-            dgvStatistical.Rows[0].Cells[0].Value = "Từ ngày "+sevenDaysAgo.ToShortDateString() + " đến " + now.ToShortDateString();
+            dgvStatistical.Rows[0].Cells[0].Value = "Từ ngày "+sevenDaysAgo.ToString("dd/MM/yyyy") + " đến " + now.ToString("dd/MM/yyyy");
             dgvStatistical.Rows[0].Cells[1].Value = TongTien.ToString();
         }
 
