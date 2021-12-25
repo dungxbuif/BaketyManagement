@@ -67,7 +67,7 @@ namespace BaketyManagement.View.Forms
                 DateTime threeMonthAgo = month.AddMonths(-2);
                 dgvStatistical.Columns[0].HeaderText = "Thang";
                 dgvStatistical.Columns[1].HeaderText = "Tong tien";
-                gbStatisticalList.Text = "Danh sach doanh thu 3 thang gan đay";
+                gbStatisticalList.Text = "Danh sach doanh thu 3 thang gan day";
                 var data = from bi in db.Bills
                            join nv in db.staff on bi.IdStaff equals nv.IdStaff
                            join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
@@ -95,7 +95,7 @@ namespace BaketyManagement.View.Forms
                 DateTime thirtyDaysAgo = DateTime.Today.AddDays(-29);
                 dgvStatistical.Columns[0].HeaderText = "Ten banh";
                 dgvStatistical.Columns[1].HeaderText = "So luong";
-                gbStatisticalList.Text = "Danh sach 10 loai banh ban chay nhat trong 30 ngay gan đay";
+                gbStatisticalList.Text = "Danh sach 10 loai banh ban chay nhat trong 30 ngay gan day";
                 var data = from ca in db.Cakes
                            join res in db.Recipes on ca.IdRecipe equals res.IdRecipe
                            join ctb in db.BilDetails on ca.IdCake equals ctb.IdCake
@@ -128,7 +128,7 @@ namespace BaketyManagement.View.Forms
                 DateTime thirtyDaysAgo = DateTime.Today.AddDays(-29);
                 dgvStatistical.Columns[0].HeaderText = "Ten banh";
                 dgvStatistical.Columns[1].HeaderText = "So luong";
-                gbStatisticalList.Text = "Danh sach 10 loai banh ban cham nhat trong 30 ngay gan đay";
+                gbStatisticalList.Text = "Danh sach 10 loai banh ban cham nhat trong 30 ngay gan day";
                 var data = from ca in db.Cakes
                            join res in db.Recipes on ca.IdRecipe equals res.IdRecipe
                            join ctb in db.BilDetails on ca.IdCake equals ctb.IdCake
@@ -234,9 +234,10 @@ namespace BaketyManagement.View.Forms
                         {
                             StringBuilder sb = new StringBuilder();
                             sb.Append("<h1>TIEM BANH CAU DIEN</h1>");
-                            sb.Append("<div>" + gbStatisticalList.Text + "</div>");
                             sb.Append("<div>455 Cau Dien,<br /> Bac Tu Liem, Ha Noi</div>");
                             sb.Append("<div>(+84) 698-888-888</div>");
+                            sb.Append("<div>Ngay in: "+DateTime.Now.ToString("dd/MM/yyyy") + "</div>");
+                            sb.Append("<div>Noi dung: " + gbStatisticalList.Text + "</div>");
                             sb.Append("<div><br></div>");
                             PdfPTable pdfTable = new PdfPTable(dgvStatistical.Columns.Count);
                             pdfTable.DefaultCell.Padding = 3;
