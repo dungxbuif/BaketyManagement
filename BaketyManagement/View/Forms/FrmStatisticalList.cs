@@ -35,9 +35,9 @@ namespace BaketyManagement.View.Forms
                 double TongTien = 0;
                 DateTime now = DateTime.Now;
                 DateTime sevenDaysAgo = DateTime.Today.AddDays(-7);
-                dgvStatistical.Columns[0].HeaderText = "Ngày";
-                dgvStatistical.Columns[1].HeaderText = "Tổng tiền";
-                gbStatisticalList.Text = "Danh sách doanh thu 7 ngày gần đây";
+                dgvStatistical.Columns[0].HeaderText = "Ngay";
+                dgvStatistical.Columns[1].HeaderText = "Tong tien";
+                gbStatisticalList.Text = "Danh sach doanh thu 7 ngay gan day";
                 var data = from bi in db.Bills
                            join nv in db.staff on bi.IdStaff equals nv.IdStaff
                            join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
@@ -56,7 +56,7 @@ namespace BaketyManagement.View.Forms
                     TongTien += (double)tinhTien.tien;
                 }
                 dgvStatistical.Rows.Clear();
-                dgvStatistical.Rows[0].Cells[0].Value = "Từ ngày " + sevenDaysAgo.ToString("dd/MM/yyyy") + " đến " + now.ToString("dd/MM/yyyy");
+                dgvStatistical.Rows[0].Cells[0].Value = "Tu ngay " + sevenDaysAgo.ToString("dd/MM/yyyy") + " den " + now.ToString("dd/MM/yyyy");
                 dgvStatistical.Rows[0].Cells[1].Value = TongTien.ToString();
             }
             else if (radRevenue3MonthsList.Checked)
@@ -65,9 +65,9 @@ namespace BaketyManagement.View.Forms
                 DateTime now = DateTime.Now;
                 DateTime month = new DateTime(now.Year, now.Month, 1);
                 DateTime threeMonthAgo = month.AddMonths(-2);
-                dgvStatistical.Columns[0].HeaderText = "Tháng";
-                dgvStatistical.Columns[1].HeaderText = "Tổng tiền";
-                gbStatisticalList.Text = "Danh sách doanh thu 3 tháng gần đây";
+                dgvStatistical.Columns[0].HeaderText = "Thang";
+                dgvStatistical.Columns[1].HeaderText = "Tong tien";
+                gbStatisticalList.Text = "Danh sach doanh thu 3 thang gan đay";
                 var data = from bi in db.Bills
                            join nv in db.staff on bi.IdStaff equals nv.IdStaff
                            join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
@@ -86,16 +86,16 @@ namespace BaketyManagement.View.Forms
                     TongTien += (double)tinhTien.tien;
                 }
                 dgvStatistical.Rows.Clear();
-                dgvStatistical.Rows[0].Cells[0].Value = "Từ ngày " + threeMonthAgo.ToString("dd/MM/yyyy") + " đến " + now.ToString("dd/MM/yyyy");
+                dgvStatistical.Rows[0].Cells[0].Value = "Tu ngay " + threeMonthAgo.ToString("dd/MM/yyyy") + " den " + now.ToString("dd/MM/yyyy");
                 dgvStatistical.Rows[0].Cells[1].Value = TongTien.ToString();
             }
             else if (radBestSellerList.Checked)
             {
                 DateTime now = DateTime.Now;
                 DateTime thirtyDaysAgo = DateTime.Today.AddDays(-29);
-                dgvStatistical.Columns[0].HeaderText = "Tên bánh";
-                dgvStatistical.Columns[1].HeaderText = "Số lượng";
-                gbStatisticalList.Text = "Danh sách 10 loại bánh bán chạy nhất trong 30 ngày gần đây";
+                dgvStatistical.Columns[0].HeaderText = "Ten banh";
+                dgvStatistical.Columns[1].HeaderText = "So luong";
+                gbStatisticalList.Text = "Danh sach 10 loai banh ban chay nhat trong 30 ngay gan đay";
                 var data = from ca in db.Cakes
                            join res in db.Recipes on ca.IdRecipe equals res.IdRecipe
                            join ctb in db.BilDetails on ca.IdCake equals ctb.IdCake
@@ -126,9 +126,9 @@ namespace BaketyManagement.View.Forms
             {
                 DateTime now = DateTime.Now;
                 DateTime thirtyDaysAgo = DateTime.Today.AddDays(-29);
-                dgvStatistical.Columns[0].HeaderText = "Tên bánh";
-                dgvStatistical.Columns[1].HeaderText = "Số lượng";
-                gbStatisticalList.Text = "Danh sách 10 loại bánh bán chậm nhất trong 30 ngày gần đây";
+                dgvStatistical.Columns[0].HeaderText = "Ten banh";
+                dgvStatistical.Columns[1].HeaderText = "So luong";
+                gbStatisticalList.Text = "Danh sach 10 loai banh ban cham nhat trong 30 ngay gan đay";
                 var data = from ca in db.Cakes
                            join res in db.Recipes on ca.IdRecipe equals res.IdRecipe
                            join ctb in db.BilDetails on ca.IdCake equals ctb.IdCake
@@ -161,9 +161,9 @@ namespace BaketyManagement.View.Forms
             double TongTien = 0;
             DateTime now = DateTime.Now;
             DateTime sevenDaysAgo = DateTime.Today.AddDays(-7);
-            dgvStatistical.Columns.Add("Ngay", "Ngày");
-            dgvStatistical.Columns.Add("TongTien", "Tổng tiền");
-            gbStatisticalList.Text = "Danh sách doanh thu 7 ngày gần đây";
+            dgvStatistical.Columns.Add("Ngay", "Ngay");
+            dgvStatistical.Columns.Add("TongTien", "Tong tien");
+            gbStatisticalList.Text = "Danh sach doanh thu 7 ngay gan day";
             var data = from bi in db.Bills
                        join nv in db.staff on bi.IdStaff equals nv.IdStaff
                        join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
@@ -182,7 +182,7 @@ namespace BaketyManagement.View.Forms
                 TongTien += (double)tinhTien.tien;
             }
 
-            dgvStatistical.Rows[0].Cells[0].Value = "Từ ngày "+sevenDaysAgo.ToString("dd/MM/yyyy") + " đến " + now.ToString("dd/MM/yyyy");
+            dgvStatistical.Rows[0].Cells[0].Value = "Tu ngay "+sevenDaysAgo.ToString("dd/MM/yyyy") + " den ngay " + now.ToString("dd/MM/yyyy");
             dgvStatistical.Rows[0].Cells[1].Value = TongTien.ToString();
         }
 
@@ -232,8 +232,12 @@ namespace BaketyManagement.View.Forms
                     {
                         try
                         {
-                            string pdfHeader = gbStatisticalList.Text + "\n";
-                            StringReader sr = new StringReader(pdfHeader.ToString());
+                            StringBuilder sb = new StringBuilder();
+                            sb.Append("<h1>TIEM BANH CAU DIEN</h1>");
+                            sb.Append("<div>" + gbStatisticalList.Text + "</div>");
+                            sb.Append("<div>455 Cau Dien,<br /> Bac Tu Liem, Ha Noi</div>");
+                            sb.Append("<div>(+84) 698-888-888</div>");
+                            sb.Append("<div><br></div>");
                             PdfPTable pdfTable = new PdfPTable(dgvStatistical.Columns.Count);
                             pdfTable.DefaultCell.Padding = 3;
                             pdfTable.WidthPercentage = 100;
@@ -276,6 +280,7 @@ namespace BaketyManagement.View.Forms
 
                             using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
                             {
+                                StringReader sr = new StringReader(sb.ToString());
                                 Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
                                 HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
                                 PdfWriter.GetInstance(pdfDoc, stream);
