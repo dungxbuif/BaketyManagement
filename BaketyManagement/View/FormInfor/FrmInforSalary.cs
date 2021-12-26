@@ -33,7 +33,7 @@ namespace BaketyManagement.View.FormInfor
                 btnTimeKeeping.Text = "Thêm Chấm Công";
             } else
             {
-
+                txtWorkDays.Enabled = true;
                 btnTimeKeeping.Text = "Sửa thông tin";
                 Salary sl = (from slr in db.Salaries
                              where slr.IdStaff == idStaff
@@ -135,15 +135,28 @@ namespace BaketyManagement.View.FormInfor
 
         private void EditSalary()
         {
-            Salary slrSua = (from sl in db.Salaries
-                             where sl.IdStaff == idStaff
-                             select sl).FirstOrDefault();
-            slrSua.HoursOverTime = int.Parse(txtHoursOverTime.Text);
-            slrSua.Rewards = int.Parse(txtRewards.Text);
-            db.SaveChanges();
-            DialogResult result = MessageBox.Show("Sửa chấm công thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (result == DialogResult.OK)
-                this.Close();
+            try
+            {
+                Salary slrSua = (from sl in db.Salaries
+                                 where sl.IdStaff == idStaff
+                                 select sl).FirstOrDefault();
+                slrSua.HoursOverTime = int.Parse(txtHoursOverTime.Text);
+                if (slrSua.WorkDay < int.Parse(txtWorkDays.Text))
+                {
+                    throw new Exception("Ngày công mới không được lớn hơn ngày công cũ");
+                }
+                slrSua.WorkDay = int.Parse(txtWorkDays.Text);
+                slrSua.Rewards = int.Parse(txtRewards.Text);
+                db.SaveChanges();
+                DialogResult result = MessageBox.Show("Sửa chấm công thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                    this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

@@ -1,16 +1,22 @@
 ﻿
 using BaketyManagement.DataModels;
 using BaketyManagement.View.FormInfor;
+using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Document = iTextSharp.text.Document;
 
 namespace BaketyManagement.View.Forms
 {
@@ -232,6 +238,7 @@ namespace BaketyManagement.View.Forms
                                     where sl.IdStaff == idStaff
                                     select sl).FirstOrDefault();
                     slXoa.TimeKeeped = DateTime.Today.AddDays(-1);
+                    slXoa.WorkDay = slXoa.WorkDay - 1;
                     db.SaveChanges();
                     MessageBox.Show("Xóa chấm công ngày hôm nay thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadSalary();
@@ -315,6 +322,96 @@ namespace BaketyManagement.View.Forms
         private void btnDisplaySalary_Click(object sender, EventArgs e)
         {
             LoadSalary();
+        }
+
+        private void btnPrintSalary_Click(object sender, EventArgs e)
+        {
+            if (dgvTimeKeeping.Rows.Count > 0)
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "PDF (*.pdf)|*.pdf";
+                sfd.FileName = "Output.pdf";
+                bool fileError = false;
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    if (File.Exists(sfd.FileName))
+                    {
+                        try
+                        {
+                            File.Delete(sfd.FileName);
+                        }
+                        catch (IOException ex)
+                        {
+                            fileError = true;
+                            MessageBox.Show("Không thể in dữ liệu." + ex.Message);
+                        }
+                    }
+                    if (!fileError)
+                    {
+                        try
+                        {
+                            StringBuilder sb = new StringBuilder();
+                            sb.Append("<h1>TIEM BANH CAU DIEN</h1>");
+                            sb.Append("<div>455 Cau Dien,<br /> Bac Tu Liem, Ha Noi</div>");
+                            sb.Append("<div>(+84) 698-888-888</div>");
+                            sb.Append("<div>Ngay in: " + DateTime.Now.ToString("dd/MM/yyyy") + "</div>");
+                            sb.Append("<div>Noi dung: " + dgvTimeKeeping.Text + "</div>");
+                            sb.Append("<div><br></div>");
+                            PdfPTable pdfTable = new PdfPTable(dgvTimeKeeping.Columns.Count);
+                            pdfTable.DefaultCell.Padding = 3;
+                            pdfTable.WidthPercentage = 100;
+                            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                            foreach (DataGridViewColumn column in dgvTimeKeeping.Columns)
+                            {
+                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                pdfTable.AddCell(cell);
+                            }
+
+                            foreach (DataGridViewRow row in dgvTimeKeeping.Rows)
+                            {
+                                if (row.Index < dgvTimeKeeping.Rows.Count - 1)
+                                {
+                                    foreach (DataGridViewCell cell in row.Cells)
+                                    {
+                                        pdfTable.AddCell(cell.Value.ToString());
+                                    }
+                                }
+                                else
+                                {
+                                    foreach (DataGridViewCell cell in row.Cells)
+                                    {
+                                        pdfTable.AddCell("");
+                                    }
+                                }
+                            }
+
+                            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+                            {
+                                StringReader sr = new StringReader(sb.ToString());
+                                Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+                                HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
+                                PdfWriter.GetInstance(pdfDoc, stream);
+                                pdfDoc.Open();
+                                htmlparser.Parse(sr);
+                                pdfDoc.Add(pdfTable);
+                                pdfDoc.Close();
+                                stream.Close();
+                            }
+
+                            MessageBox.Show("Xuất dữ liệu thành công !!!", "Info");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error :" + ex.Message);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Record To Export !!!", "Info");
+            }
         }
     }
 }

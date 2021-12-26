@@ -75,6 +75,7 @@ namespace BaketyManagement.View.Forms
             this.tlpSupplier.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tlpSupplier.Size = new System.Drawing.Size(1191, 482);
             this.tlpSupplier.TabIndex = 4;
+            this.tlpSupplier.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpSupplier_Paint);
             // 
             // panel11
             // 
