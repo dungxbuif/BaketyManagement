@@ -1,12 +1,16 @@
 ﻿
 using BaketyManagement.DataModels;
 using BaketyManagement.DTO;
+using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -80,12 +84,12 @@ namespace BaketyManagement.View
             }
             txtTotalMoney.Text = totalMoney.ToString();
             dgvBill.DataSource = query.ToList();
-            dgvBill.Columns[0].HeaderText = "Mã";
-            dgvBill.Columns[1].HeaderText = "Tên bánh";
-            dgvBill.Columns[2].HeaderText = "Giá";
-            dgvBill.Columns[3].HeaderText = "Số lượng còn";
-            dgvBill.Columns[4].HeaderText = "Kích cỡ";
-            dgvBill.Columns[5].HeaderText = "Hạn dùng";
+            dgvBill.Columns[0].HeaderText = "Ma";
+            dgvBill.Columns[1].HeaderText = "Ten banh";
+            dgvBill.Columns[2].HeaderText = "Gia";
+            dgvBill.Columns[3].HeaderText = "So Luong";
+            dgvBill.Columns[4].HeaderText = "Kich co";
+            dgvBill.Columns[5].HeaderText = "Han dung";
         }
         private void btnAll_Click(object sender, EventArgs e)
         {
@@ -347,8 +351,6 @@ namespace BaketyManagement.View
 
         private void Pay()
         {
-            try
-            {
                 Single totalMoney = Convert.ToSingle(txtTotalMoney.Text);
                 Single discount = Convert.ToSingle(txtDiscount.Text);
                 Single returnMoney = 0;
@@ -360,22 +362,91 @@ namespace BaketyManagement.View
                     bill.Discount = discount;
                 }
                 else
-                {                   
+                {
+                    bill.Discount = 0;
                     totalAfterDiscount = totalMoney;
+                }
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "PDF (*.pdf)|*.pdf";
+                sfd.FileName = "Output.pdf";
+                bool fileError = false;
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    if (File.Exists(sfd.FileName))
+                    {
+                        try
+                        {
+                            File.Delete(sfd.FileName);
+                        }
+                        catch (IOException ex)
+                        {
+                            fileError = true;
+                            MessageBox.Show("Không thể in dữ liệu." + ex.Message);
+                        }
+                    }
+                    if (!fileError)
+                    {
+                            StringBuilder sb = new StringBuilder();
+                            sb.Append("<h1>TIEM BANH CAU DIEN</h1>");
+                            sb.Append("<div>455 Cau Dien,<br /> Bac Tu Liem, Ha Noi</div>");
+                            sb.Append("<div>(+84) 698-888-888</div>");
+                            sb.Append("<div>Ngay in: " + DateTime.Now.ToString("dd/MM/yyyy") + "</div>");
+                            sb.Append("<div>Noi dung: Hoa don ban hang</div>");
+                            sb.Append("<div><br></div>");
+                            PdfPTable pdfTable = new PdfPTable(dgvBill.Columns.Count);
+                            pdfTable.DefaultCell.Padding = 3;
+                            pdfTable.WidthPercentage = 100;
+                            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                            StringBuilder sbTotalMoney = new StringBuilder();
+                            sbTotalMoney.Append("<div style='text-align: right'><b>Tong tien: "+ totalMoney + "</b></div>");
+                            foreach (DataGridViewColumn column in dgvBill.Columns)
+                            {
+                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                pdfTable.AddCell(cell);
+                            }
+
+                            foreach (DataGridViewRow row in dgvBill.Rows)
+                            {
+                                string cell1 = row.Cells[0].Value.ToString();
+                                pdfTable.AddCell(cell1);
+                                string cell2 = row.Cells[1].Value.ToString();
+                                pdfTable.AddCell(cell2);
+                                string cell3 = row.Cells[2].Value.ToString();
+                                pdfTable.AddCell(cell3);
+                                string cell4 = row.Cells[3].Value.ToString();
+                                pdfTable.AddCell(cell4);
+                                string cell5 = row.Cells[4].Value.ToString();
+                                pdfTable.AddCell(cell5);
+                                string cell6 = row.Cells[5].Value.ToString();
+                                pdfTable.AddCell(cell6);
+                            }
+
+                            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+                            {
+                                StringReader sr = new StringReader(sb.ToString());
+                                StringReader srTotal = new StringReader(sbTotalMoney.ToString());
+                                Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+                                HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
+                                PdfWriter.GetInstance(pdfDoc, stream);
+                                pdfDoc.Open();
+                                htmlparser.Parse(sr);
+                                pdfDoc.Add(pdfTable);
+                                htmlparser.Parse(srTotal);
+                                pdfDoc.Close();
+                                stream.Close();
+                            }
+                            MessageBox.Show("In hóa đơn thành công !!!", "Info");
+                        }
+                    }
+                else
+                {
+                    MessageBox.Show("No Record To Export !!!", "Info");
                 }
                 dgvBill.DataSource = null;
                 db.SaveChanges();
                 MessageBox.Show("Thanh toán thành công");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+             
         }
 
-        private void pnPayCake_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
