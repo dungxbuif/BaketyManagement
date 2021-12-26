@@ -152,7 +152,6 @@ namespace BaketyManagement.View.FormInfor
             // 
             this.txtWorkDays.Location = new System.Drawing.Point(220, 183);
             this.txtWorkDays.Name = "txtWorkDays";
-            this.txtWorkDays.ReadOnly = true;
             this.txtWorkDays.Size = new System.Drawing.Size(317, 26);
             this.txtWorkDays.TabIndex = 3;
             // 

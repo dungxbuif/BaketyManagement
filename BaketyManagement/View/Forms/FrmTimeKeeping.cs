@@ -232,6 +232,7 @@ namespace BaketyManagement.View.Forms
                                     where sl.IdStaff == idStaff
                                     select sl).FirstOrDefault();
                     slXoa.TimeKeeped = DateTime.Today.AddDays(-1);
+                    slXoa.WorkDay = slXoa.WorkDay - 1;
                     db.SaveChanges();
                     MessageBox.Show("Xóa chấm công ngày hôm nay thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadSalary();

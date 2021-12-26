@@ -20,7 +20,7 @@ namespace BaketyManagement
             CustomizeDesign();
             this.Text = String.Empty;
             this.ControlBox = false;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.FormBorderStyle = FormBorderStyle.None;
             Account acc = MainDto.accountDto;
         }

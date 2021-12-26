@@ -181,6 +181,11 @@ namespace BaketyManagement.View.Forms
         {
             searchSupplier();
         }
+
+        private void tlpSupplier_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }
