@@ -273,6 +273,7 @@ namespace BaketyManagement.View.Forms
             this.btnPrintSalary.Text = "Xuất Lương";
             this.btnPrintSalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPrintSalary.UseVisualStyleBackColor = false;
+            this.btnPrintSalary.Click += new System.EventHandler(this.btnPrintSalary_Click);
             // 
             // txtTimeKeepingSearch
             // 
