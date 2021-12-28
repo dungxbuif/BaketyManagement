@@ -21,7 +21,8 @@ namespace BaketyManagement.View.FormInfor
             txtIdRecipe.Enabled = false;
             if (isAdd)
             {
-                txtIdRecipe.Text = (db.Recipes.Count() + 1).ToString();
+                int idLast = (from s in db.Recipes orderby s.IdRecipe descending select s).FirstOrDefault().IdRecipe;
+                txtIdRecipe.Text = (idLast +1).ToString();
                 btnEditRecipe.Visible = false;
             }
 
@@ -80,11 +81,12 @@ namespace BaketyManagement.View.FormInfor
                     }
                     else
                     {
+                        int idLast = (from s in db.Recipes orderby s.IdRecipe descending select s).FirstOrDefault().IdRecipe;
                         string nameCategory = comboBox1.Text.ToString();
                         var queryCate = from s in db.Categories where (s.NameCategory.Equals(nameCategory)) select s;
                         Category cate = queryCate.FirstOrDefault();
                         Recipe record = new Recipe();
-                        record.IdRecipe = db.Recipes.Count() + 1;
+                        record.IdRecipe = idLast + 1;
                         record.NameCake = txtNameCake.Text;
                         record.IdCategory = cate.IdCategory;
                         record.Price = double.Parse(txtPrice.Text);
