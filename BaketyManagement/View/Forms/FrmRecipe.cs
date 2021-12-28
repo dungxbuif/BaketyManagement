@@ -14,7 +14,8 @@ namespace BaketyManagement.View.Forms
 {
     public partial class FrmRecipe : Form
     {
-        private Int32 row,rowDetail;
+        private Int32 row,rowDetail, rowDetailsClick;
+        private int idRecipe;
         BakeryManagementContext db = new BakeryManagementContext();
         public FrmRecipe()
         {
@@ -66,7 +67,7 @@ namespace BaketyManagement.View.Forms
             try
             {
                 row = e.RowIndex;
-                int idRecipe = int.Parse(dgvRecipe.Rows[row].Cells[0].Value.ToString());
+                idRecipe = int.Parse(dgvRecipe.Rows[row].Cells[0].Value.ToString());
                 LoadTabDetails(idRecipe);
             }
             catch(Exception ex)
@@ -102,7 +103,8 @@ namespace BaketyManagement.View.Forms
 
             for (int i = 0; i < rowDetail; i++)
             {
-                int id = int.Parse(dgvRecipe.Rows[i].Cells[0].Value.ToString());
+                int id = int.Parse(dgvDetail.Rows[i].Cells[0].Value.ToString());
+               
                 dgvDetail.Rows[i].Cells[0].Value = Find_NameMaterial(id);
             }
         }
@@ -197,9 +199,17 @@ namespace BaketyManagement.View.Forms
                 if (row < 0)
                     throw new Exception("Chọn loại bánh cần xóa");
                 Int32 idRecipe = Int32.Parse(dgvRecipe.Rows[row].Cells[0].Value.ToString());
-                DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa loại bánh có mã " + dgvRecipe.Rows[row].Cells[0].Value.ToString(), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa công thức có mã " + dgvRecipe.Rows[row].Cells[0].Value.ToString(), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    List<RecipeDetail> list = (from sp in db.RecipeDetails where (sp.IdRecipe == idRecipe) select sp).ToList();
+                    foreach (var item in list)
+                    {
+                        RecipeDetail r = item;
+                        
+                        db.RecipeDetails.Remove(r);
+                        db.SaveChanges();
+                    }
                     var q = from sp in db.Cakes where (sp.IdRecipe == idRecipe) select sp;
                     if (q.FirstOrDefault() != null)
                         throw new Exception("Đang tồn tại bánh có công thức này, không thể xóa");
@@ -207,6 +217,7 @@ namespace BaketyManagement.View.Forms
                     Recipe recipe = query.FirstOrDefault();
                     db.Recipes.Remove(recipe);
                     db.SaveChanges();
+                    dgvDetail.Rows.Clear();
                     LoadTabRecipe();
                     MessageBox.Show("Xóa thành công");
                 }
@@ -217,6 +228,72 @@ namespace BaketyManagement.View.Forms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnAddMaterial_Click(object sender, EventArgs e)
+        {
+            AddRecipeDetail();
+        }
+
+        private void AddRecipeDetail()
+        {
+            try
+            {
+                FrmInforTabRecipeDetail.isAdd = true;
+                FrmInforTabRecipeDetail.idRecipe = idRecipe;
+                FrmInforTabRecipeDetail frm = new FrmInforTabRecipeDetail();
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
+                LoadTabDetails(idRecipe);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnEditMaterial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelMaterial_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (rowDetailsClick < 0)
+                    throw new Exception("Chọn nguyên liệu cần xóa");
+                string name = dgvDetail.Rows[rowDetailsClick].Cells[0].Value.ToString();
+                DialogResult result = MessageBox.Show("Bạn thực sự muốn xóa nguyên liệu " + name, "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    var queryMaterial = from sp in db.Materials where (sp.NameMaterial.Equals(name)) select sp;
+                    Material material = queryMaterial.FirstOrDefault();
+                    var q = from sp in db.RecipeDetails where (sp.IdRecipe == idRecipe && sp.IdMaterial == material.IdMaterial) select sp;   
+                    RecipeDetail re = q.FirstOrDefault();
+                    db.RecipeDetails.Remove(re);
+                    db.SaveChanges();
+                    dgvDetail.Rows.Clear();
+                    LoadTabDetails(idRecipe);
+                    MessageBox.Show("Xóa thành công");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnBaking_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDetail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            rowDetailsClick = e.RowIndex;
+        }
+
         private void AddRecipe()
         {
             try

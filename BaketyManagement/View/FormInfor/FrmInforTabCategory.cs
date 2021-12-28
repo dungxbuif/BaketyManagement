@@ -23,7 +23,8 @@ namespace BaketyManagement.View
             txtIdCategory.Enabled = false;
             if (isAdd)
             {
-                txtIdCategory.Text = (db.Categories.Count() + 1).ToString();
+                int idLast = (from s in db.Categories orderby s.IdCategory descending select s).FirstOrDefault().IdCategory;
+                txtIdCategory.Text = (idLast + 1).ToString();
                 btnEditCategory.Visible = false;
             }
 
@@ -46,6 +47,7 @@ namespace BaketyManagement.View
                     throw new Exception("Nhập tên Loại bánh cần thêm");
                 else
                 {
+                    int idLast = (from s in db.Categories orderby s.IdCategory descending select s).FirstOrDefault().IdCategory;
                     var query = from sp in db.Categories where (sp.NameCategory == txtNameCategory.Text) select sp;
                     if (query.FirstOrDefault() != null)
                     {
@@ -54,7 +56,7 @@ namespace BaketyManagement.View
                     else
                     {
                         Category record = new Category();
-                        record.IdCategory = db.Categories.Count() + 1;
+                        record.IdCategory = idLast + 1;
                         record.NameCategory = txtNameCategory.Text;
                         db.Categories.Add(record);
                         db.SaveChanges();

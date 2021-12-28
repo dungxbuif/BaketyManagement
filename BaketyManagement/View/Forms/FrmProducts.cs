@@ -49,8 +49,10 @@ namespace BaketyManagement.View.Forms
                 dgvCake.Rows[row].Cells[2].Value = cake.Price.ToString();
                 dgvCake.Rows[row].Cells[3].Value = cake.Amount.ToString();
                 dgvCake.Rows[row].Cells[4].Value = cake.Size.ToString();
-                dgvCake.Rows[row].Cells[5].Value = cake.ExpCake.ToString();
-                dgvCake.Rows[row].Cells[6].Value = cake.MfgCake.ToString();
+                string dateex= String.Format("{0:dd-MM-yyyy}", cake.ExpCake);
+                string datemfg = String.Format("{0:dd-MM-yyyy}", cake.MfgCake);
+                dgvCake.Rows[row].Cells[5].Value = dateex;
+                dgvCake.Rows[row].Cells[6].Value = datemfg;
                 row++;
                
             }
@@ -157,16 +159,17 @@ namespace BaketyManagement.View.Forms
 
         private void btnCakeEdit_Click(object sender, EventArgs e)
         {
+
             try
             {
                 if (row < 0)
                     throw new Exception("Chọn bánh cần sửa");
-                    FrmInforTabProduct.id = Int32.Parse(dgvCake.Rows[row].Cells[0].Value.ToString());
-                    FrmInforTabProduct.name = dgvCake.Rows[row].Cells[1].Value.ToString();
-                    FrmInforTabProduct frm = new FrmInforTabProduct();
-                    frm.StartPosition = FormStartPosition.CenterScreen;
-                    frm.ShowDialog();
-                    LoadProduct();             
+                FrmInforTabProduct.id = Int32.Parse(dgvCake.Rows[row].Cells[0].Value.ToString());
+                FrmInforTabProduct.name = dgvCake.Rows[row].Cells[1].Value.ToString();
+                FrmInforTabProduct frm = new FrmInforTabProduct();
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
+                LoadProduct();
             }
             catch (Exception ex)
             {

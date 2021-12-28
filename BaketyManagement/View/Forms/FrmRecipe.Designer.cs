@@ -339,6 +339,7 @@ namespace BaketyManagement.View.Forms
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetail.Size = new System.Drawing.Size(403, 127);
             this.dgvDetail.TabIndex = 2;
+            this.dgvDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellClick);
             // 
             // Column5
             // 
@@ -393,6 +394,7 @@ namespace BaketyManagement.View.Forms
             this.btnAddMaterial.Text = "Thêm NL";
             this.btnAddMaterial.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddMaterial.UseVisualStyleBackColor = false;
+            this.btnAddMaterial.Click += new System.EventHandler(this.btnAddMaterial_Click);
             // 
             // btnDelMaterial
             // 
@@ -414,6 +416,7 @@ namespace BaketyManagement.View.Forms
             this.btnDelMaterial.Text = "Xóa NL";
             this.btnDelMaterial.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelMaterial.UseVisualStyleBackColor = false;
+            this.btnDelMaterial.Click += new System.EventHandler(this.btnDelMaterial_Click);
             // 
             // btnEditMaterial
             // 
@@ -435,6 +438,7 @@ namespace BaketyManagement.View.Forms
             this.btnEditMaterial.Text = "Sửa NL";
             this.btnEditMaterial.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditMaterial.UseVisualStyleBackColor = false;
+            this.btnEditMaterial.Click += new System.EventHandler(this.btnEditMaterial_Click);
             // 
             // btnBaking
             // 
@@ -456,6 +460,7 @@ namespace BaketyManagement.View.Forms
             this.btnBaking.Text = "Làm Bánh";
             this.btnBaking.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBaking.UseVisualStyleBackColor = false;
+            this.btnBaking.Click += new System.EventHandler(this.btnBaking_Click);
             // 
             // FrmRecipe
             // 
