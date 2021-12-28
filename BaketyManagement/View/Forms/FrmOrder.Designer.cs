@@ -152,7 +152,6 @@ namespace BaketyManagement.View
             this.pnPayCake.Name = "pnPayCake";
             this.pnPayCake.Size = new System.Drawing.Size(550, 362);
             this.pnPayCake.TabIndex = 2;
-            this.pnPayCake.Paint += new System.Windows.Forms.PaintEventHandler(this.pnPayCake_Paint);
             // 
             // btnCancel
             // 

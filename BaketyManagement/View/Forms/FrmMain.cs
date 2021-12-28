@@ -20,7 +20,7 @@ namespace BaketyManagement
             CustomizeDesign();
             this.Text = String.Empty;
             this.ControlBox = false;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.FormBorderStyle = FormBorderStyle.None;
             Account acc = MainDto.accountDto;
         }
@@ -168,6 +168,8 @@ namespace BaketyManagement
                 pnStatistical.Visible = false;
                 pnSubmenuAdmin.Height = pnSubmenuAdmin.Height - pnStatistical.Height;
             }
+            FrmStatisticalList frmStatisticalList = new FrmStatisticalList();
+            OpenChildForm(frmStatisticalList, sender);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -202,7 +204,7 @@ namespace BaketyManagement
 
         private void btnPrintInventory_Click(object sender, EventArgs e)
         {
-          //  OpenChildForm(new FrmPrintInventory(), sender);
+            //  OpenChildForm(new FrmPrintInventory(), sender);
         }
 
         private void btnAccount_Click(object sender, EventArgs e)

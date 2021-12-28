@@ -135,14 +135,17 @@ namespace BaketyManagement.View.Forms
                     row = 0;
                     foreach (var acc in accTim)
                     {
-                        dgvAccount.Rows.Add();
-                        dgvAccount.Rows[row].Cells[0].Value = acc.NameStaff.ToString();
-                        dgvAccount.Rows[row].Cells[1].Value = acc.userName.ToString();
-                        if (acc.typeAccount == false)
-                            dgvAccount.Rows[row].Cells[2].Value = "Admin";
-                        else
-                            dgvAccount.Rows[row].Cells[2].Value = "Member";
-                        row++;
+                        if(acc.NameStaff.Contains(userName))
+                        {
+                            dgvAccount.Rows.Add();
+                            dgvAccount.Rows[row].Cells[0].Value = acc.NameStaff.ToString();
+                            dgvAccount.Rows[row].Cells[1].Value = acc.userName.ToString();
+                            if (acc.typeAccount == false)
+                                dgvAccount.Rows[row].Cells[2].Value = "Admin";
+                            else
+                                dgvAccount.Rows[row].Cells[2].Value = "Member";
+                            row++;
+                        }
                     }
                 }
                 if (dgvAccount.Rows.Count <= 0)
