@@ -442,8 +442,10 @@ namespace BaketyManagement.View
                 {
                     MessageBox.Show("No Record To Export !!!", "Info");
                 }
+
                 dgvBill.DataSource = null;
                 db.SaveChanges();
+                idBill = 0;
                 MessageBox.Show("Thanh toán thành công");
              
         }
