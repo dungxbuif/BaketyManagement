@@ -160,6 +160,7 @@ namespace BaketyManagement.View.Forms
             }
             else if (radSlowestSellerList.Checked)
             {
+                double TongTien = 0;
                 DateTime now = DateTime.Now;
                 DateTime thirtyDaysAgo = DateTime.Today.AddDays(-30);
                 dgvStatistical.Columns.Remove("NhanVien");
@@ -188,6 +189,22 @@ namespace BaketyManagement.View.Forms
                     actValue = st.Sum(s => s.ctb.AmountOrder * s.ca.Price * ((100 - s.bi.Discount) / 100)),
                     sumValue = st.Sum(s => s.ctb.AmountOrder * s.ca.Price * ((100 - s.bi.Discount) / 100))
                 });
+                var dataTongTien = from bi in db.Bills
+                           join nv in db.staff on bi.IdStaff equals nv.IdStaff
+                           join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
+                           join ca in db.Cakes on ctb.IdCake equals ca.IdCake
+                           where bi.ExportDate <= now && bi.ExportDate >= thirtyDaysAgo
+                                   group new { bi, ctb, ca } by new { bi.IdBill, bi.ExportDate, bi.Discount, nv.NameStaff } into bill
+                           select bill;
+                var queryTongTien = dataTongTien
+                    .Select(bill => new
+                    {
+                        tien = bill.Sum(b => b.ctb.AmountOrder * b.ca.Price * ((100 - bill.Key.Discount) / 100))
+                    });
+                foreach (var tinhTien in queryTongTien)
+                {
+                    TongTien += (double)tinhTien.tien;
+                }
                 Int32 row = 0;
                 dgvStatistical.Rows.Clear();
                 foreach (var st in query)
@@ -201,6 +218,9 @@ namespace BaketyManagement.View.Forms
                     dgvStatistical.Rows[row].Cells[5].Value = st.sumValue;
                     row++;
                 }
+                dgvStatistical.Rows.Add();
+                dgvStatistical.Rows[row+1].Cells[0].Value = "Tổng tiền";
+                dgvStatistical.Rows[row+1].Cells[5].Value = TongTien.ToString();
             }
         }
         private void LoadStatisticalList()
@@ -302,7 +322,7 @@ namespace BaketyManagement.View.Forms
                             {
                                 foreach (DataGridViewRow row in dgvStatistical.Rows)
                                 {
-                                    if (row.Index < dgvStatistical.Rows.Count - 1)
+                                    if (row.Index < dgvStatistical.Rows.Count - 2)
                                     {
                                         string cell1 = row.Cells[0].Value.ToString();
                                         pdfTable.AddCell(cell1);
@@ -317,7 +337,7 @@ namespace BaketyManagement.View.Forms
                                         string cell6 = row.Cells[5].Value.ToString();
                                         pdfTable.AddCell(cell6);
                                     }
-                                    else
+                                    else if(row.Index == dgvStatistical.Rows.Count - 2)
                                     {
                                         string cell1 = "";
                                         pdfTable.AddCell(cell1);
@@ -330,6 +350,21 @@ namespace BaketyManagement.View.Forms
                                         string cell5 = "";
                                         pdfTable.AddCell(cell5);
                                         string cell6 = "";
+                                        pdfTable.AddCell(cell6);
+                                    }
+                                    else
+                                    {
+                                        string cell1 = row.Cells[0].Value.ToString();
+                                        pdfTable.AddCell(cell1);
+                                        string cell2 = "";
+                                        pdfTable.AddCell(cell2);
+                                        string cell3 = "";
+                                        pdfTable.AddCell(cell3);
+                                        string cell4 = "";
+                                        pdfTable.AddCell(cell4);
+                                        string cell5 = "";
+                                        pdfTable.AddCell(cell5);
+                                        string cell6 = row.Cells[5].Value.ToString();
                                         pdfTable.AddCell(cell6);
                                     }
                                 }

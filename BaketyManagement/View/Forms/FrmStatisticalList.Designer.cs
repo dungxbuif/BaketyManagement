@@ -73,7 +73,7 @@ namespace BaketyManagement.View.Forms
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(1074, 673);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(1077, 673);
             this.tableLayoutPanel10.TabIndex = 2;
             // 
             // pnListStatical
@@ -84,7 +84,7 @@ namespace BaketyManagement.View.Forms
             this.pnListStatical.Margin = new System.Windows.Forms.Padding(10);
             this.pnListStatical.Name = "pnListStatical";
             this.pnListStatical.Padding = new System.Windows.Forms.Padding(10);
-            this.pnListStatical.Size = new System.Drawing.Size(1034, 383);
+            this.pnListStatical.Size = new System.Drawing.Size(1037, 383);
             this.pnListStatical.TabIndex = 1;
             // 
             // panel3
@@ -93,7 +93,7 @@ namespace BaketyManagement.View.Forms
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(10, 10);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1014, 363);
+            this.panel3.Size = new System.Drawing.Size(1017, 363);
             this.panel3.TabIndex = 0;
             // 
             // gbStatisticalList
@@ -105,7 +105,7 @@ namespace BaketyManagement.View.Forms
             this.gbStatisticalList.Location = new System.Drawing.Point(0, 0);
             this.gbStatisticalList.Name = "gbStatisticalList";
             this.gbStatisticalList.Padding = new System.Windows.Forms.Padding(0);
-            this.gbStatisticalList.Size = new System.Drawing.Size(1014, 363);
+            this.gbStatisticalList.Size = new System.Drawing.Size(1017, 363);
             this.gbStatisticalList.TabIndex = 0;
             this.gbStatisticalList.TabStop = false;
             this.gbStatisticalList.Text = "Danh sách thống kê";
@@ -119,7 +119,7 @@ namespace BaketyManagement.View.Forms
             this.panel25.Location = new System.Drawing.Point(0, 23);
             this.panel25.Margin = new System.Windows.Forms.Padding(0);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(1014, 340);
+            this.panel25.Size = new System.Drawing.Size(1017, 340);
             this.panel25.TabIndex = 0;
             // 
             // dgvStatistical
@@ -135,7 +135,7 @@ namespace BaketyManagement.View.Forms
             this.dgvStatistical.ReadOnly = true;
             this.dgvStatistical.RowHeadersWidth = 51;
             this.dgvStatistical.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStatistical.Size = new System.Drawing.Size(1014, 340);
+            this.dgvStatistical.Size = new System.Drawing.Size(1017, 340);
             this.dgvStatistical.TabIndex = 0;
             // 
             // panel26
@@ -145,7 +145,7 @@ namespace BaketyManagement.View.Forms
             this.panel26.Location = new System.Drawing.Point(13, 416);
             this.panel26.Name = "panel26";
             this.panel26.Padding = new System.Windows.Forms.Padding(10);
-            this.panel26.Size = new System.Drawing.Size(1048, 244);
+            this.panel26.Size = new System.Drawing.Size(1051, 244);
             this.panel26.TabIndex = 1;
             // 
             // pnTypeStatical
@@ -155,7 +155,7 @@ namespace BaketyManagement.View.Forms
             this.pnTypeStatical.Location = new System.Drawing.Point(10, 10);
             this.pnTypeStatical.Name = "pnTypeStatical";
             this.pnTypeStatical.Padding = new System.Windows.Forms.Padding(10);
-            this.pnTypeStatical.Size = new System.Drawing.Size(1028, 224);
+            this.pnTypeStatical.Size = new System.Drawing.Size(1031, 224);
             this.pnTypeStatical.TabIndex = 1;
             // 
             // panel1
@@ -164,7 +164,7 @@ namespace BaketyManagement.View.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1008, 204);
+            this.panel1.Size = new System.Drawing.Size(1011, 204);
             this.panel1.TabIndex = 0;
             // 
             // groupBox22
@@ -176,7 +176,7 @@ namespace BaketyManagement.View.Forms
             this.groupBox22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.groupBox22.Location = new System.Drawing.Point(0, 0);
             this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(1008, 204);
+            this.groupBox22.Size = new System.Drawing.Size(1011, 204);
             this.groupBox22.TabIndex = 0;
             this.groupBox22.TabStop = false;
             this.groupBox22.Text = "Kiểu thống kê";
@@ -192,7 +192,7 @@ namespace BaketyManagement.View.Forms
             this.panel29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel29.Location = new System.Drawing.Point(3, 26);
             this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(1002, 175);
+            this.panel29.Size = new System.Drawing.Size(1005, 175);
             this.panel29.TabIndex = 0;
             // 
             // btn_exportPDF
@@ -213,7 +213,7 @@ namespace BaketyManagement.View.Forms
             this.radSlowestSellerList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radSlowestSellerList.AutoSize = true;
             this.radSlowestSellerList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.radSlowestSellerList.Location = new System.Drawing.Point(285, 137);
+            this.radSlowestSellerList.Location = new System.Drawing.Point(252, 137);
             this.radSlowestSellerList.Name = "radSlowestSellerList";
             this.radSlowestSellerList.Size = new System.Drawing.Size(547, 29);
             this.radSlowestSellerList.TabIndex = 0;
@@ -226,7 +226,7 @@ namespace BaketyManagement.View.Forms
             this.radBestSellerList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radBestSellerList.AutoSize = true;
             this.radBestSellerList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.radBestSellerList.Location = new System.Drawing.Point(285, 96);
+            this.radBestSellerList.Location = new System.Drawing.Point(252, 96);
             this.radBestSellerList.Name = "radBestSellerList";
             this.radBestSellerList.Size = new System.Drawing.Size(514, 29);
             this.radBestSellerList.TabIndex = 0;
@@ -239,7 +239,7 @@ namespace BaketyManagement.View.Forms
             this.radRevenue3MonthsList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radRevenue3MonthsList.AutoSize = true;
             this.radRevenue3MonthsList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.radRevenue3MonthsList.Location = new System.Drawing.Point(285, 55);
+            this.radRevenue3MonthsList.Location = new System.Drawing.Point(252, 55);
             this.radRevenue3MonthsList.Name = "radRevenue3MonthsList";
             this.radRevenue3MonthsList.Size = new System.Drawing.Size(487, 29);
             this.radRevenue3MonthsList.TabIndex = 0;
@@ -253,7 +253,7 @@ namespace BaketyManagement.View.Forms
             this.radRevenue7DaysList.AutoSize = true;
             this.radRevenue7DaysList.Checked = true;
             this.radRevenue7DaysList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.radRevenue7DaysList.Location = new System.Drawing.Point(285, 14);
+            this.radRevenue7DaysList.Location = new System.Drawing.Point(252, 14);
             this.radRevenue7DaysList.Name = "radRevenue7DaysList";
             this.radRevenue7DaysList.Size = new System.Drawing.Size(475, 29);
             this.radRevenue7DaysList.TabIndex = 0;
