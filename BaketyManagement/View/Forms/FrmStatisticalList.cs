@@ -47,7 +47,7 @@ namespace BaketyManagement.View.Forms
                 DateTime sevenDaysAgo = DateTime.Today.AddDays(-7);
                 dgvStatistical.Columns[0].HeaderText = "Nhân viên";
                 dgvStatistical.Columns[1].HeaderText = "Tổng tiền";
-                gbStatisticalList.Text = "Danh sách doanh thu của từng nhân viên 7 ngày gần đây nhất";
+                gbStatisticalList.Text = "Danh sách doanh thu của từng nhân viên 7 ngày gần đây nhất (từ ngày " + sevenDaysAgo.ToString("dd/MM/yyyy") + " đến ngày " + now.ToString("dd/MM/yyyy") + ")";
                 var data = from staff in db.staff
                            join bi in db.Bills on staff.IdStaff equals bi.IdStaff
                            join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
@@ -89,7 +89,7 @@ namespace BaketyManagement.View.Forms
                 DateTime thirtyDaysAgo = DateTime.Today.AddDays(-30);
                 dgvStatistical.Columns[0].HeaderText = "Nhân viên";
                 dgvStatistical.Columns[1].HeaderText = "Tổng tiền";
-                gbStatisticalList.Text = "Danh sách doanh thu của từng nhân viên 30 ngày gần đây nhất";
+                gbStatisticalList.Text = "Danh sách doanh thu của từng nhân viên 30 ngày gần đây nhất (từ ngày " + thirtyDaysAgo.ToString("dd/MM/yyyy") + " đến ngày " + now.ToString("dd/MM/yyyy") + ")";
                 var data = from staff in db.staff
                            join bi in db.Bills on staff.IdStaff equals bi.IdStaff
                            join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
@@ -128,10 +128,10 @@ namespace BaketyManagement.View.Forms
                     dgvStatistical.Columns.Add("TongTien", "Tổng tiền");
                 }
                 DateTime now = DateTime.Now;
-                DateTime thirtyDaysAgo = DateTime.Today.AddDays(-29);
+                DateTime thirtyDaysAgo = DateTime.Today.AddDays(-30);
                 dgvStatistical.Columns[0].HeaderText = "Tên bánh";
                 dgvStatistical.Columns[1].HeaderText = "Số lượng";
-                gbStatisticalList.Text = "Danh sách 10 loại bánh bán chạy nhất trong 30 ngày gần đây";
+                gbStatisticalList.Text = "Danh sách 10 loại bánh bán chạy nhất trong 30 ngày gần đây (từ ngày " + thirtyDaysAgo.ToString("dd/MM/yyyy") + " đến ngày " + now.ToString("dd/MM/yyyy") + ")";
                 var data = from ca in db.Cakes
                            join res in db.Recipes on ca.IdRecipe equals res.IdRecipe
                            join ctb in db.BilDetails on ca.IdCake equals ctb.IdCake
@@ -170,7 +170,7 @@ namespace BaketyManagement.View.Forms
                 dgvStatistical.Columns.Add("GiamGia", "Giảm giá");
                 dgvStatistical.Columns.Add("DoanhThuThuc", "Doanh thu thực");
                 dgvStatistical.Columns.Add("TongDoanhThu", "Tổng doanh thu");
-                gbStatisticalList.Text = "Thống kê doanh thu sản phẩm trong 30 ngày gần đây";
+                gbStatisticalList.Text = "Thống kê doanh thu sản phẩm trong 30 ngày gần đây (từ ngày " + thirtyDaysAgo.ToString("dd/MM/yyyy") + " đến ngày " + now.ToString("dd/MM/yyyy") + ")";
                 var data = from ca in db.Cakes
                            join res in db.Recipes on ca.IdRecipe equals res.IdRecipe
                            join ctb in db.BilDetails on ca.IdCake equals ctb.IdCake
@@ -209,7 +209,7 @@ namespace BaketyManagement.View.Forms
             DateTime sevenDaysAgo = DateTime.Today.AddDays(-7);
             dgvStatistical.Columns.Add("NhanVien", "Nhân viên");
             dgvStatistical.Columns.Add("TongTien", "Tổng tiền");
-            gbStatisticalList.Text = "Danh sách doanh thu của từng nhân viên 7 ngày gần đây nhất";
+            gbStatisticalList.Text = "Danh sách doanh thu của từng nhân viên 7 ngày gần đây nhất (từ ngày "+ sevenDaysAgo.ToString("dd/MM/yyyy")+" đến ngày "+now.ToString("dd/MM/yyyy")+")";
             var data = from staff in db.staff
                        join bi in db.Bills on staff.IdStaff equals bi.IdStaff
                        join ctb in db.BilDetails on bi.IdBill equals ctb.IdBill
