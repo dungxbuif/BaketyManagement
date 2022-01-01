@@ -215,9 +215,9 @@ namespace BaketyManagement.View.Forms
             this.radSlowestSellerList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.radSlowestSellerList.Location = new System.Drawing.Point(285, 137);
             this.radSlowestSellerList.Name = "radSlowestSellerList";
-            this.radSlowestSellerList.Size = new System.Drawing.Size(520, 29);
+            this.radSlowestSellerList.Size = new System.Drawing.Size(547, 29);
             this.radSlowestSellerList.TabIndex = 0;
-            this.radSlowestSellerList.Text = "10 loại bánh bán chậm nhất trong 30 ngày gần đây";
+            this.radSlowestSellerList.Text = "Thống kê doanh thu sản phẩm trong 30 ngày gần đây";
             this.radSlowestSellerList.UseVisualStyleBackColor = true;
             this.radSlowestSellerList.Click += new System.EventHandler(this.radSlowestSellerList_Click);
             // 
@@ -241,9 +241,9 @@ namespace BaketyManagement.View.Forms
             this.radRevenue3MonthsList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.radRevenue3MonthsList.Location = new System.Drawing.Point(285, 55);
             this.radRevenue3MonthsList.Name = "radRevenue3MonthsList";
-            this.radRevenue3MonthsList.Size = new System.Drawing.Size(293, 29);
+            this.radRevenue3MonthsList.Size = new System.Drawing.Size(487, 29);
             this.radRevenue3MonthsList.TabIndex = 0;
-            this.radRevenue3MonthsList.Text = "Doanh thu 3 tháng gần đây";
+            this.radRevenue3MonthsList.Text = "Doanh thu của từng nhân viên 30 ngày gần đây";
             this.radRevenue3MonthsList.UseVisualStyleBackColor = true;
             this.radRevenue3MonthsList.Click += new System.EventHandler(this.radRevenue3MonthsList_Click);
             // 
@@ -255,10 +255,10 @@ namespace BaketyManagement.View.Forms
             this.radRevenue7DaysList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.radRevenue7DaysList.Location = new System.Drawing.Point(285, 14);
             this.radRevenue7DaysList.Name = "radRevenue7DaysList";
-            this.radRevenue7DaysList.Size = new System.Drawing.Size(286, 29);
+            this.radRevenue7DaysList.Size = new System.Drawing.Size(475, 29);
             this.radRevenue7DaysList.TabIndex = 0;
             this.radRevenue7DaysList.TabStop = true;
-            this.radRevenue7DaysList.Text = "Doanh thu 7 ngày gần đây";
+            this.radRevenue7DaysList.Text = "Doanh thu của từng nhân viên 7 ngày gần đây";
             this.radRevenue7DaysList.UseVisualStyleBackColor = true;
             this.radRevenue7DaysList.Click += new System.EventHandler(this.radRevenue7DaysList_Click);
             // 
