@@ -31,8 +31,8 @@ namespace BaketyManagement.View
             txtPrice.Text = cake.Price.ToString();
             txtSize.Text = cake.Size.ToString();
             txtSoLuongCon.Text = cake.Amount.ToString();
-            dtpNgayRaLo.Value = cake.ExpCake.Value;
-            dtpNgayHetHan.Value = cake.MfgCake.Value;
+            dtpNgayRaLo.Value = cake.MfgCake.Value;
+            dtpNgayHetHan.Value = cake.ExpCake.Value;
         }
 
         private void btnCakeEdit_Click(object sender, EventArgs e)
@@ -74,8 +74,8 @@ namespace BaketyManagement.View
                     cake.Price = float.Parse(txtPrice.Text.ToString());
                     cake.Amount = int.Parse(txtSoLuongCon.Text.ToString());
                     cake.Size = txtSize.Text.ToString();
-                    cake.ExpCake = dtpNgayRaLo.Value;
                     cake.MfgCake = dtpNgayRaLo.Value;
+                    cake.ExpCake = dtpNgayRaLo.Value;
                     db.SaveChanges();
                     MessageBox.Show("Sửa thành công");
                     this.Close();
