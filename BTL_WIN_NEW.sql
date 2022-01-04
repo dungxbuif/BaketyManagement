@@ -91,8 +91,8 @@ CREATE TABLE [Supplier] (
   [address] nvarchar(255)
 )
 GO
-INSERT INTO Supplier VALUES(1,N'Hữu Nghị','0123456789',N'Thanh Xuân - Hà Nội')
-INSERT INTO Supplier VALUES(2,N'Kinh Đô','0123456789',N'Đống Đa - Hà Nội')
+INSERT INTO Supplier VALUES(1,N'Huu Nghi','0123456789',N'Thanh Xuân - Hà Nội')
+INSERT INTO Supplier VALUES(2,N'Kinh Do','0123456789',N'Đống Đa - Hà Nội')
 INSERT INTO Supplier VALUES(3,N'Mixi Food','0123456789',N'Láng Hạ - Hà Nội')
 INSERT INTO Supplier VALUES(4,N'Haki Food','0123456789',N'Hoài Đức - Hà Nội')
 Go
@@ -103,24 +103,24 @@ CREATE TABLE [Material] (
   [unit] nvarchar(255)
 )
 GO
-INSERT INTO Material VALUES(1,1,N'Bột mỳ','Kg')
-INSERT INTO Material VALUES(2,1,N'Bột nở','Kg')
-INSERT INTO Material VALUES(3,1,N'Bột bắp','Kg')
+INSERT INTO Material VALUES(1,1,N'Bot my','Kg')
+INSERT INTO Material VALUES(2,1,N'Bot no','Kg')
+INSERT INTO Material VALUES(3,1,N'Bot bap','Kg')
 INSERT INTO Material VALUES(4,2,N'Socola','Kg')
-INSERT INTO Material VALUES(5,2,N'Sữa','lọ')
+INSERT INTO Material VALUES(5,2,N'Sua','lọ')
 INSERT INTO Material VALUES(6,2,N'Vani','lọ')
-INSERT INTO Material VALUES(7,3,N'Màu thực phẩm','lọ')
-INSERT INTO Material VALUES(8,3,N'Bơ','Kg')
+INSERT INTO Material VALUES(7,3,N'Mau thuc pham','lọ')
+INSERT INTO Material VALUES(8,3,N'Bo','Kg')
 INSERT INTO Material VALUES(9,3,N'Siro','lọ')
 INSERT INTO Material VALUES(10,4,N'Kem','bình')
-INSERT INTO Material VALUES(11,4,N'Đường','Kg')
-INSERT INTO Material VALUES(12,4,N'Mứt','lọ')
-INSERT INTO Material VALUES(13,1,N'Hạnh nhân','Kg')
-INSERT INTO Material VALUES(14,2,N'Hạt óc chó','Kg')
-INSERT INTO Material VALUES(15,3,N'Dừa sợi','túi')
-INSERT INTO Material VALUES(16,4,N'Cốt dừa','lít')
-INSERT INTO Material VALUES(17,1,N'Bột matcha','kg')
-INSERT INTO Material VALUES(18,1,N'Trứng','quả')
+INSERT INTO Material VALUES(11,4,N'Duong','Kg')
+INSERT INTO Material VALUES(12,4,N'Mut','lọ')
+INSERT INTO Material VALUES(13,1,N'Hanh nhan','Kg')
+INSERT INTO Material VALUES(14,2,N'Hat oc cho','Kg')
+INSERT INTO Material VALUES(15,3,N'Dua soi','túi')
+INSERT INTO Material VALUES(16,4,N'Cot dua','lít')
+INSERT INTO Material VALUES(17,1,N'Bot matcha','kg')
+INSERT INTO Material VALUES(18,1,N'Trung','quả')
 CREATE TABLE [MaterialStore] (
   [idMaterialStore] int PRIMARY KEY,
   [idMaterial] int,
@@ -182,25 +182,27 @@ CREATE TABLE [Import] (
   [idMaterial] int,
   [amount] float,
   [price] float,
-  [createdAt] datetime
+  [createdAt] datetime,
+  [importer] nvarchar(255),
 )
 GO
-INSERT INTO Import VALUES(1,1,10,10000,2021-12-1)
-INSERT INTO Import VALUES(2,2,10,10000,2021-12-1)
-INSERT INTO Import VALUES(3,3,10,10000,2021-12-1)
-INSERT INTO Import VALUES(4,4,10,10000,2021-12-1)
-INSERT INTO Import VALUES(5,5,10,10000,2021-12-1)
-INSERT INTO Import VALUES(6,6,10,10000,2021-12-1)
-INSERT INTO Import VALUES(7,7,10,10000,2021-12-1)
-INSERT INTO Import VALUES(8,8,10,10000,2021-12-1)
-INSERT INTO Import VALUES(9,9,10,10000,2021-12-1)
-INSERT INTO Import VALUES(10,10,10,10000,2021-12-1)
-INSERT INTO Import VALUES(11,11,10,10000,2021-12-1)
-INSERT INTO Import VALUES(12,12,10,10000,2021-12-1)
-INSERT INTO Import VALUES(13,13,10,10000,2021-12-1)
-INSERT INTO Import VALUES(14,14,10,10000,2021-12-1)
-INSERT INTO Import VALUES(15,15,10,10000,2021-12-1)
-INSERT INTO Import VALUES(16,16,10,10000,2021-12-1)
+INSERT INTO Import VALUES(1,1,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(2,2,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(3,3,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(4,4,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(5,5,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(6,6,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(7,7,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(8,8,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(9,9,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(10,10,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(11,11,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(12,12,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(13,13,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(14,14,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(15,15,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+INSERT INTO Import VALUES(16,16,10,10000,'2021-12-01',N'Bùi Hữu Dũng')
+
 ALTER TABLE [Bill] ADD FOREIGN KEY ([idStaff]) REFERENCES [Staff] ([idStaff])
 GO
 

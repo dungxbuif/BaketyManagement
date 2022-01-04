@@ -1,5 +1,6 @@
 ﻿
 using BaketyManagement.DataModels;
+using BaketyManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,13 +21,18 @@ namespace BaketyManagement.View
         {
             InitializeComponent();
             cbbNameSupplier.DataSource = db.Suppliers.Select(s => s.NameSupplier).ToList();
-
+            var query = db.Imports.Select(c => c);
+            var count  = query.Count() + 1;
+            txtId.Text = count.ToString();
+            Importer.Text = db.staff.Where(s=> s.IdStaff == MainDto.accountDto.IdStaff).FirstOrDefault().NameStaff;
         }
-        public FrmInforTabImputCouponImport(Int32 IdImport)
+        public FrmInforTabImputCouponImport(Int32 IdImport, string importer)
         {
             InitializeComponent();
             btnAddImportCoupon.Text = "Sửa";
+            Importer.Text = importer;
             idImport = IdImport;
+            txtId.Text = idImport.ToString();
             var import = db.Imports.Where(i => i.IdImport == idImport).FirstOrDefault();
             var query = (from metrial in db.Materials
                          where import.IdMaterial == metrial.IdMaterial
@@ -56,13 +62,12 @@ namespace BaketyManagement.View
                     var material = db.Materials.Where(m => m.NameMaterial == cbbMaterial.Text).FirstOrDefault();
                     var materialStore = db.MaterialStores.Where(m => m.IdMaterial == material.IdMaterial).FirstOrDefault();
 
-                    var query = db.Imports.Select(c => c);
-                    var count = query.Count() + 1;
-                    import.IdImport = count;
+                    import.IdImport = Convert.ToInt32(txtId.Text);
                     import.Price = Convert.ToDouble(txtImportPrice.Text);
                     import.Amount = Convert.ToDouble(txtAmountImport.Text);
                     import.CreatedAt = dtpDayImport.Value;
                     import.IdMaterial = material.IdMaterial;
+                    import.Importer = Importer.Text;
                     if (materialStore == null)
                     {
                         materialStore = new MaterialStore();
@@ -110,7 +115,7 @@ namespace BaketyManagement.View
                 MessageBox.Show(ex.Message);
             }
         }
-
+        
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();

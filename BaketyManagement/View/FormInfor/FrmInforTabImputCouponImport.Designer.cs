@@ -49,6 +49,10 @@ namespace BaketyManagement.View
             this.btnAddImportCoupon = new System.Windows.Forms.Button();
             this.btnEditImportCoupon = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.Importer = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -81,6 +85,10 @@ namespace BaketyManagement.View
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(47)))));
+            this.panel2.Controls.Add(this.txtId);
+            this.panel2.Controls.Add(this.Importer);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.cbbMaterial);
             this.panel2.Controls.Add(this.label39);
             this.panel2.Controls.Add(this.dtpMfgImport);
@@ -106,7 +114,7 @@ namespace BaketyManagement.View
             // 
             this.cbbMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMaterial.FormattingEnabled = true;
-            this.cbbMaterial.Location = new System.Drawing.Point(223, 72);
+            this.cbbMaterial.Location = new System.Drawing.Point(233, 187);
             this.cbbMaterial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbMaterial.Name = "cbbMaterial";
             this.cbbMaterial.Size = new System.Drawing.Size(415, 33);
@@ -116,7 +124,7 @@ namespace BaketyManagement.View
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label39.Location = new System.Drawing.Point(84, 236);
+            this.label39.Location = new System.Drawing.Point(94, 351);
             this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(119, 25);
@@ -137,7 +145,7 @@ namespace BaketyManagement.View
             // 
             this.dtpDayImport.CustomFormat = "dd-MM-yyyy";
             this.dtpDayImport.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDayImport.Location = new System.Drawing.Point(223, 231);
+            this.dtpDayImport.Location = new System.Drawing.Point(233, 346);
             this.dtpDayImport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpDayImport.Name = "dtpDayImport";
             this.dtpDayImport.Size = new System.Drawing.Size(415, 30);
@@ -158,7 +166,7 @@ namespace BaketyManagement.View
             // 
             this.cbbNameSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNameSupplier.FormattingEnabled = true;
-            this.cbbNameSupplier.Location = new System.Drawing.Point(223, 16);
+            this.cbbNameSupplier.Location = new System.Drawing.Point(233, 131);
             this.cbbNameSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbNameSupplier.Name = "cbbNameSupplier";
             this.cbbNameSupplier.Size = new System.Drawing.Size(415, 33);
@@ -169,7 +177,7 @@ namespace BaketyManagement.View
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label38.Location = new System.Drawing.Point(84, 19);
+            this.label38.Location = new System.Drawing.Point(94, 134);
             this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(103, 25);
@@ -178,7 +186,7 @@ namespace BaketyManagement.View
             // 
             // txtImportPrice
             // 
-            this.txtImportPrice.Location = new System.Drawing.Point(223, 127);
+            this.txtImportPrice.Location = new System.Drawing.Point(233, 242);
             this.txtImportPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtImportPrice.Name = "txtImportPrice";
             this.txtImportPrice.Size = new System.Drawing.Size(415, 30);
@@ -188,7 +196,7 @@ namespace BaketyManagement.View
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label28.Location = new System.Drawing.Point(84, 72);
+            this.label28.Location = new System.Drawing.Point(94, 187);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(126, 25);
@@ -197,7 +205,7 @@ namespace BaketyManagement.View
             // 
             // txtAmountImport
             // 
-            this.txtAmountImport.Location = new System.Drawing.Point(223, 179);
+            this.txtAmountImport.Location = new System.Drawing.Point(233, 294);
             this.txtAmountImport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAmountImport.Name = "txtAmountImport";
             this.txtAmountImport.Size = new System.Drawing.Size(415, 30);
@@ -207,7 +215,7 @@ namespace BaketyManagement.View
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label30.Location = new System.Drawing.Point(84, 132);
+            this.label30.Location = new System.Drawing.Point(94, 247);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(99, 25);
@@ -218,7 +226,7 @@ namespace BaketyManagement.View
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label31.Location = new System.Drawing.Point(84, 179);
+            this.label31.Location = new System.Drawing.Point(94, 294);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(105, 25);
@@ -319,6 +327,46 @@ namespace BaketyManagement.View
             this.tableLayoutPanel1.Size = new System.Drawing.Size(772, 817);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(233, 28);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(415, 30);
+            this.txtId.TabIndex = 24;
+            // 
+            // Importer
+            // 
+            this.Importer.Enabled = false;
+            this.Importer.Location = new System.Drawing.Point(233, 80);
+            this.Importer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Importer.Name = "Importer";
+            this.Importer.Size = new System.Drawing.Size(415, 30);
+            this.Importer.TabIndex = 25;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(94, 33);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 25);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Mã hóa đơn";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(94, 80);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 25);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Người nhập";
+            // 
             // FrmInforTabImputCouponImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -365,5 +413,9 @@ namespace BaketyManagement.View
         private System.Windows.Forms.Button btnAddImportCoupon;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cbbMaterial;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox Importer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

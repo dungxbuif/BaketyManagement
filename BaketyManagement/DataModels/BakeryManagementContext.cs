@@ -47,7 +47,7 @@ namespace BaketyManagement.DataModels
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-QK45TVM\\SQLEXPRESS;Initial Catalog=BakeryManagement;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=DUNGXBUIF;Initial Catalog=BakeryManagement;Integrated Security=True");
             }
         }
 
@@ -200,6 +200,11 @@ namespace BaketyManagement.DataModels
                 entity.Property(e => e.CreatedAt)
                     .HasColumnType("datetime")
                     .HasColumnName("createdAt");
+
+                entity.Property(e => e.Importer)
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("importer");
 
                 entity.Property(e => e.IdMaterial).HasColumnName("idMaterial");
 
