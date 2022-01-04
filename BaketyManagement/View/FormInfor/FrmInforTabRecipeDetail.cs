@@ -96,11 +96,11 @@ namespace BaketyManagement.View.FormInfor
 
         private void FrmInforTabRecipeDetail_Load(object sender, EventArgs e)
         {
-            var query = from s in db.Materials select new { s.NameMaterial };
+            var query = from s in db.Materials select s;
 
             foreach (var c in query)
             {
-                cbbNameMaterial.Items.Add(c.NameMaterial);
+                cbbNameMaterial.Items.Add(c.NameMaterial+"("+c.Unit+")");
             }
         }
     }

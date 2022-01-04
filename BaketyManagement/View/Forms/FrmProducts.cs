@@ -36,7 +36,6 @@ namespace BaketyManagement.View.Forms
                             c.IdRecipe,
                             c.Price,
                             c.Amount,
-                            c.Size,
                             c.ExpCake,
                             c.MfgCake
                         };
@@ -48,9 +47,8 @@ namespace BaketyManagement.View.Forms
                 dgvCake.Rows[row].Cells[1].Value = cake.IdRecipe.ToString();
                 dgvCake.Rows[row].Cells[2].Value = cake.Price.ToString();
                 dgvCake.Rows[row].Cells[3].Value = cake.Amount.ToString();
-                dgvCake.Rows[row].Cells[4].Value = cake.Size.ToString();
-                string dateex= String.Format("{0:dd-MM-yyyy}", cake.ExpCake);
-                string datemfg = String.Format("{0:dd-MM-yyyy}", cake.MfgCake);
+                string dateex= String.Format("{0:dd-MM-yyyy}", cake.MfgCake);
+                string datemfg = String.Format("{0:dd-MM-yyyy}", cake.ExpCake);
                 dgvCake.Rows[row].Cells[5].Value = dateex;
                 dgvCake.Rows[row].Cells[6].Value = datemfg;
                 row++;
@@ -108,9 +106,8 @@ namespace BaketyManagement.View.Forms
                             dgvCake.Rows[row].Cells[1].Value = cake.IdRecipe.ToString();
                             dgvCake.Rows[row].Cells[2].Value = cake.Price.ToString();
                             dgvCake.Rows[row].Cells[3].Value = cake.Amount.ToString();
-                            dgvCake.Rows[row].Cells[4].Value = cake.Size.ToString();
-                            dgvCake.Rows[row].Cells[5].Value = cake.ExpCake.ToString();
-                            dgvCake.Rows[row].Cells[6].Value = cake.MfgCake.ToString();
+                            dgvCake.Rows[row].Cells[5].Value = cake.MfgCake.ToString();
+                            dgvCake.Rows[row].Cells[6].Value = cake.ExpCake.ToString();
                             row++;
                         }
 

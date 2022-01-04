@@ -84,6 +84,7 @@ namespace BaketyManagement.View.Forms
 
         private void LoadTabDetails(int idRecipe)
         {
+            
             rowDetail = 0;
             var q = from c in db.RecipeDetails
                     where (c.IdRecipe == idRecipe)
@@ -104,9 +105,16 @@ namespace BaketyManagement.View.Forms
             for (int i = 0; i < rowDetail; i++)
             {
                 int id = int.Parse(dgvDetail.Rows[i].Cells[0].Value.ToString());
-               
                 dgvDetail.Rows[i].Cells[0].Value = Find_NameMaterial(id);
+                dgvDetail.Rows[i].Cells[1].Value = dgvDetail.Rows[i].Cells[1].Value.ToString() + " " +Find_UnitMaterial(id);
             }
+        }
+
+        private object Find_UnitMaterial(int id)
+        {
+            var query = from c in db.Materials where (c.IdMaterial == id) select c;
+            Material mater = query.FirstOrDefault();
+            return mater.Unit.ToString(); 
         }
 
         private void btnRecipeSearch_Click(object sender, EventArgs e)
@@ -286,7 +294,17 @@ namespace BaketyManagement.View.Forms
 
         private void btnBaking_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                FrmInforBaking.idRecipe = idRecipe;
+                FrmInforBaking frm = new FrmInforBaking();
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dgvDetail_CellClick(object sender, DataGridViewCellEventArgs e)
