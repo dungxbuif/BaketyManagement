@@ -35,18 +35,13 @@ VALUES (4,'BUI HUU DUNG', 1, '09974294839', 'Phu Dien - Minh Khai -Bac Tu Liem -
 CREATE TABLE [Salary] (
   [idSalary] int PRIMARY KEY,
   [idStaff] int,
-  [salaryDate] float,
   [timeKeeped] date,
-  [salaryTime] date,
-  [workDay] float,
+  [workingTime] float,
   [hoursOverTime] float,
-  [rewards] float,
+  [salary] float,
   [salaryOverTime] float
 )
 GO
-INSERT INTO Salary VALUES (1, 1, 100000, '2021-12-22', '2021-12-01', 20, 3, 0, 30000)
-INSERT INTO Salary VALUES (2, 2, 100000, '2021-12-22', '2021-12-01', 21, 0, 0, 30000)
-INSERT INTO Salary VALUES (3, 3, 100000, '2021-12-22', '2021-12-01', 22, 5, 0, 30000)
 
 CREATE TABLE [BilDetail] (
   [idBill] int,
