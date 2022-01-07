@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp13212.Models;
 
 namespace BaketyManagement
 {
@@ -50,6 +51,20 @@ namespace BaketyManagement
 
                 FrmMain frmMain = new FrmMain();
                 MainDto.accountDto = acc;
+
+                DateTime nowDate = DateTime.Now;
+                int max = 0;
+                Salary sl = new Salary();
+                var query = from sp in db.Salaries
+                            select sp;
+                foreach (var slr in query)
+                {
+                    if (slr.IdSalary > max)
+                    {
+                        max = slr.IdSalary;
+                    }
+                }
+
                 frmMain.Tag = acc;
                 this.Hide();
                 frmMain.ShowDialog();

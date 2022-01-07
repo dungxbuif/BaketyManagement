@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp13212.Models;
 
 namespace BaketyManagement.View.FormInfor
 {
@@ -38,13 +39,13 @@ namespace BaketyManagement.View.FormInfor
                 Salary sl = (from slr in db.Salaries
                              where slr.IdStaff == idStaff
                              select slr).FirstOrDefault();
-                txtIDStaff.Text = idStaff.ToString();
-                txtHoursOverTime.Text = sl.HoursOverTime.ToString();
-                txtRewards.Text = sl.Rewards.ToString();
-                txtSalaryDate.Text = sl.SalaryDate.ToString();
-                txtSalaryOverTime.Text = sl.SalaryOverTime.ToString();
-                txtWorkDays.Text = sl.WorkDay.ToString();
-                cboStaffName.Enabled = false;
+                //txtIDStaff.Text = idStaff.ToString();
+                //txtHoursOverTime.Text = sl.HoursOverTime.ToString();
+                //txtRewards.Text = sl.Rewards.ToString();
+                //txtSalaryDate.Text = sl.SalaryDate.ToString();
+                //txtSalaryOverTime.Text = sl.SalaryOverTime.ToString();
+                //txtWorkDays.Text = sl.WorkDay.ToString();
+                //cboStaffName.Enabled = false;
             }
         }
 
@@ -114,18 +115,18 @@ namespace BaketyManagement.View.FormInfor
                 }
                 sl.IdSalary = max;
                 sl.IdStaff = int.Parse(idStaff);
-                sl.SalaryDate = salaryDate;
-                sl.TimeKeeped = nowDate;
-                sl.SalaryTime = DateTime.Parse("2021-12-01");
-                sl.WorkDay = workDay;
-                sl.SalaryOverTime = salaryOverTime;
-                sl.Rewards = reward;
-                sl.HoursOverTime = hourOverTime;
-                db.Salaries.Add(sl);
-                db.SaveChanges();
-                DialogResult result = MessageBox.Show("Chấm công mới thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (result == DialogResult.OK)
-                    this.Close();
+                //sl.SalaryDate = salaryDate;
+                //sl.TimeKeeped = nowDate;
+                //sl.SalaryTime = DateTime.Parse("2021-12-01");
+                //sl.WorkDay = workDay;
+                //sl.SalaryOverTime = salaryOverTime;
+                //sl.Rewards = reward;
+                //sl.HoursOverTime = hourOverTime;
+                //db.Salaries.Add(sl);
+                //db.SaveChanges();
+                //DialogResult result = MessageBox.Show("Chấm công mới thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //if (result == DialogResult.OK)
+                //    this.Close();
             }
             catch (Exception ex)
             {
@@ -137,20 +138,20 @@ namespace BaketyManagement.View.FormInfor
         {
             try
             {
-                Salary slrSua = (from sl in db.Salaries
-                                 where sl.IdStaff == idStaff
-                                 select sl).FirstOrDefault();
-                slrSua.HoursOverTime = int.Parse(txtHoursOverTime.Text);
-                if (slrSua.WorkDay < int.Parse(txtWorkDays.Text))
-                {
-                    throw new Exception("Ngày công mới không được lớn hơn ngày công cũ");
-                }
-                slrSua.WorkDay = int.Parse(txtWorkDays.Text);
-                slrSua.Rewards = int.Parse(txtRewards.Text);
-                db.SaveChanges();
-                DialogResult result = MessageBox.Show("Sửa chấm công thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (result == DialogResult.OK)
-                    this.Close();
+                //Salary slrSua = (from sl in db.Salaries
+                //                 where sl.IdStaff == idStaff
+                //                 select sl).FirstOrDefault();
+                //slrSua.HoursOverTime = int.Parse(txtHoursOverTime.Text);
+                //if (slrSua.WorkDay < int.Parse(txtWorkDays.Text))
+                //{
+                //    throw new Exception("Ngày công mới không được lớn hơn ngày công cũ");
+                //}
+                //slrSua.WorkDay = int.Parse(txtWorkDays.Text);
+                //slrSua.Rewards = int.Parse(txtRewards.Text);
+                //db.SaveChanges();
+                //DialogResult result = MessageBox.Show("Sửa chấm công thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //if (result == DialogResult.OK)
+                //    this.Close();
             }
             catch(Exception ex)
             {
