@@ -13,6 +13,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
 using iTextSharp.text.html.simpleparser;
+using WinFormsApp13212.Models;
 
 namespace BaketyManagement.View.Forms
 {
