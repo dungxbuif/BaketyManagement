@@ -429,5 +429,10 @@ namespace BaketyManagement.View.Forms
                 MessageBox.Show("Không có bản ghi để xuất !!!", "Info");
             }
         }
+
+        private void radRevenue7DaysList_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
