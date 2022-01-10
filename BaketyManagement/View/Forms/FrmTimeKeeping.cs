@@ -1,5 +1,6 @@
 ﻿
 using BaketyManagement.DataModels;
+using BaketyManagement.DTO;
 using BaketyManagement.View.FormInfor;
 using iTextSharp.text;
 using iTextSharp.text.html.simpleparser;
@@ -52,93 +53,39 @@ namespace BaketyManagement.View.Forms
                                          where stf.IdStaff == slr.IdStaff
                                          select stf.NameStaff).FirstOrDefault(),
                             slr.TimeKeeped,
-                            //slr.SalaryDate,
-                            //slr.WorkDay,
-                            //slr.HoursOverTime,
-                            //slr.Rewards,
-                            slr.SalaryOverTime,
+                            slr.WorkingTime,
+                            slr.HoursOverTime,
                         };
             dgvTimeKeeping.Rows.Clear();
             foreach (var slr in query)
             {
-                //DateTime timekeep = (DateTime)slr.TimeKeeped;
-                //dgvTimeKeeping.Rows.Add();
-                //dgvTimeKeeping.Rows[row].Cells[0].Value = slr.IdStaff.ToString();
-                //dgvTimeKeeping.Rows[row].Cells[1].Value = slr.nameStaff.ToString();
-                //dgvTimeKeeping.Rows[row].Cells[2].Value = timekeep.ToString("dd/MM/yyyy");
-                //dgvTimeKeeping.Rows[row].Cells[3].Value = slr.SalaryDate.ToString();
-                //dgvTimeKeeping.Rows[row].Cells[4].Value = slr.WorkDay.ToString();
-                //dgvTimeKeeping.Rows[row].Cells[5].Value = slr.HoursOverTime.ToString();
-                //dgvTimeKeeping.Rows[row].Cells[6].Value = slr.Rewards.ToString();
-                //dgvTimeKeeping.Rows[row].Cells[7].Value = slr.SalaryOverTime.ToString();
-                //double tong = ((double)((slr.WorkDay * slr.SalaryDate) + (slr.HoursOverTime * slr.SalaryOverTime) + slr.Rewards));
-                //string Tong = tong.ToString("#,###", cul.NumberFormat);
-                //dgvTimeKeeping.Rows[row].Cells[8].Value = Tong;
-                //row++;
+                DateTime timekeep = (DateTime)slr.TimeKeeped;
+                dgvTimeKeeping.Rows.Add();
+                dgvTimeKeeping.Rows[row].Cells[0].Value = slr.IdStaff.ToString();
+                dgvTimeKeeping.Rows[row].Cells[1].Value = slr.nameStaff.ToString();
+                dgvTimeKeeping.Rows[row].Cells[2].Value = timekeep.ToString("dd/MM/yyyy");
+                dgvTimeKeeping.Rows[row].Cells[3].Value = slr.WorkingTime.ToString();
+                dgvTimeKeeping.Rows[row].Cells[4].Value = slr.HoursOverTime.ToString();
+                row++;
             }
         }
 
         private void btnAddSalary_Click(object sender, EventArgs e)
         {
-            addSalary();
+
         }
 
-        private void addSalary()
+        private void btnTimeKeeping_Click(object sender, EventArgs e)
         {
             try
             {
                 row = 0;
-                Int32 idStaff = Convert.ToInt32(dgvTimeKeeping.Rows[row].Cells[0].Value);
+                Int32 idStaff = (int)MainDto.accountDto.IdStaff;
                 FrmInforSalary.idStaff = idStaff;
                 FrmInforSalary.checkSender = 2;
                 FrmInforSalary frmInforSalary = new FrmInforSalary();
                 frmInforSalary.ShowDialog();
                 LoadSalary();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnTimeKeeping_Click(object sender, EventArgs e)
-        {
-            timeKeeping();
-        }
-
-        private void timeKeeping()
-        {
-            try
-            {
-                if (row < 0 || row >= dgvTimeKeeping.Rows.Count - 1)
-                {
-                    throw new Exception("Vui lòng chọn nhân viên cần cập nhật!");
-                }
-                Int32 idStaff = Convert.ToInt32(dgvTimeKeeping.Rows[row].Cells[0].Value);
-
-                var query = from slr in db.Salaries
-                            where slr.IdStaff == idStaff
-                            select slr;
-                string nowDay = DateTime.Now.ToString("dd/MM/yyyy");
-                foreach (var day in query)
-                {
-                    DateTime timeKeep = (DateTime)day.TimeKeeped;
-                    string timeKeepDay = timeKeep.ToString("dd/MM/yyyy");
-                    if (timeKeepDay == nowDay)
-                    {
-                        throw new Exception("Nhân viên này đã chấm công ngày hôm nay");
-                    }
-                }
-
-                Salary sl = (from slry in db.Salaries
-                             where slry.IdStaff == idStaff
-                             select slry).FirstOrDefault();
-                //int m = (int)sl.WorkDay;
-                //sl.WorkDay = m + 1;
-                //sl.TimeKeeped = DateTime.Now;
-                //db.SaveChanges();
-                //MessageBox.Show("Chấm công thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //LoadSalary();
             }
             catch (Exception ex)
             {
@@ -196,22 +143,18 @@ namespace BaketyManagement.View.Forms
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            //CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-            //Int32 idStaff = Convert.ToInt32(dgvTimeKeeping.Rows[row].Cells[0].Value);
-            //Salary slTinh = (from sl in db.Salaries
-            //                where sl.IdStaff == idStaff
-            //                select sl).FirstOrDefault();
-            //Double tong = (double)((slTinh.WorkDay * slTinh.SalaryDate) + (slTinh.HoursOverTime * slTinh.SalaryOverTime) + slTinh.Rewards);
-            //string Tong = tong.ToString("#,###", cul.NumberFormat);
-            //double reward = (double)slTinh.Rewards;
-            //double salaryNgoaiGio = (double)(slTinh.HoursOverTime * slTinh.SalaryOverTime);
-            //double salary = (double)(slTinh.WorkDay * slTinh.SalaryDate);
-            //MessageBox.Show("Tiền lương thực nhận của "
-            //    + dgvTimeKeeping.Rows[row].Cells[1].Value.ToString()
-            //    + " là: Lương thưởng: " + reward.ToString()
-            //    + " Lương ngoài giờ: " + salaryNgoaiGio.ToString()
-            //    + " Lương chính : " + salary.ToString("#,###", cul.NumberFormat)
-            //    + " Tổng lương thực nhận: " + Tong + " VND", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                FrmSumSalaryInfor frmSumSalaryInfor = new FrmSumSalaryInfor();
+                FrmSumSalaryInfor.timeKeepedMonth = dateTimePicker2.Value.Month;
+                FrmSumSalaryInfor.timeKeepedYear = dateTimePicker2.Value.Year;
+                frmSumSalaryInfor.ShowDialog();
+                LoadSalary();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -257,57 +200,44 @@ namespace BaketyManagement.View.Forms
             try
             {
                 string userName = txtTimeKeepingSearch.Text;
+                string time = dateTimePicker1.Value.ToString("dd-MM-yyyy");
                 if (userName == "")
                     throw new Exception("Nhập tên nhân viên cần tìm");
                 else
                 {
-                    //dgvTimeKeeping.Rows.Clear();
-                    //var accTim = from nv in db.staff
-                    //             select new
-                    //             {
-                    //                 nv.IdStaff,
-                    //                 nv.NameStaff,
-                    //                 TimeKeeped = (from sl in db.Salaries
-                    //                               where sl.IdStaff == nv.IdStaff
-                    //                               select sl.TimeKeeped).FirstOrDefault(),
-                    //                 SalaryDate = (from sl in db.Salaries
-                    //                                 where sl.IdStaff == nv.IdStaff
-                    //                                 select sl.SalaryDate).FirstOrDefault(),
-                    //                 WorkDay = (from sl in db.Salaries
-                    //                            where sl.IdStaff == nv.IdStaff
-                    //                            select sl.WorkDay).FirstOrDefault(),
-                    //                 HoursOverTime = (from sl in db.Salaries
-                    //                                  where sl.IdStaff == nv.IdStaff
-                    //                                  select sl.HoursOverTime).FirstOrDefault(),
-                    //                 Rewards = (from sl in db.Salaries
-                    //                            where sl.IdStaff == nv.IdStaff
-                    //                            select sl.Rewards).FirstOrDefault(),
-                    //                 SalaryOverTime = (from sl in db.Salaries
-                    //                                    where sl.IdStaff == nv.IdStaff
-                    //                                    select sl.SalaryOverTime).FirstOrDefault(),
-                    //             };
-                    //row = 0;
-                    //foreach (var slr in accTim)
-                    //{
-                    //    CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-                    //    if (slr.NameStaff.Contains(userName))
-                    //    {
-                    //        DateTime timekeep = (DateTime)slr.TimeKeeped;
-                    //        dgvTimeKeeping.Rows.Add();
-                    //        dgvTimeKeeping.Rows[row].Cells[0].Value = slr.IdStaff.ToString();
-                    //        dgvTimeKeeping.Rows[row].Cells[1].Value = slr.NameStaff.ToString();
-                    //        dgvTimeKeeping.Rows[row].Cells[2].Value = timekeep.ToString("dd/MM/yyyy");
-                    //        dgvTimeKeeping.Rows[row].Cells[3].Value = slr.SalaryDate.ToString();
-                    //        dgvTimeKeeping.Rows[row].Cells[4].Value = slr.WorkDay.ToString();
-                    //        dgvTimeKeeping.Rows[row].Cells[5].Value = slr.HoursOverTime.ToString();
-                    //        dgvTimeKeeping.Rows[row].Cells[6].Value = slr.Rewards.ToString();
-                    //        dgvTimeKeeping.Rows[row].Cells[7].Value = slr.SalaryOverTime.ToString();
-                    //        double tong = ((double)((slr.WorkDay * slr.SalaryDate) + (slr.HoursOverTime * slr.SalaryOverTime) + slr.Rewards));
-                    //        string Tong = tong.ToString("#,###", cul.NumberFormat);
-                    //        dgvTimeKeeping.Rows[row].Cells[8].Value = Tong;
-                    //        row++;
-                    //    }
-                    //}
+                    dgvTimeKeeping.Rows.Clear();
+                    var accTim = from nv in db.staff
+                                 select new
+                                 {
+                                     nv.IdStaff,
+                                     nv.NameStaff,
+                                     TimeKeeped = (from sl in db.Salaries
+                                                   where sl.IdStaff == nv.IdStaff
+                                                   select sl.TimeKeeped).FirstOrDefault(),
+                                     WorkingTime = (from sl in db.Salaries
+                                                where sl.IdStaff == nv.IdStaff
+                                                select sl.WorkingTime).FirstOrDefault(),
+                                     HoursOverTime = (from sl in db.Salaries
+                                                      where sl.IdStaff == nv.IdStaff
+                                                      select sl.HoursOverTime).FirstOrDefault(),
+                                 };
+                    row = 0;
+                    foreach (var slr in accTim)
+                    {
+                        DateTime timeKeep = (DateTime)slr.TimeKeeped;
+                        string timeKeepDay = timeKeep.ToString("dd-MM-yyyy");
+                        if (slr.NameStaff.Contains(userName) && timeKeepDay == time)
+                        {
+                            DateTime timekeep = (DateTime)slr.TimeKeeped;
+                            dgvTimeKeeping.Rows.Add();
+                            dgvTimeKeeping.Rows[row].Cells[0].Value = slr.IdStaff.ToString();
+                            dgvTimeKeeping.Rows[row].Cells[1].Value = slr.NameStaff.ToString();
+                            dgvTimeKeeping.Rows[row].Cells[2].Value = timekeep.ToString("dd/MM/yyyy");
+                            dgvTimeKeeping.Rows[row].Cells[3].Value = slr.WorkingTime.ToString();
+                            dgvTimeKeeping.Rows[row].Cells[4].Value = slr.HoursOverTime.ToString();
+                            row++;
+                        }
+                    }
                 }
                 if (dgvTimeKeeping.Rows.Count <= 0)
                 {
@@ -413,6 +343,11 @@ namespace BaketyManagement.View.Forms
             {
                 MessageBox.Show("No Record To Export !!!", "Info");
             }
+        }
+
+        private void dgvTimeKeeping_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            row = e.RowIndex;
         }
     }
 }

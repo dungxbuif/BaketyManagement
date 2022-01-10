@@ -33,30 +33,27 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionTimeKeeping = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pnFunctionSalary = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.btnTimeKeeping = new System.Windows.Forms.Button();
-            this.btnAddSalary = new System.Windows.Forms.Button();
             this.btnDisplaySalary = new System.Windows.Forms.Button();
             this.btnEditSalary = new System.Windows.Forms.Button();
             this.btnPrintSalary = new System.Windows.Forms.Button();
             this.txtTimeKeepingSearch = new System.Windows.Forms.TextBox();
-            this.btnCancelTimeKeeping = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnTimeKeepingSearch = new System.Windows.Forms.Button();
             this.pnTimeKeeping = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvTimeKeeping = new System.Windows.Forms.DataGridView();
-            this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Luong1Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoNgayLamViec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thoiGianLamThem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LuongLamNgoaiGio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LuongThucNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soGioLv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soGioLamThem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlpTimeKeeping.SuspendLayout();
             this.pnFunctionTimeKeeping.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -113,15 +110,16 @@ namespace BaketyManagement.View.Forms
             // pnFunctionSalary
             // 
             this.pnFunctionSalary.BackColor = System.Drawing.Color.White;
-            this.pnFunctionSalary.Controls.Add(this.button1);
+            this.pnFunctionSalary.Controls.Add(this.dateTimePicker2);
+            this.pnFunctionSalary.Controls.Add(this.dateTimePicker1);
+            this.pnFunctionSalary.Controls.Add(this.label2);
+            this.pnFunctionSalary.Controls.Add(this.label1);
             this.pnFunctionSalary.Controls.Add(this.label21);
             this.pnFunctionSalary.Controls.Add(this.btnTimeKeeping);
-            this.pnFunctionSalary.Controls.Add(this.btnAddSalary);
             this.pnFunctionSalary.Controls.Add(this.btnDisplaySalary);
             this.pnFunctionSalary.Controls.Add(this.btnEditSalary);
             this.pnFunctionSalary.Controls.Add(this.btnPrintSalary);
             this.pnFunctionSalary.Controls.Add(this.txtTimeKeepingSearch);
-            this.pnFunctionSalary.Controls.Add(this.btnCancelTimeKeeping);
             this.pnFunctionSalary.Controls.Add(this.btnFilter);
             this.pnFunctionSalary.Controls.Add(this.btnTimeKeepingSearch);
             this.pnFunctionSalary.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -130,27 +128,49 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionSalary.Size = new System.Drawing.Size(1131, 355);
             this.pnFunctionSalary.TabIndex = 0;
             // 
-            // button1
+            // dateTimePicker2
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(18)))), ((int)(((byte)(167)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(36)))), ((int)(((byte)(210)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::BaketyManagement.Properties.Resources.Cancel;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(722, 113);
-            this.button1.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 86);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Hủy chấm công hôm nay";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dateTimePicker2.CustomFormat = "MM-yyyy";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(546, 290);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(121, 26);
+            this.dateTimePicker2.TabIndex = 11;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(546, 106);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(326, 26);
+            this.dateTimePicker1.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.label2.Location = new System.Drawing.Point(28, 296);
+            this.label2.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(204, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Chọn Tháng Xuất Lương";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.label1.Location = new System.Drawing.Point(28, 111);
+            this.label1.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Tìm kiếm theo ngày";
             // 
             // label21
             // 
@@ -177,7 +197,7 @@ namespace BaketyManagement.View.Forms
             this.btnTimeKeeping.ForeColor = System.Drawing.Color.White;
             this.btnTimeKeeping.Image = global::BaketyManagement.Properties.Resources.timekeepingSmaller;
             this.btnTimeKeeping.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTimeKeeping.Location = new System.Drawing.Point(401, 248);
+            this.btnTimeKeeping.Location = new System.Drawing.Point(387, 172);
             this.btnTimeKeeping.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.btnTimeKeeping.Name = "btnTimeKeeping";
             this.btnTimeKeeping.Size = new System.Drawing.Size(150, 70);
@@ -186,28 +206,6 @@ namespace BaketyManagement.View.Forms
             this.btnTimeKeeping.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTimeKeeping.UseVisualStyleBackColor = false;
             this.btnTimeKeeping.Click += new System.EventHandler(this.btnTimeKeeping_Click);
-            // 
-            // btnAddSalary
-            // 
-            this.btnAddSalary.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(140)))), ((int)(((byte)(36)))));
-            this.btnAddSalary.FlatAppearance.BorderSize = 0;
-            this.btnAddSalary.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
-            this.btnAddSalary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
-            this.btnAddSalary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAddSalary.ForeColor = System.Drawing.Color.White;
-            this.btnAddSalary.Image = global::BaketyManagement.Properties.Resources.Add;
-            this.btnAddSalary.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddSalary.Location = new System.Drawing.Point(221, 248);
-            this.btnAddSalary.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.btnAddSalary.Name = "btnAddSalary";
-            this.btnAddSalary.Size = new System.Drawing.Size(150, 70);
-            this.btnAddSalary.TabIndex = 4;
-            this.btnAddSalary.Text = "Thêm mới lương";
-            this.btnAddSalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddSalary.UseVisualStyleBackColor = false;
-            this.btnAddSalary.Click += new System.EventHandler(this.btnAddSalary_Click);
             // 
             // btnDisplaySalary
             // 
@@ -221,7 +219,7 @@ namespace BaketyManagement.View.Forms
             this.btnDisplaySalary.ForeColor = System.Drawing.Color.White;
             this.btnDisplaySalary.Image = global::BaketyManagement.Properties.Resources.Display;
             this.btnDisplaySalary.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDisplaySalary.Location = new System.Drawing.Point(41, 248);
+            this.btnDisplaySalary.Location = new System.Drawing.Point(175, 172);
             this.btnDisplaySalary.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.btnDisplaySalary.Name = "btnDisplaySalary";
             this.btnDisplaySalary.Size = new System.Drawing.Size(150, 70);
@@ -243,7 +241,7 @@ namespace BaketyManagement.View.Forms
             this.btnEditSalary.ForeColor = System.Drawing.Color.White;
             this.btnEditSalary.Image = global::BaketyManagement.Properties.Resources.Edit;
             this.btnEditSalary.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditSalary.Location = new System.Drawing.Point(761, 248);
+            this.btnEditSalary.Location = new System.Drawing.Point(608, 172);
             this.btnEditSalary.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.btnEditSalary.Name = "btnEditSalary";
             this.btnEditSalary.Size = new System.Drawing.Size(150, 70);
@@ -265,10 +263,10 @@ namespace BaketyManagement.View.Forms
             this.btnPrintSalary.ForeColor = System.Drawing.Color.White;
             this.btnPrintSalary.Image = global::BaketyManagement.Properties.Resources.print;
             this.btnPrintSalary.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrintSalary.Location = new System.Drawing.Point(941, 248);
+            this.btnPrintSalary.Location = new System.Drawing.Point(925, 258);
             this.btnPrintSalary.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.btnPrintSalary.Name = "btnPrintSalary";
-            this.btnPrintSalary.Size = new System.Drawing.Size(150, 70);
+            this.btnPrintSalary.Size = new System.Drawing.Size(166, 70);
             this.btnPrintSalary.TabIndex = 6;
             this.btnPrintSalary.Text = "Xuất Lương";
             this.btnPrintSalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -286,28 +284,6 @@ namespace BaketyManagement.View.Forms
             this.txtTimeKeepingSearch.Size = new System.Drawing.Size(600, 26);
             this.txtTimeKeepingSearch.TabIndex = 8;
             // 
-            // btnCancelTimeKeeping
-            // 
-            this.btnCancelTimeKeeping.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCancelTimeKeeping.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
-            this.btnCancelTimeKeeping.FlatAppearance.BorderSize = 0;
-            this.btnCancelTimeKeeping.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(18)))), ((int)(((byte)(167)))));
-            this.btnCancelTimeKeeping.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(36)))), ((int)(((byte)(210)))));
-            this.btnCancelTimeKeeping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelTimeKeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelTimeKeeping.ForeColor = System.Drawing.Color.White;
-            this.btnCancelTimeKeeping.Image = global::BaketyManagement.Properties.Resources.Cancel;
-            this.btnCancelTimeKeeping.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelTimeKeeping.Location = new System.Drawing.Point(578, 248);
-            this.btnCancelTimeKeeping.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.btnCancelTimeKeeping.Name = "btnCancelTimeKeeping";
-            this.btnCancelTimeKeeping.Size = new System.Drawing.Size(150, 70);
-            this.btnCancelTimeKeeping.TabIndex = 7;
-            this.btnCancelTimeKeeping.Text = "Hủy chấm công";
-            this.btnCancelTimeKeeping.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCancelTimeKeeping.UseVisualStyleBackColor = false;
-            this.btnCancelTimeKeeping.Click += new System.EventHandler(this.btnCancelTimeKeeping_Click);
-            // 
             // btnFilter
             // 
             this.btnFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -320,10 +296,10 @@ namespace BaketyManagement.View.Forms
             this.btnFilter.ForeColor = System.Drawing.Color.White;
             this.btnFilter.Image = global::BaketyManagement.Properties.Resources.filter;
             this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFilter.Location = new System.Drawing.Point(455, 113);
+            this.btnFilter.Location = new System.Drawing.Point(741, 260);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(221, 86);
+            this.btnFilter.Size = new System.Drawing.Size(166, 68);
             this.btnFilter.TabIndex = 7;
             this.btnFilter.Text = "Tính Lương Nhận";
             this.btnFilter.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -342,10 +318,10 @@ namespace BaketyManagement.View.Forms
             this.btnTimeKeepingSearch.ForeColor = System.Drawing.Color.White;
             this.btnTimeKeepingSearch.Image = global::BaketyManagement.Properties.Resources.Search;
             this.btnTimeKeepingSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTimeKeepingSearch.Location = new System.Drawing.Point(941, 35);
+            this.btnTimeKeepingSearch.Location = new System.Drawing.Point(925, 58);
             this.btnTimeKeepingSearch.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.btnTimeKeepingSearch.Name = "btnTimeKeepingSearch";
-            this.btnTimeKeepingSearch.Size = new System.Drawing.Size(150, 70);
+            this.btnTimeKeepingSearch.Size = new System.Drawing.Size(166, 70);
             this.btnTimeKeepingSearch.TabIndex = 7;
             this.btnTimeKeepingSearch.Text = "Tìm";
             this.btnTimeKeepingSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -394,15 +370,11 @@ namespace BaketyManagement.View.Forms
             this.dgvTimeKeeping.BackgroundColor = System.Drawing.Color.White;
             this.dgvTimeKeeping.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTimeKeeping.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaNhanVien,
-            this.tenNhanVien,
-            this.NgayChamCong,
-            this.Luong1Ngay,
-            this.SoNgayLamViec,
-            this.thoiGianLamThem,
-            this.Thuong,
-            this.LuongLamNgoaiGio,
-            this.LuongThucNhan});
+            this.name,
+            this.maNhanVien,
+            this.ngayChamCong,
+            this.soGioLv,
+            this.soGioLamThem});
             this.dgvTimeKeeping.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTimeKeeping.Location = new System.Drawing.Point(0, 0);
             this.dgvTimeKeeping.MultiSelect = false;
@@ -413,60 +385,37 @@ namespace BaketyManagement.View.Forms
             this.dgvTimeKeeping.Size = new System.Drawing.Size(1131, 132);
             this.dgvTimeKeeping.TabIndex = 0;
             this.dgvTimeKeeping.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTimeKeeping_CellClick);
+            this.dgvTimeKeeping.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTimeKeeping_CellContentClick);
             // 
-            // MaNhanVien
+            // name
             // 
-            this.MaNhanVien.HeaderText = "Mã Nhân Viên";
-            this.MaNhanVien.Name = "MaNhanVien";
-            this.MaNhanVien.ReadOnly = true;
+            this.name.HeaderText = "Tên Nhân Viên";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
-            // tenNhanVien
+            // maNhanVien
             // 
-            this.tenNhanVien.HeaderText = "Tên Nhân Viên";
-            this.tenNhanVien.Name = "tenNhanVien";
-            this.tenNhanVien.ReadOnly = true;
+            this.maNhanVien.HeaderText = "Mã Nhân Viên";
+            this.maNhanVien.Name = "maNhanVien";
+            this.maNhanVien.ReadOnly = true;
             // 
-            // NgayChamCong
+            // ngayChamCong
             // 
-            this.NgayChamCong.HeaderText = "Ngày Chấm Công Gần Nhất";
-            this.NgayChamCong.Name = "NgayChamCong";
-            this.NgayChamCong.ReadOnly = true;
+            this.ngayChamCong.HeaderText = "Ngày Chấm Công";
+            this.ngayChamCong.Name = "ngayChamCong";
+            this.ngayChamCong.ReadOnly = true;
             // 
-            // Luong1Ngay
+            // soGioLv
             // 
-            this.Luong1Ngay.HeaderText = "Lương 1 Ngày (VND)";
-            this.Luong1Ngay.Name = "Luong1Ngay";
-            this.Luong1Ngay.ReadOnly = true;
+            this.soGioLv.HeaderText = "Số giờ làm việc";
+            this.soGioLv.Name = "soGioLv";
+            this.soGioLv.ReadOnly = true;
             // 
-            // SoNgayLamViec
+            // soGioLamThem
             // 
-            this.SoNgayLamViec.HeaderText = "Số Ngày Làm Việc";
-            this.SoNgayLamViec.Name = "SoNgayLamViec";
-            this.SoNgayLamViec.ReadOnly = true;
-            // 
-            // thoiGianLamThem
-            // 
-            this.thoiGianLamThem.HeaderText = "Số Giờ Làm Thêm";
-            this.thoiGianLamThem.Name = "thoiGianLamThem";
-            this.thoiGianLamThem.ReadOnly = true;
-            // 
-            // Thuong
-            // 
-            this.Thuong.HeaderText = "Thưởng (VND)";
-            this.Thuong.Name = "Thuong";
-            this.Thuong.ReadOnly = true;
-            // 
-            // LuongLamNgoaiGio
-            // 
-            this.LuongLamNgoaiGio.HeaderText = "Lương Làm Ngoài Giờ (VND/h)";
-            this.LuongLamNgoaiGio.Name = "LuongLamNgoaiGio";
-            this.LuongLamNgoaiGio.ReadOnly = true;
-            // 
-            // LuongThucNhan
-            // 
-            this.LuongThucNhan.HeaderText = "Lương Thực Nhận (VND)";
-            this.LuongThucNhan.Name = "LuongThucNhan";
-            this.LuongThucNhan.ReadOnly = true;
+            this.soGioLamThem.HeaderText = "Số giờ làm thêm";
+            this.soGioLamThem.Name = "soGioLamThem";
+            this.soGioLamThem.ReadOnly = true;
             // 
             // FrmTimeKeeping
             // 
@@ -510,17 +459,14 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.TextBox txtTimeKeepingSearch;
         private System.Windows.Forms.Button btnTimeKeepingSearch;
         private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.Button btnCancelTimeKeeping;
-        private System.Windows.Forms.Button btnAddSalary;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayChamCong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Luong1Ngay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoNgayLamViec;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thoiGianLamThem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Thuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LuongLamNgoaiGio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LuongThucNhan;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayChamCong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soGioLv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soGioLamThem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -27,7 +27,7 @@ namespace BaketyManagement.View
             txtIdSupplier.Enabled = false;
             if(isAdd == true)
             {
-                txtIdSupplier.Visible = false;
+                txtIdSupplier.Enabled = false;
             }
             else
             {

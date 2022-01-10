@@ -52,19 +52,6 @@ namespace BaketyManagement
                 FrmMain frmMain = new FrmMain();
                 MainDto.accountDto = acc;
 
-                DateTime nowDate = DateTime.Now;
-                int max = 0;
-                Salary sl = new Salary();
-                var query = from sp in db.Salaries
-                            select sp;
-                foreach (var slr in query)
-                {
-                    if (slr.IdSalary > max)
-                    {
-                        max = slr.IdSalary;
-                    }
-                }
-
                 frmMain.Tag = acc;
                 this.Hide();
                 frmMain.ShowDialog();

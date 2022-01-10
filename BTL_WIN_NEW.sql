@@ -38,7 +38,7 @@ CREATE TABLE [Salary] (
   [timeKeeped] date,
   [workingTime] float,
   [hoursOverTime] float,
-  [salary] float,
+  [salaryOver] float,
   [salaryOverTime] float
 )
 GO

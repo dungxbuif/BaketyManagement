@@ -174,6 +174,7 @@ namespace BaketyManagement
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            MainDto.accountDto = null;
             this.Close();
         }
 
