@@ -181,7 +181,7 @@ namespace BaketyManagement.View.Forms
                 dgvDetailCouponImport.DataSource = null;
                 DateTime startDate = dtpStartImportDay.Value;
                 DateTime endDate = dtpEndImportDay.Value;
-                if (DateTime.Compare(startDate, endDate) < 0)
+                if (DateTime.Compare(endDate, startDate) < 0)
                 {
                     throw new Exception("Vui lòng chọn ngày kết thúc sau hoặc bằng ngày bắt đầu!");
                 }
