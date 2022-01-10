@@ -300,6 +300,11 @@ namespace BaketyManagement.View.Forms
                     }
                     if (!fileError)
                     {
+                        BaseFont bf = BaseFont.CreateFont(Environment.GetEnvironmentVariable("windir") + @"\fonts\Arial.ttf", BaseFont.IDENTITY_H, true);
+                        iTextSharp.text.Font f = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.NORMAL);
+                        iTextSharp.text.Font fontChuVua = new iTextSharp.text.Font(bf, 18, iTextSharp.text.Font.BOLD);
+                        iTextSharp.text.Font fontChuTo = new iTextSharp.text.Font(bf, 22, iTextSharp.text.Font.BOLD);
+                        iTextSharp.text.Font fontChuNhoDam = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.BOLD);
                         try
                         {
                             StringBuilder sb = new StringBuilder();
@@ -307,16 +312,18 @@ namespace BaketyManagement.View.Forms
                             sb.Append("<div>455 Cau Dien,<br /> Bac Tu Liem, Ha Noi</div>");
                             sb.Append("<div>(+84) 698-888-888</div>");
                             sb.Append("<div>Ngay in: " + DateTime.Now.ToString("dd/MM/yyyy") + "</div>");
-                            sb.Append("<div>Noi dung: " + gbStatisticalList.Text + "</div>");
                             sb.Append("<div><br></div>");
+                            Paragraph title = new Paragraph("Nội dung: " + gbStatisticalList.Text, f);
+                            StringBuilder sb1 = new StringBuilder();
+                            sb1.Append("<div><br></div>");
                             PdfPTable pdfTable = new PdfPTable(dgvStatistical.Columns.Count);
                             pdfTable.DefaultCell.Padding = 3;
                             pdfTable.WidthPercentage = 100;
                             pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-
+                            
                             foreach (DataGridViewColumn column in dgvStatistical.Columns)
                             {
-                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText,f));
                                 pdfTable.AddCell(cell);
                             }
                             if (dgvStatistical.Columns.Count > 2)
@@ -325,7 +332,7 @@ namespace BaketyManagement.View.Forms
                                 {
                                     if (row.Index < dgvStatistical.Rows.Count - 2)
                                     {
-                                        string cell1 = row.Cells[0].Value.ToString();
+                                        PdfPCell cell1 = new PdfPCell(new Phrase(row.Cells[0].Value.ToString(),f));
                                         pdfTable.AddCell(cell1);
                                         string cell2 = row.Cells[1].Value.ToString();
                                         pdfTable.AddCell(cell2);
@@ -355,7 +362,7 @@ namespace BaketyManagement.View.Forms
                                     }
                                     else
                                     {
-                                        string cell1 = row.Cells[0].Value.ToString();
+                                        PdfPCell cell1 = new PdfPCell(new Phrase(row.Cells[0].Value.ToString(), f));
                                         pdfTable.AddCell(cell1);
                                         string cell2 = "";
                                         pdfTable.AddCell(cell2);
@@ -376,7 +383,7 @@ namespace BaketyManagement.View.Forms
                                 {
                                     if (dgvStatistical.Rows.Count == 1)
                                     {
-                                        string cell1 = row.Cells[0].Value.ToString();
+                                        PdfPCell cell1 = new PdfPCell(new Phrase(row.Cells[0].Value.ToString(), f));
                                         pdfTable.AddCell(cell1);
                                         string cell2 = row.Cells[1].Value.ToString();
                                         pdfTable.AddCell(cell2);
@@ -385,7 +392,7 @@ namespace BaketyManagement.View.Forms
                                     {
                                         if (row.Index < dgvStatistical.Rows.Count - 1)
                                         {
-                                            string cell1 = row.Cells[0].Value.ToString();
+                                            PdfPCell cell1 = new PdfPCell(new Phrase(row.Cells[0].Value.ToString(), f));
                                             pdfTable.AddCell(cell1);
                                             string cell2 = row.Cells[1].Value.ToString();
                                             pdfTable.AddCell(cell2);
@@ -405,11 +412,14 @@ namespace BaketyManagement.View.Forms
                             using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
                             {
                                 StringReader sr = new StringReader(sb.ToString());
+                                StringReader sr1 = new StringReader(sb1.ToString());
                                 Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
                                 HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
                                 PdfWriter.GetInstance(pdfDoc, stream);
                                 pdfDoc.Open();
                                 htmlparser.Parse(sr);
+                                pdfDoc.Add(title);
+                                htmlparser.Parse(sr1);
                                 pdfDoc.Add(pdfTable);
                                 pdfDoc.Close();
                                 stream.Close();
