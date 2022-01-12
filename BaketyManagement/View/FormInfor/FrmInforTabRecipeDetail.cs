@@ -50,7 +50,7 @@ namespace BaketyManagement.View.FormInfor
             try
             {
                
-                if (int.Parse(txtAmount.Text) < 0)
+                if (double.Parse(txtAmount.Text) < 0)
                     throw new Exception("Số lượng phải lớn hơn 0");
                 else
                 {
@@ -81,7 +81,7 @@ namespace BaketyManagement.View.FormInfor
                     throw new Exception("Nhập tên nguyên liệu cần thêm");
                 if (txtAmount.Text == "")
                     throw new Exception("Nhập số lượng");  
-                if (int.Parse(txtAmount.Text) < 0)
+                if (double.Parse(txtAmount.Text) < 0)
                     throw new Exception("Số lượng phải lớn hơn 0");
                 else
                 {
@@ -96,7 +96,7 @@ namespace BaketyManagement.View.FormInfor
                         RecipeDetail record = new RecipeDetail();
                         record.IdRecipe = idRecipe;
                         record.IdMaterial = index;
-                        record.Amount = int.Parse(txtAmount.Text);
+                        record.Amount = double.Parse(txtAmount.Text);
                         db.RecipeDetails.Add(record);
                         db.SaveChanges();
                         MessageBox.Show("Thêm thành công");
