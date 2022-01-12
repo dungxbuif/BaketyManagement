@@ -116,10 +116,10 @@ namespace BaketyManagement.View.Forms
             this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel25.ForeColor = System.Drawing.Color.Black;
-            this.panel25.Location = new System.Drawing.Point(0, 23);
+            this.panel25.Location = new System.Drawing.Point(0, 19);
             this.panel25.Margin = new System.Windows.Forms.Padding(0);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(1014, 340);
+            this.panel25.Size = new System.Drawing.Size(1014, 344);
             this.panel25.TabIndex = 0;
             // 
             // dgvStatistical
@@ -135,7 +135,7 @@ namespace BaketyManagement.View.Forms
             this.dgvStatistical.ReadOnly = true;
             this.dgvStatistical.RowHeadersWidth = 51;
             this.dgvStatistical.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStatistical.Size = new System.Drawing.Size(1014, 340);
+            this.dgvStatistical.Size = new System.Drawing.Size(1014, 344);
             this.dgvStatistical.TabIndex = 0;
             // 
             // panel26
@@ -190,9 +190,9 @@ namespace BaketyManagement.View.Forms
             this.panel29.Controls.Add(this.radRevenue3MonthsList);
             this.panel29.Controls.Add(this.radRevenue7DaysList);
             this.panel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel29.Location = new System.Drawing.Point(3, 26);
+            this.panel29.Location = new System.Drawing.Point(3, 22);
             this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(1002, 175);
+            this.panel29.Size = new System.Drawing.Size(1002, 179);
             this.panel29.TabIndex = 0;
             // 
             // btn_exportPDF
@@ -213,11 +213,11 @@ namespace BaketyManagement.View.Forms
             this.radSlowestSellerList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radSlowestSellerList.AutoSize = true;
             this.radSlowestSellerList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.radSlowestSellerList.Location = new System.Drawing.Point(285, 137);
+            this.radSlowestSellerList.Location = new System.Drawing.Point(251, 139);
             this.radSlowestSellerList.Name = "radSlowestSellerList";
-            this.radSlowestSellerList.Size = new System.Drawing.Size(520, 29);
+            this.radSlowestSellerList.Size = new System.Drawing.Size(453, 24);
             this.radSlowestSellerList.TabIndex = 0;
-            this.radSlowestSellerList.Text = "10 loại bánh bán chậm nhất trong 30 ngày gần đây";
+            this.radSlowestSellerList.Text = "Thống kê doanh thu sản phẩm trong 30 ngày gần đây";
             this.radSlowestSellerList.UseVisualStyleBackColor = true;
             this.radSlowestSellerList.Click += new System.EventHandler(this.radSlowestSellerList_Click);
             // 
@@ -226,9 +226,9 @@ namespace BaketyManagement.View.Forms
             this.radBestSellerList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radBestSellerList.AutoSize = true;
             this.radBestSellerList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.radBestSellerList.Location = new System.Drawing.Point(285, 96);
+            this.radBestSellerList.Location = new System.Drawing.Point(251, 98);
             this.radBestSellerList.Name = "radBestSellerList";
-            this.radBestSellerList.Size = new System.Drawing.Size(514, 29);
+            this.radBestSellerList.Size = new System.Drawing.Size(426, 24);
             this.radBestSellerList.TabIndex = 0;
             this.radBestSellerList.Text = "10 loại bánh bán chạy nhất trong 30 ngày gần đây";
             this.radBestSellerList.UseVisualStyleBackColor = true;
@@ -239,11 +239,11 @@ namespace BaketyManagement.View.Forms
             this.radRevenue3MonthsList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radRevenue3MonthsList.AutoSize = true;
             this.radRevenue3MonthsList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.radRevenue3MonthsList.Location = new System.Drawing.Point(285, 55);
+            this.radRevenue3MonthsList.Location = new System.Drawing.Point(251, 57);
             this.radRevenue3MonthsList.Name = "radRevenue3MonthsList";
-            this.radRevenue3MonthsList.Size = new System.Drawing.Size(293, 29);
+            this.radRevenue3MonthsList.Size = new System.Drawing.Size(404, 24);
             this.radRevenue3MonthsList.TabIndex = 0;
-            this.radRevenue3MonthsList.Text = "Doanh thu 3 tháng gần đây";
+            this.radRevenue3MonthsList.Text = "Doanh thu của từng nhân viên 30 ngày gần đây";
             this.radRevenue3MonthsList.UseVisualStyleBackColor = true;
             this.radRevenue3MonthsList.Click += new System.EventHandler(this.radRevenue3MonthsList_Click);
             // 
@@ -253,18 +253,19 @@ namespace BaketyManagement.View.Forms
             this.radRevenue7DaysList.AutoSize = true;
             this.radRevenue7DaysList.Checked = true;
             this.radRevenue7DaysList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.radRevenue7DaysList.Location = new System.Drawing.Point(285, 14);
+            this.radRevenue7DaysList.Location = new System.Drawing.Point(251, 16);
             this.radRevenue7DaysList.Name = "radRevenue7DaysList";
-            this.radRevenue7DaysList.Size = new System.Drawing.Size(286, 29);
+            this.radRevenue7DaysList.Size = new System.Drawing.Size(394, 24);
             this.radRevenue7DaysList.TabIndex = 0;
             this.radRevenue7DaysList.TabStop = true;
-            this.radRevenue7DaysList.Text = "Doanh thu 7 ngày gần đây";
+            this.radRevenue7DaysList.Text = "Doanh thu của từng nhân viên 7 ngày gần đây";
             this.radRevenue7DaysList.UseVisualStyleBackColor = true;
+            this.radRevenue7DaysList.CheckedChanged += new System.EventHandler(this.radRevenue7DaysList_CheckedChanged);
             this.radRevenue7DaysList.Click += new System.EventHandler(this.radRevenue7DaysList_Click);
             // 
             // FrmStatisticalList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1074, 673);
             this.Controls.Add(this.tableLayoutPanel10);

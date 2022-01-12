@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp13212.Models;
 
 namespace BaketyManagement
 {
@@ -50,6 +51,7 @@ namespace BaketyManagement
 
                 FrmMain frmMain = new FrmMain();
                 MainDto.accountDto = acc;
+
                 frmMain.Tag = acc;
                 this.Hide();
                 frmMain.ShowDialog();

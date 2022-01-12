@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp13212.Models;
 
 namespace BaketyManagement.View.Forms
 {
@@ -42,14 +43,16 @@ namespace BaketyManagement.View.Forms
                         select new
                         {
                             import.IdImport,
+                            import.Importer,
                             supplier.NameSupplier,
-                            import.CreatedAt
+                            createdAt = Convert.ToDateTime(import.CreatedAt).ToString("dd/MM/yyyy"),
                         };
 
             dgvCouponImport.DataSource = query.ToList();
             dgvCouponImport.Columns[0].HeaderText = "Mã Phiếu";
-            dgvCouponImport.Columns[1].HeaderText = "Tên Nhà Cung Cấp";
-            dgvCouponImport.Columns[2].HeaderText = "Ngày Nhập";
+            dgvCouponImport.Columns[1].HeaderText = "Người nhập";
+            dgvCouponImport.Columns[2].HeaderText = "Tên Nhà Cung Cấp";
+            dgvCouponImport.Columns[3].HeaderText = "Ngày Nhập";
         }
 
         private void dgvCouponImport_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -105,7 +108,7 @@ namespace BaketyManagement.View.Forms
             LoadImportByText(keyWord);
             LoadImportDetailByText(keyWord);
         }
-        private void LoadImportByText(String keyWord)
+        private void LoadImportByText(string keyWord)
         {
             dgvDetailCouponImport.DataSource = null;
             var query = from import in db.Imports
@@ -113,21 +116,23 @@ namespace BaketyManagement.View.Forms
                         on import.IdMaterial equals metrial.IdMaterial
                         join supplier in db.Suppliers
                         on metrial.IdSupplier equals supplier.IdSupplier
-                        where supplier.NameSupplier.ToLower().Contains(keyWord.ToLower())
+                        where supplier.NameSupplier.Equals(keyWord)
                         select new
                         {
                             import.IdImport,
+                            import.Importer,
                             supplier.NameSupplier,
                             import.CreatedAt
                         };
 
             dgvCouponImport.DataSource = query.ToList();
             dgvCouponImport.Columns[0].HeaderText = "Mã Phiếu";
-            dgvCouponImport.Columns[1].HeaderText = "Tên Nhà Cung Cấp";
-            dgvCouponImport.Columns[2].HeaderText = "Ngày Nhập";
+            dgvCouponImport.Columns[1].HeaderText = "Người nhập";
+            dgvCouponImport.Columns[2].HeaderText = "Tên Nhà Cung Cấp";
+            dgvCouponImport.Columns[3].HeaderText = "Ngày Nhập";
         }
 
-        private void LoadImportDetailByText(String keyWord)
+        private void LoadImportDetailByText(string keyWord)
         {
             dgvDetailCouponImport.DataSource = null;
 
@@ -176,7 +181,7 @@ namespace BaketyManagement.View.Forms
                 dgvDetailCouponImport.DataSource = null;
                 DateTime startDate = dtpStartImportDay.Value;
                 DateTime endDate = dtpEndImportDay.Value;
-                if (DateTime.Compare(startDate, endDate) < 0)
+                if (DateTime.Compare(endDate, startDate) < 0)
                 {
                     throw new Exception("Vui lòng chọn ngày kết thúc sau hoặc bằng ngày bắt đầu!");
                 }
@@ -276,8 +281,8 @@ namespace BaketyManagement.View.Forms
             {
                 if (idImport <= 0)
                     throw new Exception("Hãy chọn phiếu nhập");
-
-                FrmInforTabImputCouponImport frmImportInfo = new FrmInforTabImputCouponImport(idImport);
+                var importer = db.Imports.Where(i => i.IdImport == idImport).FirstOrDefault().Importer;
+                FrmInforTabImputCouponImport frmImportInfo = new FrmInforTabImputCouponImport(idImport, importer);
                 frmImportInfo.StartPosition = FormStartPosition.CenterScreen;
                 frmImportInfo.ShowDialog();
 

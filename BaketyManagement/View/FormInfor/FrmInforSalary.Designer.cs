@@ -33,15 +33,11 @@ namespace BaketyManagement.View.FormInfor
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dateTimeKeeped = new System.Windows.Forms.DateTimePicker();
             this.cboStaffName = new System.Windows.Forms.ComboBox();
-            this.txtSalaryOverTime = new System.Windows.Forms.TextBox();
-            this.txtRewards = new System.Windows.Forms.TextBox();
             this.txtHoursOverTime = new System.Windows.Forms.TextBox();
-            this.txtWorkDays = new System.Windows.Forms.TextBox();
-            this.txtSalaryDate = new System.Windows.Forms.TextBox();
+            this.txtWorkingTime = new System.Windows.Forms.TextBox();
             this.txtIDStaff = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -97,15 +93,11 @@ namespace BaketyManagement.View.FormInfor
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.dateTimeKeeped);
             this.panel2.Controls.Add(this.cboStaffName);
-            this.panel2.Controls.Add(this.txtSalaryOverTime);
-            this.panel2.Controls.Add(this.txtRewards);
             this.panel2.Controls.Add(this.txtHoursOverTime);
-            this.panel2.Controls.Add(this.txtWorkDays);
-            this.panel2.Controls.Add(this.txtSalaryDate);
+            this.panel2.Controls.Add(this.txtWorkingTime);
             this.panel2.Controls.Add(this.txtIDStaff);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
@@ -117,6 +109,15 @@ namespace BaketyManagement.View.FormInfor
             this.panel2.Size = new System.Drawing.Size(574, 408);
             this.panel2.TabIndex = 1;
             // 
+            // dateTimeKeeped
+            // 
+            this.dateTimeKeeped.CustomFormat = "dd-MM-yyyy";
+            this.dateTimeKeeped.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeKeeped.Location = new System.Drawing.Point(220, 130);
+            this.dateTimeKeeped.Name = "dateTimeKeeped";
+            this.dateTimeKeeped.Size = new System.Drawing.Size(317, 26);
+            this.dateTimeKeeped.TabIndex = 8;
+            // 
             // cboStaffName
             // 
             this.cboStaffName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -127,20 +128,6 @@ namespace BaketyManagement.View.FormInfor
             this.cboStaffName.TabIndex = 7;
             this.cboStaffName.SelectedIndexChanged += new System.EventHandler(this.cboStaffName_SelectedIndexChanged);
             // 
-            // txtSalaryOverTime
-            // 
-            this.txtSalaryOverTime.Location = new System.Drawing.Point(220, 339);
-            this.txtSalaryOverTime.Name = "txtSalaryOverTime";
-            this.txtSalaryOverTime.Size = new System.Drawing.Size(317, 26);
-            this.txtSalaryOverTime.TabIndex = 6;
-            // 
-            // txtRewards
-            // 
-            this.txtRewards.Location = new System.Drawing.Point(220, 287);
-            this.txtRewards.Name = "txtRewards";
-            this.txtRewards.Size = new System.Drawing.Size(317, 26);
-            this.txtRewards.TabIndex = 5;
-            // 
             // txtHoursOverTime
             // 
             this.txtHoursOverTime.Location = new System.Drawing.Point(220, 235);
@@ -148,19 +135,12 @@ namespace BaketyManagement.View.FormInfor
             this.txtHoursOverTime.Size = new System.Drawing.Size(317, 26);
             this.txtHoursOverTime.TabIndex = 4;
             // 
-            // txtWorkDays
+            // txtWorkingTime
             // 
-            this.txtWorkDays.Location = new System.Drawing.Point(220, 183);
-            this.txtWorkDays.Name = "txtWorkDays";
-            this.txtWorkDays.Size = new System.Drawing.Size(317, 26);
-            this.txtWorkDays.TabIndex = 3;
-            // 
-            // txtSalaryDate
-            // 
-            this.txtSalaryDate.Location = new System.Drawing.Point(220, 131);
-            this.txtSalaryDate.Name = "txtSalaryDate";
-            this.txtSalaryDate.Size = new System.Drawing.Size(317, 26);
-            this.txtSalaryDate.TabIndex = 2;
+            this.txtWorkingTime.Location = new System.Drawing.Point(220, 183);
+            this.txtWorkingTime.Name = "txtWorkingTime";
+            this.txtWorkingTime.Size = new System.Drawing.Size(317, 26);
+            this.txtWorkingTime.TabIndex = 3;
             // 
             // txtIDStaff
             // 
@@ -169,28 +149,6 @@ namespace BaketyManagement.View.FormInfor
             this.txtIDStaff.ReadOnly = true;
             this.txtIDStaff.Size = new System.Drawing.Size(317, 26);
             this.txtIDStaff.TabIndex = 0;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(37, 342);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(142, 40);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Lương làm thêm \r\n     (VNĐ/Giờ)";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(37, 290);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Thưởng";
             // 
             // label5
             // 
@@ -232,9 +190,9 @@ namespace BaketyManagement.View.FormInfor
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(37, 134);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(158, 20);
+            this.label9.Size = new System.Drawing.Size(147, 20);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Ngày Lương (VNĐ)";
+            this.label9.Text = "Ngày Chấm Công";
             // 
             // label2
             // 
@@ -243,9 +201,9 @@ namespace BaketyManagement.View.FormInfor
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(37, 186);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 20);
+            this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Ngày Công";
+            this.label2.Text = "Số giờ làm việc";
             // 
             // panel3
             // 
@@ -372,22 +330,18 @@ namespace BaketyManagement.View.FormInfor
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtSalaryOverTime;
-        private System.Windows.Forms.TextBox txtRewards;
         private System.Windows.Forms.TextBox txtHoursOverTime;
-        private System.Windows.Forms.TextBox txtWorkDays;
-        private System.Windows.Forms.TextBox txtSalaryDate;
+        private System.Windows.Forms.TextBox txtWorkingTime;
         private System.Windows.Forms.TextBox txtIDStaff;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnTimeKeeping;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAddSalary;
         private System.Windows.Forms.ComboBox cboStaffName;
+        private System.Windows.Forms.DateTimePicker dateTimeKeeped;
+        private System.Windows.Forms.Label label9;
     }
 }

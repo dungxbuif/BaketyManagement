@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaketyManagement.DataModels;
+using WinFormsApp13212.Models;
 
 namespace BaketyManagement.View.FormInfor
 {

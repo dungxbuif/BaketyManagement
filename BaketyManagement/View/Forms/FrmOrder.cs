@@ -16,6 +16,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp13212.Models;
 
 namespace BaketyManagement.View
 {
@@ -442,8 +443,10 @@ namespace BaketyManagement.View
                 {
                     MessageBox.Show("No Record To Export !!!", "Info");
                 }
+
                 dgvBill.DataSource = null;
                 db.SaveChanges();
+                idBill = 0;
                 MessageBox.Show("Thanh toán thành công");
              
         }

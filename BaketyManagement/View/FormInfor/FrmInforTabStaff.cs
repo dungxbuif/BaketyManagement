@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp13212.Models;
 
 namespace BaketyManagement.View
 {
@@ -24,9 +25,28 @@ namespace BaketyManagement.View
             this.MaximumSize = this.Size;
             this.MinimumSize = this.Size;
             this.TopLevelControl.BackColor = this.BackColor;
-            
+            if (isAdd)
+                btnEditStaff.Visible = false;
+            else
+            {
+                btnAddStaff.Visible = false;
+                LoadTextBox();
+            }
         }
-              
+        public void LoadTextBox()
+        {
+            staff stf = (from nv in db.staff
+                         where nv.IdStaff == idStaff
+                         select nv).FirstOrDefault();
+            txtNameStaff.Text = stf.NameStaff;
+            if (stf.Gender == true)
+                rdbMan.Checked = true;
+            if (stf.Gender == false)
+                rdbWoman.Checked = true;
+            txtPhoneStaff.Text = stf.Phone.ToString();
+            txtAddressStaff.Text = stf.Address.ToString();
+        }
+
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
             AddStaff();
@@ -107,9 +127,9 @@ namespace BaketyManagement.View
                 }
                 Boolean gender = false;
                 if (rdbMan.Checked)
-                    gender = false;
-                if (rdbWoman.Checked)
                     gender = true;
+                if (rdbWoman.Checked)
+                    gender = false;
                 nvSua.IdStaff = idStaff;
                 nvSua.NameStaff = nameStaff;
                 nvSua.Gender = gender;
@@ -124,6 +144,22 @@ namespace BaketyManagement.View
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void btnEditStaff_Click_1(object sender, EventArgs e)
+        {
+            EditStaff();
+        }
+
+        private void btnAddStaff_Click_1(object sender, EventArgs e)
+        {
+            AddStaff();
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp13212.Models;
 
 namespace BaketyManagement.View
 {
@@ -26,7 +27,7 @@ namespace BaketyManagement.View
             txtIdSupplier.Enabled = false;
             if(isAdd == true)
             {
-                txtIdSupplier.Visible = false;
+                txtIdSupplier.Enabled = false;
             }
             else
             {
