@@ -261,9 +261,28 @@ namespace BaketyManagement.View.Forms
 
         private void btnEditMaterial_Click(object sender, EventArgs e)
         {
-
+            EditRecipeDetail();
         }
-
+        private void EditRecipeDetail()
+        {
+            try
+            {
+                string name = dgvDetail.Rows[rowDetailsClick].Cells[0].Value.ToString();
+                var queryMaterial = from sp in db.Materials where (sp.NameMaterial.Equals(name)) select sp;
+                Material material = queryMaterial.FirstOrDefault();
+                FrmInforTabRecipeDetail.isAdd = false;
+                FrmInforTabRecipeDetail.idRecipe = idRecipe;
+                FrmInforTabRecipeDetail.idMaterial = material.IdMaterial;
+                FrmInforTabRecipeDetail frm = new FrmInforTabRecipeDetail();
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
+                LoadTabDetails(idRecipe);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void btnDelMaterial_Click(object sender, EventArgs e)
         {
             try

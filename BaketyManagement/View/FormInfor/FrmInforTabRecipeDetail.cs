@@ -14,7 +14,7 @@ namespace BaketyManagement.View.FormInfor
     public partial class FrmInforTabRecipeDetail : Form
     {
         BakeryManagementContext db = new BakeryManagementContext();
-        public static Int32 idRecipe;
+        public static Int32 idRecipe, idMaterial;
         public static Boolean isAdd;
         public FrmInforTabRecipeDetail()
         {
@@ -32,14 +32,11 @@ namespace BaketyManagement.View.FormInfor
         }
         private void LoadTextBox()
         {
-            /*var query = from sp in db.M where (sp.IdRecipe == id) select sp;
-            Recipe re = query.FirstOrDefault();
-            txtIdRecipe.Text = re.IdRecipe.ToString();
-            txtNameCake.Text = re.NameCake;
-            txtPrice.Text = re.Price.ToString();
-            var queryCate = from s in db.Categories where (s.IdCategory == re.IdCategory) select s;
-            Category cate = queryCate.FirstOrDefault();
-            comboBox1.Text = cate.NameCategory;*/
+
+            var query = from sp in db.Materials where (sp.IdMaterial == idMaterial) select sp;
+            Material re = query.FirstOrDefault();
+            cbbNameMaterial.Text = re.NameMaterial;
+            cbbNameMaterial.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -49,7 +46,25 @@ namespace BaketyManagement.View.FormInfor
 
         private void btnEditDetail_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+               
+                if (int.Parse(txtAmount.Text) < 0)
+                    throw new Exception("Số lượng phải lớn hơn 0");
+                else
+                {
+                    var query = from s in db.RecipeDetails where (s.IdRecipe == idRecipe && s.IdMaterial == idMaterial) select s;
+                    RecipeDetail recipeDetail = query.FirstOrDefault();
+                    recipeDetail.Amount = double.Parse(txtAmount.Text);
+                    db.SaveChanges();
+                    MessageBox.Show("Sửa thành công");
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Nhập đúng kiểu dữ liệu");
+            }
         }
 
         private void btnAddDetail_Click(object sender, EventArgs e)
