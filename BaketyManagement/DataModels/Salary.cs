@@ -10,7 +10,7 @@ namespace WinFormsApp13212.Models
     {
         public int IdSalary { get; set; }
         public int? IdStaff { get; set; }
-        public DateTime? TimeKeeped { get; set; }
+        public DateTime TimeKeeped { get; set; }
         public double? WorkingTime { get; set; }
         public double? HoursOverTime { get; set; }
         public double? SalaryOver { get; set; }
