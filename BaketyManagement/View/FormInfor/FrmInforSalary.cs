@@ -27,16 +27,19 @@ namespace BaketyManagement.View.FormInfor
             if(checkSender == 2)
             {
                 btnTimeKeeping.Text = "Thêm Chấm Công";
+                txtHoursOverTime.Text = "0";
+                txtWorkingTime.Text = "8";
             }
             else
             {
                 txtWorkingTime.Enabled = true;
                 btnTimeKeeping.Text = "Sửa thông tin";
                 Salary sl = (from slr in db.Salaries
-                             where slr.IdStaff == idStaff
+                             where slr.IdSalary == idStaff
                              select slr).FirstOrDefault();
-                txtIDStaff.Text = idStaff.ToString();
-                cboStaffName.SelectedIndex = idStaff - 1;
+                txtIDStaff.Text = sl.IdStaff.ToString();
+                dateTimeKeeped.Value = sl.TimeKeeped;
+                cboStaffName.SelectedIndex = (int)(sl.IdStaff - 1);
                 txtHoursOverTime.Text = sl.HoursOverTime.ToString();
                 txtWorkingTime.Text = sl.WorkingTime.ToString();
                 cboStaffName.Enabled = false;
@@ -71,23 +74,26 @@ namespace BaketyManagement.View.FormInfor
             try
             {
                 DateTime timeKeeped = DateTime.Now;
-                int workingTime = int.Parse(txtWorkingTime.Text);
-                int hourOverTime = int.Parse(txtHoursOverTime.Text);
+                
 
-                if (hourOverTime.ToString() == "" || workingTime.ToString() == "")
+                if (txtWorkingTime.Text == "" || txtHoursOverTime.Text == "")
                 {
                     throw new Exception("Vui lòng nhập đầy đủ thông tin");
                 }
+                int workingTime = int.Parse(txtWorkingTime.Text);
+                int hourOverTime = int.Parse(txtHoursOverTime.Text);
 
                 var query = from slr in db.Salaries
-                            where slr.IdStaff.ToString() == idStaff.ToString()
+                            where slr.IdStaff.ToString() == txtIDStaff.Text
                             select slr;
 
                 foreach (var id in query)
                 {
                     DateTime timeKeep = (DateTime)id.TimeKeeped;
+                    DateTime time = (DateTime)dateTimeKeeped.Value;
                     string timeKeepDay = timeKeep.ToString("dd/MM/yyyy");
-                    if (timeKeepDay == DateTime.Now.ToString("dd/MM/yyyy"))
+                    string tim = time.ToString("dd/MM/yyyy");
+                    if (timeKeepDay == tim)
                     {
                         throw new Exception("Nhân viên này đã được chấm công ngày hôm nay rồi, vui lòng chọn sửa hoặc chấm công để thay đổi");
                     }
@@ -121,7 +127,7 @@ namespace BaketyManagement.View.FormInfor
                 sl.SalaryOverTime = 35000;
                 db.Salaries.Add(sl);
                 db.SaveChanges();
-                DialogResult result = MessageBox.Show("Chấm công mới ngày hôm nay thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult result = MessageBox.Show("Chấm công mới thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                     this.Close();
             }
@@ -136,7 +142,7 @@ namespace BaketyManagement.View.FormInfor
             try
             {
                 Salary slrSua = (from sl in db.Salaries
-                                 where sl.IdStaff == idStaff
+                                 where sl.IdSalary == idStaff
                                  select sl).FirstOrDefault();
                 if(txtWorkingTime.Text == "" || txtHoursOverTime.Text == "")
                 {
@@ -146,6 +152,22 @@ namespace BaketyManagement.View.FormInfor
                 slrSua.WorkingTime = int.Parse(txtWorkingTime.Text);
                 slrSua.HoursOverTime = int.Parse(txtHoursOverTime.Text);
                 slrSua.TimeKeeped = dateTimeKeeped.Value;
+
+                var query = from slr in db.Salaries
+                            where slr.IdStaff.ToString() == idStaff.ToString()
+                            select slr;
+
+                foreach (var id in query)
+                {
+                    DateTime timeKeep = (DateTime)id.TimeKeeped;
+                    DateTime timeEdit = (DateTime)dateTimeKeeped.Value;
+                    string timeKeepDay = timeKeep.ToString("dd/MM/yyyy");
+                    string timeedit = timeEdit.ToString("dd/MM/yyyy");
+                    if (timeKeepDay == timeedit)
+                    {
+                        throw new Exception("Nhân viên này đã được chấm công ngày hôm đó rồi, vui lòng thay đổi");
+                    }
+                }
 
                 db.SaveChanges();
                 DialogResult result = MessageBox.Show("Sửa chấm công thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

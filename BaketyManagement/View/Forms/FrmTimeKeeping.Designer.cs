@@ -33,6 +33,7 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionTimeKeeping = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pnFunctionSalary = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@ namespace BaketyManagement.View.Forms
             this.btnTimeKeeping = new System.Windows.Forms.Button();
             this.btnDisplaySalary = new System.Windows.Forms.Button();
             this.btnEditSalary = new System.Windows.Forms.Button();
-            this.btnPrintSalary = new System.Windows.Forms.Button();
             this.txtTimeKeepingSearch = new System.Windows.Forms.TextBox();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnTimeKeepingSearch = new System.Windows.Forms.Button();
@@ -49,8 +49,9 @@ namespace BaketyManagement.View.Forms
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvTimeKeeping = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mcc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayChamCong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soGioLv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soGioLamThem = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,6 +111,7 @@ namespace BaketyManagement.View.Forms
             // pnFunctionSalary
             // 
             this.pnFunctionSalary.BackColor = System.Drawing.Color.White;
+            this.pnFunctionSalary.Controls.Add(this.btnCancel);
             this.pnFunctionSalary.Controls.Add(this.dateTimePicker2);
             this.pnFunctionSalary.Controls.Add(this.dateTimePicker1);
             this.pnFunctionSalary.Controls.Add(this.label2);
@@ -118,7 +120,6 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionSalary.Controls.Add(this.btnTimeKeeping);
             this.pnFunctionSalary.Controls.Add(this.btnDisplaySalary);
             this.pnFunctionSalary.Controls.Add(this.btnEditSalary);
-            this.pnFunctionSalary.Controls.Add(this.btnPrintSalary);
             this.pnFunctionSalary.Controls.Add(this.txtTimeKeepingSearch);
             this.pnFunctionSalary.Controls.Add(this.btnFilter);
             this.pnFunctionSalary.Controls.Add(this.btnTimeKeepingSearch);
@@ -128,13 +129,34 @@ namespace BaketyManagement.View.Forms
             this.pnFunctionSalary.Size = new System.Drawing.Size(1131, 355);
             this.pnFunctionSalary.TabIndex = 0;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(32)))), ((int)(((byte)(18)))));
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Image = global::BaketyManagement.Properties.Resources.Cancel;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancel.Location = new System.Drawing.Point(941, 172);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(150, 70);
+            this.btnCancel.TabIndex = 12;
+            this.btnCancel.Text = "Xóa";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.CustomFormat = "MM-yyyy";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(546, 290);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(121, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(326, 26);
             this.dateTimePicker2.TabIndex = 11;
             // 
             // dateTimePicker1
@@ -241,7 +263,7 @@ namespace BaketyManagement.View.Forms
             this.btnEditSalary.ForeColor = System.Drawing.Color.White;
             this.btnEditSalary.Image = global::BaketyManagement.Properties.Resources.Edit;
             this.btnEditSalary.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditSalary.Location = new System.Drawing.Point(608, 172);
+            this.btnEditSalary.Location = new System.Drawing.Point(589, 172);
             this.btnEditSalary.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.btnEditSalary.Name = "btnEditSalary";
             this.btnEditSalary.Size = new System.Drawing.Size(150, 70);
@@ -250,28 +272,6 @@ namespace BaketyManagement.View.Forms
             this.btnEditSalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditSalary.UseVisualStyleBackColor = false;
             this.btnEditSalary.Click += new System.EventHandler(this.btnEditSalary_Click);
-            // 
-            // btnPrintSalary
-            // 
-            this.btnPrintSalary.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnPrintSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(36)))), ((int)(((byte)(210)))));
-            this.btnPrintSalary.FlatAppearance.BorderSize = 0;
-            this.btnPrintSalary.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(32)))), ((int)(((byte)(18)))));
-            this.btnPrintSalary.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(52)))), ((int)(((byte)(36)))));
-            this.btnPrintSalary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPrintSalary.ForeColor = System.Drawing.Color.White;
-            this.btnPrintSalary.Image = global::BaketyManagement.Properties.Resources.print;
-            this.btnPrintSalary.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrintSalary.Location = new System.Drawing.Point(925, 258);
-            this.btnPrintSalary.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
-            this.btnPrintSalary.Name = "btnPrintSalary";
-            this.btnPrintSalary.Size = new System.Drawing.Size(166, 70);
-            this.btnPrintSalary.TabIndex = 6;
-            this.btnPrintSalary.Text = "Xuất Lương";
-            this.btnPrintSalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPrintSalary.UseVisualStyleBackColor = false;
-            this.btnPrintSalary.Click += new System.EventHandler(this.btnPrintSalary_Click);
             // 
             // txtTimeKeepingSearch
             // 
@@ -296,7 +296,7 @@ namespace BaketyManagement.View.Forms
             this.btnFilter.ForeColor = System.Drawing.Color.White;
             this.btnFilter.Image = global::BaketyManagement.Properties.Resources.filter;
             this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFilter.Location = new System.Drawing.Point(741, 260);
+            this.btnFilter.Location = new System.Drawing.Point(947, 252);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(166, 68);
@@ -370,8 +370,9 @@ namespace BaketyManagement.View.Forms
             this.dgvTimeKeeping.BackgroundColor = System.Drawing.Color.White;
             this.dgvTimeKeeping.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTimeKeeping.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name,
+            this.mcc,
             this.maNhanVien,
+            this.name,
             this.ngayChamCong,
             this.soGioLv,
             this.soGioLamThem});
@@ -387,17 +388,24 @@ namespace BaketyManagement.View.Forms
             this.dgvTimeKeeping.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTimeKeeping_CellClick);
             this.dgvTimeKeeping.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTimeKeeping_CellContentClick);
             // 
-            // name
+            // mcc
             // 
-            this.name.HeaderText = "Tên Nhân Viên";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
+            this.mcc.HeaderText = "Mã Chấm Công";
+            this.mcc.Name = "mcc";
+            this.mcc.ReadOnly = true;
+            this.mcc.Visible = false;
             // 
             // maNhanVien
             // 
             this.maNhanVien.HeaderText = "Mã Nhân Viên";
             this.maNhanVien.Name = "maNhanVien";
             this.maNhanVien.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Tên Nhân Viên";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // ngayChamCong
             // 
@@ -455,18 +463,19 @@ namespace BaketyManagement.View.Forms
         private System.Windows.Forms.Button btnTimeKeeping;
         private System.Windows.Forms.Button btnDisplaySalary;
         private System.Windows.Forms.Button btnEditSalary;
-        private System.Windows.Forms.Button btnPrintSalary;
         private System.Windows.Forms.TextBox txtTimeKeepingSearch;
         private System.Windows.Forms.Button btnTimeKeepingSearch;
         private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngayChamCong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soGioLv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soGioLamThem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mcc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayChamCong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soGioLv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soGioLamThem;
     }
 }
