@@ -225,6 +225,7 @@ namespace BaketyManagement.View.Forms
             // 
             // btnRecipeDisplay
             // 
+            this.btnRecipeDisplay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRecipeDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(159)))), ((int)(((byte)(56)))));
             this.btnRecipeDisplay.FlatAppearance.BorderSize = 0;
             this.btnRecipeDisplay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(126)))), ((int)(((byte)(38)))));
