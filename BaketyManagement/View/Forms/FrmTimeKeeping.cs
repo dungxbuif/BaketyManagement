@@ -60,8 +60,7 @@ namespace BaketyManagement.View.Forms
                         };
             dgvTimeKeeping.Rows.Clear();
             var data = query
-                .OrderByDescending(sl => sl.TimeKeeped)
-                .OrderByDescending(sl => sl.nameStaff);
+                .OrderBy(sl => sl.nameStaff).ThenBy(sl => sl.TimeKeeped);
 
             foreach (var slr in data)
             {
