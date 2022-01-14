@@ -74,30 +74,37 @@ namespace BaketyManagement.View.FormInfor
             try
             {
                 DateTime timeKeeped = DateTime.Now;
-                
-
+                string m = timeKeeped.ToString("dd/MM/yyyy");
                 if (txtWorkingTime.Text == "" || txtHoursOverTime.Text == "")
                 {
                     throw new Exception("Vui lòng nhập đầy đủ thông tin");
                 }
+               
                 int workingTime = int.Parse(txtWorkingTime.Text);
                 int hourOverTime = int.Parse(txtHoursOverTime.Text);
 
                 var query = from slr in db.Salaries
                             where slr.IdStaff.ToString() == txtIDStaff.Text
                             select slr;
+                DateTime time = (DateTime)dateTimeKeeped.Value;
+                string tim = time.ToString("dd/MM/yyyy");
 
                 foreach (var id in query)
                 {
                     DateTime timeKeep = (DateTime)id.TimeKeeped;
-                    DateTime time = (DateTime)dateTimeKeeped.Value;
+                    
                     string timeKeepDay = timeKeep.ToString("dd/MM/yyyy");
-                    string tim = time.ToString("dd/MM/yyyy");
                     if (timeKeepDay == tim)
                     {
                         throw new Exception("Nhân viên này đã được chấm công ngày hôm nay rồi, vui lòng chọn sửa hoặc chấm công để thay đổi");
                     }
                 }
+
+                if(time > timeKeeped)
+                {
+                    throw new Exception("Ngày chọn chưa đến so với ngày hiện tại");
+                }
+
 
                 Salary sl = new Salary();
                 int max = 0;
